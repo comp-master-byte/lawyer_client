@@ -1,0 +1,31 @@
+@import "../../styles/vars";
+
+.myButton {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 35px;
+  font-weight: 600;
+}
+
+.primaryContained {
+  color: #fff;
+  background-color: $blue-color;
+}
+
+.primaryOutlined {
+  color: $blue-color;
+  background-color: #fff;
+  border: 2px solid $blue-color;
+}
+
+// size
+.large {
+  font-size: 28px;
+  padding: 21px 50px 24px 50px;
+}
+
+.small {
+  font-size: 24px;
+  padding: 9px 28px 11px 28px;
+}
