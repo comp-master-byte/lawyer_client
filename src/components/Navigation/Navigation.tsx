@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import styles from "./Navigation.module.scss";
 import logo from "../../assets/logo.svg";
 import vk from "../../assets/vk.svg";
