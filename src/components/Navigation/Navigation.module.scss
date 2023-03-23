@@ -1,0 +1,32 @@
+@import "../../styles/exports";
+
+.navigationWrapper {
+  padding-top: 42px;
+}
+.container {
+  @include container;
+}
+
+.navigationInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigationLinks {
+  display: flex;
+  column-gap: 47px;
+
+  &__link {
+    color: $blue-color;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 20.89px;
+    cursor: pointer;
+  }
+}
+
+.navigationEntrance {
+  display: flex;
+  column-gap: 10px;
+}
