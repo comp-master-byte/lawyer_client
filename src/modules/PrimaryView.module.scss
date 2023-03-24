@@ -1,0 +1,48 @@
+@import "../styles/exports";
+
+@mixin columnView {
+  width: 685px;
+  height: 656px;
+  border-radius: 50px;
+  padding: 38px 30px 70px 30px;
+}
+
+@mixin title-text {
+  font-family: "Inter";
+  font-size: 48px;
+  line-height: 43.2px;
+  font-weight: 600;
+}
+
+.primaryViewWrapper {
+  margin-top: 40px;
+}
+
+.container {
+  @include container;
+}
+
+.primaryViewInner {
+  display: flex;
+  column-gap: 30px;
+}
+
+.viewLeftColumn {
+  @include columnView();
+  background: $blueLinear-color;
+
+  &__title {
+    @include title-text();
+    color: $blue-color;
+  }
+}
+
+.viewRightColumn {
+  @include columnView();
+  background: $orangeLinear-color;
+
+  &__title {
+    @include title-text();
+    color: $orange-color;
+  }
+}
