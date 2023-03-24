@@ -5,6 +5,8 @@
   height: 656px;
   border-radius: 50px;
   padding: 38px 30px 70px 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 @mixin title-text {
@@ -12,6 +14,12 @@
   font-size: 48px;
   line-height: 43.2px;
   font-weight: 600;
+}
+
+@mixin button {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
 }
 
 .primaryViewWrapper {
@@ -35,6 +43,14 @@
     @include title-text();
     color: $blue-color;
   }
+
+  &__btn {
+    @include button;
+
+    button {
+      max-width: 300px;
+    }
+  }
 }
 
 .viewRightColumn {
@@ -44,5 +60,13 @@
   &__title {
     @include title-text();
     color: $orange-color;
+  }
+
+  &__btn {
+    @include button;
+    justify-content: flex-end;
+    button {
+      max-width: 382px;
+    }
   }
 }

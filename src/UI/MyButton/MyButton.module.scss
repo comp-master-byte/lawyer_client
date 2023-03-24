@@ -1,16 +1,21 @@
 @import "../../styles/vars";
 
 .myButton {
+  width: 100%;
   border: none;
   outline: none;
   cursor: pointer;
   border-radius: 35px;
-  font-weight: 600;
 }
 
 .primaryContained {
   color: #fff;
   background-color: $blue-color;
+}
+
+.secondaryContained {
+  color: #fff;
+  background-color: $orange-color;
 }
 
 .primaryOutlined {
@@ -22,7 +27,9 @@
 // size
 .large {
   font-size: 28px;
-  padding: 21px 50px 24px 50px;
+  padding: 21px 0px 24px 0px;
+  font-weight: 600;
+  line-height: 24.37px;
 }
 
 .small {

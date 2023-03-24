@@ -22,6 +22,8 @@ const MyButton: FC<MyButtonProps> = ({
         [styles.primaryContained]:
           color === "primary" && variant === "contained",
         [styles.primaryOutlined]: color === "primary" && variant === "outlined",
+        [styles.secondaryContained]:
+          color === "secondary" && variant === "contained",
         [styles.large]: size === "large",
         [styles.small]: size === "small",
       })}
