@@ -13,9 +13,18 @@
     text-align: center;
     margin: 0 auto;
     width: 1081px;
+
+    .titleEmphasized {
+      color: #fff;
+      padding: 8px 15px 14px 15px;
+      border-radius: 20px;
+      background-color: $blue-color;
+      margin-right: 6px;
+    }
   }
 
   .aboutUsCards {
     display: flex;
+    margin-bottom: 145px;
   }
 }

@@ -1,0 +1,48 @@
+@import "../../../../../app/styles/exports";
+
+@mixin card {
+  width: 634px;
+  height: 318px;
+  border-radius: 50px;
+  padding: 45px 0 0 45px;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Inter";
+  line-height: 27px;
+  letter-spacing: -0.025em;
+}
+
+.lawyerAssistantWrapper {
+  width: 100%;
+  height: 563px;
+  background-color: #f3f8ff;
+  border-radius: 50px;
+  margin-top: 105px;
+  position: relative;
+
+  &__assistant {
+    position: absolute;
+    bottom: -30px;
+    left: -80px;
+  }
+
+  .lawyerAssistantCards {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .lawyerTopCard {
+      @include card;
+      background: linear-gradient(180deg, #cce4ff 0%, #ffffff 100%);
+      color: $blue-color;
+      padding-right: 127px;
+    }
+
+    .lawyerBottomCard {
+      @include card;
+      background: linear-gradient(180deg, #ffe5cd 0%, #ffffff 100%);
+      color: $orange-color;
+      transform: translateY(-72px);
+      padding-right: 109px;
+    }
+  }
+}

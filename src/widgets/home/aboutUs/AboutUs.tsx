@@ -1,9 +1,11 @@
+import react, { FC } from "react";
 import styles from "./AboutUs.module.scss";
 import AdditionalCard from "./components/additionalCard/AdditionalCard";
 import ProblemCard from "./components/problemCard/ProblemCard";
 import SolutionCard from "./components/solutionCard/SolutionCard";
+import LawyerAssistant from "./components/lawyerAssistant/LawyerAssistant";
 
-const AboutUs = () => {
+const AboutUs: FC = () => {
   return (
     <div className={styles.aboutUsWrapper}>
       <div className={styles.container}>
@@ -17,6 +19,12 @@ const AboutUs = () => {
             <SolutionCard />
             <AdditionalCard />
           </div>
+
+          <p className={styles.aboutUsInner__title}>
+            Почему Юра <span className={styles.titleEmphasized}>прав</span>?
+          </p>
+
+          <LawyerAssistant />
         </div>
       </div>
     </div>
