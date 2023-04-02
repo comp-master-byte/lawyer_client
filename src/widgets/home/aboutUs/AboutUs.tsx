@@ -1,4 +1,5 @@
 import styles from "./AboutUs.module.scss";
+import AdditionalCard from "./components/additionalCard/AdditionalCard";
 import ProblemCard from "./components/problemCard/ProblemCard";
 import SolutionCard from "./components/solutionCard/SolutionCard";
 
@@ -14,6 +15,7 @@ const AboutUs = () => {
           <div className={styles.aboutUsCards}>
             <ProblemCard />
             <SolutionCard />
+            <AdditionalCard />
           </div>
         </div>
       </div>
