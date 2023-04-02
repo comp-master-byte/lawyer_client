@@ -1,5 +1,5 @@
 import styles from "./AboutUs.module.scss";
-import SolutionCard from "./components/solutionCard/SolutionCard";
+import ProblemCard from "./components/problemCard/ProblemCard";
 
 const AboutUs = () => {
   return (
@@ -11,7 +11,7 @@ const AboutUs = () => {
             понятной обычному пользователю
           </p>
           <div className={styles.aboutUsCards}>
-            <SolutionCard />
+            <ProblemCard />
           </div>
         </div>
       </div>

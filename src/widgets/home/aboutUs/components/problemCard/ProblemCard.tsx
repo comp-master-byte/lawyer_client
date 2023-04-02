@@ -1,7 +1,7 @@
-import styles from "./SolutionCard.module.scss";
+import styles from "./ProblemCard.module.scss";
 import icon from "./assets/icon.svg";
 
-const SolutionCard = () => {
+const ProblemCard = () => {
   return (
     <div className={styles.solutionCardWrapper}>
       <div className={styles.solutionCardTitle}>
@@ -17,4 +17,4 @@ const SolutionCard = () => {
   );
 };
 
-export default SolutionCard;
+export default ProblemCard;
