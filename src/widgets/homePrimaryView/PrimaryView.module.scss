@@ -1,5 +1,4 @@
-@import "../styles/exports";
-
+@import "../../app/styles/exports";
 @mixin columnView {
   position: relative;
   width: 685px;
@@ -59,14 +58,14 @@
       line-height: 24.37px;
       transform: rotate(-12deg);
       position: absolute;
-      bottom: 296px;
-      left: 295px;
+      bottom: 293.66px;
+      left: 295.86px;
     }
 
     &__img {
       position: absolute;
-      bottom: 199px;
-      left: 137px;
+      bottom: 198.78px;
+      left: 137.62px;
     }
   }
 

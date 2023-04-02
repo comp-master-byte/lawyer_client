@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import styles from "./Navigation.module.scss";
-import logo from "../../assets/logo.svg";
-import vk from "../../assets/vk.svg";
+import logo from "./assets/logo.svg";
+import vk from "./assets/vk.svg";
 
-import MyButton from "../../UI/MyButton/MyButton";
+import MyButton from "../../shared/MyButton/MyButton";
 
 const Navigation: FC = () => {
   return (
@@ -15,7 +15,7 @@ const Navigation: FC = () => {
           </div>
           <div className={styles.navigationLinks}>
             <div className={styles.navigationLinks__link}>О нас</div>
-            <div className={styles.navigationLinks__link}>Как это работает</div>
+            <div className={styles.navigationLinks__link}>вв</div>
             <div className={styles.navigationLinks__link}>Вопросы и ответы</div>
             <div className={styles.navigationLinks__link}>Контакты</div>
           </div>

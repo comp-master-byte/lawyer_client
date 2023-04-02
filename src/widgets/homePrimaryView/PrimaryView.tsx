@@ -1,5 +1,5 @@
 import React from "react";
-import MyButton from "../UI/MyButton/MyButton";
+import MyButton from "../../shared/MyButton/MyButton";
 import styles from "./PrimaryView.module.scss";
 import pointer from "./public/pointer.svg";
 import human from "./public/yura.png";
