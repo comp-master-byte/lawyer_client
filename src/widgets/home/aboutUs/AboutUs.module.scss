@@ -1,0 +1,17 @@
+@import "../../../app/styles/exports";
+
+.aboutUsWrapper {
+  padding-bottom: 145px;
+}
+.container {
+  @include container;
+}
+
+.aboutUsInner {
+  &__title {
+    @include page-title;
+    text-align: center;
+    margin: 0 auto;
+    width: 1081px;
+  }
+}

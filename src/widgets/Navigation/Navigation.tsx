@@ -15,8 +15,8 @@ const Navigation: FC = () => {
           </div>
           <div className={styles.navigationLinks}>
             <div className={styles.navigationLinks__link}>О нас</div>
-            <div className={styles.navigationLinks__link}>вв</div>
-            <div className={styles.navigationLinks__link}>Вопросы и ответы</div>
+            <div className={styles.navigationLinks__link}>Преимущества</div>
+            <div className={styles.navigationLinks__link}>Категории и темы</div>
             <div className={styles.navigationLinks__link}>Контакты</div>
           </div>
           <div className={styles.navigationEntrance}>
