@@ -1,0 +1,25 @@
+@import "../../../../../app/styles/exports";
+
+.solutionCardWrapper {
+  width: 466px;
+  height: 350px;
+  background-color: #cfe5ff;
+  border-radius: 50px;
+  padding: 34px 34px 51px 53px;
+
+  &__text {
+    width: 356px;
+    @include home-card-text;
+    color: $blue-color;
+  }
+}
+
+.solutionCardTitle {
+  @include flex-between-center;
+  margin-bottom: 24px;
+
+  &__label {
+    @include home-card-label;
+    color: $blue-color;
+  }
+}
