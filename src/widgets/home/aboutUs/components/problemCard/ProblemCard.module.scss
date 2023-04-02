@@ -7,6 +7,19 @@
   border-radius: 50px;
   padding: 34px 34px 57px 53px;
   margin-top: 126px;
+  position: relative;
+
+  &__pointer {
+    position: absolute;
+    top: -52px;
+    right: -97px;
+    z-index: 3;
+  }
+
+  &__text {
+    @include home-card-text;
+    color: $blue-color;
+  }
 
   .solutionCardTitle {
     display: flex;
@@ -18,10 +31,5 @@
       @include home-card-label;
       color: $blue-color;
     }
-  }
-
-  &__text {
-    @include home-card-text;
-    color: $blue-color;
   }
 }

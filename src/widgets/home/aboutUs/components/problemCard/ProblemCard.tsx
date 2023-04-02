@@ -1,9 +1,16 @@
+import React from "react";
 import styles from "./ProblemCard.module.scss";
 import icon from "./assets/icon.svg";
+import pointer from "./assets/pointer.svg";
 
 const ProblemCard = () => {
   return (
     <div className={styles.solutionCardWrapper}>
+      <img
+        src={pointer}
+        alt="pointer"
+        className={styles.solutionCardWrapper__pointer}
+      />
       <div className={styles.solutionCardTitle}>
         <div className={styles.solutionCardTitle__label}>Проблема</div>
         <img src={icon} alt="icon" />

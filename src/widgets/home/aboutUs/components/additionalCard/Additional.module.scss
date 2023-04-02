@@ -7,6 +7,8 @@
   border-radius: 50px;
   padding: 35px 34px 63px 55px;
   margin-top: 45px;
+  z-index: -2;
+
   &__text {
     @include home-card-text;
     color: $orange-color;

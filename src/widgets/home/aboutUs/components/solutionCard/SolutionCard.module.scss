@@ -1,5 +1,14 @@
 @import "../../../../../app/styles/exports";
 
+.solutionCardPosition {
+  position: relative;
+  &__pointer {
+    position: absolute;
+    top: 45px;
+    right: -80px;
+    z-index: -1;
+  }
+}
 .solutionCardWrapper {
   width: 466px;
   height: 350px;
@@ -7,6 +16,7 @@
   border-radius: 50px;
   padding: 34px 34px 51px 53px;
   margin-top: 75px;
+  z-index: 3;
 
   &__text {
     width: 356px;
