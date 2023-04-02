@@ -12,6 +12,24 @@
   font-weight: 600;
   font-size: 48px;
   line-height: 43.2px;
-  letter-spacing: -0.4px;
+  letter-spacing: -0.025em;
   color: $blue-color;
+}
+
+@mixin home-card-label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 27px;
+  letter-spacing: -0.025em;
+}
+
+@mixin home-card-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.025em;
+  line-height: 23.1px;
 }
