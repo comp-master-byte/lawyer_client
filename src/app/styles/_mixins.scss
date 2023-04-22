@@ -1,5 +1,11 @@
 @import "./vars";
 
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin container {
   max-width: 1400px;
   width: 100%;

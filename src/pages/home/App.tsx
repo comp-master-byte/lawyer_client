@@ -3,6 +3,7 @@ import Navigation from "../../widgets/Navigation/Navigation";
 import PrimaryView from "../../widgets/home/primary/PrimaryView";
 import AboutUs from "../../widgets/home/aboutUs/AboutUs";
 import Advantages from "../../widgets/home/advantages/Advantages";
+import Themes from "../../widgets/home/themes/Themes";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <PrimaryView />
       <AboutUs />
       <Advantages />
+      <Themes />
     </div>
   );
 }
