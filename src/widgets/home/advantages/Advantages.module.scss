@@ -1,0 +1,23 @@
+@import "../../../app/styles/exports";
+
+.advantagesWrapper {
+  padding-bottom: 180px;
+  .container {
+    @include container;
+  }
+  &__title {
+    @include page-title();
+    max-width: 590px;
+    margin: 0 auto 60px auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .advantagesContent {
+    width: 100%;
+    height: 822px;
+    background-color: $lightBlue-color-2;
+    border-radius: 50px;
+    padding: 55px 50px 62px 50px;
+  }
+}

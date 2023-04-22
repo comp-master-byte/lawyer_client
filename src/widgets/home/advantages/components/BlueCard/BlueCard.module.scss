@@ -1,0 +1,12 @@
+@import "../../../../../app/styles/exports";
+
+.blueCardWrapper {
+  padding: 33px 31px 33px 33px;
+  border-radius: 50px;
+  background: $blueLinear-color;
+  color: $blue-color;
+  font-family: "Inter";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 21px;
+}
