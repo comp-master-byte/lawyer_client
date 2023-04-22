@@ -7,6 +7,7 @@ interface MyButtonProps {
   variant: string;
   size?: string;
   children?: React.ReactNode;
+  btnClassName?: string;
 }
 
 const MyButton: FC<MyButtonProps> = ({
@@ -14,11 +15,12 @@ const MyButton: FC<MyButtonProps> = ({
   variant,
   size,
   children,
+  btnClassName,
   ...props
 }) => {
   return (
     <button
-      className={classNames(styles.myButton, {
+      className={classNames(styles.myButton, btnClassName, {
         [styles.primaryContained]:
           color === "primary" && variant === "contained",
         [styles.primaryOutlined]: color === "primary" && variant === "outlined",

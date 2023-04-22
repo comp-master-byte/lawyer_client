@@ -20,4 +20,38 @@
     border-radius: 50px;
     padding: 55px 50px 62px 50px;
   }
+
+  .whiteCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid $blue-color;
+    color: $blue-color;
+    background-color: #fff;
+    border-radius: 50px;
+    font-family: "Inter";
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 27px;
+    height: 188px;
+    letter-spacing: -0.025em;
+    margin-bottom: 45px;
+
+    p {
+      width: 831px;
+    }
+  }
+
+  .advantagesButtons {
+    display: flex;
+    column-gap: 20px;
+
+    &__primary {
+      flex-basis: 70%;
+    }
+    &__secondary {
+      flex-basis: 30%;
+    }
+  }
 }

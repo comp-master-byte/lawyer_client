@@ -1,7 +1,7 @@
 @import "../../../../../app/styles/exports";
 
 .whiteCardWrapper {
-  height: 173px;
+  min-height: 173px;
   padding: 33px 0px 10px 33px;
   border: 2px solid $blue-color;
   color: $blue-color;
