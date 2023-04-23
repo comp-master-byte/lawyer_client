@@ -1,9 +1,9 @@
 import React from "react";
 import Navigation from "../../widgets/Navigation/Navigation";
-import PrimaryView from "../../widgets/home/primary/PrimaryView";
-import AboutUs from "../../widgets/home/aboutUs/AboutUs";
-import Advantages from "../../widgets/home/advantages/Advantages";
-import Themes from "../../widgets/home/themes/Themes";
+import PrimaryView from "../../widgets/Home/Primary/PrimaryView";
+import AboutUs from "../../widgets/Home/AboutUs/AboutUs";
+import Advantages from "../../widgets/Home/Advantages/Advantages";
+import Themes from "../../widgets/Home/Themes/Themes";
 
 function App() {
   return (

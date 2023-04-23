@@ -3,7 +3,7 @@ import styles from "./Navigation.module.scss";
 import logo from "./assets/logo.svg";
 import vk from "./assets/vk.svg";
 
-import MyButton from "../../shared/MyButton/MyButton";
+import MyButton from "../../shared/UI/MyButton/MyButton";
 
 const Navigation: FC = () => {
   return (

@@ -4,7 +4,7 @@ import CardsList from "./components/CardsList/CardsList";
 import { firstRowContent, secondRowContent } from "./lib/mocks/advantagesMocks";
 import WhiteCard from "./components/WhiteCard/WhiteCard";
 import BlueCard from "./components/BlueCard/BlueCard";
-import MyButton from "../../../shared/MyButton/MyButton";
+import MyButton from "../../../shared/UI/MyButton/MyButton";
 
 const Advantages: FC = () => {
   return (
