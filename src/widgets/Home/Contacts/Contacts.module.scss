@@ -1,0 +1,84 @@
+@import "../../../app/styles/exports";
+
+@mixin big-text {
+  font-weight: 600;
+  font-size: 40px;
+  color: $blue-color;
+  letter-spacing: -0.025em;
+  line-height: 36px;
+}
+
+@mixin small-text {
+  font-weight: 600;
+  font-size: 20px;
+  color: $blue-color;
+  letter-spacing: -0.025em;
+  line-height: 21px;
+}
+
+.contactsWrapper {
+  margin-bottom: 180px;
+  .container {
+    @include container;
+  }
+  &__title {
+    @include page-title;
+    margin: 0 auto 65px auto;
+    max-width: fit-content;
+  }
+}
+
+.contactsContent {
+  position: relative;
+  width: 100%;
+  height: 877.05px;
+  border-radius: 50px;
+  padding: 51px 56px 55.71px 45px;
+  background-image: url("./assets/molot.png");
+
+  display: flex;
+  align-items: flex-start;
+  column-gap: 60px;
+
+  &__img {
+    position: absolute;
+    right: 65px;
+    top: 40px;
+    z-index: 2;
+  }
+}
+
+.leftColumnIcons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 83px;
+}
+
+.contentInfoFirst {
+  margin-bottom: 73px;
+}
+
+.contentTitle {
+  @include big-text;
+  width: 635px;
+  margin-bottom: 6px;
+}
+
+.contentParagraph {
+  text-align: right;
+  @include small-text;
+}
+
+.contentRightColumn {
+  &__title {
+    @include big-text();
+    margin-bottom: 20px;
+  }
+
+  &__paragraph {
+    @include small-text();
+    width: 448px;
+    margin-bottom: 43px;
+  }
+}

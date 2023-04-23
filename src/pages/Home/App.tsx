@@ -4,6 +4,7 @@ import PrimaryView from "../../widgets/Home/Primary/PrimaryView";
 import AboutUs from "../../widgets/Home/AboutUs/AboutUs";
 import Advantages from "../../widgets/Home/Advantages/Advantages";
 import Themes from "../../widgets/Home/Themes/Themes";
+import Contacts from "../../widgets/Home/Contacts/Contacts";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <AboutUs />
       <Advantages />
       <Themes />
+      <Contacts />
     </div>
   );
 }

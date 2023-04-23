@@ -7,6 +7,8 @@
   border-radius: 50px;
   background: $blueLinear-color;
   padding: 44px 39px 39px 48px;
+  z-index: 10;
+  position: relative;
 }
 
 .contactInputs {
@@ -29,6 +31,7 @@
 
     &::placeholder {
       opacity: 0.4;
+      color: $blue-color;
     }
   }
 }
@@ -41,8 +44,14 @@
   line-height: 15.66px;
   letter-spacing: -0.025em;
   margin-bottom: 15px;
+  margin-left: 10px;
 
   span {
     text-decoration: underline;
   }
+}
+
+textarea {
+  resize: none;
+  height: 222px !important;
 }

@@ -1,0 +1,31 @@
+@import "../../../../../app/styles/exports";
+
+.contactCardWrapper {
+  width: 300px;
+  height: 231px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.contactCardParagraph {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 21px;
+  letter-spacing: -0.025em;
+}
+
+.blue {
+  border: 3px solid $blue-color;
+  background: $blueLinear-color;
+  color: $blue-color;
+}
+
+.orange {
+  border: 3px solid $orange-color;
+  background: $orangeLinear-color;
+  color: $orange-color;
+}

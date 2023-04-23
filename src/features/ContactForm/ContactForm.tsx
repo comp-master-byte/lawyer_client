@@ -25,16 +25,19 @@ const ContactForm: FC = () => {
       <div className={styles.contactInputs}>
         <input
           defaultValue=""
+          placeholder="Имя"
           className={styles.contactInputs__input}
           {...register("name", { required: "Это поле обязательное!" })}
         />
         <input
           defaultValue=""
+          placeholder="E-mail"
           className={styles.contactInputs__input}
           {...register("email", { required: "Это поле обязательное!" })}
         />
         <textarea
           defaultValue=""
+          placeholder="Ваше сообщение/вопрос"
           className={styles.contactInputs__input}
           {...register("message", { required: "Это поле обязательное!" })}
         />
