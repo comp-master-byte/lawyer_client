@@ -1,0 +1,12 @@
+@import "../../app/styles/exports";
+
+.footer {
+  .container {
+    @include container;
+  }
+}
+
+.footerContent {
+  display: flex;
+  column-gap: 20px;
+}

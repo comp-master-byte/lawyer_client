@@ -1,0 +1,23 @@
+@import "../../../../app/styles/exports";
+
+.supportedByWrapper {
+  @include center;
+  flex-direction: column;
+  width: 308px;
+  height: 341px;
+  border-radius: 50px 50px 0px 0px;
+  border: 3px solid #cce4ff;
+
+  &__logo {
+    margin-right: 25px;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 20px;
+    color: $blue-color;
+    letter-spacing: -0.025em;
+    line-height: 17.4px;
+    margin: 27px 0 21px 0;
+  }
+}

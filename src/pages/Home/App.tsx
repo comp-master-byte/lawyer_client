@@ -5,6 +5,7 @@ import AboutUs from "../../widgets/Home/AboutUs/AboutUs";
 import Advantages from "../../widgets/Home/Advantages/Advantages";
 import Themes from "../../widgets/Home/Themes/Themes";
 import Contacts from "../../widgets/Home/Contacts/Contacts";
+import Footer from "../../widgets/Footer/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Advantages />
       <Themes />
       <Contacts />
+      <Footer />
     </div>
   );
 }

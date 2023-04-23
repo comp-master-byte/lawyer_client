@@ -1,11 +1,10 @@
 import React, { FC } from "react";
 import styles from "./Navigation.module.scss";
+import MyButton from "../../shared/UI/MyButton/MyButton";
 import logo from "./assets/logo.svg";
 import vk from "./assets/vk.svg";
 
-import MyButton from "../../shared/UI/MyButton/MyButton";
-
-const Navigation: FC = () => {
+const Navigation: FC = React.memo(function Navigation() {
   return (
     <header className={styles.navigationWrapper}>
       <div className={styles.container}>
@@ -29,6 +28,6 @@ const Navigation: FC = () => {
       </div>
     </header>
   );
-};
+});
 
 export default Navigation;
