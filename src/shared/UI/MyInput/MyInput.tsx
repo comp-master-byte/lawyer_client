@@ -4,7 +4,7 @@ import styles from "./MyInput.module.scss";
 interface MyInputProps {
   error: string;
   placeholder: string;
-  register: () => void;
+  register(value: string): any;
 }
 
 const MyInput: FC<MyInputProps> = ({ register, error, placeholder }) => {
