@@ -1,8 +1,15 @@
 @import "../../app/styles/exports";
 
 .footer {
+  position: relative;
   .container {
     @include container;
+  }
+
+  &__yura {
+    position: absolute;
+    right: 37%;
+    bottom: 0;
   }
 }
 

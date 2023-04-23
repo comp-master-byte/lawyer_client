@@ -1,0 +1,43 @@
+@import "../../../../app/styles/exports";
+
+.contactsAndLinksWrapper {
+  width: 540px;
+  height: 341px;
+  background: $orangeLinear-color;
+  padding: 40px 30px 0px 40px;
+  border-radius: 50px 50px 0px 0px;
+}
+
+.linksAndEmails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+
+  .linksImages {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+  }
+}
+
+.emailsText {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+p {
+  color: $orange-color;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 17px;
+  letter-spacing: -0.025em;
+  text-align: right;
+}
+
+.userRigths {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}

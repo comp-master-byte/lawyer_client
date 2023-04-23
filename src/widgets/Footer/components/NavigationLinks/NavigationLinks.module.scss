@@ -1,0 +1,27 @@
+@import "../../../../app/styles/exports";
+
+.navigationLinksWrapper {
+  width: 509px;
+  height: 341px;
+  background: $blueLinear-color;
+  border-radius: 50px 50px 0px 0px;
+  padding: 40px 40px 40px 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.navigationLinks {
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+
+  .link {
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -0.025em;
+    line-height: 17.4px;
+    color: $blue-color;
+    cursor: pointer;
+  }
+}
