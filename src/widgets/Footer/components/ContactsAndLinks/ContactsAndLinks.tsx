@@ -12,16 +12,22 @@ const ContactsAndLinks: FC = React.memo(function ContactsAndLinks() {
           <img src={tg} alt="" />
         </div>
         <div className={styles.emailsText}>
-          <p>support@juraprav.ru</p>
-          <p>partnership@juraprav.ru</p>
+          <p className={styles.emailsText__paragraph}>support@juraprav.ru</p>
+          <p className={styles.emailsText__paragraph}>
+            partnership@juraprav.ru
+          </p>
         </div>
       </div>
 
       <div className={styles.userRigths}>
-        <p>2023</p>
+        <p className={styles.userRigths__year}>2023</p>
         <div className={styles.emailsText}>
-          <p>Политика конфиденциальности</p>
-          <p>Пользовательское соглашение</p>
+          <p className={styles.userRigths__paragraph}>
+            Политика конфиденциальности
+          </p>
+          <p className={styles.userRigths__paragraph}>
+            Пользовательское соглашение
+          </p>
         </div>
       </div>
     </div>

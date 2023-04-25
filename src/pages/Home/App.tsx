@@ -7,7 +7,7 @@ import Themes from "../../widgets/Home/Themes/Themes";
 import Contacts from "../../widgets/Home/Contacts/Contacts";
 import Footer from "../../widgets/Footer/Footer";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div>
       <Navigation />
@@ -19,6 +19,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,5 +1,13 @@
 @import "../../../../app/styles/exports";
 
+@mixin paragraph {
+  color: $orange-color;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 17px;
+  letter-spacing: -0.025em;
+}
+
 .contactsAndLinksWrapper {
   width: 540px;
   height: 341px;
@@ -25,19 +33,23 @@
   display: flex;
   flex-direction: column;
   row-gap: 8px;
-}
 
-p {
-  color: $orange-color;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 17px;
-  letter-spacing: -0.025em;
-  text-align: right;
+  &__paragraph {
+    @include paragraph;
+    text-align: right;
+  }
 }
-
 .userRigths {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+
+  &__paragraph {
+    @include paragraph;
+    text-align: right;
+  }
+
+  &__year {
+    @include paragraph;
+  }
 }

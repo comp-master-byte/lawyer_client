@@ -1,11 +1,11 @@
-import react, { FC } from "react";
+import React, { FC } from "react";
 import styles from "./AboutUs.module.scss";
 import AdditionalCard from "./components/additionalCard/AdditionalCard";
 import ProblemCard from "./components/problemCard/ProblemCard";
 import SolutionCard from "./components/solutionCard/SolutionCard";
 import LawyerAssistant from "./components/lawyerAssistant/LawyerAssistant";
 
-const AboutUs: FC = () => {
+const AboutUs: FC = React.memo(function AboutUs() {
   return (
     <div className={styles.aboutUsWrapper}>
       <div className={styles.container}>
@@ -29,6 +29,6 @@ const AboutUs: FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default AboutUs;
