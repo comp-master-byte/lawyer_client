@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import styles from "./ThemeQuestion.module.scss";
 import classNames from "classnames";
 
@@ -12,27 +12,29 @@ interface ThemeQuestionProps {
   left?: number;
 }
 
-const ThemeQuestion: FC<ThemeQuestionProps> = ({
-  questionType,
-  question,
-  angle,
-  top,
-  right,
-  bottom,
-  left,
-}) => {
-  return (
-    <div
-      style={{ transform: `rotate(${angle}deg)`, top, right, bottom, left }}
-      className={classNames(styles.questionWrapper, {
-        [styles.orange]: questionType === "orange",
-        [styles.blue]: questionType === "blue",
-      })}
-    >
-      <p className={styles.questionText}>{question}</p>
-      <div className={styles.questionIcon}>?</div>
-    </div>
-  );
-};
+const ThemeQuestion: React.FC<ThemeQuestionProps> = React.memo(
+  function ThemeQuestion({
+    questionType,
+    question,
+    angle,
+    top,
+    right,
+    bottom,
+    left,
+  }) {
+    return (
+      <div
+        style={{ transform: `rotate(${angle}deg)`, top, right, bottom, left }}
+        className={classNames(styles.questionWrapper, {
+          [styles.orange]: questionType === "orange",
+          [styles.blue]: questionType === "blue",
+        })}
+      >
+        <p className={styles.questionText}>{question}</p>
+        <div className={styles.questionIcon}>?</div>
+      </div>
+    );
+  }
+);
 
 export default ThemeQuestion;

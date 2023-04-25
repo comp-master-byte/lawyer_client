@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import React from "react";
 import styles from "./NavigationLinks.module.scss";
 import toTop from "./assets/toTop.svg";
 
-const NavigationLinks: FC = React.memo(function NavigationLinks() {
+const NavigationLinks: React.FC = React.memo(function NavigationLinks() {
   return (
     <div className={styles.navigationLinksWrapper}>
       <ul className={styles.navigationLinks}>

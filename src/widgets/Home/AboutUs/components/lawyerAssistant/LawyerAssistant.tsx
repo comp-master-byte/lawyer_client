@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import React from "react";
 import styles from "./LawyerAssistant.module.scss";
 import assistant from "./assets/assistant.svg";
 
-const LawyerAssistant: FC = () => {
+const LawyerAssistant: React.FC = React.memo(function LawyerAssistant() {
   return (
     <div className={styles.lawyerAssistantWrapper}>
       <img
@@ -22,6 +22,6 @@ const LawyerAssistant: FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default LawyerAssistant;

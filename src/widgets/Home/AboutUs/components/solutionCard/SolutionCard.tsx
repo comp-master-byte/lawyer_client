@@ -3,7 +3,7 @@ import styles from "./SolutionCard.module.scss";
 import icon from "./assets/icon.svg";
 import pointer from "./assets/pointer.svg";
 
-const SolutionCard = () => {
+const SolutionCard: React.FC = React.memo(function SolutionCard() {
   return (
     <div className={styles.solutionCardPosition}>
       <img
@@ -24,6 +24,6 @@ const SolutionCard = () => {
       </div>
     </div>
   );
-};
+});
 
 export default SolutionCard;

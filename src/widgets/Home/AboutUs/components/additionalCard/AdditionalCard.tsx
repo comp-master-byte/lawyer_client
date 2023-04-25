@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Additional.module.scss";
 import icon from "./assets/icon.svg";
 
-const AdditionalCard = () => {
+const AdditionalCard: React.FC = React.memo(function AdditionalCard() {
   return (
     <div className={styles.additionalCardWrapper}>
       <div className={styles.additionalCardTitle}>
@@ -16,6 +16,6 @@ const AdditionalCard = () => {
       </p>
     </div>
   );
-};
+});
 
 export default AdditionalCard;

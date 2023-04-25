@@ -6,7 +6,7 @@ import WhiteCard from "./components/WhiteCard/WhiteCard";
 import BlueCard from "./components/BlueCard/BlueCard";
 import MyButton from "../../../shared/UI/MyButton/MyButton";
 
-const Advantages: FC = () => {
+const Advantages: React.FC = React.memo(function Advantages() {
   return (
     <div className={styles.advantagesWrapper}>
       <h1 className={styles.advantagesWrapper__title}>
@@ -56,6 +56,6 @@ const Advantages: FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Advantages;

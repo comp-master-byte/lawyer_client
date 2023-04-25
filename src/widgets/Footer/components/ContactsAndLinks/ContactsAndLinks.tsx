@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React from "react";
 import styles from "./ContactsAndLinks.module.scss";
 import vk from "./assets/vk.svg";
 import tg from "./assets/tg.svg";
 
-const ContactsAndLinks: FC = React.memo(function ContactsAndLinks() {
+const ContactsAndLinks: React.FC = React.memo(function ContactsAndLinks() {
   return (
     <div className={styles.contactsAndLinksWrapper}>
       <div className={styles.linksAndEmails}>

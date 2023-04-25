@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React from "react";
 import styles from "./SupportedBy.module.scss";
 import logo from "./assets/logo.svg";
 import fsi from "./assets/fsi.svg";
 
-const SupportedBy: FC = React.memo(function SupportedBy() {
+const SupportedBy: React.FC = React.memo(function SupportedBy() {
   return (
     <div className={styles.supportedByWrapper}>
       <img src={logo} className={styles.supportedByWrapper__logo} alt="" />

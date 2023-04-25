@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import styles from "./ContactForm.module.scss";
 import { useForm, SubmitHandler } from "react-hook-form";
 import MyInput from "../../shared/UI/MyInput/MyInput";
@@ -10,7 +10,7 @@ type Inputs = {
   message: string;
 };
 
-const ContactForm: FC = () => {
+const ContactForm: React.FC = React.memo(function ContactForm() {
   const {
     register,
     handleSubmit,
@@ -53,6 +53,6 @@ const ContactForm: FC = () => {
       </MyButton>
     </form>
   );
-};
+});
 
 export default ContactForm;

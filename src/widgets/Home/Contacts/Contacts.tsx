@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import styles from "./Contacts.module.scss";
 import ContactCard from "./components/ContactCard/ContactCard";
 import ContactForm from "../../../features/ContactForm/ContactForm";
@@ -6,7 +6,7 @@ import vk from "./assets/vk.svg";
 import tg from "./assets/tg.svg";
 import yura from "./assets/yura.svg";
 
-const Contacts: FC = () => {
+const Contacts: React.FC = React.memo(function Contacts() {
   return (
     <div className={styles.contactsWrapper}>
       <h1 className={styles.contactsWrapper__title}>Контакты</h1>
@@ -56,6 +56,6 @@ const Contacts: FC = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Contacts;

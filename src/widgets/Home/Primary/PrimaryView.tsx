@@ -1,9 +1,10 @@
 import React from "react";
 import MyButton from "../../../shared/UI/MyButton/MyButton";
 import styles from "./PrimaryView.module.scss";
-import pointer from "./public/pointer.svg";
-import human from "./public/yura.png";
-const PrimaryView = () => {
+import pointer from "./assets/pointer.svg";
+import human from "./assets/yura.png";
+
+const PrimaryView: React.FC = React.memo(function PrimaryView() {
   return (
     <div className={styles.primaryViewWrapper}>
       <div className={styles.container}>
@@ -52,6 +53,6 @@ const PrimaryView = () => {
       </div>
     </div>
   );
-};
+});
 
 export default PrimaryView;

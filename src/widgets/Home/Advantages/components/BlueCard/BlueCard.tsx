@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import styles from "./BlueCard.module.scss";
 
 interface BlueCardProps {
@@ -6,12 +6,15 @@ interface BlueCardProps {
   width: number;
 }
 
-const BlueCard: FC<BlueCardProps> = ({ text, width }) => {
+const BlueCard: React.FC<BlueCardProps> = React.memo(function BlueCard({
+  text,
+  width,
+}) {
   return (
     <div style={{ width }} className={styles.blueCardWrapper}>
       {text}
     </div>
   );
-};
+});
 
 export default BlueCard;
