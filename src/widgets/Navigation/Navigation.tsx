@@ -3,8 +3,16 @@ import styles from "./Navigation.module.scss";
 import MyButton from "../../shared/UI/MyButton/MyButton";
 import logo from "./assets/logo.svg";
 import vk from "./assets/vk.svg";
+import { useNavigation } from "./lib/hooks/useNavigation";
 
 const Navigation: React.FC = React.memo(function Navigation() {
+  const {
+    scrollToAboutUs,
+    scrollToAdvantages,
+    scrollToThemes,
+    scrollToContacts,
+  } = useNavigation();
+
   return (
     <header className={styles.navigationWrapper}>
       <div className={styles.container}>
@@ -14,10 +22,30 @@ const Navigation: React.FC = React.memo(function Navigation() {
             <img src={logo} alt="logo" />
           </div>
           <div className={styles.navigationLinks}>
-            <div className={styles.navigationLinks__link}>О нас</div>
-            <div className={styles.navigationLinks__link}>Преимущества</div>
-            <div className={styles.navigationLinks__link}>Категории и темы</div>
-            <div className={styles.navigationLinks__link}>Контакты</div>
+            <div
+              className={styles.navigationLinks__link}
+              onClick={scrollToAboutUs}
+            >
+              О нас
+            </div>
+            <div
+              className={styles.navigationLinks__link}
+              onClick={scrollToAdvantages}
+            >
+              Преимущества
+            </div>
+            <div
+              className={styles.navigationLinks__link}
+              onClick={scrollToThemes}
+            >
+              Категории и темы
+            </div>
+            <div
+              className={styles.navigationLinks__link}
+              onClick={scrollToContacts}
+            >
+              Контакты
+            </div>
           </div>
           <div className={styles.burgerMenu}>
             <div className={styles.burgerMenu__line}></div>
