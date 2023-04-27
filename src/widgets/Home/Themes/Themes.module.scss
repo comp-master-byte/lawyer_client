@@ -1,10 +1,10 @@
 @import "../../../app/styles/exports";
 
+.container {
+  @include container;
+}
 .themesWrapper {
   margin-bottom: 180px;
-  .container {
-    @include container;
-  }
 
   &__title {
     margin: 0 auto 65px auto;
@@ -18,5 +18,11 @@
     height: 680px;
     background: $blueLinear-color;
     border-radius: 50px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    @include container-1440;
   }
 }

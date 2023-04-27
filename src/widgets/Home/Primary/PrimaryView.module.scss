@@ -132,6 +132,12 @@
   }
 }
 
+@media screen and (max-width: 1440px) {
+  .container {
+    @include container-1440;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .container {
     @include container-mobile;

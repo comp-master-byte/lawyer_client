@@ -1,11 +1,11 @@
 @import "../../app/styles/exports";
 
+.container {
+  @include container;
+}
+
 .footer {
   position: relative;
-  .container {
-    @include container;
-  }
-
   &__yura {
     position: absolute;
     right: 37%;
@@ -16,4 +16,10 @@
 .footerContent {
   display: flex;
   column-gap: 20px;
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    @include container-1440;
+  }
 }

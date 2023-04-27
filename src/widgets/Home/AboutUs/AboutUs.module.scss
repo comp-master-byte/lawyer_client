@@ -28,3 +28,9 @@
     margin-bottom: 145px;
   }
 }
+
+@media screen and (max-width: 1440px) {
+  .container {
+    @include container-1440;
+  }
+}

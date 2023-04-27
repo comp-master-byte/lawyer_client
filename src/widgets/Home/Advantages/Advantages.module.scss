@@ -1,10 +1,11 @@
 @import "../../../app/styles/exports";
 
+.container {
+  @include container;
+}
+
 .advantagesWrapper {
   padding-bottom: 180px;
-  .container {
-    @include container;
-  }
   &__title {
     @include page-title();
     max-width: 590px;
@@ -53,5 +54,10 @@
     &__secondary {
       flex-basis: 30%;
     }
+  }
+}
+@media screen and (max-width: 1440px) {
+  .container {
+    @include container-1440;
   }
 }

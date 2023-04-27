@@ -16,11 +16,11 @@
   line-height: 21px;
 }
 
+.container {
+  @include container;
+}
 .contactsWrapper {
   margin-bottom: 180px;
-  .container {
-    @include container;
-  }
   &__title {
     @include page-title;
     margin: 0 auto 65px auto;
@@ -80,5 +80,11 @@
     @include small-text();
     width: 448px;
     margin-bottom: 43px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    @include container-1440;
   }
 }
