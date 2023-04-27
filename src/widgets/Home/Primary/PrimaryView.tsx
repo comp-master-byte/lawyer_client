@@ -20,7 +20,8 @@ const PrimaryView: React.FC = React.memo(function PrimaryView() {
                 alt="pointer"
               />
               <div className={styles.leftColumnIllustration__text}>
-                Задайте <br /> свой вопрос <br /> Юре
+                Задайте свой вопрос бесплатному помощнику Юре или сразу юристу,
+                если ваш вопрос сложнее
               </div>
             </div>
             <div className={styles.viewLeftColumn__btn}>

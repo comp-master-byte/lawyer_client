@@ -1,4 +1,3 @@
-// @import "../../styles/exports";
 @import "../../app/styles/exports";
 
 .navigationWrapper {
@@ -30,4 +29,39 @@
 .navigationEntrance {
   display: flex;
   column-gap: 10px;
+}
+
+.navigationInner__vk,
+.burgerMenu {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    @include container-mobile;
+  }
+  .navigationInner__vk {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+  }
+  .burgerMenu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+
+    &__line {
+      width: 28px;
+      height: 4px;
+      background-color: $blue-color;
+    }
+  }
+  .navigationInner__logo img {
+    width: 62.7px;
+    height: 45px;
+  }
+  .navigationLinks,
+  .navigationEntrance {
+    display: none;
+  }
 }

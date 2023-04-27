@@ -12,6 +12,12 @@
   margin: 0 auto;
 }
 
+@mixin container-mobile {
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 @mixin flex-between-center {
   display: flex;
   align-items: center;

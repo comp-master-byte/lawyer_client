@@ -10,6 +10,11 @@ const LawyerAssistant: React.FC = React.memo(function LawyerAssistant() {
         alt="assistant"
         className={styles.lawyerAssistantWrapper__assistant}
       />
+      {/* <div className={styles.dialogueCloud}>
+        <p className={styles.dialogueCloudInner}>
+          Меня создал специалист с юридическим образованием и опытом
+        </p>
+      </div> */}
       <div className={styles.lawyerAssistantCards}>
         <div className={styles.lawyerTopCard}>
           Юра от слова “юридический”, это имя нашего юридического
