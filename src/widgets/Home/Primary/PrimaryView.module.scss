@@ -132,9 +132,21 @@
   }
 }
 
+// === MEDIA ===
+
 @media screen and (max-width: 1440px) {
   .container {
     @include container-1440;
+  }
+
+  @mixin columnView-1440 {
+    width: 645px;
+    height: 656px;
+  }
+
+  .viewLeftColumn,
+  .viewRightColumn {
+    @include columnView-1440;
   }
 }
 
