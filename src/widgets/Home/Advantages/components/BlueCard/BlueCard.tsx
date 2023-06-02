@@ -1,18 +1,19 @@
 import React from "react";
 import styles from "./BlueCard.module.scss";
+import classNames from "classnames";
 
 interface BlueCardProps {
-  text: string;
-  width: number;
+  children: React.ReactNode;
+  cardClassName?: string;
 }
 
 const BlueCard: React.FC<BlueCardProps> = React.memo(function BlueCard({
-  text,
-  width,
+  children,
+  cardClassName
 }) {
   return (
-    <div style={{ width }} className={styles.blueCardWrapper}>
-      {text}
+    <div className={classNames(styles.blueCardWrapper, cardClassName)}>
+      {children}
     </div>
   );
 });

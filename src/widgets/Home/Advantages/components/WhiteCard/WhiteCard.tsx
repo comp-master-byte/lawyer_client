@@ -3,24 +3,23 @@ import styles from "./WhiteCard.module.scss";
 import classNames from "classnames";
 
 interface WhiteCardProps {
-  text: string;
-  width: number | string;
+  children: React.ReactNode;
   fullWidth?: boolean;
+  cardClassName: string;
 }
 
 const WhiteCard: React.FC<WhiteCardProps> = React.memo(function WhiteCard({
-  text,
-  width,
+  children,
+  cardClassName,
   fullWidth,
 }) {
   return (
     <div
-      style={{ width }}
-      className={classNames(styles.whiteCardWrapper, {
+      className={classNames(styles.whiteCardWrapper, cardClassName, {
         [styles.whiteCardFullWidth]: fullWidth,
       })}
     >
-      {text}
+      {children}
     </div>
   );
 });

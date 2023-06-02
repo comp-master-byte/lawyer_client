@@ -2,7 +2,8 @@
 
 .blueCardWrapper {
   height: 221px;
-  padding: 33px 31px 33px 33px;
+  padding: 33px 24px 10px 33px;
+
   border-radius: 50px;
   background: $blueLinear-color;
   color: $blue-color;
@@ -10,4 +11,13 @@
   font-size: 20px;
   font-weight: 600;
   line-height: 21px;
+}
+
+// === media ===
+@media screen and (max-width: 1440px) {
+  .blueCardWrapper {
+    padding-left: 27px;
+    padding-right: 20px;
+    height: 197px;
+  }
 }

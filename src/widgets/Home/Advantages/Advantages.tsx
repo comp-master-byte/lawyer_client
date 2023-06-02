@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./Advantages.module.scss";
-import CardsList from "./components/CardsList/CardsList";
-import { firstRowContent, secondRowContent } from "./lib/mocks/advantagesMocks";
 import WhiteCard from "./components/WhiteCard/WhiteCard";
 import BlueCard from "./components/BlueCard/BlueCard";
 import MyButton from "../../../shared/UI/MyButton/MyButton";
@@ -14,18 +12,20 @@ const Advantages: React.FC = React.memo(function Advantages() {
       </h1>
       <div className={styles.container}>
         <div className={styles.advantagesContent}>
-          <CardsList
-            items={firstRowContent}
-            renderItem={(card) => (
-              <WhiteCard key={card.id} text={card.text} width={card.width} />
-            )}
-          />
-          <CardsList
-            items={secondRowContent}
-            renderItem={(card) => (
-              <BlueCard key={card.id} text={card.text} width={card.width} />
-            )}
-          />
+          <div className={styles.cardsList}>
+            <WhiteCard cardClassName={styles.whiteCardLeft}>Получить понятный ответ на свой юридический вопрос</WhiteCard>
+            <WhiteCard cardClassName={styles.whiteCardMiddle}>Получить ответ быстро</WhiteCard>
+            <WhiteCard cardClassName={styles.whiteCardRight}>Получить ответ бесплатно или за адекватную стоимость</WhiteCard>
+          </div>
+          <div className={styles.cardsList}>
+            <BlueCard cardClassName={styles.blueCardLeft}>
+                Мы делаем упор на внятное донесение сложной юридической информации до пользователей.
+            </BlueCard>
+            <BlueCard cardClassName={styles.blueCardMiddle}>
+                Наш сервис дает быстрые автоматизированные ответы.
+            </BlueCard>
+            <BlueCard cardClassName={styles.blueCardRight}>Это сэкономит вам значительную часть средств, которые могли быть потрачены в каком-нибудь юридическом бюро.</BlueCard>
+          </div>
           <div className={styles.whiteCard}>
             <p>
               Если вам понадобится индивидуальный подход <br /> в решении вашей
