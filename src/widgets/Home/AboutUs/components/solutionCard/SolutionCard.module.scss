@@ -34,3 +34,9 @@
     color: $blue-color;
   }
 }
+
+@media screen and (max-width: 1440px) {
+  .solutionCardWrapper {
+    width: 447px;
+  }
+}

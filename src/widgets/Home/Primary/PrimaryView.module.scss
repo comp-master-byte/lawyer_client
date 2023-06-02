@@ -71,7 +71,6 @@
       line-height: 19px;
       transform: rotate(-12deg);
       width: 290.2px;
-
       position: absolute;
       bottom: 371px;
       left: 120px;
@@ -133,7 +132,6 @@
 }
 
 // === MEDIA ===
-
 @media screen and (max-width: 1440px) {
   .container {
     @include container-1440;
@@ -142,6 +140,7 @@
   @mixin columnView-1440 {
     width: 645px;
     height: 656px;
+    padding: 38px 35px 60px 40px;
   }
 
   .viewLeftColumn,

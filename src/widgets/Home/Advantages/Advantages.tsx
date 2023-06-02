@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import styles from "./Advantages.module.scss";
 import CardsList from "./components/CardsList/CardsList";
 import { firstRowContent, secondRowContent } from "./lib/mocks/advantagesMocks";
