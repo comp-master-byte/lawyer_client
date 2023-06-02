@@ -47,12 +47,13 @@
   }
 }
 
+// === media ===
 @media screen and (max-width: 1440px) {
   .lawyerAssistantWrapper {
     .lawyerAssistantCards {
       .lawyerTopCard,
       .lawyerBottomCard {
-        width: 584px;
+        width: 577px;
       }
     }
   }
