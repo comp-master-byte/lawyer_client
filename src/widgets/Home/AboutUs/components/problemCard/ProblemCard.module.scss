@@ -1,6 +1,6 @@
 @import "../../../../../app/styles/exports";
 
-.solutionCardWrapper {
+.problemCardWrapper {
   width: 466px;
   height: 333px;
   border: 3px solid $blue-color;
@@ -21,7 +21,7 @@
     color: $blue-color;
   }
 
-  .solutionCardTitle {
+  .problemCardTitle {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,7 +35,7 @@
 }
 
 @media screen and (max-width: 1440px) {
-  .solutionCardWrapper {
-    width: 447px;
+  .problemCardWrapper {
+    width: 436px;
   }
 }

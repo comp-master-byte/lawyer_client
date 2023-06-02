@@ -24,3 +24,12 @@
     color: $orange-color;
   }
 }
+
+
+// === media ===
+
+@media screen and (max-width: 1440px) {
+  .additionalCardWrapper {
+    width: 437px;
+  } 
+}

@@ -5,17 +5,17 @@ import pointer from "./assets/pointer.svg";
 
 const ProblemCard: React.FC = React.memo(function ProblemCard() {
   return (
-    <div className={styles.solutionCardWrapper}>
+    <div className={styles.problemCardWrapper}>
       <img
         src={pointer}
         alt="pointer"
-        className={styles.solutionCardWrapper__pointer}
+        className={styles.problemCardWrapper__pointer}
       />
-      <div className={styles.solutionCardTitle}>
-        <div className={styles.solutionCardTitle__label}>Проблема</div>
+      <div className={styles.problemCardTitle}>
+        <div className={styles.problemCardTitle__label}>Проблема</div>
         <img src={icon} alt="icon" />
       </div>
-      <p className={styles.solutionCardWrapper__text}>
+      <p className={styles.problemCardWrapper__text}>
         На рынке оказания юридических услуг сложилось определенное недоверие к
         юристам, так как они объясняют все сложным языком, и пытаются оказать
         как можно больше консультаций за максимальную стоимость.
