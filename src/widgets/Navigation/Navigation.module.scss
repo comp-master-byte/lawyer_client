@@ -36,9 +36,17 @@
   display: none;
 }
 
+
+// === Media ===
 @media screen and (max-width: 1440px) {
   .container {
     @include container-1440;
+  }
+  .navigationInner__logo {
+    img {
+      width: 112px;
+      height: auto;
+    }
   }
 }
 
