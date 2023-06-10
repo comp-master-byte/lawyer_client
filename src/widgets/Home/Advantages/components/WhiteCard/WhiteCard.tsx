@@ -5,7 +5,7 @@ import classNames from "classnames";
 interface WhiteCardProps {
   children: React.ReactNode;
   fullWidth?: boolean;
-  cardClassName: string;
+  cardClassName?: string;
 }
 
 const WhiteCard: React.FC<WhiteCardProps> = React.memo(function WhiteCard({

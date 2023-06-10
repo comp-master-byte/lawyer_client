@@ -1,5 +1,10 @@
 @import "../../../app/styles/exports";
 
+@mixin content {
+  background-color: $lightBlue-color-2;
+  width: 100%;
+}
+
 .container {
   @include container;
 }
@@ -16,9 +21,8 @@
   }
 
   .advantagesContent {
-    width: 100%;
+    @include content;
     height: 822px;
-    background-color: $lightBlue-color-2;
     border-radius: 50px;
     padding: 55px 50px 62px 50px;
   }
@@ -62,6 +66,10 @@
   display: flex;
 }
 
+.bgMobileLine {
+  display: none;
+}
+
 @media screen and (max-width: 1440px) {
   .container {
     @include container-1440;
@@ -78,5 +86,74 @@
   .whiteCardRight, 
   .blueCardRight {
     width: 442px;
+  }
+}
+
+.advantagesMobileContent {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    @include container-mobile;
+  }
+  
+  .advantagesWrapper {
+    padding: 0 15px;
+    margin-bottom: 70px;
+    .advantagesContent {
+      display: none;
+    }
+  }
+  
+  .advantagesMobileContent {
+      display: block;
+      background-image: url("./assets/bg-line.svg");
+      background-repeat: no-repeat;
+      background-position: 61px -10px;
+      @include content;
+      margin-top: 30px;
+      padding: 0;
+      border-radius: 30px;
+
+      .cards {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        margin-bottom: 33px;
+      }
+  }
+
+  .topContentCards {
+      max-width: 282px;
+      padding-top: 30px;
+      padding-left: 20px;
+  }
+
+  .middleContentCards {
+    width: 261px;
+    align-self: flex-end;
+    padding-right: 15px;
+  }
+
+  .bottomContentCards {
+    width: 315px;
+    padding-left: 20px;
+  }
+
+  .fullWidthCardMobileWrapper {
+    padding: 0 15px;
+    .fullWidthCard {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+  }
+
+  
+
+  .mobileButtons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
   }
 }

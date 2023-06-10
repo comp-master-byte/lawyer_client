@@ -3,9 +3,9 @@ import { FC } from "react";
 import styles from "./MyButton.module.scss";
 
 interface MyButtonProps {
-  color: string;
-  variant: string;
-  size?: string;
+  color: "primary"|"secondary";
+  variant: "contained"|"outlined";
+  size?: "large"|"small";
   children?: React.ReactNode;
   btnClassName?: string;
 }

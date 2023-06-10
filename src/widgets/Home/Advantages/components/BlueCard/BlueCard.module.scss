@@ -21,3 +21,14 @@
     height: 197px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .blueCardWrapper {
+    border-radius: 30px;
+    padding: 16px 21px 15px 21px;
+    width: auto;
+    height: auto;
+    font-size: 15px;
+    line-height: 16px;
+  }
+}
