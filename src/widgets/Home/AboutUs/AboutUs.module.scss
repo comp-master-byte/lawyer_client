@@ -40,7 +40,11 @@
     @include container-mobile;
   }
 
-  .aboutUsCards {
-    flex-direction: column;
+  .aboutUsInner {
+    .aboutUsCards {
+      flex-direction: column;
+      margin-bottom: 70px;
+    }
   }
+
 }

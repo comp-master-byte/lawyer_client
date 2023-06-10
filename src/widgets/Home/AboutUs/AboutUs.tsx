@@ -21,9 +21,9 @@ const AboutUs: FC = React.memo(function AboutUs() {
             <AdditionalCard />
           </div>
 
-          <p className={styles.aboutUsInner__title}>
+          <SectionTitle>
             Почему Юра <span className={styles.titleEmphasized}>прав</span>?
-          </p>
+          </SectionTitle>
 
           <LawyerAssistant />
         </div>

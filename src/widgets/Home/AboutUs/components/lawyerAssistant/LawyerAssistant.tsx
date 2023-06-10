@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./LawyerAssistant.module.scss";
 import assistant from "./assets/assistant.svg";
+import mobileAssistantSvg from "./assets/yura-mobile.svg";
 
 const LawyerAssistant: React.FC = React.memo(function LawyerAssistant() {
   return (
@@ -9,6 +10,11 @@ const LawyerAssistant: React.FC = React.memo(function LawyerAssistant() {
         src={assistant}
         alt="assistant"
         className={styles.lawyerAssistantWrapper__assistant}
+      />
+      <img
+        src={mobileAssistantSvg}
+        alt="assistant"
+        className={styles.lawyerMobile}
       />
       {/* <div className={styles.dialogueCloud}>
         <p className={styles.dialogueCloudInner}>
