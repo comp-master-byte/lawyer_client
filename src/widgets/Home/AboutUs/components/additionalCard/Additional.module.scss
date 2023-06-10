@@ -33,3 +33,30 @@
     width: 437px;
   } 
 }
+
+@media screen and (max-width: 480px) {
+  .additionalCardWrapper {
+    height: 229px;
+    margin-top: 22px;
+    padding: 30px 30px 48px 33px;
+
+    &__text {
+      @include home-card-text-mobile;
+      width: 348px;
+    }
+
+    .additionalCardTitle {
+      margin-bottom: 8px;
+
+      &__label {
+        @include home-card-label-mobile;
+      }
+
+      img {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+  }
+}

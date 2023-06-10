@@ -64,6 +64,10 @@
 
   .solutionCardTitle {
     margin-bottom: 8px;
+
+    &__label {
+      @include home-card-label-mobile;
+    }
     img {
       width: 45px;
       height: 45px;

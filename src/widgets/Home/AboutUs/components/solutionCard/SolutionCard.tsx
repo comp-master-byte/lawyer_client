@@ -3,7 +3,6 @@ import styles from "./SolutionCard.module.scss";
 import icon from "./assets/icon.svg";
 import pointer from "./assets/pointer.svg";
 import mobilePointerSvg from "./assets/pointer-mobile.svg";
-import SectionTitle from "../../../../../shared/Styled-Components/SectionTitle/SectionTitle";
 
 const SolutionCard: React.FC = React.memo(function SolutionCard() {
   return (
@@ -20,12 +19,12 @@ const SolutionCard: React.FC = React.memo(function SolutionCard() {
       />
       <div className={styles.solutionCardWrapper}>
         <div className={styles.solutionCardTitle}>
-          <SectionTitle>Решение</SectionTitle>
+          <div className={styles.solutionCardTitle__label}>Решение</div>
           <img src={icon} alt="icon" />
         </div>
         <p className={styles.solutionCardWrapper__text}>
           Мы разработали бесплатного юридического помощника Юру, который в
-          автоматизированном режиме выдает информацию <br /> по бытовым,
+          автоматизированном режиме выдает информацию по бытовым,
           повседневным юридическим вопросам пользователей понятным языком.
         </p>
       </div>
