@@ -36,6 +36,11 @@
 }
 
 @media screen and (max-width: 480px) {
+  .aboutUsWrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
   .container {
     @include container-mobile;
   }
