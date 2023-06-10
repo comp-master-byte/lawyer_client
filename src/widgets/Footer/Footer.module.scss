@@ -23,3 +23,9 @@
     @include container-1440;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .footer {
+    display: none;
+  }
+}

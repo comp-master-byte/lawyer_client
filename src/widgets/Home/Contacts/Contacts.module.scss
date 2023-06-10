@@ -88,3 +88,9 @@
     @include container-1440;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .contactsWrapper {
+    display: none;
+  }
+}
