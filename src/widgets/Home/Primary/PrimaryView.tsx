@@ -31,6 +31,13 @@ const PrimaryView: React.FC = React.memo(function PrimaryView() {
             </div>
           </div>
 
+          <div className={styles.mobileButton}>
+              <MyButton color="primary" size="large" variant="contained">
+                  Задать вопрос
+              </MyButton>
+          </div>
+
+
           <div className={styles.viewRightColumn}>
             <div className={styles.viewRightColumn__title}>
               Станьте юристом <br /> на нашей <br /> платформе
@@ -40,16 +47,22 @@ const PrimaryView: React.FC = React.memo(function PrimaryView() {
               клиентов, то регистрируйся!
             </div>
             <div className={styles.viewRightColumn__btn}>
+        
+            </div>
+          </div>
+
+          <div className={styles.mobileButton}>
               <MyButton color="secondary" size="large" variant="contained">
                 Зарегистрироваться
               </MyButton>
-            </div>
           </div>
+          
           <img
             src={human}
             className={styles.primaryViewInner__human}
             alt="human"
           />
+
         </div>
       </div>
     </div>

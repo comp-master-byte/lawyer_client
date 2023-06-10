@@ -25,8 +25,9 @@
 }
 
 @mixin title-mobile {
-  font-size: 20px;
-  line-height: 18px;
+  font-size: 30px;
+  line-height: 27px;
+  padding: 30px 0 0 22px;
 }
 
 @mixin button {
@@ -132,6 +133,11 @@
   }
 }
 
+// Отключение мобильных компонентов
+.mobileButton {
+  display: none;
+}
+
 // === MEDIA ===
 @media screen and (max-width: 1440px) {
   .container {
@@ -155,22 +161,24 @@
     @include container-mobile;
   }
 
-  .primaryViewInner {
-    flex-direction: column;
-
-    &__human {
-      width: 173px;
-      height: 227px;
-    }
-  }
-
   .viewLeftColumn {
     @include columnView-mobile;
 
     .leftColumnIllustration {
       &__text {
-        font-size: 11px;
-        line-height: 9.57px;
+        width: 213px;
+        top: 150px;
+        left: 49px;
+        font-size: 16px;
+        line-height: 13.92px;
+      }
+
+      &__img {
+        bottom: 18px;
+        left: 25px;
+        width: 78px;
+        height: 54px;
+        transform: rotate(-66.89deg);
       }
     }
 
@@ -179,14 +187,46 @@
     }
   }
 
+  .primaryViewInner {
+    flex-direction: column;
+    &__human {
+      display: none;
+    }
+  }
+
   .viewRightColumn {
     @include columnView-mobile;
+    margin-top: 18px;
     .rightColumnItalic {
-      font-size: 11px;
-      line-height: 9.57px;
+      width: 207px;
+      top: 150px;
+      left: 193px;
+      font-size: 16px;
+      line-height: 13.92px;
+      transform: rotate(-13deg);
+      text-align: center;
     }
     &__title {
       @include title-mobile;
+    }
+  }
+
+  .viewLeftColumn__btn,
+  .viewRightColumn__btn {
+    display: none;
+  }
+
+  .mobileButton {
+    display: block;
+    margin-top: 6px;
+    
+    button {
+      width: 100%;
+      max-width: 100%;
+      height: 57px;
+      font-size: 24px;
+      line-height: 87.02%;
+      padding: 0;
     }
   }
 }
