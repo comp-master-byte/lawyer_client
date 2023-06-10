@@ -25,6 +25,10 @@
   }
 }
 
+.mobilePointer {
+  display: none;
+}
+
 .solutionCardTitle {
   @include flex-between-center;
   margin-bottom: 24px;
@@ -39,4 +43,39 @@
   .solutionCardWrapper {
     width: 447px;
   }
+}
+
+@media screen and (max-width: 480px) {
+    .solutionCardPosition {
+      &__pointer {
+        display: none; 
+    }
+  }
+  .solutionCardWrapper {
+    height: 245px;
+    margin-top: 22px;
+    padding: 30px 30px 48px 33px;
+
+    &__text {
+      @include home-card-text-mobile;
+      width: 358px;
+    }
+  }
+
+  .solutionCardTitle {
+    margin-bottom: 8px;
+    img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  .mobilePointer {
+    display: inline-block;
+    position: absolute;
+    bottom: -53px;
+    left: 93px;
+    z-index: 1;
+  }
+
 }

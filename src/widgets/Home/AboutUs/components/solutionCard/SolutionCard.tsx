@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./SolutionCard.module.scss";
 import icon from "./assets/icon.svg";
 import pointer from "./assets/pointer.svg";
+import mobilePointerSvg from "./assets/pointer-mobile.svg";
+import SectionTitle from "../../../../../shared/Styled-Components/SectionTitle/SectionTitle";
 
 const SolutionCard: React.FC = React.memo(function SolutionCard() {
   return (
@@ -11,9 +13,14 @@ const SolutionCard: React.FC = React.memo(function SolutionCard() {
         alt="pointer"
         className={styles.solutionCardPosition__pointer}
       />
+      <img
+        src={mobilePointerSvg}
+        alt="pointer"
+        className={styles.mobilePointer}
+      />
       <div className={styles.solutionCardWrapper}>
         <div className={styles.solutionCardTitle}>
-          <p className={styles.solutionCardTitle__label}>Решение</p>
+          <SectionTitle>Решение</SectionTitle>
           <img src={icon} alt="icon" />
         </div>
         <p className={styles.solutionCardWrapper__text}>
