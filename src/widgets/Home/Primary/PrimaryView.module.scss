@@ -11,9 +11,10 @@
 }
 
 @mixin columnView-mobile {
-  width: 300px;
-  height: 210px;
+  width: 450px;
+  height: 316px;
   border-radius: 20px;
+  padding: 0;
 }
 
 @mixin title-text {

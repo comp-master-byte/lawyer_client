@@ -19,7 +19,7 @@
 }
 
 @mixin container-mobile {
-  max-width: 300px;
+  max-width: $mobile-container-width;
   width: 100%;
   margin: 0 auto;
 }

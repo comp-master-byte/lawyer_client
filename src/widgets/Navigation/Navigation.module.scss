@@ -56,23 +56,24 @@
   }
   .navigationInner__vk {
     display: inline-block;
-    width: 26px;
-    height: 26px;
+    width: 39px;
+    height: 39px;
   }
   .burgerMenu {
     display: flex;
     flex-direction: column;
-    row-gap: 4px;
+    row-gap: 6px;
 
     &__line {
-      width: 28px;
-      height: 4px;
+      width: 42px;
+      height: 6px;
+      border-radius: 30px;
       background-color: $blue-color;
     }
   }
   .navigationInner__logo img {
-    width: 62.7px;
-    height: 45px;
+    width: 94.24px;
+    height: 67.69px;
   }
   .navigationLinks,
   .navigationEntrance {
