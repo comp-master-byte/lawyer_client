@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const useNavigation = () => {
+  const [isNavigationMobileVisible, setIsNavigationMobileVisible] = useState<boolean>(false);
+
+  const openMobileMavigation = () => setIsNavigationMobileVisible(true);
+  const closeMobileNavigation = () => setIsNavigationMobileVisible(false);
+
   const scrollToAboutUs = (e: React.MouseEvent<HTMLDivElement>) => {
     window.scrollTo({
       top: 993,
@@ -34,5 +39,8 @@ export const useNavigation = () => {
     scrollToAdvantages,
     scrollToThemes,
     scrollToContacts,
+    isNavigationMobileVisible,
+    openMobileMavigation,
+    closeMobileNavigation
   };
 };

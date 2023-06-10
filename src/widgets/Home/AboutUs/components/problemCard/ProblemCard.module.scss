@@ -34,8 +34,49 @@
   }
 }
 
+.mobilePointer {
+  display: none;
+}
+
 @media screen and (max-width: 1440px) {
   .problemCardWrapper {
     width: 436px;
   }
+}
+
+@media screen and (max-width: 480px) {
+  .problemCardWrapper {
+    height: 245px;
+    margin-top: 70px;
+    padding: 30px 30px 48px 33px;
+
+    &__text {
+      @include home-card-text-mobile;
+      width: 348px;
+    }
+
+    &__pointer {
+      display: none;
+    }
+
+    .mobilePointer {
+      position: absolute;
+      display: inline-block;
+      bottom: -47px;
+      left: 93px;
+    }
+
+    .problemCardTitle {
+      margin-bottom: 8px;
+      &__label {
+        @include home-card-label-mobile;
+      }
+
+      img {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+
 }

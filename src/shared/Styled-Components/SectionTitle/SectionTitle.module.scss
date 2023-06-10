@@ -1,0 +1,35 @@
+@import "../../../app/styles/exports";
+
+.sectionTitle {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 43.2px;
+    letter-spacing: -0.025em;
+    color: $blue-color;
+
+    span {
+        background-color: $blue-color;
+        color: #fff;
+        border-radius: 22px;
+        display: inline-flex;
+        align-items: center;
+        line-height: 43.2px;
+        justify-content: center;
+        width: fit-content;
+        padding: 5px 18px 12px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sectionTitle {
+        font-size: 30px;
+        line-height: 27px;
+        /* or 27px */
+
+        text-align: center;
+        letter-spacing: -0.025em;
+        
+    }
+}

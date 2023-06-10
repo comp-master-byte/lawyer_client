@@ -61,6 +61,11 @@
   letter-spacing: -0.025em;
 }
 
+@mixin home-card-label-mobile {
+  font-size: 22px;
+  line-height: 20px;
+}
+
 @mixin home-card-text {
   font-family: "Inter";
   font-style: normal;
@@ -68,4 +73,9 @@
   font-size: 20px;
   letter-spacing: -0.025em;
   line-height: 23.1px;
+}
+
+@mixin home-card-text-mobile {
+  font-size: 18px;
+  line-height: 19px;
 }

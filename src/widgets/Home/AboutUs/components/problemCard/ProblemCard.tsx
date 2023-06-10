@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./ProblemCard.module.scss";
 import icon from "./assets/icon.svg";
 import pointer from "./assets/pointer.svg";
+import mobilePointerSvg from "./assets/pointer-mobile.svg";
 
 const ProblemCard: React.FC = React.memo(function ProblemCard() {
   return (
@@ -11,6 +12,7 @@ const ProblemCard: React.FC = React.memo(function ProblemCard() {
         alt="pointer"
         className={styles.problemCardWrapper__pointer}
       />
+      <img src={mobilePointerSvg} className={styles.mobilePointer} alt="" />
       <div className={styles.problemCardTitle}>
         <div className={styles.problemCardTitle__label}>Проблема</div>
         <img src={icon} alt="icon" />

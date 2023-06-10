@@ -11,6 +11,9 @@ const Navigation: React.FC = React.memo(function Navigation() {
     scrollToAdvantages,
     scrollToThemes,
     scrollToContacts,
+    isNavigationMobileVisible,
+    openMobileMavigation,
+    closeMobileNavigation
   } = useNavigation();
 
   return (
@@ -47,7 +50,7 @@ const Navigation: React.FC = React.memo(function Navigation() {
               Контакты
             </div>
           </div>
-          <div className={styles.burgerMenu}>
+          <div onClick={openMobileMavigation} className={styles.burgerMenu}>
             <div className={styles.burgerMenu__line}></div>
             <div className={styles.burgerMenu__line}></div>
             <div className={styles.burgerMenu__line}></div>

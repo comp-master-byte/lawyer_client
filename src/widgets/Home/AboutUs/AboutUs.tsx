@@ -4,16 +4,17 @@ import AdditionalCard from "./components/additionalCard/AdditionalCard";
 import ProblemCard from "./components/problemCard/ProblemCard";
 import SolutionCard from "./components/solutionCard/SolutionCard";
 import LawyerAssistant from "./components/lawyerAssistant/LawyerAssistant";
+import SectionTitle from "../../../shared/Styled-Components/SectionTitle/SectionTitle";
 
 const AboutUs: FC = React.memo(function AboutUs() {
   return (
     <div className={styles.aboutUsWrapper}>
       <div className={styles.container}>
         <div className={styles.aboutUsInner}>
-          <p className={styles.aboutUsInner__title}>
+          <SectionTitle>
             Наша цель — сделать юридическую помощь не только доступной, но и
             понятной обычному пользователю
-          </p>
+          </SectionTitle>
           <div className={styles.aboutUsCards}>
             <ProblemCard />
             <SolutionCard />
