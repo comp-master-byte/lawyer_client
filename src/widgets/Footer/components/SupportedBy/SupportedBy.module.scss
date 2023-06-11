@@ -1,8 +1,8 @@
 @import "../../../../app/styles/exports";
 
 .supportedByWrapper {
-  position: relative;
   @include center;
+  position: relative;
   flex-direction: column;
   width: 308px;
   height: 341px;
@@ -31,5 +31,43 @@
     letter-spacing: -0.025em;
     line-height: 17.4px;
     margin: 27px 0 21px 0;
+  }
+}
+
+.mobileLogo {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .supportedByWrapper {
+    width: 100%;
+    flex-direction: row;
+    padding: 37px 0 80px 0;
+    height: auto;
+
+    &::before {
+      border-radius: 30px 30px 0px 0px;
+    }
+
+    &__logo {
+      display: none;
+    }
+
+    .mobileLogo {
+      display: inline-block;
+      margin-right: 32px;
+    }
+
+    p {
+      font-size: 15px;
+      margin-right: 20px;
+      align-self: flex-start;
+    }
+
+    .fsi {
+      width: 118px;
+      height: 57.71px;
+      align-self: flex-end;
+    }
   }
 }

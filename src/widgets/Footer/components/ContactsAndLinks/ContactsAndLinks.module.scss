@@ -53,3 +53,42 @@
     @include paragraph;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .contactsAndLinksWrapper {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    padding: 40px 23px 85px 33px;
+    transform: translateY(-100px);
+    z-index: 3;
+  }
+
+  .linksAndEmails {
+    .linksImages {
+      img {
+        width: 44px;
+        height: 43px;
+      }
+    }
+  }
+
+  .emailsText {
+    &__paragraph {
+      font-size: 18px;
+      line-height: 16px;
+    }
+  }
+  .userRigths {
+    &__paragraph {
+      font-size: 18px;
+      line-height: 16px;
+    }
+    &__year {
+      font-size: 18px;
+      line-height: 16px;
+    }
+  }
+
+  
+}

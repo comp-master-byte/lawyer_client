@@ -25,3 +25,20 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .navigationLinksWrapper {
+    width: 100%;
+    height: auto;
+    padding: 35px 34px 104px 33px;
+    border-radius: 30px;
+    transform: translateY(-50px);
+  }
+
+  .navigationLinks {
+    .link {
+      font-size: 18px;
+      line-height: 16px;
+    }
+  }
+}

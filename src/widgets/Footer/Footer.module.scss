@@ -6,6 +6,7 @@
 
 .footer {
   position: relative;
+  
   &__yura {
     position: absolute;
     right: 37%;
@@ -18,6 +19,10 @@
   column-gap: 20px;
 }
 
+.yuraMobile {
+  display: none;
+}
+
 @media screen and (max-width: 1440px) {
   .container {
     @include container-1440;
@@ -26,6 +31,28 @@
 
 @media screen and (max-width: 480px) {
   .footer {
-    display: none;
+    padding: 0 15px;
+    height: 639px;
+    overflow: hidden;
+
+    &__yura {
+      display: none;
+    }
+  }
+  
+  .container {
+    @include container-mobile;
+  }
+
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .yuraMobile {
+    display: inline-block;
+    position: absolute;
+    bottom: 268px;
+    left: 195px;
+    z-index: 2;
   }
 }
