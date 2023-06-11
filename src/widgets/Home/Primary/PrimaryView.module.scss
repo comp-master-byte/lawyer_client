@@ -134,7 +134,8 @@
 }
 
 // Отключение мобильных компонентов
-.mobileButton {
+.mobileButton,
+.humanMobile {
   display: none;
 }
 
@@ -157,12 +158,19 @@
 }
 
 @media screen and (max-width: 480px) {
-
   .primaryViewWrapper {
     padding: 0 15px;
   }
   .container {
     @include container-mobile;
+  }
+
+  .humanMobile {
+    display: inline-block;
+    position: absolute;
+    top: 33px;
+    right: 10px;
+    z-index: 1;
   }
 
   .viewLeftColumn {
@@ -172,14 +180,14 @@
       &__text {
         width: 213px;
         top: 150px;
-        left: 49px;
+        left: 30px;
         font-size: 16px;
         line-height: 13.92px;
       }
 
       &__img {
         bottom: 18px;
-        left: 25px;
+        left: 7px;
         width: 78px;
         height: 54px;
         transform: rotate(-66.89deg);
@@ -195,6 +203,7 @@
     flex-direction: column;
     &__human {
       display: none;
+     
     }
   }
 
@@ -224,6 +233,7 @@
   .mobileButton {
     display: block;
     margin-top: 6px;
+    z-index: 2;
     
     button {
       width: 100%;

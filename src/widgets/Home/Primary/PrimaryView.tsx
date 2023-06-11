@@ -3,6 +3,7 @@ import MyButton from "../../../shared/UI/MyButton/MyButton";
 import styles from "./PrimaryView.module.scss";
 import pointer from "./assets/pointer.svg";
 import human from "./assets/yura.png";
+import humanMobile from "./assets/yura_primary_mobile.svg";
 
 const PrimaryView: React.FC = React.memo(function PrimaryView() {
   return (
@@ -55,12 +56,13 @@ const PrimaryView: React.FC = React.memo(function PrimaryView() {
                 Зарегистрироваться
               </MyButton>
           </div>
-
           <img
             src={human}
             className={styles.primaryViewInner__human}
             alt="human"
           />
+
+          <img src={humanMobile} className={styles.humanMobile} alt="" />
 
         </div>
       </div>
