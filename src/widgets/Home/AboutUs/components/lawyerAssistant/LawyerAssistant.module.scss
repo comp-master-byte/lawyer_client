@@ -106,12 +106,8 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1024px) {
   .lawyerAssistantWrapper {
-    width: 100%;
-    height: 446px;
-    margin-top: 84px;
-
     &__assistant {
       display: none;
     }
@@ -119,9 +115,6 @@
     .lawyerMobile {
       display: inline-block;
       position: absolute;
-      right: -15px;
-      top: -20px;
-      z-index: 0;
     }
 
     .lawyerAssistantCards {
@@ -131,8 +124,61 @@
       transform: translateY(10px);
 
       .lawyerTopCard {
-        @include card-mobile;
         z-index: 3;
+      }
+
+      .lawyerBottomCard {
+        height: 113px;
+        transform: translateY(0px);
+        z-index: 3;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .lawyerAssistantWrapper {
+    width: 100%;
+
+    .lawyerMobile {
+      right: -30px;
+      top: -20px;
+      z-index: 0;
+    }
+    .lawyerAssistantCards {
+      .lawyerTopCard,.lawyerBottomCard {
+        width: 434.03px;
+        height: 158.42px;
+        border-radius: 38.6379px;
+        font-size: 22px;
+        line-height: 90%;
+        padding: 27px 59px 30px 43px;
+      }
+
+      .lawyerBottomCard {
+        height: 145.54px;
+        padding-bottom: 51px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .lawyerAssistantWrapper {
+    width: 100%;
+    height: 446px;
+    margin-top: 84px;
+
+    .lawyerMobile {
+      right: -15px;
+      top: -20px;
+      z-index: 0;
+    }
+
+    .lawyerAssistantCards {
+  
+      .lawyerTopCard {
+        @include card-mobile;
       }
 
       .lawyerBottomCard {

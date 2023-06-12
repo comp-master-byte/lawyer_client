@@ -50,6 +50,8 @@
   }
 }
 
+
+
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .problemCardWrapper {
     width: 100%;
@@ -88,6 +90,32 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .mobilePointer {
+    position: absolute;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 640px) {
+  .problemCardWrapper {
+    width: 100%;
+    padding: 39px 39px 70px 42px;
+
+    &__text {
+      max-width: 448px;
+    }
+  }
+
+  .mobilePointer {
+    width: 226.34px;
+    height: 109.14px;
+    bottom: -70px;
+    left: 120px;
+    z-index: 2;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .problemCardWrapper {
     width: 100%;
@@ -105,8 +133,6 @@
     }
 
     .mobilePointer {
-      position: absolute;
-      display: inline-block;
       bottom: -47px;
       left: 93px;
       z-index: 1;

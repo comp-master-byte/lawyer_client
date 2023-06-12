@@ -92,9 +92,28 @@
     height: 63.83px;
     transform: rotate(8deg);
   }
-
-
 }
+
+@media screen and (max-width: 1024px) and (min-width: 640px) {
+  .solutionCardWrapper {
+    width: 100%;
+    padding: 39px 39px 70px 42px;
+    margin-top: 28px;
+
+    &__text {
+      width: 461px;
+    }
+  }
+
+  .mobilePointer {
+    width: 224.03px;
+    height: 109.12px;
+    bottom: -73px;
+    left: 120px;
+    z-index: 2;
+  }
+}
+
 
 @media screen and (max-width: 480px) {
     .solutionCardPosition {

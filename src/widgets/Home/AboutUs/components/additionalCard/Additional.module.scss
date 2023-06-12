@@ -62,6 +62,18 @@
   } 
 }
 
+@media screen and (max-width: 1024px) and (min-width: 640px) {
+  .additionalCardWrapper {
+    width: 100%;
+    padding: 39px 39px 57px 42px;
+    margin-top: 28px;
+
+    &__text {
+      width: 448px;
+    }
+  }
+}
+
 @media screen and (max-width: 480px) {
   .additionalCardWrapper {
     width: 100%;

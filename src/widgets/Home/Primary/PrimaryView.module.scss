@@ -166,9 +166,9 @@
   margin-bottom: 184px;
 
   }
-  .container {
-    @include container-934px;
-  }
+  // .container {
+  //   @include container-934px;
+  // }
 
   .primaryViewInner {
     column-gap: 20px;
@@ -255,11 +255,12 @@
 @media screen and (min-width: 640px) and (max-width: 1024px) { 
   .primaryViewWrapper {
     padding: 0 30px;
+    margin-bottom: 80px;
   }
 
-  .container {
-    @include container-580px;
-  }
+  // .container {
+  //   @include container-580px;
+  // }
 
   .primaryViewInner {
     row-gap: 17px;

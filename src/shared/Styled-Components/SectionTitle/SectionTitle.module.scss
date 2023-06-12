@@ -30,14 +30,18 @@
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .sectionTitle {
+        font-size: 38px;
+        line-height: 90%;
+    }
+}
+
+
 @media screen and (max-width: 480px) {
     .sectionTitle {
         font-size: 30px;
         line-height: 27px;
-        /* or 27px */
-
-        text-align: center;
         letter-spacing: -0.025em;
-        
     }
 }
