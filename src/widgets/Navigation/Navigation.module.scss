@@ -2,6 +2,8 @@
 
 .navigationWrapper {
   padding-top: 42px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .container {
   @include container;
@@ -51,9 +53,9 @@
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
-    .container {
-      @include container-934px;
-    }
+    // .container {
+    //   @include container-934px;
+    // }
 
     .navigationLinks {
       column-gap: 33px;
@@ -105,9 +107,9 @@
     padding-right: 30px;
   }
 
-  .container {
-    @include container-580px;
-  }
+  // .container {
+  //   @include container-580px;
+  // }
 
   .navigationInner__vk {
     width: 50px;
@@ -137,9 +139,9 @@
     padding-right: 15px;
   }
 
-  .container {
-    @include container-mobile;
-  }
+  // .container {
+  //   @include container-mobile;
+  // }
 
   .navigationInner__vk {
     width: 39px;
