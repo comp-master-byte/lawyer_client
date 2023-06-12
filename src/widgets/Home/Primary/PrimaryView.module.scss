@@ -231,6 +231,101 @@
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .viewLeftColumn,
+  .viewRightColumn {
+    width: 100%;
+    padding: 0;
+  }
+
+  .primaryViewInner {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) { 
+  .primaryViewWrapper {
+    padding: 0 30px;
+  }
+
+  .container {
+    @include container-580px;
+  }
+
+  .primaryViewInner {
+    row-gap: 17px;
+
+    &__human {
+      top: 30px;
+      left: 283px;
+      width: 320.55px;
+      height: auto;
+      z-index: 2;
+    }
+  }
+
+  .viewLeftColumn,
+  .viewRightColumn {
+    height: 406.99px;
+    border-radius: 38.6379px;
+  }
+
+  .viewLeftColumn {
+
+    .leftColumnIllustration {
+      &__text {
+        top: 172px;
+        left: 51px;
+        width: 237px;
+        font-size: 18px;
+        line-height: 87.02%;
+      }
+      &__img {
+        width: 56.77px;
+        height: 39.1px;
+        left: 30px;
+        bottom: 120px;
+        transform: rotate(-66.89deg);
+      }
+    }
+
+    &__title {
+      @include title-mobile;
+    }
+  }
+
+  .viewRightColumn {
+    .rightColumnItalic {
+      width: 228px;
+      top: 150px; // 150
+      left: 280px; // 193
+      font-size: 18px;
+      line-height: 87.02%;
+      transform: rotate(-13deg);
+      text-align: center;
+    }
+  }
+
+  .titleText {
+    font-size: 38px;
+    line-height: 90%;
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+
+  .viewLeftColumn,.viewRightColumn {
+    &__btn button {
+      width: 100%;
+      max-width: 100%;
+      z-index: 3;
+    }
+  }
+
+
+
+}
+
 @media screen and (max-width: 480px) {
   .primaryViewWrapper {
     padding: 0 15px;
@@ -273,12 +368,7 @@
     }
   }
 
-  .primaryViewInner {
-    flex-direction: column;
-    &__human {
-      display: none;
-    }
-  }
+  
 
   .viewRightColumn {
     @include columnView-mobile;
