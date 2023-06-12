@@ -3,5 +3,11 @@
 @mixin container-934px {
     max-width: $width-1024;
     width: 100%;
-    max-width: 0 auto;
+    margin: 0 auto;
+}
+
+@mixin container-580px {
+    max-width: $width-580;
+    width: 100%;
+    margin: 0 auto;
 }
