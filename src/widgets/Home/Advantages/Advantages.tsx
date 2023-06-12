@@ -4,6 +4,7 @@ import WhiteCard from "./components/WhiteCard/WhiteCard";
 import BlueCard from "./components/BlueCard/BlueCard";
 import MyButton from "../../../shared/UI/MyButton/MyButton";
 import SectionTitle from "../../../shared/Styled-Components/SectionTitle/SectionTitle";
+import mobileBgLine from "./assets/bg-line.svg";
 
 const Advantages: React.FC = React.memo(function Advantages() {
   return (

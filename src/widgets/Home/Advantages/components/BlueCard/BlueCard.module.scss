@@ -32,6 +32,21 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .blueCardWrapper {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .blueCardWrapper {
+    font-size: 18px;
+    line-height: 105%;
+    padding-bottom: 45px;
+/* or 20px */
+  }
+}
+
 @media screen and (max-width: 480px) {
   .blueCardWrapper {
     border-radius: 30px;

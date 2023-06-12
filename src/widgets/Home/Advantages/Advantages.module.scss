@@ -75,17 +75,17 @@
 }
 
 .whiteCardLeft, 
-  .blueCardLeft {
-    width: 34.77%;
-  } 
-  .whiteCardMiddle, 
-  .blueCardMiddle {
-    width: 30.2%;
-  }
-  .whiteCardRight, 
-  .blueCardRight {
-    width: 35.5%;
-  }
+.blueCardLeft {
+  width: 34.77%;
+} 
+.whiteCardMiddle, 
+.blueCardMiddle {
+  width: 30.2%;
+}
+.whiteCardRight, 
+.blueCardRight {
+  width: 35.5%;
+}
 
 @media screen and (min-width: 1024px) and (max-width: 1920px) {
   .container {
@@ -102,8 +102,6 @@
       margin-bottom: 28px;
     }
   }
-
-  
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
@@ -137,32 +135,103 @@
   }
 }
 
-@media screen and (max-width: 480px) {
-  .container {
-    @include container-mobile;
-  }
-  
+@media screen and (max-width: 1024px) {
   .advantagesWrapper {
     padding: 0 15px;
     margin-bottom: 70px;
+    
     .advantagesContent {
       display: none;
     }
   }
+
+  .advantagesMobileContent {
+    display: block;
+    @include content;
+    background-image: url("./assets/bg-line.svg");
+    background-repeat: no-repeat;
+    background-position: 100px -5px;
+    padding: 0;
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .mobileButtons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .advantagesWrapper {
+    margin-bottom: 90px;
+  }
+
+  .advantagesMobileContent {
+    border-radius: 38.6379px;
+    margin-top: 38.6379px;
+
+    .cards {
+      row-gap: 21px;
+      margin-bottom: 42px;
+    }
+  }
+
+  .topContentCards {
+    width: 363px;
+    padding-top: 39px;
+    padding-left: 20px;
+
+    div {
+      width: 100%;
+    }
+  }
+
+  .middleContentCards {
+    max-width: 336px;
+    align-self: flex-end;
+    padding-right: 20px;
+  }
+
+  .bottomContentCards {
+    width: 406px;
+    padding-left: 25px;
+  }
+
+  .fullWidthCardMobileWrapper {
+    padding: 0 25px;
+
+    .fullWidthCard {
+      text-align: center;
+      margin-bottom: 49px;
+    }
+  }
+
+  .mobileButtons {
+    row-gap: 12px;
+
+    button {
+      font-size: 23.1827px;
+      line-height: 87.02%;
+      padding: 19px 83px;
+    }
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .advantagesWrapper {
+    padding: 0 15px;
+    margin-bottom: 70px;
+  }
   
   .advantagesMobileContent {
-      display: block;
-      background-image: url("./assets/bg-line.svg");
-      background-repeat: no-repeat;
-      background-position: 61px -10px;
-      @include content;
       margin-top: 30px;
-      padding: 0;
       border-radius: 30px;
 
       .cards {
-        display: flex;
-        flex-direction: column;
         row-gap: 16px;
         margin-bottom: 33px;
       }
@@ -192,8 +261,6 @@
       margin-bottom: 38px;
     }
   }
-
-  
 
   .mobileButtons {
     display: flex;
