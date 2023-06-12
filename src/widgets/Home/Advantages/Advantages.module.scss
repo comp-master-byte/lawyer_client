@@ -11,6 +11,8 @@
 
 .advantagesWrapper {
   padding-bottom: 180px;
+  padding-left: 30px;
+  padding-right: 30px;
 
   &__title {
     @include page-title();
@@ -67,31 +69,72 @@
   display: flex;
 }
 
-.bgMobileLine {
+.bgMobileLine, 
+.advantagesMobileContent {
   display: none;
 }
 
-@media screen and (max-width: 1440px) {
+.whiteCardLeft, 
+  .blueCardLeft {
+    width: 34.77%;
+  } 
+  .whiteCardMiddle, 
+  .blueCardMiddle {
+    width: 30.2%;
+  }
+  .whiteCardRight, 
+  .blueCardRight {
+    width: 35.5%;
+  }
+
+@media screen and (min-width: 1024px) and (max-width: 1920px) {
   .container {
     @include container-1440;
   }
 
-  .whiteCardLeft, 
-  .blueCardLeft {
-    width: 433px;
-  } 
-  .whiteCardMiddle, 
-  .blueCardMiddle {
-    width: 376px;
+  .advantagesWrapper {
+    .advantagesContent {
+      height: auto;
+      padding: 44px 38px 58px 37px;
+    }
+
+    .whiteCard {
+      margin-bottom: 28px;
+    }
   }
-  .whiteCardRight, 
-  .blueCardRight {
-    width: 442px;
-  }
+
+  
 }
 
-.advantagesMobileContent {
-  display: none;
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .advantagesWrapper {
+    .advantagesContent {
+      height: auto;
+    }
+    .whiteCard {
+      font-size: 22px;
+      line-height: 90%;
+      padding: 26px 145px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .advantagesButtons {
+
+      &__primary {
+        font-size: 19.7061px;
+        line-height: 87.02%;
+        height: 55px;
+        padding: 0;
+      }
+      &__secondary {
+        font-size: 19.7061px;
+        line-height: 87.02%;
+        height: 55px;
+        padding: 0;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 480px) {

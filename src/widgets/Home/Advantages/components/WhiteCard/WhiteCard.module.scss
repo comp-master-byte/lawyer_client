@@ -2,7 +2,7 @@
 
 .whiteCardWrapper {
   min-height: 173px;
-  padding: 33px 24px 10px 33px;
+  padding: 33px 20px 10px 33px;
   border: 2px solid $blue-color;
   color: $blue-color;
   background-color: #fff;
@@ -16,9 +16,19 @@
 
 // === media ===
 @media screen and (max-width: 1440px) {
+  // .whiteCardWrapper {
+  //   padding-left: 27px;
+  //   padding-right: 20px;
+  // }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
   .whiteCardWrapper {
-    padding-left: 27px;
-    padding-right: 20px;
+    font-size: 22px;
+    line-height: 90%;
+    font-weight: 600;
+    min-height: 121px;
+/* or 20px */
   }
 }
 
@@ -30,6 +40,6 @@
     height: auto;
     min-height: auto;
     font-size: 18px;
-line-height: 90%;
+    line-height: 90%;
   }
 }

@@ -14,11 +14,21 @@
 }
 
 // === media ===
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
   .blueCardWrapper {
-    padding-left: 27px;
-    padding-right: 20px;
+    // padding-left: 27px;
+    // padding-right: 20px;
     height: 197px;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  .blueCardWrapper {
+    font-size: 18px;
+    line-height: 105%;
+    height: 138px;
+    
+    /* or 19px */
   }
 }
 
