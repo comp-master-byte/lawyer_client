@@ -47,7 +47,9 @@ const PrimaryView: React.FC = React.memo(function PrimaryView() {
               клиентов, то регистрируйся!
             </div>
             <div className={styles.viewRightColumn__btn}>
-        
+              <MyButton color="secondary" size="large" variant="contained">
+                Зарегистрироваться
+              </MyButton>
             </div>
           </div>
 
