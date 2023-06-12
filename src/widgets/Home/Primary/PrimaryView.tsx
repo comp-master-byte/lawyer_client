@@ -4,6 +4,7 @@ import styles from "./PrimaryView.module.scss";
 import pointer from "./assets/pointer.svg";
 import human from "./assets/yura.png";
 import humanMobile from "./assets/yura_primary_mobile.svg";
+import classNames from "classnames";
 
 const PrimaryView: React.FC = React.memo(function PrimaryView() {
   return (
@@ -11,7 +12,7 @@ const PrimaryView: React.FC = React.memo(function PrimaryView() {
       <div className={styles.container}>
         <div className={styles.primaryViewInner}>
           <div className={styles.viewLeftColumn}>
-            <div className={styles.viewLeftColumn__title}>
+            <div className={classNames(styles.viewLeftColumn__title, styles.titleText)}>
               Решите свой <br /> юридический <br /> вопрос
             </div>
             <div className={styles.leftColumnIllustration}>
@@ -20,7 +21,7 @@ const PrimaryView: React.FC = React.memo(function PrimaryView() {
                 src={pointer}
                 alt="pointer"
               />
-              <div className={styles.leftColumnIllustration__text}>
+              <div className={classNames(styles.leftColumnIllustration__text, styles.italicText)}>
                 Задайте свой вопрос бесплатному помощнику Юре или сразу юристу,
                 если ваш вопрос сложнее
               </div>
@@ -39,10 +40,10 @@ const PrimaryView: React.FC = React.memo(function PrimaryView() {
           </div>
 
           <div className={styles.viewRightColumn}>
-            <div className={styles.viewRightColumn__title}>
+            <div className={classNames(styles.viewRightColumn__title, styles.titleText)}>
               Станьте юристом <br /> на нашей <br /> платформе
             </div>
-            <div className={styles.rightColumnItalic}>
+            <div className={classNames(styles.rightColumnItalic, styles.italicText)}>
               Если ты юрист и хочешь решать индивидуальные запросы наших
               клиентов, то регистрируйся!
             </div>

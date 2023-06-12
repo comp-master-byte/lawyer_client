@@ -38,7 +38,7 @@
 
 
 // === Media ===
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
   .container {
     @include container-1440;
   }
@@ -48,6 +48,35 @@
       height: auto;
     }
   }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .container {
+      @include container-934px;
+    }
+
+    .navigationLinks {
+      column-gap: 33px;
+    
+      &__link {
+        font-size: 16.925px;
+        line-height: 87.02%;
+      }
+    }
+
+    .navigationInner__logo {
+      img {
+        width: 108px;
+        height: 105px;
+      }
+    }
+
+    .entranceBtn {
+      font-size: 16.925px;
+    line-height: 87.02%;
+    padding: 6.34688px 19.7458px 7.75729px;
+    height: auto;
+    }
 }
 
 @media screen and (max-width: 480px) {

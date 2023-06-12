@@ -41,6 +41,12 @@
   font-weight: 600;
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .small,.large {
+    
+  }
+}
+
 @media screen and (max-width: 480px) {
   .small,.large {
       font-size: 18px;

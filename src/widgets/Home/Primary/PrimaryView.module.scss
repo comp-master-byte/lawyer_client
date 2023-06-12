@@ -140,7 +140,7 @@
 }
 
 // === MEDIA ===
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
   .container {
     @include container-1440;
   }
@@ -157,6 +157,80 @@
   }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .container {
+    @include container-934px;
+  }
+
+  .primaryViewInner {
+    column-gap: 20px;
+  }
+
+  .viewLeftColumn,
+  .viewRightColumn {
+    width: 100%;
+    height: 462px;
+    padding: 27px 30px 43px 21px;
+    border-radius: 35.2604px;
+  }
+
+
+  .titleText {
+    font-size: 34px;
+    line-height: 31px;
+  }
+
+  .viewLeftColumn {
+    .leftColumnIllustration {
+      &__text {
+        width: 220px;
+        left: 95px;
+        top: 160px;
+      }
+
+      &__img {
+        width: 106px;
+        height: 73px;
+        bottom: 159px;
+        left: 30px;
+      }
+    }
+  }
+
+  .viewRightColumn {
+    .rightColumnItalic {
+      top: 174px;
+      left: 135px;
+      width: 190px;
+    }
+  }
+
+
+  .italicText {
+    font-size: 15.5146px !important;
+    line-height: 87.02% !important;
+  }
+
+  .viewRightColumn,.viewLeftColumn {
+    &__btn {
+      button {
+        height: 55px;
+        padding: 0;
+        font-size: 19.7458px;
+        line-height: 87.02%;
+      }
+    }
+  }
+
+  .primaryViewInner {
+    &__human {
+      width: 419px;
+      height: auto;
+      left: 45%;
+      transform: translateX(-45%);
+    }
+  }
+}
 @media screen and (max-width: 480px) {
   .primaryViewWrapper {
     padding: 0 15px;
@@ -203,7 +277,6 @@
     flex-direction: column;
     &__human {
       display: none;
-     
     }
   }
 

@@ -56,7 +56,7 @@ const Navigation: React.FC = React.memo(function Navigation() {
             <div className={styles.burgerMenu__line}></div>
           </div>
           <div className={styles.navigationEntrance}>
-            <MyButton color="primary" variant="outlined" size="small">
+            <MyButton btnClassName={styles.entranceBtn} color="primary" variant="outlined" size="small">
               Войти
             </MyButton>
           </div>
