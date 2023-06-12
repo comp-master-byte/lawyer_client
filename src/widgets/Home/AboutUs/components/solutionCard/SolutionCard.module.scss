@@ -40,10 +40,60 @@
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
   .solutionCardWrapper {
     width: 447px;
   }
+}
+
+@media screen and (max-width: 1440px) {
+  .solutionCardPosition__pointer {
+    display: none;
+  }
+
+  .mobilePointer {
+    display: inline-block;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .solutionCardWrapper {
+    width: 100%;
+
+    margin-top: 0;
+    padding: 25px 30px 0 46px;
+    height: 233px;
+    border-radius: 35.3409px;
+
+    .solutionCardTitle {
+      margin-bottom: 20px;
+      &__label {
+        font-size: 22px;
+        line-height: 90%;
+      }
+      img {
+        width: 40.29px;
+        height: 40.29px;
+      }
+    }
+
+    &__text {
+      width: 391px;
+      font-size: 18px;
+      line-height: 105%;
+    }
+  }
+
+  .mobilePointer {
+    left: 35px;
+    bottom: -34px;
+    width: 149.33px;  
+    height: 63.83px;
+    transform: rotate(8deg);
+  }
+
+
 }
 
 @media screen and (max-width: 480px) {
@@ -78,8 +128,6 @@
   }
 
   .mobilePointer {
-    display: inline-block;
-    position: absolute;
     bottom: -53px;
     left: 93px;
     z-index: 1;

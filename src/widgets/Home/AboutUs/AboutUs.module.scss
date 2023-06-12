@@ -3,8 +3,14 @@
 .aboutUsWrapper {
   padding-bottom: 145px;
 }
+
 .container {
   @include container;
+}
+
+.titleText {
+  width: 1081px;
+  margin: 0 auto;
 }
 
 .aboutUsInner {
@@ -27,11 +33,32 @@
     display: flex;
     margin-bottom: 145px;
   }
+
+  .leftCards {
+    display: flex;
+  }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+    .container {
+      @include container-1440;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
   .container {
-    @include container-1440;
+    @include container-934px;
+  }
+
+  .aboutUsInner {
+    .aboutUsCards {
+      margin-top: 80px;
+      margin-bottom: 90px;
+    }
+  }  
+
+  .leftCards {
+    flex-direction: column;
   }
 }
 

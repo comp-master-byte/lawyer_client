@@ -28,9 +28,37 @@
 
 // === media ===
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1900px) {
   .additionalCardWrapper {
     width: 437px;
+  } 
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .additionalCardWrapper {
+    margin-top: 0;
+    width: 100%;
+    padding: 25px 30px 0 46px;
+    height: 222px;
+    border-radius: 35.3409px;
+
+    &__text {
+      width: 391px;
+      font-size: 18px;
+      line-height: 105%;
+    }
+
+    .additionalCardTitle {
+      margin-bottom: 29px;
+      &__label {
+        font-size: 22px;
+        line-height: 90%;
+      }
+      img {
+        width: 41px;
+        height: 41px;
+      }
+    }
   } 
 }
 

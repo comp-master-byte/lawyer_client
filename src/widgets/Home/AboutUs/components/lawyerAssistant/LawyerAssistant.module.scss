@@ -62,12 +62,45 @@
 }
 
 // === media ===
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
   .lawyerAssistantWrapper {
     .lawyerAssistantCards {
       .lawyerTopCard,
       .lawyerBottomCard {
         width: 577px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .lawyerAssistantWrapper {
+    height: 393px;
+    margin-top: 74px;
+
+    &__assistant {
+      width: 518.52px;
+      height: 376.14px;
+      bottom: -20px;
+      left: -31px;
+    }
+    .lawyerAssistantCards {
+      .lawyerTopCard,
+      .lawyerBottomCard {
+        padding: 34px 41px 0 27px;
+        width: 457px;
+        border-radius: 34.9057px;
+        font-size: 22px;
+        line-height: 90%;
+      }
+
+      .lawyerTopCard {
+        height: 222px;
+      }
+  
+      .lawyerBottomCard {
+        height: 203px;
+        transform: translateY(-30px);
       }
     }
   }

@@ -11,14 +11,16 @@ const AboutUs: FC = React.memo(function AboutUs() {
     <div className={styles.aboutUsWrapper}>
       <div className={styles.container}>
         <div className={styles.aboutUsInner}>
-          <SectionTitle>
+          <SectionTitle titleClassName={styles.titleText}>
             Наша цель — сделать юридическую помощь не только доступной, но и
             понятной обычному пользователю
           </SectionTitle>
           <div className={styles.aboutUsCards}>
             <ProblemCard />
-            <SolutionCard />
-            <AdditionalCard />
+            <div className={styles.leftCards}>
+              <SolutionCard />
+              <AdditionalCard />
+            </div>
           </div>
 
           <SectionTitle>
