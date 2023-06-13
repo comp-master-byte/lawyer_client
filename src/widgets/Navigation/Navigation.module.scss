@@ -1,9 +1,7 @@
 @import "../../app/styles/exports";
 
 .navigationWrapper {
-  padding-top: 42px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 42px 60px 0 60px;
 }
 .container {
   @include container;
@@ -41,9 +39,6 @@
 
 // === Media ===
 @media screen and (min-width: 1440px) and (max-width: 1920px) {
-  .container {
-    @include container-1440;
-  }
   .navigationInner__logo {
     img {
       width: 112px;
@@ -53,32 +48,32 @@
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
-    // .container {
-    //   @include container-934px;
-    // }
-
-    .navigationLinks {
-      column-gap: 33px;
-    
-      &__link {
-        font-size: 16.925px;
-        line-height: 87.02%;
-      }
-    }
-
-    .navigationInner__logo {
-      img {
-        width: 108px;
-        height: 105px;
-      }
-    }
-
-    .entranceBtn {
+  .navigationWrapper {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  .navigationLinks {
+    column-gap: 33px;
+  
+    &__link {
       font-size: 16.925px;
+      line-height: 87.02%;
+    }
+  }
+
+  .navigationInner__logo {
+    img {
+      width: 108px;
+      height: 105px;
+    }
+  }
+
+  .entranceBtn {
+    font-size: 16.925px;
     line-height: 87.02%;
     padding: 6.34688px 19.7458px 7.75729px;
     height: auto;
-    }
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -103,13 +98,8 @@
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
   .navigationWrapper {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 22px 30px 0 30px;
   }
-
-  // .container {
-  //   @include container-580px;
-  // }
 
   .navigationInner__vk {
     width: 50px;
@@ -130,22 +120,11 @@
     width: 121.38px;
     height: 87.17px;
   }
-
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 639px) {
   .navigationWrapper {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  // .container {
-  //   @include container-mobile;
-  // }
-
-  .navigationInner__vk {
-    width: 39px;
-    height: 39px;
+    padding: 15px 15px 0 15px;
   }
 
   .burgerMenu {
@@ -157,9 +136,23 @@
       border-radius: 30px;
     }
   }
+
+  .navigationInner__vk {
+    width: 39px;
+    height: 39px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
   .navigationInner__logo img {
     width: 94.24px;
     height: 67.69px;
   }
+}
 
+@media screen and (max-width: 479px) {
+  .navigationInner__logo img {
+    width: 75.44px;
+    height: 54.18px;
+  }
 }

@@ -165,12 +165,8 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .primaryViewWrapper {
-  margin-bottom: 184px;
-
+    margin-bottom: 184px;
   }
-  // .container {
-  //   @include container-934px;
-  // }
 
   .primaryViewInner {
     column-gap: 20px;
