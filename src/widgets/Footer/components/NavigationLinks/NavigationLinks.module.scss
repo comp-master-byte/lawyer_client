@@ -62,6 +62,11 @@
   .navigationLinksWrapper {
     width: 100%;
     height: auto;
+
+    .person {
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      left: 42.5%;
+    }
   }
 }
 
@@ -77,8 +82,6 @@
       .person {
         width: 173.87px;
         height: 228.16px;
-        left: 42.5%;
-        transform: matrix(-1, 0, 0, 1, 0, 0);
       }
   }
 
@@ -91,13 +94,19 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) and (max-width: 639px) {
   .navigationLinksWrapper {
-    width: 100%;
-    height: auto;
-    padding: 35px 34px 104px 33px;
+    padding: 35px 34px 54px 33px;
     border-radius: 30px;
-    transform: translateY(-50px);
+
+    .pointer {
+      width: 56px;
+      height: 56px;
+    }
+    .person {
+      width: 135px;
+      height: 177.15px;
+    }
   }
 
   .navigationLinks {

@@ -101,12 +101,10 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) and (max-width: 639px) {
   .contactsAndLinksWrapper {
     border-radius: 30px;
-    padding: 40px 23px 85px 33px;
-    transform: translateY(-100px);
-    z-index: 3;
+    padding: 42px 34px 85px 33px;
   }
 
   .linksAndEmails {

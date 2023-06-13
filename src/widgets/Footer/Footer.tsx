@@ -3,7 +3,6 @@ import styles from "./Footer.module.scss";
 import SupportedBy from "./components/SupportedBy/SupportedBy";
 import NavigationLinks from "./components/NavigationLinks/NavigationLinks";
 import ContactsAndLinks from "./components/ContactsAndLinks/ContactsAndLinks";
-import yuraMobileSvg from "./assets/footer-yura-mobile.svg";
 
 const Footer: React.FC = React.memo(function Footer() {
   return (
@@ -15,7 +14,6 @@ const Footer: React.FC = React.memo(function Footer() {
           <ContactsAndLinks />
         </div>
       </div>
-      {/* <img src={yuraMobileSvg} className={styles.yuraMobile} alt="" /> */}
     </footer>
   );
 });

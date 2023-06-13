@@ -52,23 +52,6 @@
 @media screen and (max-width: 480px) {
   .footer {
     padding: 0 15px;
-    height: 639px;
-    overflow: hidden;
-
-    &__yura {
-      display: none;
-    }
-  }
-  
-  .container {
-    @include container-mobile;
   }
 
-  .yuraMobile {
-    display: inline-block;
-    position: absolute;
-    bottom: 268px;
-    left: 195px;
-    z-index: 2;
-  }
 }
