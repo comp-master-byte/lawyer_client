@@ -13,7 +13,7 @@ const NavigationLinks: React.FC = React.memo(function NavigationLinks() {
         <li className={styles.link}>Категории и темы</li>
         <li className={styles.link}>Контакты</li>
       </ul>
-      <img src={toTop} alt="" />
+      <img className={styles.pointer} src={toTop} alt="" />
     </div>
   );
 });

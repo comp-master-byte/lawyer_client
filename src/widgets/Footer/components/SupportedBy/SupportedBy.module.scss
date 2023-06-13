@@ -38,6 +38,37 @@
   display: none;
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .supportedByWrapper {
+    height: 241px;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+
+    &::before {
+      border-radius: 35px 35px 0px 0px;
+    }
+
+    &__logo {
+      width: 115.33px;
+      height: 82.84px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 87.02%;
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+
+    .fsi {
+      width: 104px;
+      height: 50px;
+    }
+  }
+
+}
+
 @media screen and (max-width: 480px) {
   .supportedByWrapper {
     width: 100%;

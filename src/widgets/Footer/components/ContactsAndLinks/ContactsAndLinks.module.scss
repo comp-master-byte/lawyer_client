@@ -54,6 +54,40 @@
   }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .contactsAndLinksWrapper {
+    height: 241px;
+    border-radius: 35px 35px 0px 0px;
+    padding: 27px 25px 0 31px;
+  }
+
+  .linksAndEmails {
+    margin-bottom: 43px;
+  }
+
+  .socials {
+    width: 39px;
+    height: 39px;
+  }
+
+  .emailsText {
+    &__paragraph {
+      font-size: 15px;
+      line-height: 87.02%;
+      /* identical to box height, or 13px */
+    }
+  }
+
+  .userRigths {
+    &__paragraph, &__year {
+      font-size: 15px;
+      line-height: 87.02%;
+      /* identical to box height, or 13px */  
+    }
+  }
+
+}
+
 @media screen and (max-width: 480px) {
   .contactsAndLinksWrapper {
     width: 100%;

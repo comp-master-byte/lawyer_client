@@ -18,8 +18,20 @@
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .footer {
+    padding: 0 60px;
+  }
   .container {
     @include container-1440;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .footer {
+    padding: 0 45px;
+  }
+  .footerContent {
+    column-gap: 15px;
   }
 }
 

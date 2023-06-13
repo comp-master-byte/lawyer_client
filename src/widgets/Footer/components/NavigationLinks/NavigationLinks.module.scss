@@ -33,6 +33,30 @@
   }
 }
 
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .navigationLinksWrapper {
+    padding: 27px 31px 0 31px;
+  border-radius: 35px 35px 0px 0px;
+    height: 241px;
+    .pointer {
+      width: 39.62px;
+      height: 39.62px;
+    }
+    .person {
+      width: 142.35px;
+      height: 186.8px;
+      right: -75px;
+    }
+  }
+  .navigationLinks {
+    row-gap: 11px;
+    .link {
+      font-size: 15px;
+      line-height: 87.02%;
+    }
+  }
+}
+
 @media screen and (max-width: 480px) {
   .navigationLinksWrapper {
     width: 100%;
