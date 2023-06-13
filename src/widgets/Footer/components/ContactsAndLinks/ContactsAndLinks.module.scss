@@ -85,13 +85,24 @@
       /* identical to box height, or 13px */  
     }
   }
+}
 
+@media screen and (max-width: 1023px) {
+  .contactsAndLinksWrapper {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  .contactsAndLinksWrapper {
+    padding: 54px 43px 74px 42px;
+      border-radius: 38.6379px 38.6379px 0px 0px;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .contactsAndLinksWrapper {
-    width: 100%;
-    height: auto;
     border-radius: 30px;
     padding: 40px 23px 85px 33px;
     transform: translateY(-100px);

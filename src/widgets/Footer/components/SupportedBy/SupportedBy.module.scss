@@ -66,15 +66,49 @@
       height: 50px;
     }
   }
+}
 
+@media screen and (max-width: 1023px) {
+  .supportedByWrapper {
+      width: 100%;
+      flex-direction: row;
+      height: auto;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  .supportedByWrapper {
+    padding: 48px 43px 38px 20px;
+    align-items: center;
+    justify-content: space-between;
+
+    &::before {
+      border-radius: 38px 38px 0px 0px;
+    }
+
+    &__logo {
+      width: 131.82px;
+      height: 96.2px;
+      margin-right: 0;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 87.02%;
+      margin: 0 36px;
+    }
+
+    .fsi {
+      width: 151px;
+      height: 74px;
+      align-self: flex-end;
+    }
+  }
 }
 
 @media screen and (max-width: 480px) {
   .supportedByWrapper {
-    width: 100%;
-    flex-direction: row;
     padding: 37px 0 80px 0;
-    height: auto;
 
     &::before {
       border-radius: 30px 30px 0px 0px;

@@ -36,7 +36,7 @@
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .navigationLinksWrapper {
     padding: 27px 31px 0 31px;
-  border-radius: 35px 35px 0px 0px;
+    border-radius: 35px 35px 0px 0px;
     height: 241px;
     .pointer {
       width: 39.62px;
@@ -52,6 +52,40 @@
     row-gap: 11px;
     .link {
       font-size: 15px;
+      line-height: 87.02%;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1023px) {
+  .navigationLinksWrapper {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  .navigationLinksWrapper {
+      border-radius: 38.6379px 38.6379px 0px 0px;
+      padding: 53px 43px 83px 42px;
+
+      .pointer {
+        width: 72.12px;
+        height: 72.12px;
+      }
+      .person {
+        width: 173.87px;
+        height: 228.16px;
+        left: 42.5%;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+      }
+  }
+
+  .navigationLinks {
+    row-gap: 22px;
+    .link {
+      font-size: 22px;
       line-height: 87.02%;
     }
   }

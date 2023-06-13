@@ -35,6 +35,20 @@
   }
 }
 
+@media screen and (max-width: 1023px) {
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .footer {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  
+}
+
 @media screen and (max-width: 480px) {
   .footer {
     padding: 0 15px;
@@ -48,10 +62,6 @@
   
   .container {
     @include container-mobile;
-  }
-
-  .footerContent {
-    flex-direction: column;
   }
 
   .yuraMobile {
