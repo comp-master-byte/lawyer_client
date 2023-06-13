@@ -1,6 +1,7 @@
 @import "../../../../app/styles/exports";
 
 .navigationLinksWrapper {
+  position: relative;
   width: 509px;
   height: 341px;
   background: $blueLinear-color;
@@ -9,6 +10,12 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+}
+
+.person {
+  position: absolute;
+  bottom: 0;
+  right: -110px;
 }
 
 .navigationLinks {

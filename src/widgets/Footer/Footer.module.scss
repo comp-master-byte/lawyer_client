@@ -5,13 +5,7 @@
 }
 
 .footer {
-  position: relative;
-  
-  &__yura {
-    position: absolute;
-    right: 37%;
-    bottom: 0;
-  }
+  padding: 0 30px;
 }
 
 .footerContent {
@@ -23,7 +17,7 @@
   display: none;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
   .container {
     @include container-1440;
   }
