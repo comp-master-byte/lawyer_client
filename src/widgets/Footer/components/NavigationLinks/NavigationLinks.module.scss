@@ -94,10 +94,22 @@
   }
 }
 
+@media screen and (max-width: 639px) {
+  .navigationLinksWrapper {
+    border-radius: 30px;
+  }
+
+  .navigationLinks {
+    .link {
+      font-size: 18px;
+      line-height: 16px;
+    }
+  }
+}
+
 @media screen and (min-width: 480px) and (max-width: 639px) {
   .navigationLinksWrapper {
     padding: 35px 34px 54px 33px;
-    border-radius: 30px;
 
     .pointer {
       width: 56px;
@@ -108,11 +120,19 @@
       height: 177.15px;
     }
   }
+}
 
-  .navigationLinks {
-    .link {
-      font-size: 18px;
-      line-height: 16px;
+@media screen and (max-width: 479px) {
+  .navigationLinksWrapper {
+    padding: 30px 19px 77px 20px;
+
+    .pointer {
+      width: 47px;
+      height: 47px;
     }
-  }
+    .person {
+      width: 122.81px;
+      height: 161.15px;
+    }
+  }  
 }
