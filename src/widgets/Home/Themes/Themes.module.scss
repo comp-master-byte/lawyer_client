@@ -14,7 +14,16 @@
     background: $blueLinear-color;
     border-radius: 50px;
     margin-top: 64px;
+    overflow: hidden;
   }
+}
+
+.line {
+  position: absolute;
+  left: 2px;
+  top: 0;
+  width: 100%;
+    height: auto;
 }
 
 .question__1 {
@@ -336,6 +345,11 @@
     .themesContent {
       height: 906px;
     }
+  }
+
+  .line {
+    width: 100%;
+    height: auto;
   }
 
   .question__1 {

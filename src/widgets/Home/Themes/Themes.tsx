@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Themes.module.scss";
 import ThemeQuestion from "./components/themeQuestion/ThemeQuestion";
 import SectionTitle from "../../../shared/Styled-Components/SectionTitle/SectionTitle";
+import line from "./assets/line.svg";
 
 const Themes: React.FC = React.memo(function Themes() {
   return (
@@ -9,6 +10,7 @@ const Themes: React.FC = React.memo(function Themes() {
       <SectionTitle>Категории и темы</SectionTitle>
       <div className={styles.container}>
         <div className={styles.themesContent}>
+          <img src={line} className={styles.line} alt="" />
           <ThemeQuestion 
               question="Трудовое право" 
               questionType="blue" 
@@ -68,7 +70,7 @@ const Themes: React.FC = React.memo(function Themes() {
             questionClassName={styles.question__10} 
           />
           <ThemeQuestion 
-            question={`Административная\nотвественность`}
+            question={`Административная\nответственность`}
             questionType="orange" 
             questionClassName={styles.question__11} 
           />
