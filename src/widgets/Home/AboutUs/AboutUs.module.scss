@@ -91,8 +91,9 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 479px) {
   .aboutUsWrapper {
+    display: none;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 60px;
@@ -103,5 +104,4 @@
       margin-bottom: 70px;
     }
   }
-
 }
