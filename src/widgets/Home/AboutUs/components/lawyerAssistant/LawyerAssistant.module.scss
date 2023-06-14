@@ -163,7 +163,7 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) and (max-width: 639px) {
   .lawyerAssistantWrapper {
     width: 100%;
     height: 446px;

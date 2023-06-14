@@ -1,19 +1,17 @@
 @import "../../../app/styles/exports";
 
 .aboutUsWrapper {
-  padding-bottom: 145px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 0px 60px 0 60px;
 }
 
 .container {
   @include container;
 }
 
-// .titleText {
-//   width: 1081px;
-//   margin: 0 auto;
-// }
+.titleText {
+  width: 1081px;
+  margin: 0 auto;
+}
 
 .aboutUsInner {
   &__title {
@@ -48,6 +46,13 @@
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .aboutUsWrapper {
+    padding: 45px 45px 0 45px;
+  }
+  .titleText {
+    width: 764.07px;
+    margin: 0 auto;
+  }
   .aboutUsInner {
     .aboutUsCards {
       margin-top: 80px;
@@ -81,7 +86,7 @@
   }
 
   .titleText {
-    // width: 579.57px;
+    width: 579.57px;
   }
 
   .aboutUsInner {
@@ -91,12 +96,13 @@
   }
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (min-width: 480px) and (max-width: 639px) {
   .aboutUsWrapper {
-    display: none;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 60px;
+    padding: 0 15px 60px 15px;
+  }
+
+  .titleText {
+    width: 450px;
   }
   
   .aboutUsInner {
@@ -104,4 +110,8 @@
       margin-bottom: 70px;
     }
   }
+}
+
+@media screen and (max-width: 479px) {
+  
 }
