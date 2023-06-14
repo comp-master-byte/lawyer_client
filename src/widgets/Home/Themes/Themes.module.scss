@@ -216,6 +216,15 @@
   }
 }
 
+
+@media screen and (max-width: 1439px) {
+  .themesWrapper {
+    .themesContent {
+      margin-top: 40px;
+    }
+  }
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .question__1 {
     left: 48px;
@@ -314,7 +323,127 @@
     margin-bottom: 40px;
     .themesContent {
       height: 528px;
-      margin-top: 40px;
     }
+  }
+}
+
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  .themesWrapper {
+    padding: 0 30px;
+    margin-bottom: 50px;
+
+    .themesContent {
+      height: 906px;
+    }
+  }
+
+  .question__1 {
+    left: 57px;
+    top: 29px;
+  }
+
+  .question__2 {
+    left: auto;
+    top: 26px;
+    right: 70px;
+  }
+
+  .question__3 {
+    right: 58px;
+    top: 129px;
+    transform: rotate(0.15deg);
+  }
+
+  .question__4 {
+    left: 32px;
+    right: auto;
+    top: 114px;
+    transform: rotate(0deg);
+  }
+
+  .question__5 {
+    left: auto;
+    right: 20px;
+    top: 199px;
+    transform: rotate(4deg);
+  }
+
+  .question__12 {
+    left: 80px;
+    top: 208px;
+    transform: rotate(-2deg);
+  }
+  
+  .question__6 {
+    right: 40px;
+    top: 280px;
+    transform: rotate(-3deg);
+  }
+  
+  .question__7 {
+    left: 41px;
+    top: 362px;
+    transform: rotate(-3deg);
+  }
+
+  .question__8 {
+    left: 40px;
+    right: auto;
+    top: 286px;
+    transform: rotate(-6deg);
+  }
+  
+  .question__9 {
+    left: auto;
+    right: 29px;
+    top: 500px;
+    transform: rotate(2.55deg);
+  }
+  
+  .question__10 {
+    right: 62px;
+    top: 376px;
+    transform: rotate(-4.69deg);
+  }
+  
+  .question__11 {
+    left: 22px;
+    top: 464px;
+    transform: rotate(7deg);
+  }
+  
+  .question__20 {
+    left: auto;
+    right: 65px;
+    bottom: 197px;
+  }
+  
+  .question__21 {
+    left: auto;
+    right: 69px;
+    bottom: 127px;
+    transform: rotate(0deg);
+  }
+  
+  .question__22 {
+    right: 152px;
+    bottom: 40px;
+    left: auto;
+    transform: rotate(1.66deg);
+  }
+  
+  .question__23 {
+    right: auto;
+    left: 31px;
+    bottom: 224px;
+    transform: rotate(-1.61deg);
+  }
+  
+  .question__24 {
+    right: auto;
+    left: 23px;
+    bottom: 100px;
+    transform: rotate(-6deg);
   }
 }
