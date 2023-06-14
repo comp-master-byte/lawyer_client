@@ -6,11 +6,6 @@ interface ThemeQuestionProps {
   questionType: "orange"|"blue";
   question: string;
   questionClassName: string;
-  // angle: number;
-  // top?: number;
-  // right?: number;
-  // bottom?: number;
-  // left?: number;
 }
 
 const ThemeQuestion: React.FC<ThemeQuestionProps> = React.memo(
@@ -18,15 +13,9 @@ const ThemeQuestion: React.FC<ThemeQuestionProps> = React.memo(
     questionType,
     question,
     questionClassName
-    // angle,
-    // top,
-    // right,
-    // bottom,
-    // left,
   }) {
     return (
       <div
-        // style={{ transform: `rotate(${angle}deg)`, top, right, bottom, left }}
         className={classNames(styles.questionWrapper, questionClassName, {
           [styles.orange]: questionType === "orange",
           [styles.blue]: questionType === "blue",

@@ -49,3 +49,17 @@
     background-color: $blue-color;
   }
 }
+
+@media screen and (max-width: 1439px) {
+  .questionWrapper {
+    padding: 12px 16px;
+    border-radius: 18px;
+    .questionText {
+      font-size: 22px;
+      line-height: 87.02%;
+    }
+    .questionIcon {
+      display: none;
+    }
+  }
+}

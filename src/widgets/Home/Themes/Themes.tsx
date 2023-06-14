@@ -2,11 +2,12 @@ import React from "react";
 import styles from "./Themes.module.scss";
 import ThemeQuestion from "./components/themeQuestion/ThemeQuestion";
 import { questions } from "./lib/mocks/questions";
+import SectionTitle from "../../../shared/Styled-Components/SectionTitle/SectionTitle";
 
 const Themes: React.FC = React.memo(function Themes() {
   return (
     <div className={styles.themesWrapper}>
-      <h1 className={styles.themesWrapper__title}>Категории и темы</h1>
+      <SectionTitle>Категории и темы</SectionTitle>
       <div className={styles.container}>
         <div className={styles.themesContent}>
           <ThemeQuestion 

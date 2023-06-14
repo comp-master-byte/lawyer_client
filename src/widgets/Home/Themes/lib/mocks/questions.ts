@@ -77,7 +77,7 @@ export const questions: Question[] = [
   },
 
   {
-    id: 9,
+    id: 8,
     question: "Ипотека",
     questionType: "orange",
     angle: -6,
@@ -85,7 +85,7 @@ export const questions: Question[] = [
     top: 285,
   },
   {
-    id: 10,
+    id: 9,
     question: "Страхование\n(включая\nавтострахование)",
     questionType: "blue",
     angle: -5,
@@ -93,7 +93,7 @@ export const questions: Question[] = [
     top: 310,
   },
   {
-    id: 11,
+    id: 10,
     question: "Процедура\nрегистрации ИП\nи юрлиц",
     questionType: "orange",
     angle: -4.69,
@@ -101,7 +101,7 @@ export const questions: Question[] = [
     right: 433,
   },
   {
-    id: 12,
+    id: 11,
     question: "Административная\nотвественность",
     questionType: "orange",
     angle: 7,
@@ -109,7 +109,7 @@ export const questions: Question[] = [
     top: 330,
   },
   {
-    id: 13,
+    id: 20,
     question: "Пенсионное\nобеспечение",
     questionType: "orange",
     angle: 5,
@@ -117,7 +117,7 @@ export const questions: Question[] = [
     bottom: 145,
   },
   {
-    id: 14,
+    id: 21,
     question: "Туризм",
     questionType: "blue",
     angle: 0,
@@ -125,7 +125,7 @@ export const questions: Question[] = [
     bottom: 54,
   },
   {
-    id: 15,
+    id: 22,
     question: "Налоговое\nправо",
     questionType: "orange",
     angle: 8,
@@ -133,7 +133,7 @@ export const questions: Question[] = [
     bottom: 115,
   },
   {
-    id: 16,
+    id: 23,
     question: "Правовые аспекты \nкредитования",
     questionType: "blue",
     angle: 3,
@@ -141,7 +141,7 @@ export const questions: Question[] = [
     bottom: 157,
   },
   {
-    id: 17,
+    id: 24,
     question: "Льготы отдельным\nкатегориям граждан",
     questionType: "orange",
     angle: -6,
