@@ -2,8 +2,7 @@ import React from "react";
 import MyButton from "../../../shared/UI/MyButton/MyButton";
 import styles from "./PrimaryView.module.scss";
 import pointer from "./assets/pointer.svg";
-import human from "./assets/yura.png";
-import humanMobile from "./assets/yura_primary_mobile.svg";
+import bigHuman from "./assets/big-yura.svg";
 import classNames from "classnames";
 
 const PrimaryView: React.FC = React.memo(function PrimaryView() {
@@ -60,12 +59,11 @@ const PrimaryView: React.FC = React.memo(function PrimaryView() {
               </MyButton>
           </div>
           <img
-            src={human}
+            src={bigHuman}
             className={styles.primaryViewInner__human}
             alt="human"
           />
 
-          <img src={humanMobile} className={styles.humanMobile} alt="" />
 
         </div>
       </div>
