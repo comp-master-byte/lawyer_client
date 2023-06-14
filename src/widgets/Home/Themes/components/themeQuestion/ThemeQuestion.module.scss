@@ -87,3 +87,15 @@
     }
   }
 }
+
+@media screen and  (max-width: 479px) {
+  .questionWrapper {
+    padding: 11px 15px;
+    border-radius: 18px;
+
+    .questionText {
+      font-size: 16px;
+      line-height: 87.02%;
+    }
+  }
+}
