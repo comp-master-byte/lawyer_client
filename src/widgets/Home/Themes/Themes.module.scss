@@ -21,14 +21,201 @@
   }
 }
 
-@media screen and (max-width: 1440px) {
+.question__1 {
+    left: 37px;
+    top: 29px;
+    transform: rotate(5deg);
+}
+
+.question__2 {
+  left: 376px;
+  top: 38px;
+  transform: rotate(-11deg);
+}
+
+.question__3 {
+  right: 366px;
+  top: 32px;
+  transform: rotate(0deg);
+}
+
+.question__4 {
+  right: 14px;
+  top: 60px;
+  transform: rotate(9deg);
+}
+
+.question__5 {
+  left: 21px;
+  top: 125px;
+  transform: rotate(4deg);
+}
+
+.question__6 {
+  right: 393px;
+  top: 140px;
+  transform: rotate(-3deg);
+}
+
+.question__7 {
+  right: 100px;
+  top: 190px;
+  transform: rotate(-4deg);
+}
+
+.question__8 {
+  left: 30px;
+  top: 285px;
+  transform: rotate(-6deg);
+}
+
+.question__9 {
+  left: 255px;
+  top: 310px;
+  transform: rotate(-5deg);
+}
+
+.question__10 {
+  right: 433px;
+  top: 260px;
+  transform: rotate(-4.69deg);
+}
+
+.question__11 {
+  right: 36px;
+  top: 330px;
+  transform: rotate(7deg);
+}
+
+.question__12 {
+  left: 256px;
+  top: 220px;
+  transform: rotate(-2deg);
+}
+
+.question__20 {
+  left: 10px;
+  bottom: 145px;
+  transform: rotate(5deg);
+}
+
+.question__21 {
+  left: 256px;
+  bottom: 54px;
+  transform: rotate(0deg);
+}
+
+.question__22 {
+  left: 455px;
+  bottom: 115px;
+  transform: rotate(8deg);
+}
+
+.question__23 {
+  right: 300px;
+  bottom: 157px;
+  transform: rotate(3deg);
+}
+
+.question__24 {
+  right: 42px;
+  bottom: 50px;
+  transform: rotate(-6deg);
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
   .container {
     @include container-1440;
   }
-}
+  
+  .question__1 {
+    left: 133px;
+    top: 32px;
+  }
 
-@media screen and (max-width: 480px) {
+  .question__2 {
+    left: 465px;
+    top: 40px;
+  }
+
+  .question__3 {
+    right: 190px;
+    top: 33px;
+  }
+
+  .question__4 {
+    right: 28px;
+    top: 149px;
+  }
+
+  .question__5 {
+    left: 80px;
+    top: 165px;
+  }
+  
+  .question__6 {
+    right: 442px;
+    top: 170px;
+  }
+  
+  .question__7 {
+    right: 35px;
+    top: 290px;
+  }
+
+  .question__8 {
+    left: 30px;
+    top: 360px;
+  }
+  
+  .question__9 {
+    left: 280px;
+    top: 389px;
+  }
+  
+  .question__10 {
+    right: 350px;
+    top: 280px;
+  }
+  
+  .question__11 {
+    right: 75px;
+    top: 425px;
+  }
+  
+  .question__12 {
+    left: 251px;
+    top: 289px;
+  }
+
+  .question__20 {
+    left: 45px;
+    bottom: 135px;
+  }
+  
+  .question__21 {
+    left: 258px;
+    bottom: 0px;
+  }
+  
+  .question__22 {
+    left: 400px;
+    bottom: 80px;
+  }
+  
+  .question__23 {
+    right: 280px;
+    bottom: 140px;
+  }
+  
+  .question__24 {
+    right: 60px;
+    bottom: 0px;
+  }
+
   .themesWrapper {
-    display: none;
+    .themesContent {
+      height: 762px;
+    }
   }
 }

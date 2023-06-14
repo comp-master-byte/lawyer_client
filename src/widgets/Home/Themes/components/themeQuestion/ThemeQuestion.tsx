@@ -3,29 +3,31 @@ import styles from "./ThemeQuestion.module.scss";
 import classNames from "classnames";
 
 interface ThemeQuestionProps {
-  questionType: string;
+  questionType: "orange"|"blue";
   question: string;
-  angle: number;
-  top?: number;
-  right?: number;
-  bottom?: number;
-  left?: number;
+  questionClassName: string;
+  // angle: number;
+  // top?: number;
+  // right?: number;
+  // bottom?: number;
+  // left?: number;
 }
 
 const ThemeQuestion: React.FC<ThemeQuestionProps> = React.memo(
   function ThemeQuestion({
     questionType,
     question,
-    angle,
-    top,
-    right,
-    bottom,
-    left,
+    questionClassName
+    // angle,
+    // top,
+    // right,
+    // bottom,
+    // left,
   }) {
     return (
       <div
-        style={{ transform: `rotate(${angle}deg)`, top, right, bottom, left }}
-        className={classNames(styles.questionWrapper, {
+        // style={{ transform: `rotate(${angle}deg)`, top, right, bottom, left }}
+        className={classNames(styles.questionWrapper, questionClassName, {
           [styles.orange]: questionType === "orange",
           [styles.blue]: questionType === "blue",
         })}
