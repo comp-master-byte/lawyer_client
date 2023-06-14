@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./LawyerAssistant.module.scss";
 import assistant from "./assets/assistant.svg";
-import mobileAssistantSvg from "./assets/yura-mobile.svg";
+import mobileAssistantSvg from "../../assets/yura-mobile.svg"
 
 const LawyerAssistant: React.FC = React.memo(function LawyerAssistant() {
   return (

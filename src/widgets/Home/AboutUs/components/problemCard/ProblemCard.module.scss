@@ -116,12 +116,11 @@
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 639px) {
+@media screen and (max-width: 639px) {
   .problemCardWrapper {
     width: 100%;
     height: 100%;
     margin-top: 70px;
-    padding: 30px 30px 48px 33px;
 
     &__text {
       @include home-card-text-mobile;
@@ -139,7 +138,6 @@
     }
 
     .problemCardTitle {
-      margin-bottom: 8px;
       &__label {
         @include home-card-label-mobile;
       }
@@ -147,6 +145,44 @@
       img {
         width: 44px;
         height: 44px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .problemCardWrapper {
+    padding: 30px 30px 48px 33px;
+
+    &__text {
+      @include home-card-text-mobile;
+      max-width: 348px;
+    }
+
+    .problemCardTitle {
+      margin-bottom: 8px;
+      img {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .problemCardWrapper {
+    padding: 25px 20px 50px 20px;
+
+    &__text {
+      font-size: 16px;
+      line-height: 105%;
+    }
+
+    .problemCardTitle {
+      margin-bottom: 25px;
+      img {
+        width: 40px;
+        height: 40px;
       }
     }
   }

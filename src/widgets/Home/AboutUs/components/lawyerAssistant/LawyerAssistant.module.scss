@@ -142,7 +142,7 @@
 
     .lawyerMobile {
       right: -30px;
-      top: -20px;
+      top: -35px;
       z-index: 0;
     }
     .lawyerAssistantCards {
@@ -163,20 +163,26 @@
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 639px) {
+@media screen and (max-width: 639px) {
   .lawyerAssistantWrapper {
     width: 100%;
-    height: 446px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .lawyerAssistantWrapper {
+    height: 446px;  
     margin-top: 84px;
 
     .lawyerMobile {
+      width: 536.93px;
+      height: 464.35px;
       right: -15px;
       top: -20px;
       z-index: 0;
     }
 
     .lawyerAssistantCards {
-  
       .lawyerTopCard {
         @include card-mobile;
       }
@@ -186,6 +192,45 @@
         height: 113px;
         transform: translateY(0px);
         z-index: 3;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .lawyerAssistantWrapper {
+    background-color: #fff;
+    height: auto;
+    &__assistant {
+      display: inline-block;
+      width: 296px;
+      height: 255.99px;
+      top: -100%;
+      left: 68px;
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    .lawyerMobile {
+      display: none;  
+    }
+
+    .lawyerAssistantCards {
+      margin-top: 315px;
+      .lawyerTopCard {
+        width: 100%;
+        height: 111px;
+        padding: 23px 36px 24px 19px;
+        font-size: 18px;
+        line-height: 90%; 
+        border-radius: 30px
+      }
+
+      .lawyerBottomCard {
+        width: 100%;
+        height: 101px;
+        padding: 17px 31px 14px 20px;
+        font-size: 18px;
+        line-height: 90%; 
+        border-radius: 30px;
       }
     }
   }

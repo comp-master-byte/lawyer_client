@@ -96,15 +96,11 @@
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 639px) {
+@media screen and (max-width: 639px) {
   .aboutUsWrapper {
     padding: 0 15px 60px 15px;
   }
 
-  .titleText {
-    width: 450px;
-  }
-  
   .aboutUsInner {
     .aboutUsCards {
       margin-bottom: 70px;
@@ -112,6 +108,14 @@
   }
 }
 
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .titleText {
+    width: 450px;
+  }
+}
+
 @media screen and (max-width: 479px) {
-  
+  .titleText {
+    width: 351px;
+  }
 }
