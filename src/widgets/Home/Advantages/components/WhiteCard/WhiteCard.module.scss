@@ -38,7 +38,15 @@
     line-height: 90%;
     padding-bottom: 30px;
   }
+}
 
+@media screen and (max-width: 639px) {
+  .whiteCardWrapper {
+    font-size: 18px;
+    line-height: 90%;
+    padding: 19px 21px 21px 22px;
+    border-radius: 30px;
+  }
 }
 
 @media screen and (max-width: 480px) {

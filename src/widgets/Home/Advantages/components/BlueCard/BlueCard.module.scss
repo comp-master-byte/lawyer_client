@@ -27,8 +27,6 @@
     font-size: 18px;
     line-height: 105%;
     height: 138px;
-    
-    /* or 19px */
   }
 }
 
@@ -43,7 +41,15 @@
     font-size: 18px;
     line-height: 105%;
     padding-bottom: 45px;
-/* or 20px */
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .blueCardWrapper {
+    font-size: 18px;
+    line-height: 90%;
+    padding: 16px 21px 32px 22px;
+    border-radius: 30px;
   }
 }
 
