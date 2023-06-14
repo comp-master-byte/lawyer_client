@@ -66,8 +66,6 @@
   .questionWrapper {
     padding: 12px 16px;
     border-radius: 18px;
-    
-
   }
 }
 
@@ -75,5 +73,17 @@
   .questionWrapper {
     padding: 14px 20px;
     border-radius: 23px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .questionWrapper {
+    padding: 12px 16px;
+    border-radius: 18px;
+
+    .questionText {
+      font-size: 18px;
+      line-height: 87.02%;
+    }
   }
 }
