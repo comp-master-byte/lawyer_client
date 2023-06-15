@@ -88,15 +88,33 @@
     display: flex;
     flex-direction: column;
     margin-right: 45px;
+    z-index: 10;
 
     &__line {
       background-color: $blue-color;
     }
   }
 
+  .openedNavigationBurgerMenu {
+      .line1 {
+        transform: rotate(225deg);
+        transition: all .25s;
+        margin-bottom: -12px;
+      }
+      .line2 {
+        transform: translateX(-10px);
+        opacity: 0;
+      }
+      .line3 {
+        transform: rotate(-225deg);
+        transition: all .25s;
+        margin-top: -12px;
+      }
+  }
+
   .navigationLinks {
-    display: flex;
-    padding: 33px 14px 0 55px;
+    display: inline-flex;
+    padding: 105px 14px 0 55px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -106,11 +124,10 @@
     row-gap: 30px;
     z-index: 10;
     transition: all .5s;
-    // transform: translateX(0);
-    // transform: translateX(calc(-100% - 100px));
     &__link {
       font-size: 24px;
       line-height: 87.02%;
+      max-width: fit-content;
     }
   }
 
@@ -129,8 +146,7 @@
   }
 
   .closeNavigationMobileButton {
-    display: block;
-    display: flex;
+    // display: flex;
     justify-content: flex-end;
   }
 

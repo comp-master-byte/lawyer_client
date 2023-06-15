@@ -4,7 +4,6 @@ import MyButton from "../../shared/UI/MyButton/MyButton";
 import logo from "./assets/logo.svg";
 import vk from "./assets/vk.svg";
 import { useNavigation } from "./lib/hooks/useNavigation";
-import closeSvg from "./assets/close.svg";
 import classNames from "classnames";
 
 const Navigation: React.FC = React.memo(function Navigation() {
@@ -32,9 +31,6 @@ const Navigation: React.FC = React.memo(function Navigation() {
             [styles.activeMobileNavigation]: isNavigationMobileVisible,
             [styles.closedMobileNavigation]: !isNavigationMobileVisible
           })}>
-            <div className={styles.closeNavigationMobileButton} onClick={closeMobileNavigation}>
-                <img src={closeSvg} alt="" />
-            </div>
             <div
               className={styles.navigationLinks__link}
               onClick={scrollToAboutUs}
@@ -63,10 +59,12 @@ const Navigation: React.FC = React.memo(function Navigation() {
               Войти
             </MyButton>
           </div>
-          <div onClick={openMobileMavigation} className={styles.burgerMenu}>
-            <div className={styles.burgerMenu__line}></div>
-            <div className={styles.burgerMenu__line}></div>
-            <div className={styles.burgerMenu__line}></div>
+          <div onClick={isNavigationMobileVisible ? closeMobileNavigation : openMobileMavigation} className={classNames(styles.burgerMenu, {
+            [styles.openedNavigationBurgerMenu]: isNavigationMobileVisible,
+          })}>
+            <div className={classNames(styles.burgerMenu__line, styles.line1)}></div>
+            <div className={classNames(styles.burgerMenu__line, styles.line2)}></div>
+            <div className={classNames(styles.burgerMenu__line, styles.line3)}></div>
           </div>
           <div className={styles.navigationEntrance}>
             <MyButton btnClassName={styles.entranceBtn} color="primary" variant="outlined" size="small">
