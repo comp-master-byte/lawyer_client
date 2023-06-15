@@ -41,7 +41,8 @@
 
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
+  column-gap: 60px;
 
   &__img {
     position: absolute;
@@ -49,6 +50,10 @@
     top: 40px;
     z-index: 2;
   }
+}
+
+.contentLeftColumn {
+  width: 635px;
 }
 
 .leftColumnIcons {
@@ -64,7 +69,6 @@
 
 .contentTitle {
   @include big-text;
-  width: 635px;
   margin-bottom: 6px;
 }
 
@@ -89,14 +93,48 @@
 @media screen and (min-width: 1440px) and (max-width: 1920px) {
   .contactsContent {
     padding: 55px 38px 56px 37px;
-
-    &__img {
-      right: 38px;
-    }
+    column-gap: 87px;
   }
 
   .contentLeftColumn {
     max-width: 585px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .contactsContent {
+    height: auto;
+    padding: 36px 28px 35px 26px;
+    column-gap: 44px;
+  }
+  .contentLeftColumn {
+    max-width: 430px;
+  }
+  
+  .leftColumnIcons {
+    justify-content: flex-start;
+    column-gap: 20px;
+  }
+  .contentTitle {
+    font-size: 28px;
+    line-height: 90%;
+  }
+  .contentParagraph {
+    font-size: 18px;
+    line-height: 105%;
+  }
+
+  .contentRightColumn {
+    &__title {
+      font-size: 28px;
+      line-height: 90%;
+    }
+    &__paragraph {
+      font-size: 18px;
+      line-height: 105%;
+      margin-bottom: 12px;
+      width: 293px;
+    }
   }
 }
 

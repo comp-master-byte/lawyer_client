@@ -16,3 +16,10 @@
     opacity: 0.4;
   }
 }
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .myInput {
+    border-radius: 21.2273px;
+    padding: 15px;
+  }
+}

@@ -9,6 +9,14 @@
   padding: 44px 39px 39px 48px;
   z-index: 10;
   position: relative;
+  z-index: 2;
+
+  &__img {
+    position: absolute;
+    top: -156px;
+    right: 0;
+    z-index: 2;
+  }
 }
 
 .contactInputs {
@@ -54,4 +62,33 @@
 textarea {
   resize: none;
   height: 222px !important;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .contactForm {
+    border-radius: 35.3788px;
+    padding: 33px 26px 28px 26px;
+    height: auto;
+  }
+
+  .contactInputs {
+    row-gap: 10px;
+    &__input {
+      border-radius: 21.2273px;
+      padding: 15px;
+    }
+  }
+
+  .contactParagraph {
+    font-size: 15px;
+    line-height: 100%;
+    margin-bottom: 10px;
+  }
+
+  .submitButton {
+      padding: 0;
+      font-size: 19.8121px;
+      line-height: 87.02%;
+      height: 55.19px;
+  }
 }

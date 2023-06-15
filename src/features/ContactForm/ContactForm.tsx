@@ -3,8 +3,9 @@ import styles from "./ContactForm.module.scss";
 import { useForm, SubmitHandler } from "react-hook-form";
 import MyInput from "../../shared/UI/MyInput/MyInput";
 import MyButton from "../../shared/UI/MyButton/MyButton";
+import yura from "./assets/yura.svg";
 
-type Inputs = {
+interface Inputs {
   name: string;
   email: string;
   message: string;
@@ -22,6 +23,7 @@ const ContactForm: React.FC = React.memo(function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.contactForm}>
+      {/* <img src={yura} className={styles.contactForm__img} alt="" /> */}
       <div className={styles.contactInputs}>
         <input
           defaultValue=""
@@ -48,7 +50,7 @@ const ContactForm: React.FC = React.memo(function ContactForm() {
         <span>политикой конфиденциальности</span>
       </p>
 
-      <MyButton color="primary" variant="contained" size="large">
+      <MyButton btnClassName={styles.submitButton} color="primary" variant="contained" size="large">
         Отправить
       </MyButton>
     </form>
