@@ -98,27 +98,32 @@ textarea {
 }
 
 @media screen and (max-width: 1023px) {
-  
+  .contactForm {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .submitButton {
+    padding: 0;
+  }
 }
 
 @media screen and (min-width: 640px) and (max-width: 1023px) {
   .contactForm {
-    border-radius: 38.6379px;
+    border-radius: 38px;
     padding: 42.5px;
-    width: 100%;
-    max-width: 100%;
   }  
 
   .contactInputs {
     row-gap: 12px;
+
     &__input {
-      border-radius: 25;
+      border-radius: 25px;
       padding: 19px;
       font-size: 18px;
       line-height: 105%;
     }
   }
-
 
   .contactParagraph {
     font-size: 16px;
@@ -127,9 +132,39 @@ textarea {
   }
 
   .submitButton {
-    padding: 0;
     font-size: 23.3973px;
     line-height: 87.02%;
     height: 65.68px;
+  }
 }
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+    .contactForm {
+      border-radius: 30px;
+      padding: 33px;
+    }  
+
+    .contactInputs {
+      row-gap: 10px;
+  
+      &__input {
+        border-radius: 20px;
+        padding: 15px;
+        font-size: 12px;
+        line-height: 105%;
+        height: 46px;
+      }
+    }
+
+    .contactParagraph {
+      font-size: 12px;
+      line-height: 100%;
+      margin-bottom: 13px;
+    }
+
+    .submitButton {
+      font-size: 18.1666px;
+      line-height: 87.02%;
+      height: 51px;
+    }
 }
