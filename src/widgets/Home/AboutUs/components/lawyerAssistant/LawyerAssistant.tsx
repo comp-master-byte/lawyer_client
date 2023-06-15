@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./LawyerAssistant.module.scss";
 import assistant from "./assets/assistant.svg";
-import mobileAssistantSvg from "../../assets/yura-mobile.svg"
+import mobileAssistantSvg from "../../assets/yura-mobile.svg";
+import cloudSvg from "../../assets/cloud.svg";
+import rightCloudSvg from "../../assets/rightCloud.svg";
 
 const LawyerAssistant: React.FC = React.memo(function LawyerAssistant() {
   return (
@@ -16,11 +18,13 @@ const LawyerAssistant: React.FC = React.memo(function LawyerAssistant() {
         alt="assistant"
         className={styles.lawyerMobile}
       />
-      {/* <div className={styles.dialogueCloud}>
-        <p className={styles.dialogueCloudInner}>
-          Меня создал специалист с юридическим образованием и опытом
-        </p>
-      </div> */}
+      <div className={styles.dialogueCloud}>
+          <p className={styles.dialogueCloudInner}>
+            Меня создал специалист <br /> с юридическим <br /> образованием <br /> и опытом
+          </p>
+          <img src={cloudSvg} className={styles.leftImg} alt="" />
+          <img src={rightCloudSvg} className={styles.rightImg} alt="" />
+      </div>
       <div className={styles.lawyerAssistantCards}>
         <div className={styles.lawyerTopCard}>
           Юра от слова “юридический”, это имя нашего юридического

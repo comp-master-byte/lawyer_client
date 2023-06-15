@@ -57,7 +57,28 @@
   }
 }
 
-.lawyerMobile {
+.dialogueCloud {
+  position: absolute;
+  left: 381px;
+  top: -10%;
+
+  p {
+    position: absolute;
+    top: 92px;
+    left: 33px;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 87.02%;
+    text-align: center;
+    letter-spacing: -0.025em;
+    color: #013878;
+    transform: rotate(0.62deg);
+  }
+}
+
+.lawyerMobile,
+.rightImg {
   display: none;
 }
 
@@ -104,6 +125,23 @@
       }
     }
   }
+
+  .dialogueCloud {
+    position: absolute;
+    left: 270px;
+  
+    p {
+      top: 64px;
+      left: 24px;
+      font-size: 15.3585px;
+      line-height: 87.02%;
+    }
+
+    .leftImg {
+      width: 224.45px;
+      height: 206.94px;
+    }
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -134,6 +172,13 @@
       }
     }
   }
+
+  .leftImg {
+    display: none;
+  }
+  .rightImg {
+    display: inline-block;
+  }
 }
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
@@ -159,6 +204,24 @@
         height: 145.54px;
         padding-bottom: 51px;
       }
+    }
+  }
+
+  .dialogueCloud {
+    left: auto;
+    top: -17%;
+    right: 186px;
+  
+    p {
+      top: 85px;
+      left: 34px;
+      font-size: 18px;
+      line-height: 87.02%;
+    }
+
+    .rightImg {
+      width: 276.36px;
+      height: 232.66px;
     }
   }
 }
@@ -194,6 +257,24 @@
         z-index: 3;
       }
     }
+  }      
+
+  .dialogueCloud {
+    left: auto;
+    top: -17%;
+    right: 220px;
+  
+    p {
+      top: 65px;
+      left: 20px;
+      font-size: 15px;
+      line-height: 87.02%;
+    }
+
+    .rightImg {
+      width: 214.58px;
+      height: 180.64px;
+    }
   }
 }
 
@@ -206,7 +287,7 @@
       width: 296px;
       height: 255.99px;
       top: -100%;
-      left: 68px;
+      left: 88px;
       transform: matrix(-1, 0, 0, 1, 0, 0);
     }
     .lawyerMobile {
@@ -215,6 +296,7 @@
 
     .lawyerAssistantCards {
       margin-top: 315px;
+
       .lawyerTopCard {
         width: 100%;
         height: 111px;
@@ -232,6 +314,24 @@
         line-height: 90%; 
         border-radius: 30px;
       }
+    }
+  }
+
+  .dialogueCloud {
+    left: 10px;
+    top: -140%;
+    right: auto;
+  
+    p {
+      top: 65px;
+      left: 10px;
+      font-size: 15px;
+      line-height: 87.02%;
+    }
+
+    .rightImg {
+      width: 201.86px;
+      height: 163.49px;
     }
   }
 }
