@@ -26,17 +26,19 @@ const Contacts: React.FC = React.memo(function Contacts() {
               />
             </div>
 
-            <div className={styles.contentInfoFirst}>
-              <h2 className={styles.contentTitle}>
-                По поводу работы плаформы пишите на
-              </h2>
-              <p className={styles.contentParagraph}>support@juraprav.ru</p>
-            </div>
-            <div className={styles.contentInfoSecond}>
-              <h2 className={styles.contentTitle}>
-                По поводу сотрудничества пишите на
-              </h2>
-              <p className={styles.contentParagraph}>partnership@juraprav.ru</p>
+            <div className={styles.contentInfo}>
+                <div className={styles.contentInfoFirst}>
+                  <h2 className={styles.contentTitle}>
+                    По поводу работы плаформы пишите на
+                  </h2>
+                  <p className={styles.contentParagraph}>support@juraprav.ru</p>
+                </div>
+                <div className={styles.contentInfoSecond}>
+                  <h2 className={styles.contentTitle}>
+                    По поводу сотрудничества пишите на
+                  </h2>
+                  <p className={styles.contentParagraph}>partnership@juraprav.ru</p>
+                </div>
             </div>
           </div>
 

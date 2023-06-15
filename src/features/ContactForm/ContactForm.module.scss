@@ -1,7 +1,6 @@
 @import "../../app/styles/exports";
 
 .contactForm {
-  max-width: 606px;
   height: 625px;
   border: 3px solid $blue-color;
   border-radius: 50px;
@@ -64,17 +63,22 @@ textarea {
   height: 222px !important;
 }
 
+@media screen and (max-width: 1439px) {
+  .contactForm {
+    height: auto;
+  }
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .contactForm {
-    border-radius: 35.3788px;
+    border-radius: 35px;
     padding: 33px 26px 28px 26px;
-    height: auto;
   }
 
   .contactInputs {
     row-gap: 10px;
     &__input {
-      border-radius: 21.2273px;
+      border-radius: 21px;
       padding: 15px;
     }
   }
@@ -91,4 +95,41 @@ textarea {
       line-height: 87.02%;
       height: 55.19px;
   }
+}
+
+@media screen and (max-width: 1023px) {
+  
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  .contactForm {
+    border-radius: 38.6379px;
+    padding: 42.5px;
+    width: 100%;
+    max-width: 100%;
+  }  
+
+  .contactInputs {
+    row-gap: 12px;
+    &__input {
+      border-radius: 25;
+      padding: 19px;
+      font-size: 18px;
+      line-height: 105%;
+    }
+  }
+
+
+  .contactParagraph {
+    font-size: 16px;
+    line-height: 100%;
+    margin-bottom: 16px;
+  }
+
+  .submitButton {
+    padding: 0;
+    font-size: 23.3973px;
+    line-height: 87.02%;
+    height: 65.68px;
+}
 }

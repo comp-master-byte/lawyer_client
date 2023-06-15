@@ -54,3 +54,24 @@
     }
   }
 }
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  .contactCardWrapper {
+    // width: 278.19px;
+    width: 100%;
+    height: 193.19px;
+    border: none;
+    row-gap: 17px;
+
+    img {
+      width: 98px;
+      height: 98px;
+    }
+
+    .contactCardParagraph {
+      font-size: 18px;
+      line-height: 105%;
+    }
+  }
+
+}
