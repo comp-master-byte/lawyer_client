@@ -11,6 +11,7 @@ export const useNavigation = () => {
       top: 993,
       behavior: "smooth",
     });
+    closeMobileNavigation();
   };
 
   const scrollToAdvantages = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -18,6 +19,7 @@ export const useNavigation = () => {
       top: 2604,
       behavior: "smooth",
     });
+    closeMobileNavigation();
   };
 
   const scrollToThemes = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -25,6 +27,7 @@ export const useNavigation = () => {
       top: 3769,
       behavior: "smooth",
     });
+    closeMobileNavigation();
   };
 
   const scrollToContacts = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -32,6 +35,7 @@ export const useNavigation = () => {
       top: 4737,
       behavior: "smooth",
     });
+    closeMobileNavigation();
   };
 
   return {

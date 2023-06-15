@@ -32,7 +32,9 @@
 }
 
 .navigationInner__vk,
-.burgerMenu {
+.burgerMenu,
+.closeNavigationMobileButton,
+.entranceBtnMobile {
   display: none;
 }
 
@@ -48,10 +50,6 @@
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
-  .navigationWrapper {
-    padding-left: 45px;
-    padding-right: 45px;
-  }
   .navigationLinks {
     column-gap: 33px;
   
@@ -77,28 +75,81 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .navigationWrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .navigationInner__vk {
       display: inline-block;
+      margin-left: 45px;
   }
 
   .burgerMenu {
     display: flex;
     flex-direction: column;
+    margin-right: 45px;
 
     &__line {
       background-color: $blue-color;
     }
   }
 
-  .navigationEntrance,
   .navigationLinks {
+    display: flex;
+    padding: 33px 14px 0 55px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background-color:#F3F8FF;
+    flex-direction: column;
+    row-gap: 30px;
+    z-index: 10;
+    transition: all .5s;
+    // transform: translateX(0);
+    // transform: translateX(calc(-100% - 100px));
+    &__link {
+      font-size: 24px;
+      line-height: 87.02%;
+    }
+  }
+
+  .closedMobileNavigation {
+    transition: all .5s;
+    transform: translateX(calc(-100%));
+    opacity: 0;
+  }
+
+  .entranceBtnMobile {
+    display: inline-block;
+    width: 126px !important;
+    height: auto !important;
+    padding: 9px 28px 11px 28px !important;
+    background-color: transparent !important;
+  }
+
+  .closeNavigationMobileButton {
+    display: block;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .navigationEntrance {
     display: none;
   }
 }
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
   .navigationWrapper {
-    padding: 22px 30px 0 30px;
+    padding-top: 22px;
+  }
+
+  .burgerMenu {
+    margin-right: 30px;
+  }
+
+  .navigationInner__vk {
+    margin-left: 30px;
   }
 
   .navigationInner__vk {
@@ -124,7 +175,15 @@
 
 @media screen and (max-width: 639px) {
   .navigationWrapper {
-    padding: 15px 15px 0 15px;
+    padding-top: 15px;
+  }
+
+  .burgerMenu {
+    margin-right: 15px;
+  }
+
+  .navigationInner__vk {
+    margin-left: 15px;
   }
 
   .burgerMenu {
