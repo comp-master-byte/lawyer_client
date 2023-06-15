@@ -29,3 +29,10 @@
   background: $orangeLinear-color;
   color: $orange-color;
 }
+
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .contactCardWrapper {
+    width: 275px;
+    height: 230px;
+  }
+}

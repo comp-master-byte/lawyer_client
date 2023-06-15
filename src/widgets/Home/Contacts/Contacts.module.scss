@@ -21,6 +21,8 @@
 }
 .contactsWrapper {
   margin-bottom: 180px;
+  padding: 0 60px;
+
   &__title {
     @include page-title;
     margin: 0 auto 65px auto;
@@ -35,10 +37,11 @@
   border-radius: 50px;
   padding: 51px 56px 55.71px 45px;
   background-image: url("./assets/molot.png");
+  margin-top: 65px;
 
   display: flex;
   align-items: flex-start;
-  column-gap: 60px;
+  justify-content: space-between;
 
   &__img {
     position: absolute;
@@ -51,7 +54,8 @@
 .leftColumnIcons {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  column-gap: 27px;
+  // justify-content: space-between;
   margin-bottom: 83px;
 }
 
@@ -83,9 +87,17 @@
   }
 }
 
-@media screen and (max-width: 1440px) {
-  .container {
-    @include container-1440;
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .contactsContent {
+    padding: 55px 38px 56px 37px;
+
+    &__img {
+      right: 38px;
+    }
+  }
+
+  .leftColumnIcons {
+    row-gap: 34px;
   }
 }
 

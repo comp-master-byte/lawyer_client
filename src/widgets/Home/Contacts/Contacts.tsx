@@ -5,11 +5,12 @@ import ContactForm from "../../../features/ContactForm/ContactForm";
 import vk from "./assets/vk.svg";
 import tg from "./assets/tg.svg";
 import yura from "./assets/yura.svg";
+import SectionTitle from "../../../shared/Styled-Components/SectionTitle/SectionTitle";
 
 const Contacts: React.FC = React.memo(function Contacts() {
   return (
     <div className={styles.contactsWrapper}>
-      <h1 className={styles.contactsWrapper__title}>Контакты</h1>
+      <SectionTitle>Контакты</SectionTitle>
       <div className={styles.container}>
         <div className={styles.contactsContent}>
           <img src={yura} className={styles.contactsContent__img} alt="" />
