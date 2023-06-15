@@ -93,6 +93,22 @@
     &__line {
       background-color: $blue-color;
     }
+
+    .line1 {
+      transform: rotate(0);
+      transition: all .25s;
+      margin-bottom: 0;
+    }
+    .line2 {
+      transform: translateX(0);
+      transition: all .25s;
+      opacity: 1;
+    }
+    .line3 {
+      transform: rotate(0);
+      transition: all .25s;
+      margin-top: 0;
+    }
   }
 
   .openedNavigationBurgerMenu {
@@ -103,6 +119,7 @@
       }
       .line2 {
         transform: translateX(-10px);
+        transition: all .25s;
         opacity: 0;
       }
       .line3 {
@@ -143,11 +160,6 @@
     height: auto !important;
     padding: 9px 28px 11px 28px !important;
     background-color: transparent !important;
-  }
-
-  .closeNavigationMobileButton {
-    // display: flex;
-    justify-content: flex-end;
   }
 
   .navigationEntrance {
