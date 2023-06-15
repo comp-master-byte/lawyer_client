@@ -4,6 +4,7 @@ import ContactCard from "./components/ContactCard/ContactCard";
 import ContactForm from "../../../features/ContactForm/ContactForm";
 import vk from "./assets/vk.svg";
 import tg from "./assets/tg.svg";
+import yura from "./assets/yura.svg";
 import SectionTitle from "../../../shared/Styled-Components/SectionTitle/SectionTitle";
 
 const Contacts: React.FC = React.memo(function Contacts() {
@@ -43,6 +44,7 @@ const Contacts: React.FC = React.memo(function Contacts() {
           </div>
 
           <div className={styles.contentRightColumn}>
+            <img src={yura} className={styles.contentRightColumn__img} alt="" />
             <h2 className={styles.contentRightColumn__title}>
               Остались вопросы?
             </h2>
