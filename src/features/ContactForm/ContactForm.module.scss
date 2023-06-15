@@ -138,33 +138,45 @@ textarea {
   }
 }
 
+@media screen and (max-width: 639px) {
+  .contactForm {
+    border-radius: 30px;
+  }  
+
+  .contactInputs {
+    row-gap: 10px;
+
+    &__input {
+      border-radius: 20px;
+      padding: 15px;
+      font-size: 12px;
+      line-height: 105%;
+      height: 46px;
+    }
+  }
+
+  .contactParagraph {
+    font-size: 12px;
+    line-height: 100%;
+    margin-bottom: 13px;
+  }
+
+
+  .submitButton {
+    font-size: 18.1666px;
+    line-height: 87.02%;
+    height: 51px;
+  }
+}
+
 @media screen and (min-width: 480px) and (max-width: 639px) {
     .contactForm {
-      border-radius: 30px;
       padding: 33px;
     }  
+}
 
-    .contactInputs {
-      row-gap: 10px;
-  
-      &__input {
-        border-radius: 20px;
-        padding: 15px;
-        font-size: 12px;
-        line-height: 105%;
-        height: 46px;
-      }
-    }
-
-    .contactParagraph {
-      font-size: 12px;
-      line-height: 100%;
-      margin-bottom: 13px;
-    }
-
-    .submitButton {
-      font-size: 18.1666px;
-      line-height: 87.02%;
-      height: 51px;
-    }
+@media screen and (max-width: 479px) {
+    .contactForm {
+      padding: 30px 20px
+    }  
 }

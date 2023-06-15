@@ -79,20 +79,36 @@
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 639px) {
+@media screen and (max-width: 639px) {
   .contactCardWrapper {
     height: 150px;
-    row-gap: 13px;
     border-radius: 30px;
+
+    .contactCardParagraph {
+      font-size: 15px;
+      line-height: 105%;
+    }
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .contactCardWrapper {
+    row-gap: 13px;
 
     img {
       width: 76.56px;
       height: 76.56px;
     }
+  }
+}
 
-    .contactCardParagraph {
-      font-size: 15px;
-      line-height: 105%;
+@media screen and (max-width: 479px) {
+  .contactCardWrapper {
+    row-gap: 11px;
+
+    img {
+      width: 60px;
+      height: 60px;
     }
   }
 }

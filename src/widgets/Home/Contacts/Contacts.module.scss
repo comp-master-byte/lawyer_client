@@ -215,21 +215,19 @@
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 639px) {
+@media screen and (max-width: 639px) {
   .contactsWrapper {
     padding: 0 15px;
     margin-bottom: 70px;
   }
 
   .leftColumnIcons {
+    justify-content: center;
     margin-bottom: 20px;
   }
 
   .contentInfo {
-    padding: 46px 31px 45px 31px;
     border-radius: 16px;
-    height: 283px;
-    margin-bottom: 30px;
 
     .contentInfoFirst {
       margin-bottom: 38px;
@@ -238,13 +236,7 @@
     .contentTitle {
       line-height: 90%;
       font-size: 22px;
-      margin-bottom: 18px;
       width: 321px;
-    }
-
-    .contentParagraph {
-      line-height: 105%;
-      font-size: 18px;
     }
   }
 
@@ -259,6 +251,60 @@
       line-height: 105%;
       margin-bottom: 16px;
       width: 338.2px;
+    }
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .contentInfo {
+    padding: 46px 31px 45px 31px;
+    height: 283px;
+    margin-bottom: 30px;
+
+    .contentTitle {
+      margin-bottom: 18px;
+    }
+
+    .contentParagraph {
+      line-height: 105%;
+      font-size: 18px;
+    }
+  }
+
+  .leftColumnIcons {
+    column-gap: 19px;
+  }
+
+  .contentRightColumn {
+    &__paragraph {
+      width: 338.2px;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .contentInfo {
+    padding: 32px 19px 31px 20px;
+    height: 227px;
+    margin-bottom: 30px;
+
+    .contentTitle {
+      margin-bottom: 10px;
+    }
+
+    .contentParagraph {
+      font-size: 16px;
+      line-height: 105%;
+    }
+  }
+
+  .leftColumnIcons {
+    column-gap: 10px;
+  }
+
+  .contentRightColumn {
+    &__paragraph {
+      width: 287px;
     }
   }
 }
