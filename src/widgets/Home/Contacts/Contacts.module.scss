@@ -111,6 +111,9 @@
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .contactsWrapper {
+    padding: 0 45px;
+  }
   .contactsContent {
     height: auto;
     padding: 36px 28px 35px 26px;
