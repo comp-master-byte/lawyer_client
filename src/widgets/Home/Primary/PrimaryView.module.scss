@@ -39,8 +39,7 @@
 .primaryViewWrapper {
   margin-top: 40px;
   margin-bottom: 139px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 0 60px;
 }
 
 .container {
@@ -146,13 +145,9 @@
   .primaryViewWrapper {
     margin-bottom: 200px;
   }
-  
-  .container {
-    @include container-1440;
-  }
 
   @mixin columnView-1440 {
-    width: 645px;
+    // width: 645px;
     height: 656px;
     padding: 38px 35px 60px 40px;
   }
