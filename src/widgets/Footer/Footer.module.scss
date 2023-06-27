@@ -5,7 +5,7 @@
 }
 
 .footer {
-  padding: 0 30px;
+  padding: 0 60px;
 }
 
 .footerContent {
@@ -20,9 +20,6 @@
 @media screen and (min-width: 1440px) and (max-width: 1920px) {
   .footer {
     padding: 0 60px;
-  }
-  .container {
-    @include container-1440;
   }
 }
 
