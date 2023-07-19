@@ -7,7 +7,7 @@ import Themes from "../../widgets/Home/Themes/Themes";
 import Contacts from "../../widgets/Home/Contacts/Contacts";
 import Footer from "../../widgets/Footer/Footer";
 
-const App: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <div>
       <Navigation />
@@ -21,4 +21,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Home;
