@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "../../widgets/Navigation/Navigation";
+import Navigation from "../../widgets/navigation/navigation";
 import PrimaryView from "../../widgets/Home/Primary/PrimaryView";
 import AboutUs from "../../widgets/Home/AboutUs/AboutUs";
 import Advantages from "../../widgets/Home/Advantages/Advantages";
@@ -8,17 +8,17 @@ import Contacts from "../../widgets/Home/Contacts/Contacts";
 import Footer from "../../widgets/Footer/Footer";
 
 const Home: React.FC = () => {
-  return (
-    <div>
-      <Navigation />
-      <PrimaryView />
-      <AboutUs />
-      <Advantages />
-      <Themes />
-      <Contacts />
-      <Footer />
-    </div>
-  );
+    return (
+        <div>
+          <Navigation />
+          <PrimaryView />
+          <AboutUs />
+          <Advantages />
+          <Themes />
+          <Contacts />
+          <Footer />
+        </div>
+    );
 };
 
 export default Home;
