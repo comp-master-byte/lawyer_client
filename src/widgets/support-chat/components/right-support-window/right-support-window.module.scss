@@ -8,3 +8,13 @@
 .rightSupportChatWindow {
     width: 597px;
 }
+
+.rightWindowHeader {
+    padding: 17px 23px 0 0;
+    display: flex;
+    justify-content: flex-end;
+
+    .closeButton {
+        cursor: pointer;
+    }
+}

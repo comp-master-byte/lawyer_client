@@ -14,7 +14,17 @@
     align-items: center;
     justify-content: center;
 }
-
-.supportChatContent {
+.supportChatWindow {
     display: flex;
+}
+
+.lawyerConsultationButton {
+    height: 62px;
+    padding: 0;
+    color: #FFF;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 87.023%; /* 24.366px */
+    letter-spacing: -0.7px;
 }

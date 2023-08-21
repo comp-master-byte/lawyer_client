@@ -5,6 +5,7 @@ import { useSupportChat } from './lib/hooks/useSupportChat';
 import classNames from 'classnames';
 import LeftSupportWindow from './components/left-support-window/left-support-window';
 import RightSupportWindow from './components/right-support-window/right-support-window';
+import MyButton from 'shared/UI/MyButton/MyButton';
 
 const SupportChat: React.FC = () => {
     const {
@@ -19,8 +20,18 @@ const SupportChat: React.FC = () => {
 
             <section className={classNames(styles.supportChatWrapper, {[styles.supportChatVisible]: isSupportChatVisible})}>
                 <div className={styles.supportChatContent}>
-                    <LeftSupportWindow />
-                    <RightSupportWindow />
+                    <div className={styles.supportChatWindow}>
+                        <LeftSupportWindow />
+                        <RightSupportWindow closeSupportChatCallback={closeSupportChat} />
+                    </div>
+                    <MyButton 
+                        color='secondary' 
+                        variant='contained'
+                        size='large' 
+                        btnClassName={styles.lawyerConsultationButton}
+                    >
+                        Нужна консультация юриста
+                    </MyButton>
                 </div>
             </section>
         </div>
