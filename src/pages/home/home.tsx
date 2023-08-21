@@ -1,6 +1,6 @@
 import React from "react";
 import Navigation from "widgets/navigation/navigation";
-import Footer from "widgets/Footer/Footer";
+import Footer from "widgets/footer/footer";
 import PrimaryView from "./components/Primary/PrimaryView";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Advantages from "./components/Advantages/Advantages";

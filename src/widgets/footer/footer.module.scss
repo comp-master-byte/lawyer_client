@@ -4,11 +4,11 @@
   @include container;
 }
 
-.footer {
+.Footer {
   padding: 0 60px;
 }
 
-.footerContent {
+.FooterContent {
   display: flex;
   column-gap: 20px;
 }
@@ -18,26 +18,26 @@
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1920px) {
-  .footer {
+  .Footer {
     padding: 0 60px;
   }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
-  .footer {
+  .Footer {
     padding: 0 45px;
   }
-  .footerContent {
+  .FooterContent {
     column-gap: 15px;
   }
 }
 
 @media screen and (max-width: 1023px) {
-  .footerContent {
+  .FooterContent {
     flex-direction: column;
   }
 
-  .footer {
+  .Footer {
     padding: 0 30px;
   }
 }
@@ -47,7 +47,7 @@
 }
 
 @media screen and (max-width: 639px) {
-  .footer {
+  .Footer {
     padding: 0 15px;
   }
 }
