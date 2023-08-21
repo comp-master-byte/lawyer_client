@@ -11,7 +11,6 @@ const LeftSupportWindow: React.FC = () => {
     return (
         <section className={styles.leftSupportChatWindow}>
             <LeftWindowHeader />
-
             <div className={styles.mainLeftWindowContent}>
                 <div className={styles.leftWindowLogo}>
                     <img src={logoSvg} alt='' />
