@@ -3,6 +3,7 @@ import styles from "./left-support-window.module.scss";
 import logoSvg from "../../assets/logo.svg";
 import { useTypedSelector } from 'shared/lib/hooks/redux';
 import LeftWindowHeader from './components/left-window-header/left-window-header';
+import StaticContent from './components/static-content/static-content';
 
 const LeftSupportWindow: React.FC = () => {
     const {data} = useTypedSelector(state => state.supportChatSlice);
@@ -12,19 +13,12 @@ const LeftSupportWindow: React.FC = () => {
             <LeftWindowHeader />
 
             <div className={styles.mainLeftWindowContent}>
-                <img src={logoSvg} alt='' />
+                <div className={styles.leftWindowLogo}>
+                    <img src={logoSvg} alt='' />
+                </div>
                 {data?.node_id === 1 
                     ? 
-                        <React.Fragment>
-                            <h3 className={styles.contentMainTitle}>
-                                Приветствую! <br />
-                                Меня зовут Юра. <br /> 
-                                Я твой  юридический помощник.
-                            </h3>
-                            <p className={styles.contentHelperText}>
-                                Постараюсь помочь тебе разобраться в проблеме из области права. Выбери юридическую область, к которой относится твой вопрос.
-                            </p>
-                        </React.Fragment>
+                        <StaticContent />
 
                     : <p className={styles.contentHelperText}>{data?.message}</p>
                 }

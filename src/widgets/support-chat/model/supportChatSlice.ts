@@ -9,7 +9,7 @@ export const supportChatSlice = createSlice({
     name: 'support-chat',
     initialState,
     reducers: {
-        setFetchedMessaged(state, action: PayloadAction<MessageData>) {
+        setFetchedMessaged(state, action: PayloadAction<MessageData|null>) {
             state.data = action.payload;
         }
     }
