@@ -12,20 +12,34 @@
     .leftWindowLogo {
         text-align: center;
     }
+
     .contentHelperText {
-        max-width: 80%;
-        margin: 0 auto;
         color: var(--unnamed, #013878);
-        text-align: center;
         font-family: Inter;
         font-size: 18px;
         font-style: normal;
         font-weight: 600;
         line-height: 105%; /* 18.9px */
         letter-spacing: -0.45px;
-        white-space: pre-wrap;
 
+        white-space: pre-wrap;
         max-height: 240px;
         overflow-y: auto;
+        padding-left: 20px;
+        padding-right: 26px;
+    }
+
+    .contentHelperText::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    .contentHelperText::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    
+    .contentHelperText::-webkit-scrollbar-thumb {
+        width: 9px;
+        border-radius: 7px;
+        background-color: #013878;
     }
 }

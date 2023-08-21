@@ -17,9 +17,7 @@ const LeftSupportWindow: React.FC = () => {
                     <img src={logoSvg} alt='' />
                 </div>
                 {data?.node_id === 1 
-                    ? 
-                        <StaticContent />
-
+                    ? <StaticContent />
                     : <p className={styles.contentHelperText}>{data?.message}</p>
                 }
             </div>
