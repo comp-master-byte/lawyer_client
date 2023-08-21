@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useAppDispatch } from "shared/lib/hooks/redux";
 import { fetchMessageNode } from "widgets/support-chat/model/async-actions";
 
@@ -7,13 +7,13 @@ export const useSupportChat = () => {
 
     const [isSupportChatVisible, setIsSupportChatVisible] = useState(false);
 
-    const closeSupportChat = function() {
+    const closeSupportChat = useCallback(() => {
         setIsSupportChatVisible(false);
-    }
+    }, [])
 
-    const openSupportChat = function() {
+    const openSupportChat = useCallback(() => {
         setIsSupportChatVisible(true);
-    }
+    }, [])
 
     useEffect(() => {
         if(isSupportChatVisible) {
