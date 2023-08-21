@@ -1,16 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { SupportChatState } from "./types";
+import { MessageData, SupportChatState } from "./types";
 
 const initialState: SupportChatState = {
-    messages: []
+    data: null
 }
 
 export const supportChatSlice = createSlice({
     name: 'support-chat',
     initialState,
     reducers: {
-        setFetchedMessaged(state, action: PayloadAction<any[]>) {
-            state.messages = action.payload;
+        setFetchedMessaged(state, action: PayloadAction<MessageData>) {
+            state.data = action.payload;
         }
     }
 })
