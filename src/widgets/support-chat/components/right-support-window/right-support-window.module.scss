@@ -22,10 +22,26 @@
 .answersList {
     display: flex;
     align-items: center;
-    padding: 0 25px;
     gap: 14px;
     flex-wrap: wrap;
+    padding: 0 25px;
     margin-top: 22px;
+    max-height: 370px;
+    overflow-y: auto;
+}
+
+.answersList::-webkit-scrollbar {
+    width: 9px;
+}
+
+.answersList::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.answersList::-webkit-scrollbar-thumb {
+    width: 9px;
+    border-radius: 7px;
+    background-color: #FD7900;
 }
 
 .answerItem {
