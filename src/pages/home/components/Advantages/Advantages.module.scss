@@ -1,0 +1,309 @@
+@import "app/styles/exports";
+
+@mixin content {
+  background-color: $lightBlue-color-2;
+  width: 100%;
+}
+
+.container {
+  @include container;
+}
+
+.advantagesWrapper {
+  padding: 150px 60px 180px 60px;
+
+  &__title {
+    @include page-title();
+    max-width: 590px;
+    margin: 0 auto 60px auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .advantagesContent {
+    @include content;
+    height: 822px;
+    border-radius: 50px;
+    padding: 55px 50px 62px 50px;
+    margin-top: 60px;
+  }
+
+  .whiteCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 3px solid $blue-color;
+    color: $blue-color;
+    background-color: #fff;
+    border-radius: 50px;
+    font-family: "Inter";
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 27px;
+    height: 188px;
+    letter-spacing: -0.025em;
+    margin-bottom: 45px;
+
+    p {
+      width: 831px;
+    }
+  }
+
+  .advantagesButtons {
+    display: flex;
+    column-gap: 20px;
+
+    &__primary {
+      flex-basis: 70%;
+    }
+    &__secondary {
+      flex-basis: 30%;
+    }
+  }
+}
+
+.cardsList {
+  display: flex;
+}
+
+.bgMobileLine, 
+.advantagesMobileContent {
+  display: none;
+}
+
+.whiteCardLeft, 
+.blueCardLeft {
+  width: 34.77%;
+} 
+.whiteCardMiddle, 
+.blueCardMiddle {
+  width: 30.2%;
+}
+.whiteCardRight, 
+.blueCardRight {
+  width: 35.5%;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1920px) {
+  .container {
+    @include container-1440;
+  }
+
+  .advantagesWrapper {
+    .advantagesContent {
+      height: auto;
+      padding: 44px 38px 58px 37px;
+    }
+
+    .whiteCard {
+      margin-bottom: 28px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .advantagesWrapper {
+    padding: 70px 45px 80px 45px;
+    .advantagesContent {
+      height: auto;
+    }
+    .whiteCard {
+      font-size: 22px;
+      line-height: 90%;
+      padding: 26px 145px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .advantagesButtons {
+
+      &__primary {
+        font-size: 19.7061px;
+        line-height: 87.02%;
+        height: 55px;
+        padding: 0;
+      }
+      &__secondary {
+        font-size: 19.7061px;
+        line-height: 87.02%;
+        height: 55px;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .advantagesWrapper {
+    padding: 0 15px;
+    margin-bottom: 70px;
+    
+    .advantagesContent {
+      display: none;
+    }
+  }
+
+  .advantagesMobileContent {
+    display: block;
+    @include content;
+    background-image: url("./assets/bg-line.svg");
+    background-repeat: no-repeat;
+    background-position: 100px -5px;
+    padding: 0;
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .mobileButtons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .advantagesWrapper {
+    padding: 77px 30px 90px 30px;
+  }
+
+  .advantagesMobileContent {
+    border-radius: 38.6379px;
+    margin-top: 38.6379px;
+
+    .cards {
+      row-gap: 21px;
+      margin-bottom: 42px;
+    }
+  }
+
+  .topContentCards {
+    width: 363px;
+    padding-top: 39px;
+    padding-left: 20px;
+
+    div {
+      width: 100%;
+    }
+  }
+
+  .middleContentCards {
+    max-width: 336px;
+    align-self: flex-end;
+    padding-right: 20px;
+  }
+
+  .bottomContentCards {
+    width: 406px;
+    padding-left: 25px;
+  }
+
+  .fullWidthCardMobileWrapper {
+    padding: 0 25px;
+
+    .fullWidthCard {
+      text-align: center;
+      margin-bottom: 49px;
+    }
+  }
+
+  .mobileButtons {
+    row-gap: 12px;
+
+    button {
+      font-size: 23.1827px;
+      line-height: 87.02%;
+      padding: 19px 83px;
+    }
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .advantagesWrapper {
+    padding: 0 15px;
+
+    .advantagesButtons {
+      &__secondary,
+      &__primary {
+        font-size: 18px;
+        line-height: 90%;
+        padding: 15px 0;
+      }
+    }
+  }
+
+  .advantagesMobileContent {
+    margin-top: 30px;
+  }
+}
+
+
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .advantagesWrapper {
+    margin-bottom: 70px;
+  }
+  
+  .advantagesMobileContent {
+      margin-top: 30px;
+      border-radius: 30px;
+
+      .cards {
+        row-gap: 16px;
+        margin-bottom: 33px;
+      }
+  }
+
+  .topContentCards {
+      max-width: 282px;
+      margin-top: 30px;
+      margin-left: 20px;
+  }
+
+  .middleContentCards {
+    width: 261px;
+    align-self: flex-end;
+    margin-right: 15px;
+  }
+
+  .bottomContentCards {
+    width: 315px;
+    margin-left: 20px;
+  }
+
+  .fullWidthCardMobileWrapper {
+    padding: 0 15px;
+    .fullWidthCard {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+  }
+
+  .mobileButtons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .advantagesMobileContent {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    padding-top: 30px;
+    border-radius: 30px;
+
+    .cards {
+      row-gap: 60px;
+      padding: 0 20px;
+    }
+
+    .fullWidthCardMobileWrapper {
+      padding: 0 20px;
+      text-align: center;
+    }
+  }
+}

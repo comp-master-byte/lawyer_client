@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./ContactForm.module.scss";
 import { useForm, SubmitHandler } from "react-hook-form";
-import MyInput from "../../shared/UI/MyInput/MyInput";
-import MyButton from "../../shared/UI/MyButton/MyButton";
+import MyInput from "shared/UI/MyInput/MyInput";
+import MyButton from "shared/UI/MyButton/MyButton";
 import yura from "./assets/yura.svg";
 
 interface Inputs {

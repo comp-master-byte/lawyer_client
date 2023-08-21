@@ -1,11 +1,11 @@
 import React from "react";
-import Navigation from "../../widgets/navigation/navigation";
-import PrimaryView from "../../widgets/Home/Primary/PrimaryView";
-import AboutUs from "../../widgets/Home/AboutUs/AboutUs";
-import Advantages from "../../widgets/Home/Advantages/Advantages";
-import Themes from "../../widgets/Home/Themes/Themes";
-import Contacts from "../../widgets/Home/Contacts/Contacts";
-import Footer from "../../widgets/Footer/Footer";
+import Navigation from "widgets/navigation/navigation";
+import Footer from "widgets/Footer/Footer";
+import PrimaryView from "./components/Primary/PrimaryView";
+import AboutUs from "./components/AboutUs/AboutUs";
+import Advantages from "./components/Advantages/Advantages";
+import Themes from "./components/Themes/Themes";
+import Contacts from "./components/Contacts/Contacts";
 
 const Home: React.FC = () => {
     return (

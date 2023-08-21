@@ -1,0 +1,101 @@
+@import "app/styles/exports";
+
+.questionWrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  border-radius: 30px;
+  width: fit-content;
+  padding: 18px 25px 20px 25px;
+  position: absolute;
+
+  .questionText {
+    font-family: "Inter";
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 26.11px;
+    letter-spacing: -0.025em;
+    white-space: pre;
+  }
+
+  .questionIcon {
+    @include center;
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    color: #fff;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: -0.025em;
+  }
+}
+
+.orange {
+  border: 3px solid $orange-color;
+  color: $orange-color;
+  background: $orangeLinear-color;
+
+  .questionIcon {
+    background-color: $orange-color;
+  }
+}
+
+.blue {
+  border: 3px solid $blue-color;
+  color: $blue-color;
+  background: $blueLinear-color;
+  .questionIcon {
+    background-color: $blue-color;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .questionWrapper {
+    .questionText {
+      font-size: 22px;
+      line-height: 87.02%;
+    }
+    .questionIcon {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1439px) and (min-width: 1024px) {
+  .questionWrapper {
+    padding: 12px 16px;
+    border-radius: 18px;
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 640px) {
+  .questionWrapper {
+    padding: 14px 20px;
+    border-radius: 23px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .questionWrapper {
+    padding: 12px 16px;
+    border-radius: 18px;
+
+    .questionText {
+      font-size: 18px;
+      line-height: 87.02%;
+    }
+  }
+}
+
+@media screen and  (max-width: 479px) {
+  .questionWrapper {
+    padding: 11px 15px;
+    border-radius: 18px;
+
+    .questionText {
+      font-size: 16px;
+      line-height: 87.02%;
+    }
+  }
+}

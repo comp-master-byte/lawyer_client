@@ -1,0 +1,136 @@
+@import "app/styles/exports";
+
+.additionalCardWrapper {
+  width: 466px;
+  height: 316px;
+  background-color: #ffe7d1;
+  border-radius: 50px;
+  padding: 35px 34px 63px 55px;
+  margin-top: 45px;
+  z-index: -2;
+
+  &__text {
+    @include home-card-text;
+    color: $orange-color;
+  }
+}
+
+.additionalCardTitle {
+  @include flex-between-center;
+  margin-bottom: 22px;
+
+  &__label {
+    @include home-card-label;
+    color: $orange-color;
+  }
+}
+
+
+// === media ===
+
+@media screen and (min-width: 1440px) and (max-width: 1900px) {
+  .additionalCardWrapper {
+    width: 437px;
+  } 
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .additionalCardWrapper {
+    margin-top: 0;
+    width: 100%;
+    padding: 25px 30px 0 46px;
+    height: 222px;
+    border-radius: 35.3409px;
+
+    &__text {
+      width: 391px;
+      font-size: 18px;
+      line-height: 105%;
+    }
+
+    .additionalCardTitle {
+      margin-bottom: 29px;
+      &__label {
+        font-size: 22px;
+        line-height: 90%;
+      }
+      img {
+        width: 41px;
+        height: 41px;
+      }
+    }
+  } 
+}
+
+@media screen and (max-width: 1024px) and (min-width: 640px) {
+  .additionalCardWrapper {
+    width: 100%;
+    padding: 39px 39px 57px 42px;
+    margin-top: 28px;
+
+    &__text {
+      width: 448px;
+    }
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .additionalCardWrapper {
+    width: 100%;
+    height: 100%;
+
+    .additionalCardTitle {
+      &__label {
+        @include home-card-label-mobile;
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .additionalCardWrapper {
+    margin-top: 22px;
+    padding: 30px 30px 48px 33px;
+
+    &__text {
+      @include home-card-text-mobile;
+      max-width: 348px;
+    }
+
+    .additionalCardTitle {
+      margin-bottom: 8px;
+
+      &__label {
+        @include home-card-label-mobile;
+      }
+
+      img {
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .additionalCardWrapper {
+    margin-top: 20px;
+    padding: 25px 20px 50px 20px;
+
+    &__text {
+      font-size: 16px;
+      line-height: 105%;
+      width: 327px;
+    }
+
+    .additionalCardTitle {
+      margin-bottom: 25px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

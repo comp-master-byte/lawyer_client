@@ -1,0 +1,114 @@
+@import "app/styles/exports";
+
+.contactCardWrapper {
+  width: 300px;
+  height: 231px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.contactCardParagraph {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 21px;
+  letter-spacing: -0.025em;
+}
+
+.blue {
+  border: 3px solid $blue-color;
+  background: $blueLinear-color;
+  color: $blue-color;
+}
+
+.orange {
+  border: 3px solid $orange-color;
+  background: $orangeLinear-color;
+  color: $orange-color;
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .contactCardWrapper {
+    width: 275px;
+    height: 230px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .contactCardWrapper {
+    width: 205px;
+    height: 162px;
+    row-gap: 16px;
+
+    img {
+      width: 83.49px;
+      height: 83.49px;
+    }
+
+    .contactCardParagraph {
+      font-size: 15px;
+      line-height: 105%;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .contactCardWrapper {
+    width: 100%;
+    border: none;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  .contactCardWrapper {
+    height: 193.19px;
+    row-gap: 17px;
+
+    img {
+      width: 98px;
+      height: 98px;
+    }
+
+    .contactCardParagraph {
+      font-size: 18px;
+      line-height: 105%;
+    }
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .contactCardWrapper {
+    height: 150px;
+    border-radius: 30px;
+
+    .contactCardParagraph {
+      font-size: 15px;
+      line-height: 105%;
+    }
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .contactCardWrapper {
+    row-gap: 13px;
+
+    img {
+      width: 76.56px;
+      height: 76.56px;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .contactCardWrapper {
+    row-gap: 11px;
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}

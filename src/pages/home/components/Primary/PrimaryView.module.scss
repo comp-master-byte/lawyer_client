@@ -1,0 +1,477 @@
+@import "app/styles/exports";
+
+@mixin columnView {
+  position: relative;
+  width: 685px;
+  height: 710px;
+  border-radius: 50px;
+  padding: 40px 30px 90px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin columnView-mobile {
+  width: 100%;
+  height: 316px;
+  border-radius: 20px;
+  padding: 0;
+}
+
+@mixin title-text {
+  font-family: "Inter";
+  font-size: 48px;
+  line-height: 43.2px;
+  font-weight: 600;
+}
+
+@mixin title-mobile {
+  font-size: 30px;
+  line-height: 27px;
+  padding: 30px 0 0 22px;
+}
+
+@mixin button {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.primaryViewWrapper {
+  margin-top: 40px;
+  margin-bottom: 139px;
+  padding: 0 60px;
+}
+
+.container {
+  @include container;
+}
+
+.primaryViewInner {
+  position: relative;
+  display: flex;
+  column-gap: 30px;
+
+  &__human {
+    position: absolute;
+    top: 217px;
+    left: 349px;
+  }
+}
+
+.viewLeftColumn {
+  @include columnView();
+  background: $blueLinear-color;
+
+  .leftColumnIllustration {
+    display: flex;
+
+    &__text {
+      font-family: "Inter";
+      font-size: 22px;
+      font-weight: 500;
+      font-style: italic;
+      color: $blue-color;
+      line-height: 19px;
+      transform: rotate(-12deg);
+      width: 290.2px;
+      position: absolute;
+      bottom: 371px;
+      left: 120px;
+    }
+
+    &__img {
+      position: absolute;
+      bottom: 228.78px;
+      left: 10px;
+      transform: rotate(-42.02deg);
+    }
+  }
+
+  &__title {
+    @include title-text();
+    color: $blue-color;
+  }
+
+  &__btn {
+    @include button;
+
+    button {
+      max-width: 300px;
+    }
+  }
+}
+
+.viewRightColumn {
+  @include columnView();
+  background: $orangeLinear-color;
+
+  &__title {
+    @include title-text();
+    color: $orange-color;
+  }
+
+  &__btn {
+    @include button;
+    justify-content: flex-end;
+    button {
+      max-width: 382px;
+    }
+  }
+
+  .rightColumnItalic {
+    position: absolute;
+    bottom: 346px;
+    left: 216px;
+    font-family: "Inter";
+    font-weight: 500;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 19px;
+    color: $orange-color;
+    width: 275px;
+    letter-spacing: -0.025rem;
+    transform: rotate(12.57deg);
+  }
+}
+
+// Отключение мобильных компонентов
+.mobileButton,
+.humanMobile {
+  display: none;
+}
+
+// === MEDIA ===
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .primaryViewWrapper {
+    margin-bottom: 200px;
+  }
+
+  @mixin columnView-1440 {
+    // width: 645px;
+    height: 656px;
+    padding: 38px 35px 60px 40px;
+  }
+
+  .viewLeftColumn,
+  .viewRightColumn {
+    @include columnView-1440;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .primaryViewWrapper {
+    margin-bottom: 184px;
+  }
+
+  .primaryViewInner {
+    column-gap: 20px;
+  }
+
+  .viewLeftColumn,
+  .viewRightColumn {
+    width: 100%;
+    height: 462px;
+    padding: 27px 30px 43px 21px;
+    border-radius: 35.2604px;
+  }
+
+
+  .titleText {
+    font-size: 34px;
+    line-height: 31px;
+  }
+
+  .viewLeftColumn {
+    .leftColumnIllustration {
+      &__text {
+        width: 220px;
+        left: 95px;
+        top: 160px;
+      }
+
+      &__img {
+        width: 106px;
+        height: 73px;
+        bottom: 159px;
+        left: 30px;
+      }
+    }
+  }
+
+  .viewRightColumn {
+    .rightColumnItalic {
+      top: 174px;
+      left: 135px;
+      width: 190px;
+    }
+  }
+
+
+  .italicText {
+    font-size: 15.5146px !important;
+    line-height: 87.02% !important;
+  }
+
+  .viewRightColumn,.viewLeftColumn {
+    &__btn {
+      button {
+        height: 55px;
+        padding: 0;
+        font-size: 19.7458px;
+        line-height: 87.02%;
+      }
+    }
+  }
+
+  .primaryViewInner {
+    &__human {
+      width: 419px;
+      height: auto;
+      left: 45%;
+      transform: translateX(-45%);
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .viewLeftColumn,
+  .viewRightColumn {
+    width: 100%;
+    padding: 0;
+  }
+
+  .primaryViewInner {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) { 
+  .primaryViewWrapper {
+    padding: 0 30px;
+    margin-bottom: 80px;
+  }
+
+  .primaryViewInner {
+    row-gap: 17px;
+
+    &__human {
+      top: 30px;
+      left: 283px;
+      width: 320.55px;
+      height: auto;
+      z-index: 2;
+    }
+  }
+
+  .viewLeftColumn,
+  .viewRightColumn {
+    height: 406.99px;
+    border-radius: 38.6379px;
+  }
+
+  .viewLeftColumn {
+
+    .leftColumnIllustration {
+      &__text {
+        top: 172px;
+        left: 51px;
+        width: 237px;
+        font-size: 18px;
+        line-height: 87.02%;
+      }
+      &__img {
+        width: 56.77px;
+        height: 39.1px;
+        left: 30px;
+        bottom: 120px;
+        transform: rotate(-66.89deg);
+      }
+    }
+
+    &__title {
+      @include title-mobile;
+    }
+  }
+
+  .viewRightColumn {
+    .rightColumnItalic {
+      width: 228px;
+      top: 150px; // 150
+      left: 280px; // 193
+      font-size: 18px;
+      line-height: 87.02%;
+      transform: rotate(-13deg);
+      text-align: center;
+    }
+  }
+
+  .titleText {
+    font-size: 38px;
+    line-height: 90%;
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+
+  .viewLeftColumn,.viewRightColumn {
+    &__btn button {
+      width: 100%;
+      max-width: 100%;
+      z-index: 3;
+    }
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .primaryViewWrapper {
+    padding: 0 15px;
+  }
+
+  .viewLeftColumn,.viewRightColumn {
+    width: 100%;
+    padding: 0;
+
+    &__title {
+      @include title-mobile;
+    }
+  }
+
+  .viewLeftColumn {
+    .leftColumnIllustration {
+      &__text {
+        font-size: 16px;
+        line-height: 13.92px;
+      }
+
+      &__img {
+        transform: rotate(-66.89deg);
+      }
+    }
+  }
+
+  .viewLeftColumn__btn,
+  .viewRightColumn__btn {
+    display: none;
+  }
+
+  .mobileButton {
+    display: block;
+    margin-top: 6px;
+    z-index: 2;
+    
+    button {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .primaryViewInner {
+    &__human {
+      width: 260.53px;
+      height: 341.87px;
+      top: 33px;
+      left: 45%;
+    }
+  }
+
+  .viewLeftColumn {
+    border-radius: 30px;
+    height: 316px;
+
+    .leftColumnIllustration {
+      &__text {
+        width: 213px;
+        top: 150px;
+        left: 30px;
+      }
+
+      &__img {
+        bottom: 18px;
+        left: 7px;
+        width: 78px;
+        height: 54px;
+      }
+    }
+  }
+
+  .viewRightColumn {
+    margin-top: 18px;
+    border-radius: 30px;
+    height: 316px;
+
+    .rightColumnItalic {
+      width: 207px;
+      top: 150px; // 150
+      left: 35%; // 193
+      font-size: 16px;
+      line-height: 13.92px;
+      transform: rotate(-13deg);
+      text-align: center;
+    }
+  }  
+
+  .mobileButton {
+    button {
+      height: 57px;
+      font-size: 24px;
+      line-height: 87.02%;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .primaryViewInner {
+    &__human {
+      width: 193.11px;
+      height: 253.41px;
+      top: 100px;
+      left: 48%;
+    }
+  }
+
+  .viewLeftColumn, .viewRightColumn {
+    border-radius: 24px;
+    height: 300px;
+  }
+
+  .viewLeftColumn {
+    .leftColumnIllustration {
+      &__text {
+        width: 195.24px;
+        top: 140px;
+        left: 23px;
+      }
+
+      &__img {
+        height: 43.93px;
+        width: 63.79px;
+        bottom: 10px;
+        left: 20px;
+      }
+    }
+  }
+
+  .viewRightColumn {
+    margin-top: 18px;
+
+    .rightColumnItalic {
+      width: 207px;
+      top: 150px; // 150
+      left: 35%; // 193
+      font-size: 16px;
+      line-height: 13.92px;
+      transform: rotate(-13deg);
+      text-align: center;
+    }
+  }
+
+  .mobileButton {
+    button {
+      height: 50px;
+      font-size: 20px;
+      line-height: 87.02%;
+    }
+  }
+}

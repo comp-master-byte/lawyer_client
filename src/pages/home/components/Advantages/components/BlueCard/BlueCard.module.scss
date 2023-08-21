@@ -1,0 +1,65 @@
+@import "app/styles/exports";
+
+.blueCardWrapper {
+  height: 221px;
+  padding: 33px 24px 10px 33px;
+
+  border-radius: 50px;
+  background: $blueLinear-color;
+  color: $blue-color;
+  font-family: "Inter";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+// === media ===
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .blueCardWrapper {
+    // padding-left: 27px;
+    // padding-right: 20px;
+    height: 197px;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  .blueCardWrapper {
+    font-size: 18px;
+    line-height: 105%;
+    height: 138px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .blueCardWrapper {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .blueCardWrapper {
+    font-size: 18px;
+    line-height: 105%;
+    padding-bottom: 45px;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .blueCardWrapper {
+    font-size: 18px;
+    line-height: 90%;
+    padding: 16px 21px 32px 22px;
+    border-radius: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .blueCardWrapper {
+    border-radius: 30px;
+    padding: 16px 21px 15px 21px;
+    width: auto;
+    height: auto;
+    font-size: 15px;
+    line-height: 16px;
+  }
+}
