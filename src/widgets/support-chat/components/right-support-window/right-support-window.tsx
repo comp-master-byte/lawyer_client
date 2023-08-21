@@ -2,13 +2,15 @@ import React from 'react';
 import styles from "./right-support-window.module.scss";
 import classNames from 'classnames';
 import closeSvg from "../../assets/close.svg";
-import { useTypedSelector } from 'shared/lib/hooks/redux';
+import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
+import { fetchMessageNode } from 'widgets/support-chat/model/async-actions';
 
 interface RightSupportWindowProps {
     closeSupportChatCallback: () => void;
 }
 
 const RightSupportWindow: React.FC<RightSupportWindowProps> = ({closeSupportChatCallback}) => {
+    const dispatch = useAppDispatch();
     const {data} = useTypedSelector(state => state.supportChatSlice);
     
     return (
@@ -21,7 +23,13 @@ const RightSupportWindow: React.FC<RightSupportWindowProps> = ({closeSupportChat
 
             <div className={styles.answersList}> 
                 {data?.answers && Object.entries(data?.answers).map((item) => 
-                    <div key={item[1]} className={styles.answerItem}>{item[0]}</div>
+                    <div 
+                        key={item[1]} 
+                        className={styles.answerItem}
+                        onClick={() => dispatch(fetchMessageNode(item[1]))}
+                    >
+                        {item[0]}
+                    </div>
                 )}
             </div>  
         </div>

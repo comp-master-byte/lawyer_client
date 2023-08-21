@@ -17,7 +17,7 @@ export const useSupportChat = () => {
 
     useEffect(() => {
         if(isSupportChatVisible) {
-            dispatch(fetchMessageNode());
+            dispatch(fetchMessageNode(1));
         }
     }, [isSupportChatVisible])
 
