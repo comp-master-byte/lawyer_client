@@ -1,7 +1,8 @@
+import supportChatSlice from './../../widgets/support-chat/model/supportChatSlice';
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
-
+    supportChatSlice
 })
 
 export const setupStore = () => {
