@@ -20,11 +20,12 @@
 }
 
 .answersList {
-    padding: 0 25px;
     display: flex;
     align-items: center;
+    padding: 0 25px;
     gap: 14px;
     flex-wrap: wrap;
+    margin-top: 22px;
 }
 
 .answerItem {
@@ -39,6 +40,8 @@
 
     cursor: pointer;
 
+    width: auto;
+
     &:nth-child(2n + 1) {
         background: var(--unnamed, linear-gradient(180deg, #CCE4FF 0%, #FFF 100%));
         border: 2px solid var(--unnamed, #013878);
@@ -50,4 +53,8 @@
         border: 2px solid var(--unnamed, #FD7900);
         color: var(--unnamed, #FD7900);
     }
+}
+
+.halfAnswerWidth {
+    width: 48%;
 }
