@@ -19,6 +19,10 @@ export const useSupportChat = () => {
         setIsLegalAdviceModalVisible(true);
     }, [])
 
+    const closeLegalAdviceModal = useCallback(() => {
+        setIsLegalAdviceModalVisible(false);
+    }, [])
+
     const openSupportChat = useCallback(() => {
         if(!data) {
             const lastNodeId = savedChains[savedChains.length - 1];
@@ -39,6 +43,7 @@ export const useSupportChat = () => {
         closeSupportChat,
         openSupportChat,
         isLegalAdviceModalVisible,
-        openLegalAdviceModal
+        openLegalAdviceModal,
+        closeLegalAdviceModal
     }
 }

@@ -1,0 +1,35 @@
+
+.topAdviceContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.topLeftColumnContent {
+    display: flex;
+    align-items: center;
+}
+
+.topLeftContentText {
+    color: var(--unnamed, #013878);
+    font-weight: 600;
+    margin-left: 30px;
+
+    .topLeftContentTitle {
+        font-size: 22px;
+        line-height: 90%; /* 19.8px */
+        letter-spacing: -0.55px;
+        margin-bottom: 14px;
+    }
+
+    .topLeftContentParagraph {
+        font-size: 18px;
+        line-height: 105%; /* 18.9px */
+        letter-spacing: -0.45px;
+        max-width: 691px;
+    }
+}
+
+.closeSvgButton {
+    cursor: pointer;
+}

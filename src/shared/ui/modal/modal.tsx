@@ -5,12 +5,13 @@ import classNames from 'classnames';
 interface ModalProps {
     children: React.ReactNode;
     isModalVisible: boolean;
+    modalContentClassName?: string;
 }
 
-const Modal: React.FC<ModalProps> = ({children, isModalVisible}) => {
+const Modal: React.FC<ModalProps> = ({children, isModalVisible, modalContentClassName}) => {
     return (
         <section className={classNames(styles.modalWrapper, {[styles.modalVisible]: isModalVisible})}>
-            <div className={styles.modalContent}>
+            <div className={classNames(styles.modalContent, modalContentClassName)}>
                 {children}
             </div>
         </section>
