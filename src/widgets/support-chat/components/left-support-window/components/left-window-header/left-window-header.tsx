@@ -12,7 +12,10 @@ const LeftWindowHeader: React.FC = () => {
     
     const backToThePreviousChain = function() {
         dispatch(supportChatSlice.actions.popChainFromArray());
-        const prevNodeId = savedChains[savedChains.length - 2];
+        let prevNodeId = savedChains[savedChains.length - 2]
+        if(savedChains.length === 1) {
+            prevNodeId = 1;
+        }
         dispatch(fetchMessageNode(prevNodeId as number));
     }
     
