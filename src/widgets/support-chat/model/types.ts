@@ -9,4 +9,5 @@ export interface MessageData {
 
 export interface SupportChatState {
     data: MessageData|null;
+    savedChains: number[];
 }

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import closeSvg from "../../assets/close.svg";
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { fetchMessageNode } from 'widgets/support-chat/model/async-actions';
+import { supportChatSlice } from 'widgets/support-chat/model/supportChatSlice';
 
 interface RightSupportWindowProps {
     closeSupportChatCallback: () => void;
@@ -12,6 +13,11 @@ interface RightSupportWindowProps {
 const RightSupportWindow: React.FC<RightSupportWindowProps> = ({closeSupportChatCallback}) => {
     const dispatch = useAppDispatch();
     const {data} = useTypedSelector(state => state.supportChatSlice);
+
+    const moveToTheNextChain = function(nodeId: number) {
+        dispatch(fetchMessageNode(nodeId));
+        dispatch(supportChatSlice.actions.pushChainToArray(nodeId));
+    }
 
     return (
         <div className={classNames(styles.chatContentWrapper, styles.rightSupportChatWindow)}>
@@ -28,7 +34,7 @@ const RightSupportWindow: React.FC<RightSupportWindowProps> = ({closeSupportChat
                         className={classNames(styles.answerItem, {
                             [styles.halfAnswerWidth]: item[0] === 'Да'|| item[0] === 'Нет',
                         })}
-                        onClick={() => dispatch(fetchMessageNode(item[1]))}
+                        onClick={() =>  moveToTheNextChain(item[1])}
                     >
                         {item[0]}
                     </div>
