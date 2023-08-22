@@ -34,6 +34,25 @@
     margin-left: 20px;
 }
 
+textarea {
+  height: 130px !important;
+  resize: none;
+}
+
+textarea::-webkit-scrollbar {
+  width: 9px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  width: 9px;
+  border-radius: 7px;
+  background-color: #FD7900;
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .myInput {
     border-radius: 21.2273px;

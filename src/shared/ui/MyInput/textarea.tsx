@@ -1,18 +1,18 @@
 import React from "react";
-import styles from "./MyInput.module.scss";
+import styles from "./MyInput.module.scss"
 import { MyInputProps } from "./types";
 
-const MyInput: React.FC<MyInputProps> = ({ register, error, placeholder, label }) => {
+export const TextArea: React.FC<MyInputProps> = ({error, label, placeholder, register}) => {
     return (
         <div className={styles.myInputWrapper}>
             <label className={styles.inputLabel}>{label}</label>
-            <input
+            <textarea
                 className={styles.myInput}
                 placeholder={placeholder}
                 {...register}
             />
         </div>
-    );
-};
+    )
+}
 
-export default MyInput;
+export default TextArea;
