@@ -18,12 +18,17 @@ const LeftWindowHeader: React.FC = () => {
         }
         dispatch(fetchMessageNode(prevNodeId as number));
     }
+
+    const resetAndStartFromBegin = function() {
+        dispatch(fetchMessageNode(1));
+        dispatch(supportChatSlice.actions.resetChainToStarted());
+    }
     
     return (
         <header className={styles.leftWindowHeader}>
             <button 
                 className={styles.leftWindowHeader__startBegin}
-                onClick={() => dispatch(fetchMessageNode(1))}
+                onClick={resetAndStartFromBegin}
             >
                 Начать сначала
             </button>
