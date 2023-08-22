@@ -14,9 +14,13 @@ export const useSupportChat = () => {
     }, [])
 
     const openSupportChat = useCallback(() => {
-        const lastNodeId = savedChains[savedChains.length - 1];
-        dispatch(fetchMessageNode(lastNodeId));
-    }, [savedChains])
+        if(!data) {
+            const lastNodeId = savedChains[savedChains.length - 1];
+            dispatch(fetchMessageNode(lastNodeId));
+        } else {
+            setIsSupportChatVisible(true);
+        }
+    }, [savedChains, data])
 
     useEffect(() => {
         if(data) {
