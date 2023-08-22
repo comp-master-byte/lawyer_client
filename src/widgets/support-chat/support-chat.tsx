@@ -5,18 +5,22 @@ import { useSupportChat } from './lib/hooks/useSupportChat';
 import classNames from 'classnames';
 import LeftSupportWindow from './components/left-support-window/left-support-window';
 import RightSupportWindow from './components/right-support-window/right-support-window';
-import MyButton from 'shared/UI/MyButton/MyButton';
+import MyButton from 'shared/ui/MyButton/MyButton';
+import LegalAdvice from './components/legal-advice/legal-advice';
 
 const SupportChat: React.FC = () => {
     const {
         isSupportChatVisible,
         closeSupportChat,
-        openSupportChat
+        openSupportChat,
+        isLegalAdviceModalVisible,
+        openLegalAdviceModal
     } = useSupportChat();
 
     return (
         <div className={styles.supportChat}>
             <SupportChatButton openSupportChat={openSupportChat} />
+            <LegalAdvice isModalVisible={isLegalAdviceModalVisible} />
 
             <section className={classNames(styles.supportChatWrapper, {[styles.supportChatVisible]: isSupportChatVisible})}>
                 <div className={styles.supportChatContent}>
@@ -29,6 +33,7 @@ const SupportChat: React.FC = () => {
                         variant='contained'
                         size='large' 
                         btnClassName={styles.lawyerConsultationButton}
+                        onClick={openLegalAdviceModal}
                     >
                         Нужна консультация юриста
                     </MyButton>

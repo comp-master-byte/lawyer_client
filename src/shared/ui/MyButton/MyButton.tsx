@@ -8,15 +8,16 @@ interface MyButtonProps {
   size?: "large"|"small";
   children?: React.ReactNode;
   btnClassName?: string;
+  onClick?: () => void;
 }
 
 const MyButton: FC<MyButtonProps> = ({
-  color,
-  variant,
-  size,
-  children,
-  btnClassName,
-  ...props
+    color,
+    variant,
+    size,
+    children,
+    btnClassName,
+    ...props
 }) => {
   return (
     <button

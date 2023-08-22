@@ -8,9 +8,15 @@ export const useSupportChat = () => {
     const {data, savedChains} = useTypedSelector((state) => state.supportChatSlice);
 
     const [isSupportChatVisible, setIsSupportChatVisible] = useState(false);
+    const [isLegalAdviceModalVisible, setIsLegalAdviceModalVisible] = useState(false);
 
     const closeSupportChat = useCallback(() => {
         setIsSupportChatVisible(false);
+    }, [])
+
+    const openLegalAdviceModal = useCallback(() => {
+        setIsSupportChatVisible(false);
+        setIsLegalAdviceModalVisible(true);
     }, [])
 
     const openSupportChat = useCallback(() => {
@@ -31,6 +37,8 @@ export const useSupportChat = () => {
     return {
         isSupportChatVisible,
         closeSupportChat,
-        openSupportChat
+        openSupportChat,
+        isLegalAdviceModalVisible,
+        openLegalAdviceModal
     }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./navigation.module.scss";
-import MyButton from "shared/UI/MyButton/MyButton";
+import MyButton from "shared/ui/MyButton/MyButton";
 import logo from "./assets/logo.svg";
 import vk from "./assets/vk.svg";
 import { useNavigation } from "./lib/hooks/useNavigation";
