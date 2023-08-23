@@ -3,3 +3,13 @@
     column-gap: 15px;
     margin-bottom: 10px;
 }
+
+.submitButton {
+    position: absolute;
+    top: calc(100% + 3px);
+    left: 0;
+    border-radius: 30px;
+    height: 62px;
+    font-size: 28px;
+    font-weight: 600;
+}

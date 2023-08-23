@@ -3,6 +3,7 @@ import styles from "./legal-form.module.scss";
 import { useLegalAdviceForm } from 'widgets/support-chat/lib/hooks/useLegalAdviceForm';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import TextArea from 'shared/ui/MyInput/textarea';
+import MyButton from 'shared/ui/MyButton/MyButton';
 
 const LegalForm: React.FC = () => {
     const {
@@ -13,7 +14,7 @@ const LegalForm: React.FC = () => {
     } = useLegalAdviceForm();
 
     return (
-        <form onSubmit={handleSubmit(onSubmitAdviceForm)}>
+        <form className={styles.legalAdviceForm} onSubmit={handleSubmit(onSubmitAdviceForm)}>
             <div className={styles.legalFormInputs}>
                 <MyInput 
                     label='Имя' 
@@ -35,6 +36,14 @@ const LegalForm: React.FC = () => {
                 error={errors.question} 
                 register={register("question")} 
             />
+
+            <MyButton 
+                color='secondary' 
+                variant='contained'
+                btnClassName={styles.submitButton}
+            >
+                Отправить запрос юристу
+            </MyButton>
         </form>
     )
 }
