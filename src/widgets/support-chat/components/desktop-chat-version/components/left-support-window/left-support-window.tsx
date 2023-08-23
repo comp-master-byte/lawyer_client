@@ -3,7 +3,7 @@ import styles from "./left-support-window.module.scss";
 import logoSvg from "widgets/support-chat/assets/logo.svg";
 import { useTypedSelector } from 'shared/lib/hooks/redux';
 import LeftWindowHeader from './components/left-window-header/left-window-header';
-import StaticContent from './components/static-content/static-content';
+import StaticContent from 'entities/support-chat/static-content/static-content';
 
 const LeftSupportWindow: React.FC = () => {
     const {data} = useTypedSelector(state => state.supportChatSlice);
