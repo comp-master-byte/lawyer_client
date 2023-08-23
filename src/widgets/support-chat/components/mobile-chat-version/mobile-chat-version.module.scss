@@ -4,6 +4,7 @@
     border-radius: 30px;
     position: relative;
     overflow: hidden;
+    padding-bottom: 16px;
 }
 
 .blueBorder {
@@ -26,4 +27,20 @@
         width: 128px;
         height: 129.094px;
     }
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.toMobileLegalAdviceButton {
+    width: 360px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 87.023%; /* 15.664px */
+    letter-spacing: -0.45px;
 }

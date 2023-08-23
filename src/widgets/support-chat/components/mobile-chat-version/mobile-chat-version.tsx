@@ -7,6 +7,7 @@ import logoSvg from "../../assets/logo.svg";
 import MobileChatHeader from './components/mobile-chat-header/mobile-chat-header';
 import AnswerList from './components/answer-list/answer-list';
 import QuestionsList from './components/questions-list/questions-list';
+import MyButton from 'shared/ui/MyButton/MyButton';
 
 const MobileChatVersion: React.FC = () => {
     const {
@@ -35,6 +36,16 @@ const MobileChatVersion: React.FC = () => {
                 <MobileChatHeader closeSupportChat={closeSupportChat} />
                 <AnswerList />
                 <QuestionsList />
+
+                <div className={styles.buttonContainer}>
+                    <MyButton 
+                        color='secondary' 
+                        variant='contained'
+                        btnClassName={styles.toMobileLegalAdviceButton}
+                    >   
+                        Нужна консультация юриста
+                    </MyButton>
+                </div>
             </Modal>
         </div>
     )
