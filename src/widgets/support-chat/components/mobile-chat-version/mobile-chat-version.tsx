@@ -5,7 +5,8 @@ import SupportChatButton from 'features/support-chat-button/support-chat-button'
 import Modal from 'shared/ui/modal/modal';
 import logoSvg from "../../assets/logo.svg";
 import MobileChatHeader from './components/mobile-chat-header/mobile-chat-header';
-import StaticContent from 'entities/support-chat/static-content/static-content';
+import AnswerList from './components/answer-list/answer-list';
+import QuestionsList from './components/questions-list/questions-list';
 
 const MobileChatVersion: React.FC = () => {
     const {
@@ -17,7 +18,6 @@ const MobileChatVersion: React.FC = () => {
         closeLegalAdviceModal,
         backToSupportChatFromLegalModal
     } = useSupportChat();
-
 
     return (
         <div className={styles.mobileChatVersionWrapper}>
@@ -33,10 +33,8 @@ const MobileChatVersion: React.FC = () => {
                 </div>
 
                 <MobileChatHeader closeSupportChat={closeSupportChat} />
-
-                <section className={styles.answerList}>
-                    <StaticContent />
-                </section>
+                <AnswerList />
+                <QuestionsList />
             </Modal>
         </div>
     )

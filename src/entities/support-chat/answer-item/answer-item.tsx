@@ -20,10 +20,10 @@ const AnswerItem: React.FC<AnswerItemProps> = ({answer}) => {
     return (
         <div 
             key={answer[1]} 
+            onClick={() =>  moveToTheNextChain(answer[1])}
             className={classNames(styles.answerItem, {
                 [styles.halfAnswerWidth]: answer[0] === 'Да'|| answer[0] === 'Нет',
             })}
-            onClick={() =>  moveToTheNextChain(answer[1])}
         >
             {answer[0]}
         </div>

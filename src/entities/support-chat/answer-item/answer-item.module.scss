@@ -11,6 +11,7 @@
     cursor: pointer;
 
     width: auto;
+    height: auto;
 
     &:nth-child(2n + 1) {
         background: var(--unnamed, linear-gradient(180deg, #CCE4FF 0%, #FFF 100%));
