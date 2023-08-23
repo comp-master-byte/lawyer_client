@@ -1,0 +1,34 @@
+
+.chatNavigationContent {
+    padding: 16px 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.returnToBeginButton {
+    width: 92px;
+    height: 51px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 87.023%; /* 15.664px */
+    letter-spacing: -0.45px;
+    margin-bottom: 23px;
+}
+
+.navigationButtons {
+    display: flex;
+    justify-content: space-between;
+
+    .returnToPrevQuestionButton {
+        &__text {
+            width: 152px;
+            color: var(--unnamed, #FD7900);
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 87.023%; 
+            letter-spacing: -0.375px;
+        }
+    }
+}

@@ -3,10 +3,8 @@ import styles from "./mobile-chat-version.module.scss";
 import { useSupportChat } from 'widgets/support-chat/lib/hooks/useSupportChat';
 import SupportChatButton from 'features/support-chat-button/support-chat-button';
 import Modal from 'shared/ui/modal/modal';
-import MyButton from 'shared/ui/MyButton/MyButton';
-import backSvg from "../../assets/backArrow.svg";
-import closeMobileSvg from "../../assets/closeMobile.svg";
 import logoSvg from "../../assets/logo.svg";
+import MobileChatHeader from './components/mobile-chat-header/mobile-chat-header';
 
 const MobileChatVersion: React.FC = () => {
     const {
@@ -18,6 +16,7 @@ const MobileChatVersion: React.FC = () => {
         closeLegalAdviceModal,
         backToSupportChatFromLegalModal
     } = useSupportChat();
+
 
     return (
         <div className={styles.mobileChatVersionWrapper}>
@@ -32,24 +31,7 @@ const MobileChatVersion: React.FC = () => {
                     <img src={logoSvg} alt="" />
                 </div>
 
-                <header className={styles.chatNavigationContent}>
-                    <MyButton 
-                        color='primary' 
-                        variant='contained' 
-                        btnClassName={styles.returnToBeginButton}
-                    >
-                        Начать сначала
-                    </MyButton>
-                    <div className={styles.navigationButtons}>
-                        <div className={styles.returnToPrevQuestionButton}>
-                            <img src={backSvg} alt="" />
-                            <p className={styles.returnToPrevQuestionButton__text}>вернуться к предыдущему вопросу</p>
-                        </div>
-                        <div>
-                            <img src={closeMobileSvg} alt="" />
-                        </div>
-                    </div>
-                </header>
+                <MobileChatHeader closeSupportChat={closeSupportChat} />
             </Modal>
         </div>
     )
