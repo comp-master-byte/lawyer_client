@@ -1,0 +1,62 @@
+.mobileChatContent {
+    width: 390px;
+    background-color: #fff;
+    height: 732px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.blueBorder {
+    position: absolute;
+    top: 77px;
+    left: -8px;
+    width: 406px;
+    height: 817px;
+    border-radius: 30px;
+    border: 2px solid var(--unnamed, #013878);
+}
+
+.chatNavigationContent {
+    padding: 16px 15px;
+}
+
+.returnToBeginButton {
+    width: 92px;
+    height: 51px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 87.023%; /* 15.664px */
+    letter-spacing: -0.45px;
+    margin-bottom: 23px;
+}
+
+.navigationButtons {
+    display: flex;
+    justify-content: space-between;
+
+    .returnToPrevQuestionButton {
+        &__text {
+            width: 152px;
+            color: var(--unnamed, #FD7900);
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 87.023%; 
+            letter-spacing: -0.375px;
+        }
+    }
+}
+
+.chatLogoPosition {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    img {
+        width: 128px;
+        height: 129.094px;
+    }
+}

@@ -7,3 +7,12 @@
         cursor: pointer;
     }
 }
+
+@media screen and (max-width: 490px) {
+    .botButton {
+        img {
+            width: 84.317px;
+            height: 81.145px;
+        }
+    }
+}
