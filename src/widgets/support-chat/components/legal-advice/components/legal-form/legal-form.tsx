@@ -38,7 +38,7 @@ const LegalForm: React.FC = () => {
                 register={register("question")} 
             />
 
-            <Checkbox label='текст' />
+            <Checkbox />
 
             <MyButton 
                 color='secondary' 

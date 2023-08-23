@@ -1,3 +1,9 @@
+.label {
+    display: flex;
+    align-items: center;
+    column-gap: 9px;
+}
+
 .checkbox {
     display: none;
 }
@@ -28,4 +34,18 @@
 
 .checkbox:checked + .fake::before {
     opacity: 1;
+}
+
+.text {
+    color: var(--unnamed, #013878);
+    font-family: 'Inter';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 15px */
+    letter-spacing: -0.375px;
+
+    .colored {
+        color: var(--unnamed, #FD7900);
+    }
 }
