@@ -1,0 +1,31 @@
+.checkbox {
+    display: none;
+}
+
+.fake {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    border: 3px solid var(--unnamed, #013878);
+    position: relative;
+}
+
+.fake::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 31px;
+    height: 25px;
+    background-image: url("./assets/checked.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: .2s;
+}
+
+.checkbox:checked + .fake::before {
+    opacity: 1;
+}

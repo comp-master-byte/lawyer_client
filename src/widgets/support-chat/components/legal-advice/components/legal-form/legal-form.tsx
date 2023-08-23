@@ -4,6 +4,7 @@ import { useLegalAdviceForm } from 'widgets/support-chat/lib/hooks/useLegalAdvic
 import MyInput from 'shared/ui/MyInput/MyInput';
 import TextArea from 'shared/ui/MyInput/textarea';
 import MyButton from 'shared/ui/MyButton/MyButton';
+import Checkbox from 'shared/ui/checkbox/checkbox';
 
 const LegalForm: React.FC = () => {
     const {
@@ -36,6 +37,8 @@ const LegalForm: React.FC = () => {
                 error={errors.question} 
                 register={register("question")} 
             />
+
+            <Checkbox label='текст' />
 
             <MyButton 
                 color='secondary' 
