@@ -1,4 +1,8 @@
 .botButton {
+    position: fixed;
+    z-index: 11;
+    bottom: 0;
+    // right: 0;
     img {
         cursor: pointer;
     }
