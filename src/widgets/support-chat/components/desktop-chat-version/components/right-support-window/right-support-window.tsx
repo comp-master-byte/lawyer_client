@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./right-support-window.module.scss";
 import classNames from 'classnames';
-import closeSvg from "../../assets/close.svg";
+import closeSvg from "widgets/support-chat/assets/close.svg";
 import AnswersList from './components/answers-list/answers-list';
 
 interface RightSupportWindowProps {

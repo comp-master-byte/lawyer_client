@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./left-window-header.module.scss";
-import backArrowSvg from "../../../../assets/backArrow.svg";
+import backArrowSvg from 'widgets/support-chat/assets/backArrow.svg'
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { fetchMessageNode } from 'widgets/support-chat/model/async-actions';
 import { supportChatSlice } from 'widgets/support-chat/model/supportChatSlice';
