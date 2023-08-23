@@ -19,6 +19,11 @@ export const useSupportChat = () => {
         setIsLegalAdviceModalVisible(true);
     }, [])
 
+    const backToSupportChatFromLegalModal = useCallback(() => {
+        setIsLegalAdviceModalVisible(false);
+        setIsSupportChatVisible(true);
+    }, [])
+
     const closeLegalAdviceModal = useCallback(() => {
         setIsLegalAdviceModalVisible(false);
     }, [])
@@ -44,6 +49,7 @@ export const useSupportChat = () => {
         openSupportChat,
         isLegalAdviceModalVisible,
         openLegalAdviceModal,
-        closeLegalAdviceModal
+        closeLegalAdviceModal,
+        backToSupportChatFromLegalModal
     }
 }

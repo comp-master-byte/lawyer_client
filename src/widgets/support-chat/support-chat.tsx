@@ -15,13 +15,18 @@ const SupportChat: React.FC = () => {
         openSupportChat,
         isLegalAdviceModalVisible,
         openLegalAdviceModal,
-        closeLegalAdviceModal
+        closeLegalAdviceModal,
+        backToSupportChatFromLegalModal
     } = useSupportChat();
 
     return (
         <div className={styles.supportChat}>
             <SupportChatButton openSupportChat={openSupportChat} />
-            <LegalAdvice closeLegalAdviceModal={closeLegalAdviceModal} isModalVisible={isLegalAdviceModalVisible} />
+            <LegalAdvice 
+                isModalVisible={isLegalAdviceModalVisible} 
+                closeLegalAdviceModal={closeLegalAdviceModal} 
+                backToSupportChatFromLegalModal={backToSupportChatFromLegalModal}
+            />
 
             <section className={classNames(styles.supportChatWrapper, {[styles.supportChatVisible]: isSupportChatVisible})}>
                 <div className={styles.supportChatContent}>
