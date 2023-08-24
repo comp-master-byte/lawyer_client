@@ -6,9 +6,13 @@ import AnswerItem from 'entities/support-chat/answer-item/answer-item';
 const QuestionsList: React.FC = () => {
     const {data} = useTypedSelector(state => state.supportChatSlice);
 
+    if(data && !Object.keys(data.answers).length) {
+        return <></>
+    }
+    
     return (
         <div className={styles.questionsListWrapper}>
-            {data?.answers ? Object.entries(data.answers).map((item) => <AnswerItem answer={item} />) : <></>}
+            {data?.answers && Object.entries(data.answers).map((item) => <AnswerItem answer={item} />)}
         </div>
     )
 }
