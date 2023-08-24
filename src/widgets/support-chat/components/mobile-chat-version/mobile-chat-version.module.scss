@@ -1,13 +1,17 @@
 .mobileChatContent {
-    width: 390px;
+    max-width: 390px;
+    width: 100%;
+    min-width: auto;
     background-color: #fff;
     border-radius: 30px;
     position: relative;
     overflow: hidden;
     padding-bottom: 16px;
+    margin: 0 15px;
 }
 
 .scrollContent {
+    width: auto;
     position: relative;
     max-height: 732px;
     overflow-y: auto;
@@ -67,4 +71,14 @@
     line-height: 87.023%; /* 15.664px */
     letter-spacing: -0.45px;
     margin-bottom: 15px;
+}
+
+@media screen and (max-width: 389px) {
+    .mobileChatContent {
+        max-width: 350px;
+    }
+
+    .scrollContent {
+        max-height: 600px;
+    }
 }
