@@ -35,7 +35,7 @@
     position: absolute;
     top: 77px;
     left: -8px;
-    width: 406px;
+    width: 405px;
     height: 200px;
     border-radius: 30px;
     border-top: 2px solid var(--unnamed, #013878);
@@ -80,5 +80,9 @@
 
     .scrollContent {
         max-height: 600px;
+    }
+
+    .blueBorder {
+        width: 365px;
     }
 }
