@@ -1,11 +1,12 @@
 .questionsListWrapper {
     border-radius: 30px;
     background: linear-gradient(180deg, #CCE4FF 0%, #FFF 100%);
-    padding: 25px 15px;
+    padding: 25px 10px;
 
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
 
     margin-bottom: 50px;
+    padding-bottom: 0;
 }

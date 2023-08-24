@@ -28,27 +28,29 @@ const MobileChatVersion: React.FC = () => {
                 isModalVisible={isSupportChatVisible} 
                 modalContentClassName={styles.mobileChatContent}
             >
-                <div className={styles.blueBorder}></div>
-                <div className={styles.chatLogoPosition}>
-                    <img src={logoSvg} alt="" />
-                </div>
-
-                <section className={styles.mainChatContent}>
-                    <MobileChatHeader closeSupportChat={closeSupportChat} />
-                    <AnswerList />
-                    <QuestionsList />
-
-                    <div className={styles.buttonContainer}>
-                        <MyButton 
-                            color='secondary' 
-                            variant='contained'
-                            btnClassName={styles.toMobileLegalAdviceButton}
-                            onClick={openLegalAdviceModal}
-                        >   
-                            Нужна консультация юриста
-                        </MyButton>
+                <div className={styles.scrollContent}>
+                    {/* <div className={styles.blueBorder}></div> */}
+                    <div className={styles.chatLogoPosition}>
+                        <img src={logoSvg} alt="" />
                     </div>
-                </section>
+
+                    <section className={styles.mainChatContent}>
+                        <MobileChatHeader closeSupportChat={closeSupportChat} />
+                        <AnswerList />
+                        <QuestionsList />
+
+                        <div className={styles.buttonContainer}>
+                            <MyButton 
+                                color='secondary' 
+                                variant='contained'
+                                btnClassName={styles.toMobileLegalAdviceButton}
+                                onClick={openLegalAdviceModal}
+                            >   
+                                Нужна консультация юриста
+                            </MyButton>
+                        </div>
+                    </section>
+                </div>
             </Modal>
         </div>
     )
