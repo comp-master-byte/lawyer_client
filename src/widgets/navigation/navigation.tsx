@@ -5,6 +5,7 @@ import logo from "./assets/logo.svg";
 import vk from "./assets/vk.svg";
 import { useNavigation } from "./lib/hooks/useNavigation";
 import classNames from "classnames";
+import { VK_LINK } from "shared/constants/constants";
 
 const Navigation: React.FC = React.memo(function Navigation() {
   const {
@@ -23,7 +24,9 @@ const Navigation: React.FC = React.memo(function Navigation() {
     })}>
       <div className={styles.container}>
         <div className={styles.navigationInner}>
-          <img className={styles.navigationInner__vk} src={vk} alt="" />
+          <a href={VK_LINK} target="_blank">
+            <img className={styles.navigationInner__vk} src={vk} alt="" />
+          </a>
           <div className={styles.navigationInner__logo}>
             <img src={logo} alt="logo" />
           </div>
