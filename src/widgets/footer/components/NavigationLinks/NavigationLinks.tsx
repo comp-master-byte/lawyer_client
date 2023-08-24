@@ -13,7 +13,9 @@ const NavigationLinks: React.FC = React.memo(function NavigationLinks() {
         <li className={styles.link}>Категории и темы</li>
         <li className={styles.link}>Контакты</li>
       </ul>
-      <img className={styles.pointer} src={toTop} alt="" />
+      <div className={styles.pointerWrapper} onClick={() => window.scrollTo({behavior: "smooth", top: 0})}>
+        <img className={styles.pointer} src={toTop} alt="" />
+      </div>
     </div>
   );
 });

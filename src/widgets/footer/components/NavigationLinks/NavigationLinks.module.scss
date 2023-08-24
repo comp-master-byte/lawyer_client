@@ -33,6 +33,10 @@
   }
 }
 
+.pointerWrapper {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .navigationLinksWrapper {
     padding: 27px 31px 0 31px;

@@ -18,12 +18,14 @@ const Contacts: React.FC = React.memo(function Contacts() {
               <ContactCard
                 variant="orange"
                 text="Наша группа в ВК"
+                href="https://vk.com/jura_prav"
                 srcIcon={vk}
               />
               <ContactCard
                 variant="blue"
                 text="Наш канал в telegram"
                 srcIcon={tg}
+                href="https://t.me/jura_prav"
               />
             </div>
 

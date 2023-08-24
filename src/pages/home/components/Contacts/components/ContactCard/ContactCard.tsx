@@ -6,12 +6,15 @@ interface ContactCardProps {
   variant: string;
   srcIcon: string;
   text: string;
+  href: string;
 }
 
 const ContactCard: React.FC<ContactCardProps> = React.memo(
-  function ContactCard({ variant, srcIcon, text }) {
+  function ContactCard({ variant, srcIcon, text, href }) {
     return (
-      <div
+      <a
+        target="_blank"
+        href={href}
         className={classNames(styles.contactCardWrapper, {
           [styles.blue]: variant === "blue",
           [styles.orange]: variant === "orange",
@@ -19,7 +22,7 @@ const ContactCard: React.FC<ContactCardProps> = React.memo(
       >
         <img src={srcIcon} alt="" />
         <p className={styles.contactCardParagraph}>{text}</p>
-      </div>
+      </a>
     );
   }
 );
