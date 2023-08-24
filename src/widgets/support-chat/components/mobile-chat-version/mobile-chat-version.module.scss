@@ -8,8 +8,10 @@
 }
 
 .scrollContent {
+    position: relative;
     max-height: 732px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .scrollContent::-webkit-scrollbar {
@@ -26,18 +28,16 @@
     background-color: #013878;
 }
 
-.mainChatContent {
-    position: relative;
-}
-
 .blueBorder {
     position: absolute;
     top: 77px;
     left: -8px;
     width: 406px;
-    height: 817px;
+    height: 200px;
     border-radius: 30px;
-    border: 2px solid var(--unnamed, #013878);
+    border-top: 2px solid var(--unnamed, #013878);
+    border-left: 2px solid linear-gradient(#013878, #fff);
+    border-right: 2px solid linear-gradient(#013878, #fff);
 }
 
 .chatLogoPosition {
@@ -66,4 +66,5 @@
     font-weight: 600;
     line-height: 87.023%; /* 15.664px */
     letter-spacing: -0.45px;
+    margin-bottom: 15px;
 }

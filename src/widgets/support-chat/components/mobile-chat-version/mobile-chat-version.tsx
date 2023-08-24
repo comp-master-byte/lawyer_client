@@ -29,7 +29,7 @@ const MobileChatVersion: React.FC = () => {
                 modalContentClassName={styles.mobileChatContent}
             >
                 <div className={styles.scrollContent}>
-                    {/* <div className={styles.blueBorder}></div> */}
+                    <div className={styles.blueBorder}></div>
                     <div className={styles.chatLogoPosition}>
                         <img src={logoSvg} alt="" />
                     </div>
