@@ -33,19 +33,22 @@ const MobileChatVersion: React.FC = () => {
                     <img src={logoSvg} alt="" />
                 </div>
 
-                <MobileChatHeader closeSupportChat={closeSupportChat} />
-                <AnswerList />
-                <QuestionsList />
+                <section className={styles.mainChatContent}>
+                    <MobileChatHeader closeSupportChat={closeSupportChat} />
+                    <AnswerList />
+                    <QuestionsList />
 
-                <div className={styles.buttonContainer}>
-                    <MyButton 
-                        color='secondary' 
-                        variant='contained'
-                        btnClassName={styles.toMobileLegalAdviceButton}
-                    >   
-                        Нужна консультация юриста
-                    </MyButton>
-                </div>
+                    <div className={styles.buttonContainer}>
+                        <MyButton 
+                            color='secondary' 
+                            variant='contained'
+                            btnClassName={styles.toMobileLegalAdviceButton}
+                            onClick={openLegalAdviceModal}
+                        >   
+                            Нужна консультация юриста
+                        </MyButton>
+                    </div>
+                </section>
             </Modal>
         </div>
     )
