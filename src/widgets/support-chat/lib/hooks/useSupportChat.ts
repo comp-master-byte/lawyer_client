@@ -43,6 +43,14 @@ export const useSupportChat = () => {
         }
     }, [data])
 
+    useEffect(() => {
+        if(isSupportChatVisible) {
+            document.body.style.overflowY = 'hidden'
+        } else {
+            document.body.style.overflowY = 'auto'
+        }
+    }, [isSupportChatVisible])
+
     return {
         isSupportChatVisible,
         closeSupportChat,
