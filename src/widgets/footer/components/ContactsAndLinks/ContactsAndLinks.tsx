@@ -2,16 +2,17 @@ import React from "react";
 import styles from "./ContactsAndLinks.module.scss";
 import vk from "./assets/vk.svg";
 import tg from "./assets/tg.svg";
+import { TG_LINK, VK_LINK } from "shared/constants/constants";
 
 const ContactsAndLinks: React.FC = React.memo(function ContactsAndLinks() {
   return (
     <div className={styles.contactsAndLinksWrapper}>
       <div className={styles.linksAndEmails}>
         <div className={styles.linksImages}>
-          <a href="https://vk.com/jura_prav" target="_blank">
+          <a href={VK_LINK} target="_blank">
             <img className={styles.socials} src={vk} alt="" />
           </a>
-          <a href="https://t.me/jura_prav" target="_blank">
+          <a href={TG_LINK} target="_blank">
             <img className={styles.socials} src={tg} alt="" />
           </a>
         </div>

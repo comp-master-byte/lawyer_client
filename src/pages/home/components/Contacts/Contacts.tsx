@@ -6,6 +6,7 @@ import vk from "./assets/vk.svg";
 import tg from "./assets/tg.svg";
 import yura from "./assets/yura.svg";
 import SectionTitle from "shared/Styled-Components/SectionTitle/SectionTitle";
+import { TG_LINK, VK_LINK } from "shared/constants/constants";
 
 const Contacts: React.FC = React.memo(function Contacts() {
   return (
@@ -18,14 +19,14 @@ const Contacts: React.FC = React.memo(function Contacts() {
               <ContactCard
                 variant="orange"
                 text="Наша группа в ВК"
-                href="https://vk.com/jura_prav"
+                href={VK_LINK}
                 srcIcon={vk}
               />
               <ContactCard
                 variant="blue"
                 text="Наш канал в telegram"
                 srcIcon={tg}
-                href="https://t.me/jura_prav"
+                href={TG_LINK}
               />
             </div>
 
