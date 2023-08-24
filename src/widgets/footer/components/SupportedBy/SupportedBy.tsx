@@ -10,7 +10,9 @@ const SupportedBy: React.FC = React.memo(function SupportedBy() {
       <img src={logo} className={styles.supportedByWrapper__logo} alt="" />
       <img src={smallLogoSvg} className={styles.mobileLogo} alt="" />
       <p>при поддержке</p>
-      <img src={fsi} className={styles.fsi} alt="" />
+      <a href="https://fasie.ru/" target="_blank">
+        <img src={fsi} className={styles.fsi} alt="" />
+      </a>
     </div>
   );
 });
