@@ -10,7 +10,7 @@
 
 .fake {
     display: inline-block;
-    width: 32px;
+    min-width: 32px;
     height: 32px;
     border-radius: 10px;
     border: 3px solid var(--unnamed, #013878);
@@ -47,5 +47,14 @@
 
     .colored {
         color: var(--unnamed, #FD7900);
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .label {
+        align-items: flex-start;
+    }
+    .fake {
+        border: 2px solid var(--unnamed, #013878);
     }
 }

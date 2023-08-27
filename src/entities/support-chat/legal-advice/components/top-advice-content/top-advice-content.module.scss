@@ -15,7 +15,6 @@
     color: var(--unnamed, #013878);
     font-weight: 600;
     margin-left: 30px;
-    // margin-top: 20px;
 
     .topLeftContentTitle {
         font-size: 22px;
@@ -59,5 +58,30 @@
         line-height: 87.023%; /* 13.053px */
         letter-spacing: -0.375px;
         // width: 83px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .topAdviceContent {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .topLeftColumnContent {
+        flex-direction: column;
+        row-gap: 16px;
+        text-align: center;
+    }
+
+    .topRightNavigationButtons {
+        position: static;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .topLeftContentText {
+        margin-left: 0;
+        max-width: 333px;
+        margin: 0 auto;
     }
 }

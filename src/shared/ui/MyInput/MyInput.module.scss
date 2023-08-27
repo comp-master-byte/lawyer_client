@@ -59,3 +59,9 @@ textarea::-webkit-scrollbar-thumb {
     padding: 15px;
   }
 }
+
+@media screen and (max-width: 490px) {
+  .myInput {
+    border: 2px solid $blue-color;
+  }
+}

@@ -13,7 +13,7 @@ const TopAdviceContent: React.FC<TopAdviceContentProps> = ({closeLegalAdviceModa
     return (
         <div className={styles.topAdviceContent}>
             <div className={styles.topLeftColumnContent}>
-                    <img src={logoSvg} alt="" />
+                <img src={logoSvg} alt="" />
                 <div className={styles.topLeftContentText}>
                     <h3 className={styles.topLeftContentTitle}>Задай свой вопрос юристу</h3>
                     <p className={styles.topLeftContentParagraph}>

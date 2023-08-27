@@ -13,3 +13,14 @@
     font-size: 28px;
     font-weight: 600;
 }
+
+@media screen and (max-width: 490px) {
+    .legalAdviceForm {
+        row-gap: 7px;
+    }
+    .submitButton {
+        position: static;
+        font-size: 18px;
+        height: 50px;
+    }
+}
