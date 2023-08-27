@@ -44,12 +44,12 @@ export const useSupportChat = () => {
     }, [data])
 
     useEffect(() => {
-        if(isSupportChatVisible) {
+        if(isSupportChatVisible||isLegalAdviceModalVisible) {
             document.body.style.overflowY = 'hidden'
         } else {
             document.body.style.overflowY = 'auto'
         }
-    }, [isSupportChatVisible])
+    }, [isSupportChatVisible, isLegalAdviceModalVisible])
 
     return {
         isSupportChatVisible,

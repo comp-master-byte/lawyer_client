@@ -5,6 +5,8 @@ import MyInput from 'shared/ui/MyInput/MyInput';
 import TextArea from 'shared/ui/MyInput/textarea';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import Checkbox from 'shared/ui/checkbox/checkbox';
+import Select from 'shared/ui/select/select';
+import { THEMES } from 'shared/constants/constants';
 
 const LegalForm: React.FC = () => {
     const {
@@ -16,7 +18,10 @@ const LegalForm: React.FC = () => {
 
     return (
         <form className={styles.legalAdviceForm} onSubmit={handleSubmit(onSubmitAdviceForm)}>
-            <div className={styles.legalFormInputs}>
+            <Select 
+                options={THEMES}
+            />
+            {/* <div className={styles.legalFormInputs}>
                 <MyInput 
                     label='Имя' 
                     placeholder='Введите имя...' 
@@ -29,9 +34,9 @@ const LegalForm: React.FC = () => {
                     error={errors.email} 
                     register={register("email")} 
                 />
-            </div>
+            </div> */}
 
-            <TextArea  
+            {/* <TextArea  
                 label='Вопрос' 
                 placeholder='Введите вопрос...' 
                 error={errors.question} 
@@ -46,7 +51,7 @@ const LegalForm: React.FC = () => {
                 btnClassName={styles.submitButton}
             >
                 Отправить запрос юристу
-            </MyButton>
+            </MyButton> */}
         </form>
     )
 }
