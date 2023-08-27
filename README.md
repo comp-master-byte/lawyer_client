@@ -12,11 +12,7 @@
   - Полная статическая типизация
 
 Запустить проект:
-
-  git clone ...
-  
-  yarn
-  
-  yarn build
-  
-  yarn start
+  - git clone ...
+  - yarn
+  - yarn build
+  - yarn start
