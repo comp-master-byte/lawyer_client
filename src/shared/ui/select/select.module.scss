@@ -2,6 +2,15 @@
     position: relative;
 }
 
+.selectLabel {
+    color: var(--unnamed, #013878);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 105%; /* 18.9px */
+    letter-spacing: -0.45px;
+    margin-left: 20px;
+}
+
 .selectedOptionWrapper {
     width: 100%;
     height: 55px;
@@ -12,6 +21,7 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+    margin-top: 7px;
 
     .selectedOption {
         color: #013878;
@@ -41,6 +51,7 @@
     flex-direction: column;
     row-gap: 5px;
     background-color: #fff;
+    z-index: 1;
 
     .option {
         color: #013878;

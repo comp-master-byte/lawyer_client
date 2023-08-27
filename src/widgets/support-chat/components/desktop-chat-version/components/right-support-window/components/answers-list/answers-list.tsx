@@ -8,7 +8,7 @@ const AnswersList: React.FC = () => {
 
     return (
         <div className={styles.answersList}> 
-            {data?.answers ? Object.entries(data.answers).map((item) => <AnswerItem answer={item} />) : <></>}
+            {data?.answers ? Object.entries(data.answers).map((item, index) => <AnswerItem key={index} answer={item} />) : <></>}
         </div>  
     )
 }

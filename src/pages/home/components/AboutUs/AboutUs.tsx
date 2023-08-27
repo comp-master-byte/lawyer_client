@@ -4,7 +4,7 @@ import AdditionalCard from "./components/additionalCard/AdditionalCard";
 import ProblemCard from "./components/problemCard/ProblemCard";
 import SolutionCard from "./components/solutionCard/SolutionCard";
 import LawyerAssistant from "./components/lawyerAssistant/LawyerAssistant";
-import SectionTitle from "shared/Styled-Components/SectionTitle/SectionTitle";
+import SectionTitle from "shared/styled-components/SectionTitle/SectionTitle";
 import SupportChat from "widgets/support-chat/support-chat";
 
 const AboutUs: FC = React.memo(function AboutUs() {

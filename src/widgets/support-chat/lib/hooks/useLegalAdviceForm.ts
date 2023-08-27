@@ -7,7 +7,7 @@ interface FormValues {
 }
 
 export const useLegalAdviceForm = () => {
-    const {register, formState: {errors}, handleSubmit} = useForm<FormValues>({mode: "all"});
+    const {register, control, formState: {errors}, handleSubmit} = useForm<FormValues>({mode: "all"});
 
     const onSubmitAdviceForm: SubmitHandler<FormValues> = (data) => {
         console.log(data);
@@ -15,6 +15,7 @@ export const useLegalAdviceForm = () => {
 
     return {
         register,
+        control,
         errors,
         handleSubmit,
         onSubmitAdviceForm

@@ -7,36 +7,27 @@ import MyButton from 'shared/ui/MyButton/MyButton';
 import Checkbox from 'shared/ui/checkbox/checkbox';
 import Select from 'shared/ui/select/select';
 import { THEMES } from 'shared/constants/constants';
+import ControllerSelect from 'shared/ui/select/controller-select';
 
 const LegalForm: React.FC = () => {
     const {
         register,
         errors,
         handleSubmit,
+        control,
         onSubmitAdviceForm
     } = useLegalAdviceForm();
 
     return (
         <form className={styles.legalAdviceForm} onSubmit={handleSubmit(onSubmitAdviceForm)}>
-            <Select 
+            <ControllerSelect 
+                name='topic'
+                label='Тема обращения'
                 options={THEMES}
+                control={control}
             />
-            {/* <div className={styles.legalFormInputs}>
-                <MyInput 
-                    label='Имя' 
-                    placeholder='Введите имя...' 
-                    error={errors.name} 
-                    register={register("name")} 
-                />
-                <MyInput 
-                    label='Почта' 
-                    placeholder='Введите почту...' 
-                    error={errors.email} 
-                    register={register("email")} 
-                />
-            </div> */}
 
-            {/* <TextArea  
+            <TextArea  
                 label='Вопрос' 
                 placeholder='Введите вопрос...' 
                 error={errors.question} 
@@ -51,7 +42,7 @@ const LegalForm: React.FC = () => {
                 btnClassName={styles.submitButton}
             >
                 Отправить запрос юристу
-            </MyButton> */}
+            </MyButton>
         </form>
     )
 }

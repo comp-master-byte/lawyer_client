@@ -5,7 +5,7 @@ import ContactForm from "features/ContactForm/ContactForm";
 import vk from "./assets/vk.svg";
 import tg from "./assets/tg.svg";
 import yura from "./assets/yura.svg";
-import SectionTitle from "shared/Styled-Components/SectionTitle/SectionTitle";
+import SectionTitle from "shared/styled-components/SectionTitle/SectionTitle";
 import { TG_LINK, VK_LINK } from "shared/constants/constants";
 
 const Contacts: React.FC = React.memo(function Contacts() {

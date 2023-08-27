@@ -3,7 +3,7 @@ import styles from "./Advantages.module.scss";
 import WhiteCard from "./components/WhiteCard/WhiteCard";
 import BlueCard from "./components/BlueCard/BlueCard";
 import MyButton from "shared/ui/MyButton/MyButton";
-import SectionTitle from "shared/Styled-Components/SectionTitle/SectionTitle";
+import SectionTitle from "shared/styled-components/SectionTitle/SectionTitle";
 import mobileBgLine from "./assets/bg-line.svg";
 
 const Advantages: React.FC = React.memo(function Advantages() {

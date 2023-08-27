@@ -1,7 +1,7 @@
-.legalFormInputs {
+.legalAdviceForm {
     display: flex;
-    column-gap: 15px;
-    margin-bottom: 10px;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
 .submitButton {
