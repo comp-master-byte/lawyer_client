@@ -8,6 +8,7 @@ import MobileChatHeader from './components/mobile-chat-header/mobile-chat-header
 import AnswerList from './components/answer-list/answer-list';
 import QuestionsList from './components/questions-list/questions-list';
 import MyButton from 'shared/ui/MyButton/MyButton';
+import LegalAdvice from 'entities/support-chat/legal-advice/legal-advice';
 
 const MobileChatVersion: React.FC = () => {
     const {
@@ -23,6 +24,12 @@ const MobileChatVersion: React.FC = () => {
     return (
         <div className={styles.mobileChatVersionWrapper}>
             <SupportChatButton openSupportChat={openSupportChat} />
+
+            <LegalAdvice 
+                isModalVisible={isLegalAdviceModalVisible}
+                backToSupportChatFromLegalModal={backToSupportChatFromLegalModal} 
+                closeLegalAdviceModal={closeLegalAdviceModal}
+            />
 
             <Modal 
                 isModalVisible={isSupportChatVisible} 

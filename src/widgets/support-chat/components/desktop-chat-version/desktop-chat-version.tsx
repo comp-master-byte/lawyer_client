@@ -6,7 +6,7 @@ import { useSupportChat } from 'widgets/support-chat/lib/hooks/useSupportChat';
 import classNames from 'classnames';
 import SupportChatButton from 'features/support-chat-button/support-chat-button';
 import RightSupportWindow from './components/right-support-window/right-support-window';
-import LegalAdvice from './components/legal-advice/legal-advice';
+import LegalAdvice from 'entities/support-chat/legal-advice/legal-advice';
 
 const DesktopChatVersion: React.FC = () => {
     const {
