@@ -1,7 +1,9 @@
 Проект для юридического стартапа Юра Прав
 
 Стек проекта: React, TypeScript, Redux-toolkit
+
 Архитектурный подход: Feature-Sliced Design
+
 Особенности: 
   - Ui-kit в связке с React-hook-form
   - Логика в кастомных хуках
