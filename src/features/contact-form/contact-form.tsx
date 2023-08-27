@@ -1,29 +1,25 @@
 import React from "react";
-import styles from "./ContactForm.module.scss";
+import styles from "./contact-form.module.scss";
 import { useForm, SubmitHandler } from "react-hook-form";
-import MyInput from "shared/ui/MyInput/MyInput";
 import MyButton from "shared/ui/MyButton/MyButton";
-import yura from "./assets/yura.svg";
-
-interface Inputs {
-  name: string;
-  email: string;
-  message: string;
-};
+import { ContractFormValues } from "./model/types";
+import QuestionForm from "./api/QuestionForm";
+import TextArea from "shared/ui/MyInput/textarea";
+import { EMAIL_REGEX } from "shared/constants/constants";
 
 const ContactForm: React.FC = React.memo(function ContactForm() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<ContractFormValues>({mode: "all"});
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<ContractFormValues> = async (data) => {
+      return await QuestionForm.questionToEmail(data);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.contactForm}>
-      {/* <img src={yura} className={styles.contactForm__img} alt="" /> */}
       <div className={styles.contactInputs}>
         <input
           defaultValue=""
@@ -31,18 +27,29 @@ const ContactForm: React.FC = React.memo(function ContactForm() {
           className={styles.contactInputs__input}
           {...register("name", { required: "Это поле обязательное!" })}
         />
+        {errors && errors.name && <p style={{color: "red"}}>{errors.name.message}</p>}
         <input
           defaultValue=""
           placeholder="E-mail"
           className={styles.contactInputs__input}
-          {...register("email", { required: "Это поле обязательное!" })}
+          {...register("email", { 
+            required: "Это поле обязательное!",
+            pattern: {
+              message: "E-mail введен некорректно!",
+              value: EMAIL_REGEX
+            }
+          })}
         />
+        {errors && errors.email && <p style={{color: "red"}}>{errors.email.message}</p>}
         <textarea
           defaultValue=""
           placeholder="Ваше сообщение/вопрос"
           className={styles.contactInputs__input}
-          {...register("message", { required: "Это поле обязательное!" })}
+          {...register("message", { 
+            required: "Это поле обязательное!",
+          })}
         />
+        {errors && errors.message && <p style={{color: "red"}}>{errors.message.message}</p>}
       </div>
 
       <p className={styles.contactParagraph}>
