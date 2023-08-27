@@ -63,12 +63,14 @@
     .mobileChatContent {
         max-width: 350px;
     }
-
-    .scrollContent {
-        max-height: 600px;
-    }
-
+    
     .blueBorder {
         width: 365px;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .scrollContent {
+        max-height: 600px;
     }
 }
