@@ -4,7 +4,7 @@ import { useTypedSelector } from 'shared/lib/hooks/redux';
 import AnswerItem from 'entities/support-chat/answer-item/answer-item';
 
 const QuestionsList: React.FC = () => {
-    const {data} = useTypedSelector(state => state.supportChatSlice);
+    const {data, isLoading} = useTypedSelector(state => state.supportChatSlice);
 
     if(data && !Object.keys(data.answers).length) {
         return <></>
@@ -12,7 +12,8 @@ const QuestionsList: React.FC = () => {
     
     return (
         <div className={styles.questionsListWrapper}>
-            {data?.answers && Object.entries(data.answers).map((item) => <AnswerItem answer={item} />)}
+            {isLoading ? <h3>Загрузка...</h3> : 
+                data?.answers && Object.entries(data.answers).map((item) => <AnswerItem answer={item} />)}
         </div>
     )
 }

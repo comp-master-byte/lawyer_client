@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
 import { fetchMessageNode } from "widgets/support-chat/model/async-actions";
+import { supportChatSlice } from "widgets/support-chat/model/supportChatSlice";
 
 export const useSupportChat = () => {
     const dispatch = useAppDispatch();
@@ -30,6 +31,7 @@ export const useSupportChat = () => {
 
     const openSupportChat = useCallback(() => {
         if(!data) {
+            dispatch(supportChatSlice.actions.toggleLoadingStatus(true));
             const lastNodeId = savedChains[savedChains.length - 1];
             dispatch(fetchMessageNode(lastNodeId));
             setIsSupportChatVisible(true);
