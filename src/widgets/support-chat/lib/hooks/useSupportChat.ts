@@ -32,22 +32,17 @@ export const useSupportChat = () => {
         if(!data) {
             const lastNodeId = savedChains[savedChains.length - 1];
             dispatch(fetchMessageNode(lastNodeId));
+            setIsSupportChatVisible(true);
         } else {
             setIsSupportChatVisible(true);
         }
     }, [savedChains, data])
 
     useEffect(() => {
-        if(data) {
-            setIsSupportChatVisible(true);
-        }
-    }, [data])
-
-    useEffect(() => {
         if(isSupportChatVisible||isLegalAdviceModalVisible) {
-            document.body.style.overflowY = 'hidden'
+            document.body.style.overflowY = 'hidden';
         } else {
-            document.body.style.overflowY = 'auto'
+            document.body.style.overflowY = 'auto';
         }
     }, [isSupportChatVisible, isLegalAdviceModalVisible])
 

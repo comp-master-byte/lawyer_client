@@ -3,12 +3,15 @@ import styles from "./right-support-window.module.scss";
 import classNames from 'classnames';
 import closeSvg from "widgets/support-chat/assets/close.svg";
 import AnswersList from './components/answers-list/answers-list';
+import { useTypedSelector } from 'shared/lib/hooks/redux';
 
 interface RightSupportWindowProps {
     closeSupportChatCallback: () => void;
 }
 
 const RightSupportWindow: React.FC<RightSupportWindowProps> = ({closeSupportChatCallback}) => {
+    const {isLoading} = useTypedSelector(state => state.supportChatSlice);
+    
     return (
         <div className={classNames(styles.chatContentWrapper, styles.rightSupportChatWindow)}>
             <header className={styles.rightWindowHeader}>
@@ -16,7 +19,7 @@ const RightSupportWindow: React.FC<RightSupportWindowProps> = ({closeSupportChat
                     <img src={closeSvg} alt="" />
                 </div>
             </header>
-            <AnswersList />
+            {isLoading ? <h3>Загрузка...</h3> : <AnswersList />}
         </div>
     )
 }

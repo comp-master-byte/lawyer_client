@@ -6,7 +6,7 @@ import LeftWindowHeader from './components/left-window-header/left-window-header
 import StaticContent from 'entities/support-chat/static-content/static-content';
 
 const LeftSupportWindow: React.FC = () => {
-    const {data} = useTypedSelector(state => state.supportChatSlice);
+    const {data, isLoading} = useTypedSelector(state => state.supportChatSlice);
 
     return (
         <section className={styles.leftSupportChatWindow}>
@@ -15,9 +15,9 @@ const LeftSupportWindow: React.FC = () => {
                 <div className={styles.leftWindowLogo}>
                     <img src={logoSvg} alt='' />
                 </div>
-                {data?.node_id === 1 
-                    ? <StaticContent />
-                    : <p className={styles.contentHelperText}>{data?.message}</p>
+                {isLoading 
+                    ? <StaticContent /> : data?.node_id === 1 
+                    ? <StaticContent /> : <p className={styles.contentHelperText}>{data?.message}</p>
                 }
             </div>
         </section>

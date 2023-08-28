@@ -3,7 +3,8 @@ import { MessageData, SupportChatState } from "./types";
 
 const initialState: SupportChatState = {
     data: null,
-    savedChains: [1]
+    savedChains: [1],
+    isLoading: false
 }
 
 export const supportChatSlice = createSlice({
@@ -21,6 +22,9 @@ export const supportChatSlice = createSlice({
         },
         resetChainToStarted(state) {
             state.savedChains = [1]
+        },
+        toggleLoadingStatus(state, action: PayloadAction<boolean>) {
+            state.isLoading = action.payload;
         }
     }
 })
