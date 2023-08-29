@@ -6,10 +6,10 @@ import vk from "./assets/vk.svg";
 import { useNavigation } from "./lib/hooks/useNavigation";
 import classNames from "classnames";
 import { VK_LINK } from "shared/constants/constants";
-import SignInModal from "./components/SignInModal/SignInModal";
 import { useAuthorization } from "./lib/hooks/useAuthorization";
-import SignUpModal from "./components/SignUpModal/SignUpModal";
 import ForgetPasswordModal from "./components/forget-password-modal/forget-password-modal";
+import SignInModal from "./components/sign-in-modal/sign-in-modal";
+import SignUpModal from "./components/sign-up-modal/sign-up-modal";
 
 const Navigation: React.FC = React.memo(function Navigation() {
     const {

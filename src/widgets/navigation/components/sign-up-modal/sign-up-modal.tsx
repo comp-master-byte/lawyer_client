@@ -1,7 +1,5 @@
 import React from 'react';
-import styles from "./SignUpModal.module.scss";
-import Modal from 'shared/ui/modal/modal';
-import closeModalSvg from "../../assets/close-modal.svg";
+import styles from "./sign-up-modal.module.scss";
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { SignUpValues } from 'widgets/navigation/model/types';
 import MyInput from 'shared/ui/MyInput/MyInput';
@@ -11,6 +9,7 @@ import { REGISTER_TYPE } from 'widgets/navigation/constants/constants';
 import Checkbox from 'shared/ui/checkbox/checkbox';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import Auth from 'widgets/navigation/api/Auth';
+import AuthorizationModalLayout from 'entities/authorization/authorization-modal-layout/authorization-modal-layout';
 
 interface SignUpModalProps {
     isSignUpModalVisible: boolean;
@@ -27,13 +26,10 @@ const SignUpModal: React.FC<SignUpModalProps> = ({isSignUpModalVisible, closeSig
     }
 
     return (
-        <Modal 
+        <AuthorizationModalLayout 
+            closeAuthModal={closeSignUpModal}
             isModalVisible={isSignUpModalVisible}
-            modalContentClassName={styles.signUpModalContent}
         >
-            <div className={styles.closeModalButton} onClick={closeSignUpModal}>
-                <img src={closeModalSvg} alt="" />
-            </div>
             <article className={styles.signUpModalTitle}>
                 <h2 className={styles.signUpModalTitle__title}>Авторизация</h2>
                 <p className={styles.signUpModalTitle__text}>Еще не зарегистрированы?</p>
@@ -83,7 +79,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({isSignUpModalVisible, closeSig
                     Зарегистрироваться
                 </MyButton>
             </form>
-        </Modal>
+        </AuthorizationModalLayout>
     )
 }
 
