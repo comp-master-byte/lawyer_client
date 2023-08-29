@@ -76,6 +76,7 @@
     .selectedOptionWrapper {
         border: 2px solid #013878;
         padding: 0px 19px 0px 20px;
+        height: 50px;
 
         .arrow {
             width: 23px;
@@ -84,10 +85,11 @@
     }
 
     .optionsList {
-        height: 268px;
+        height: auto;
         overflow-y: auto;
         padding-top: 15px;
         padding-bottom: 15px;
+        padding-right: 15px;
         border: 2px solid #013878;
 
         .option {

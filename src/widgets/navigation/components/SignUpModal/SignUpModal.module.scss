@@ -70,3 +70,20 @@
     letter-spacing: -0.7px;
     margin-top: 30px;
 }
+
+@media screen and (max-width: 490px) {
+    .signUpModalContent {
+        width: auto;
+        margin: 0 15px;
+        padding: 25px 25px 55px 35px;
+    }   
+
+    .signUpButton {
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .signUpForm {
+        padding-right: 10px;
+    }
+}

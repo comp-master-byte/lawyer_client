@@ -84,6 +84,7 @@
         margin: 0 15px;
         padding: 25px 25px 55px 33px;
     }
+
     .signInButtons {
         align-items: center;
     }
@@ -94,10 +95,11 @@
     }
 
     .signInFormWrapper {
-        padding-right: 22px;
+        padding-right: 8px;
     }
 
     .mobBtnInline {
+        max-width: 100px;
         font-size: 16px;
         text-align: right;
     }
