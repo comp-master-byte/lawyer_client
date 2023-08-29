@@ -87,7 +87,10 @@ const Navigation: React.FC = React.memo(function Navigation() {
                           color="primary" 
                           variant="outlined" 
                           btnClassName={styles.entranceBtnMobile} 
-                          onClick={openSignInModal}
+                          onClick={() => {
+                            closeMobileNavigation();
+                            openSignInModal();
+                          }}
                       >
                         Войти
                       </MyButton>
