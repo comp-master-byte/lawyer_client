@@ -1,0 +1,75 @@
+.authModalContent {
+    border-radius: 30px;
+    border: 3px solid var(--unnamed, #013878);
+    background: #FFF;
+    width: 653px;
+    height: 492px;
+    padding: 21px 20px 0 50px;
+}
+
+.closeAuthModalButton {
+  display: flex;
+  justify-content: flex-end;
+
+  img {
+      cursor: pointer;
+  }
+}
+
+.signInModalTitle {
+    color: var(--unnamed, #013878);
+    font-weight: 600;
+    margin-bottom: 30px;
+
+    &__title {
+      font-size: 30px;
+      line-height: 90%; 
+      letter-spacing: -0.75px;
+      margin-bottom: 20px;
+    }
+
+    &__text {
+        font-size: 20px;
+        line-height: 105%;  
+        letter-spacing: -0.5px;
+        margin-bottom: 10px;
+    }
+}
+
+.inlineButton {
+    color: var(--unnamed, #FD7900);
+
+    /* Текст1 */
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 105%; /* 21px */
+    letter-spacing: -0.5px;
+    cursor: pointer;
+}
+
+.signInFormWrapper {
+    padding-right: 30px;
+}
+
+.formInputs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin-bottom: 30px;
+}
+
+.signInButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.submitButton {
+    border-radius: 40px;
+    height: 78px;
+    width: 182px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 87.023%; /* 24.366px */
+    letter-spacing: -0.7px;
+}
