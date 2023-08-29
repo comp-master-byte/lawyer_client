@@ -5,13 +5,15 @@ import { ISelectOption } from "shared/model/types";
 export interface SelectProps {
     selectedOption?: ISelectOption;
     options: ISelectOption[];
-    label: string;
+    label?: string;
     onSelectOption: (option: ISelectOption) => void;
+    defaultValue?: string;
 }
 
 export interface ControllerSelectProps {
     options: ISelectOption[];
-    label: string;
+    label?: string;
     name: string;
     control: Control<any>;
+    defaultValue?: string;
 }

@@ -6,8 +6,9 @@ import vk from "./assets/vk.svg";
 import { useNavigation } from "./lib/hooks/useNavigation";
 import classNames from "classnames";
 import { VK_LINK } from "shared/constants/constants";
-import { useSignIn } from "./lib/hooks/useSignIn";
 import SignInModal from "./components/SignInModal/SignInModal";
+import { useAuthorization } from "./lib/hooks/useAuthorization";
+import SignUpModal from "./components/SignUpModal/SignUpModal";
 
 const Navigation: React.FC = React.memo(function Navigation() {
     const {
@@ -23,16 +24,26 @@ const Navigation: React.FC = React.memo(function Navigation() {
     const {
       isSignInModalVisible,
       openSignInModal,
-      closeSignInModal
-    } = useSignIn();
+      closeSignInModal,
+      closeSignUpModal,
+      isSignUpModalVisible,
+      openSignUpModal
+    } = useAuthorization();
 
     return (
         <header className={classNames(styles.navigationWrapper, {
           [styles.mobileNavigationWrapper]: isNavigationMobileVisible
         })}>
             <SignInModal 
+                openSignUpModal={openSignUpModal}
                 closeSignInModal={closeSignInModal} 
                 isSignInModalVisible={isSignInModalVisible}
+            />
+
+            <SignUpModal 
+                openSignInModal={openSignInModal}
+                isSignUpModalVisible={isSignUpModalVisible}
+                closeSignUpModal={closeSignUpModal} 
             />
           
             <div className={styles.container}>

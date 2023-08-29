@@ -5,19 +5,18 @@ import arrowSvg from "./assets/arrow.svg";
 import { useSelect } from './hooks/useSelect';
 import classNames from 'classnames';
 
-const Select: React.FC<SelectProps> = ({options, selectedOption, label,onSelectOption}) => {
+const Select: React.FC<SelectProps> = ({options, selectedOption, label, onSelectOption, defaultValue}) => {
     const {
         isOptionsVisible,
         toggleOptionsVisibility
     } = useSelect();
 
-
     return (
         <div className={styles.selectWrapper}>
-            <label className={styles.selectLabel}>{label}</label>
+            {label ? <label className={styles.selectLabel}>{label}</label> : <></>}
             <div className={styles.selectedOptionWrapper} onClick={toggleOptionsVisibility}>
                 <div className={styles.selectedOption}>
-                    {selectedOption?.value||"Выберите  тему обращения"}
+                    {selectedOption?.value||defaultValue||"Выберите  тему обращения"}
                 </div>
                 <img className={classNames(styles.arrow, {[styles.openArrow]: isOptionsVisible})} src={arrowSvg} alt="" />
             </div>

@@ -3,7 +3,7 @@ import { ControllerSelectProps } from './model/types';
 import { Controller } from 'react-hook-form';
 import Select from './select';
 
-const ControllerSelect: React.FC<ControllerSelectProps> = ({options, name, control, label}) => {
+const ControllerSelect: React.FC<ControllerSelectProps> = ({options, name, control, label, defaultValue}) => {
     return (
         <Controller 
             name={name}
@@ -15,6 +15,7 @@ const ControllerSelect: React.FC<ControllerSelectProps> = ({options, name, contr
                     options={options} 
                     selectedOption={value} 
                     onSelectOption={onChange}
+                    defaultValue={defaultValue}
                 />
             }
         />
