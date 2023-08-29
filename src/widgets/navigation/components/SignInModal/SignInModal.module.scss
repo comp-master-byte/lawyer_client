@@ -3,8 +3,7 @@
     border: 3px solid var(--unnamed, #013878);
     background: #FFF;
     width: 653px;
-    height: 492px;
-    padding: 21px 20px 0 50px;
+    padding: 21px 20px 50px 50px;
 }
 
 .closeAuthModalButton {
@@ -38,6 +37,7 @@
 
 .inlineButton {
     color: var(--unnamed, #FD7900);
+    display: inline-block;
 
     /* Текст1 */
     font-size: 20px;
@@ -45,6 +45,10 @@
     line-height: 105%; /* 21px */
     letter-spacing: -0.5px;
     cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .signInFormWrapper {

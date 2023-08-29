@@ -10,6 +10,7 @@ import ControllerSelect from 'shared/ui/select/controller-select';
 import { REGISTER_TYPE } from 'widgets/navigation/constants/constants';
 import Checkbox from 'shared/ui/checkbox/checkbox';
 import MyButton from 'shared/ui/MyButton/MyButton';
+import Auth from 'widgets/navigation/api/Auth';
 
 interface SignUpModalProps {
     isSignUpModalVisible: boolean;
@@ -20,8 +21,9 @@ interface SignUpModalProps {
 const SignUpModal: React.FC<SignUpModalProps> = ({isSignUpModalVisible, closeSignUpModal, openSignInModal}) => {
     const {register, control, handleSubmit, formState: {errors}} = useForm<SignUpValues>({mode: "all"});
 
-    const onSubmitSignUpForm: SubmitHandler<SignUpValues> = (data) => {
-
+    const onSubmitSignUpForm: SubmitHandler<SignUpValues> = async (data) => {
+        const response = await Auth.register(data);
+        console.log(response);
     }
 
     return (

@@ -42,6 +42,11 @@
     line-height: 105%; /* 21px */
     letter-spacing: -0.5px;
     cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .signUpForm {
