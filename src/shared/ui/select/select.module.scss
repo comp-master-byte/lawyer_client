@@ -16,7 +16,7 @@
     height: 55px;
     border-radius: 27px;
     border: 3px solid #013878;
-    padding: 0px 24px 0px 29px;
+    padding: 0px 24px 0px 22px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,9 +27,8 @@
         color: #013878;
         font-size: 18px;
         font-weight: 600;
-        line-height: 105%; 
         letter-spacing: -0.45px;
-        max-width: 240px;
+        max-width: calc(100% - 20px);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;

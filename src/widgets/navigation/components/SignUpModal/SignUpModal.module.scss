@@ -1,10 +1,9 @@
 .signUpModalContent {
-    padding: 21px 20px 0 50px;
+    width: 653px;
+    padding: 21px 20px 50px 50px;
     border-radius: 30px;
     border: 3px solid var(--unnamed, #013878);
     background: #FFF;
-    width: 653px;
-    height: 715px;
 }
 
 .closeModalButton {
@@ -53,4 +52,16 @@
     display: flex;
     flex-direction: column;
     row-gap: 15px;
+    margin-bottom: 20px;
+}
+
+.signUpButton {
+    border-radius: 40px;
+    width: 100%;
+    height: 78px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 87.023%; /* 24.366px */
+    letter-spacing: -0.7px;
+    margin-top: 30px;
 }

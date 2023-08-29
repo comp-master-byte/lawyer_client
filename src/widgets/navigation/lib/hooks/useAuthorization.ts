@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 
 export const useAuthorization = () => {
@@ -24,6 +24,14 @@ export const useAuthorization = () => {
     const closeSignUpModal = useCallback(() => {
         setIsSignUpModalVisible(false);
     }, [])
+
+    useEffect(() => {
+        if(isSignInModalVisible||isSignUpModalVisible) {
+            document.body.style.overflowY = 'hidden';
+        } else {
+            document.body.style.overflowY = 'auto';
+        }
+    }, [isSignInModalVisible, isSignUpModalVisible])
 
     return {
         isSignInModalVisible,

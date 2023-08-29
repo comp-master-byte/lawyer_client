@@ -8,6 +8,8 @@ import MyInput from 'shared/ui/MyInput/MyInput';
 import { EMAIL_REGEX } from 'shared/constants/constants';
 import ControllerSelect from 'shared/ui/select/controller-select';
 import { REGISTER_TYPE } from 'widgets/navigation/constants/constants';
+import Checkbox from 'shared/ui/checkbox/checkbox';
+import MyButton from 'shared/ui/MyButton/MyButton';
 
 interface SignUpModalProps {
     isSignUpModalVisible: boolean;
@@ -69,6 +71,14 @@ const SignUpModal: React.FC<SignUpModalProps> = ({isSignUpModalVisible, closeSig
                         register={register("password", {required: "Это поле обязательное!"})}
                     />
                 </div>
+                <Checkbox />
+                <MyButton 
+                    color='secondary' 
+                    variant='contained'
+                    btnClassName={styles.signUpButton}
+                >
+                    Зарегистрироваться
+                </MyButton>
             </form>
         </Modal>
     )
