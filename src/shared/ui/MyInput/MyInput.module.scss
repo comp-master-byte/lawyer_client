@@ -63,5 +63,6 @@ textarea::-webkit-scrollbar-thumb {
 @media screen and (max-width: 490px) {
   .myInput {
     border: 2px solid $blue-color;
+    height: 50px;
   }
 }

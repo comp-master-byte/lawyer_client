@@ -77,3 +77,28 @@
     line-height: 87.023%; /* 24.366px */
     letter-spacing: -0.7px;
 }
+
+@media screen and (max-width: 490px) {
+    .authModalContent {
+        width: auto;
+        margin: 0 15px;
+        padding: 25px 25px 55px 33px;
+    }
+    .signInButtons {
+        align-items: center;
+    }
+    .submitButton {
+        font-size: 18px;
+        width: 154px;
+        height: 50px;
+    }
+
+    .signInFormWrapper {
+        padding-right: 22px;
+    }
+
+    .mobBtnInline {
+        font-size: 16px;
+        text-align: right;
+    }
+}

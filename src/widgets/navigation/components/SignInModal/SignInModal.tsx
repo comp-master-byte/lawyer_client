@@ -8,6 +8,7 @@ import { EMAIL_REGEX } from 'shared/constants/constants';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import { SignInValues } from 'widgets/navigation/model/types';
 import Auth from 'widgets/navigation/api/Auth';
+import classNames from 'classnames';
 
 interface SignInModalProps {
     isSignInModalVisible: boolean;
@@ -68,7 +69,7 @@ const SignInModal: React.FC<SignInModalProps> = ({closeSignInModal, isSignInModa
                     >   
                         Войти
                     </MyButton>
-                    <div className={styles.inlineButton}>Напомнить пароль?</div>
+                    <div className={classNames(styles.inlineButton, styles.mobBtnInline)}>Напомнить пароль?</div>
                 </div>
 
             </form>
