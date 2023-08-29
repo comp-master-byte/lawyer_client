@@ -76,6 +76,8 @@
         width: auto;
         margin: 0 15px;
         padding: 25px 25px 55px 35px;
+        position: relative;
+        z-index: 11;
     }   
 
     .signUpButton {
