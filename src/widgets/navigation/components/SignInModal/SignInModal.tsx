@@ -6,22 +6,23 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { EMAIL_REGEX } from 'shared/constants/constants';
 import MyButton from 'shared/ui/MyButton/MyButton';
+import { SignInValues } from 'widgets/navigation/model/types';
+import Auth from 'widgets/navigation/api/Auth';
 
 interface SignInModalProps {
     isSignInModalVisible: boolean;
     closeSignInModal: () => void;
 }
 
-interface FormValues {
-    email: string;
-    password: string;
-}
+
 
 const SignInModal: React.FC<SignInModalProps> = ({closeSignInModal, isSignInModalVisible}) => {
-    const {register, handleSubmit, formState: {errors}} = useForm<FormValues>({mode: "all"});
+    const {register, handleSubmit, formState: {errors}} = useForm<SignInValues>({mode: "all"});
 
-    const onSignInFormSubmit: SubmitHandler<FormValues> = (data) => {
-
+    const onSignInFormSubmit: SubmitHandler<SignInValues> = async (data) => {
+        const response = await Auth.login(data);
+        console.log(response);
+        
     }
 
     return (
