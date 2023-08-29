@@ -27,14 +27,13 @@ const SignUpModal: React.FC<SignUpModalProps> = ({isSignUpModalVisible, closeSig
 
     return (
         <AuthorizationModalLayout 
+            authButtonText='Войти'
+            authTitle='Авторизация'
+            authSubtitle='Еще не зарегистрированы?'
             closeAuthModal={closeSignUpModal}
             isModalVisible={isSignUpModalVisible}
+            openAnotherModalCallback={openSignInModal}
         >
-            <article className={styles.signUpModalTitle}>
-                <h2 className={styles.signUpModalTitle__title}>Авторизация</h2>
-                <p className={styles.signUpModalTitle__text}>Еще не зарегистрированы?</p>
-                <div className={styles.inlineButton} onClick={openSignInModal}>Войти</div>
-            </article>
             <form 
                 autoComplete='off'
                 onSubmit={handleSubmit(onSubmitSignUpForm)}

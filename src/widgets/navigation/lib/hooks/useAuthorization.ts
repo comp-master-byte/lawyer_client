@@ -35,6 +35,11 @@ export const useAuthorization = () => {
         setIsForgetPasswordModalVisible(false);
     }, [])
 
+    const backToSignInFromForget = useCallback(() => {
+        setIsForgetPasswordModalVisible(false);
+        setIsSignInModalVisible(true);
+    }, [])
+
     useEffect(() => {
         if(isSignInModalVisible||isSignUpModalVisible||isForgetPasswordModalVisible) {
             document.body.style.overflowY = 'hidden';
@@ -50,6 +55,7 @@ export const useAuthorization = () => {
         closeSignUpModal,
         openSignUpModal,
         isSignUpModalVisible,
+        backToSignInFromForget,
         openForgetPasswordModal,
         closeForgetPasswordModal,
         isForgetPasswordModalVisible

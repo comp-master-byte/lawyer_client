@@ -4,16 +4,22 @@ import AuthorizationModalLayout from 'entities/authorization/authorization-modal
 
 interface ForgetPasswordModalProps {
     closeForgetPasswordModal: () => void;
+    openSignInModal: () => void;
     isForgetPasswordModalVisible: boolean;
 }
 
-const ForgetPasswordModal: React.FC<ForgetPasswordModalProps> = ({closeForgetPasswordModal, isForgetPasswordModalVisible}) => {
+const ForgetPasswordModal: React.FC<ForgetPasswordModalProps> = (props) => {
+    const {closeForgetPasswordModal, isForgetPasswordModalVisible, openSignInModal} = props;
     return (
         <AuthorizationModalLayout
+            authTitle='Восстановление пароля'
+            authSubtitle='Уже зарегистрированы?'
+            authButtonText='Войти'
+            openAnotherModalCallback={openSignInModal}
             closeAuthModal={closeForgetPasswordModal}
             isModalVisible={isForgetPasswordModalVisible}
         >
-
+            
         </AuthorizationModalLayout>
     )
 }
