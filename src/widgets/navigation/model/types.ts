@@ -9,3 +9,7 @@ export interface SignUpValues {
     email: string;
     password: string;
 }
+
+export interface ForgetPassword {
+    email: string;
+}
