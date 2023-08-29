@@ -9,6 +9,7 @@ import { VK_LINK } from "shared/constants/constants";
 import SignInModal from "./components/SignInModal/SignInModal";
 import { useAuthorization } from "./lib/hooks/useAuthorization";
 import SignUpModal from "./components/SignUpModal/SignUpModal";
+import ForgetPasswordModal from "./components/forget-password-modal/forget-password-modal";
 
 const Navigation: React.FC = React.memo(function Navigation() {
     const {
@@ -27,7 +28,10 @@ const Navigation: React.FC = React.memo(function Navigation() {
       closeSignInModal,
       closeSignUpModal,
       isSignUpModalVisible,
-      openSignUpModal
+      openSignUpModal,
+      openForgetPasswordModal,
+      closeForgetPasswordModal,
+      isForgetPasswordModalVisible
     } = useAuthorization();
 
     return (
@@ -38,12 +42,18 @@ const Navigation: React.FC = React.memo(function Navigation() {
                 openSignUpModal={openSignUpModal}
                 closeSignInModal={closeSignInModal} 
                 isSignInModalVisible={isSignInModalVisible}
+                openForgetPasswordModal={openForgetPasswordModal}
             />
 
             <SignUpModal 
                 openSignInModal={openSignInModal}
                 isSignUpModalVisible={isSignUpModalVisible}
                 closeSignUpModal={closeSignUpModal} 
+            />
+
+            <ForgetPasswordModal 
+                closeForgetPasswordModal={closeForgetPasswordModal}
+                isForgetPasswordModalVisible={isForgetPasswordModalVisible}
             />
           
             <div className={styles.container}>

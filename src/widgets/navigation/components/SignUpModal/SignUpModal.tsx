@@ -40,6 +40,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({isSignUpModalVisible, closeSig
                 <div className={styles.inlineButton} onClick={openSignInModal}>Войти</div>
             </article>
             <form 
+                autoComplete='off'
                 onSubmit={handleSubmit(onSubmitSignUpForm)}
                 className={styles.signUpForm}
             >

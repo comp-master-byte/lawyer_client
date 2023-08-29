@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react"
 export const useAuthorization = () => {
     const [isSignInModalVisible, setIsSignInModalVisible] = useState(false);
     const [isSignUpModalVisible, setIsSignUpModalVisible] = useState(false);
+    const [isForgetPasswordModalVisible, setIsForgetPasswordModalVisible] = useState(false);
 
     const openSignInModal = useCallback(() => {
         if(isSignUpModalVisible) {
@@ -11,6 +12,11 @@ export const useAuthorization = () => {
         }
         setIsSignInModalVisible(true);
     }, [isSignUpModalVisible])
+
+    const openForgetPasswordModal = useCallback(() => {
+        setIsSignInModalVisible(false);
+        setIsForgetPasswordModalVisible(true);
+    }, [])
 
     const openSignUpModal = useCallback(() => {
         setIsSignInModalVisible(false);
@@ -25,13 +31,17 @@ export const useAuthorization = () => {
         setIsSignUpModalVisible(false);
     }, [])
 
+    const closeForgetPasswordModal = useCallback(() => {
+        setIsForgetPasswordModalVisible(false);
+    }, [])
+
     useEffect(() => {
-        if(isSignInModalVisible||isSignUpModalVisible) {
+        if(isSignInModalVisible||isSignUpModalVisible||isForgetPasswordModalVisible) {
             document.body.style.overflowY = 'hidden';
         } else {
             document.body.style.overflowY = 'auto';
         }
-    }, [isSignInModalVisible, isSignUpModalVisible])
+    }, [isSignInModalVisible, isSignUpModalVisible, isForgetPasswordModalVisible])
 
     return {
         isSignInModalVisible,
@@ -39,6 +49,9 @@ export const useAuthorization = () => {
         closeSignInModal,
         closeSignUpModal,
         openSignUpModal,
-        isSignUpModalVisible
+        isSignUpModalVisible,
+        openForgetPasswordModal,
+        closeForgetPasswordModal,
+        isForgetPasswordModalVisible
     }
 }

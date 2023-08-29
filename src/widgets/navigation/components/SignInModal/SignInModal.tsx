@@ -14,9 +14,11 @@ interface SignInModalProps {
     isSignInModalVisible: boolean;
     closeSignInModal: () => void;
     openSignUpModal: () => void;
+    openForgetPasswordModal: () => void;
 }
 
-const SignInModal: React.FC<SignInModalProps> = ({closeSignInModal, isSignInModalVisible, openSignUpModal}) => {
+const SignInModal: React.FC<SignInModalProps> = (props) => {
+    const {closeSignInModal, isSignInModalVisible, openSignUpModal, openForgetPasswordModal} = props;
     const {register, handleSubmit, formState: {errors}} = useForm<SignInValues>({mode: "all"});
 
     const onSignInFormSubmit: SubmitHandler<SignInValues> = async (data) => {
@@ -34,6 +36,7 @@ const SignInModal: React.FC<SignInModalProps> = ({closeSignInModal, isSignInModa
                 <div className={styles.inlineButton} onClick={openSignUpModal}>Зарегистрироваться</div>
             </article>
             <form 
+                autoComplete="off"
                 className={styles.signInFormWrapper}
                 onSubmit={handleSubmit(onSignInFormSubmit)}
             >
@@ -69,7 +72,12 @@ const SignInModal: React.FC<SignInModalProps> = ({closeSignInModal, isSignInModa
                     >   
                         Войти
                     </MyButton>
-                    <div className={classNames(styles.inlineButton, styles.mobBtnInline)}>Напомнить пароль?</div>
+                    <div 
+                        onClick={openForgetPasswordModal}
+                        className={classNames(styles.inlineButton, styles.mobBtnInline)}
+                    >
+                        Напомнить пароль?
+                    </div>
                 </div>
 
             </form>

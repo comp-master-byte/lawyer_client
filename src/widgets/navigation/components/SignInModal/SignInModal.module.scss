@@ -3,12 +3,14 @@
     border: 3px solid var(--unnamed, #013878);
     background: #FFF;
     width: 653px;
-    padding: 21px 20px 50px 50px;
+    padding: 50px;
+    position: relative;
 }
 
 .closeAuthModalButton {
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  top: 21px;
+  right: 20px;
 
   img {
       cursor: pointer;
@@ -51,10 +53,6 @@
     }
 }
 
-.signInFormWrapper {
-    padding-right: 30px;
-}
-
 .formInputs {
     display: flex;
     flex-direction: column;
@@ -90,14 +88,11 @@
     .signInButtons {
         align-items: center;
     }
+    
     .submitButton {
         font-size: 18px;
         width: 154px;
         height: 50px;
-    }
-
-    .signInFormWrapper {
-        padding-right: 8px;
     }
 
     .mobBtnInline {
