@@ -87,3 +87,10 @@
         padding-right: 10px;
     }
 }
+
+@media screen and (max-height: 850px) {
+    .signUpModalContent {
+        overflow-y: scroll;
+        height: 683px;
+    }
+}
