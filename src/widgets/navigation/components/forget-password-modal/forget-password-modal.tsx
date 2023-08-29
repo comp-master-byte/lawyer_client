@@ -6,6 +6,7 @@ import MyInput from 'shared/ui/MyInput/MyInput';
 import { ForgetPassword } from 'widgets/navigation/model/types';
 import { EMAIL_REGEX } from 'shared/constants/constants';
 import MyButton from 'shared/ui/MyButton/MyButton';
+import Auth from 'widgets/navigation/api/Auth';
 
 interface ForgetPasswordModalProps {
     closeForgetPasswordModal: () => void;
@@ -18,7 +19,7 @@ const ForgetPasswordModal: React.FC<ForgetPasswordModalProps> = (props) => {
     const {register, handleSubmit, formState: {errors}} = useForm<ForgetPassword>();
 
     const onSubmitEmail: SubmitHandler<ForgetPassword> = async (data) => {
-
+        const response = await Auth.resetPassword(data);
     }
 
     return (
