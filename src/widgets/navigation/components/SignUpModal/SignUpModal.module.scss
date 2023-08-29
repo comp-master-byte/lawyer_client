@@ -94,3 +94,17 @@
         height: 683px;
     }
 }
+
+@media screen and (max-height: 750px) {
+    .signUpModalContent {
+        overflow-y: scroll;
+        height: 600px;
+    }
+}
+
+@media screen and (max-height: 650px) {
+    .signUpModalContent {
+        overflow-y: scroll;
+        height: 500px;
+    }
+}
