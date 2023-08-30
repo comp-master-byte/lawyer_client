@@ -23,9 +23,6 @@ const Appeals: React.FC = () => {
         dispatch(fetchAppeals());
     }, [])
 
-    console.log(appeals);
-    
-
     return (
         <div className={styles.appealsWrapper}>
             <Navigation />
@@ -52,9 +49,7 @@ const Appeals: React.FC = () => {
                         </MyButton>
                     </div>
 
-                    <AppealsList 
-                        appeals={[{id: 1}, {id: 2}, {id: 3}]}
-                    />
+                    <AppealsList appeals={appeals} />
 
                 </div>
             </section>

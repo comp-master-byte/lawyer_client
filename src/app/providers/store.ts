@@ -1,5 +1,5 @@
-import appealsSlice from './../../pages/cabinet/appeals/model/appealsSlice';
-import supportChatSlice from './../../widgets/support-chat/model/supportChatSlice';
+import appealsSlice from 'pages/cabinet/appeals/model/appealsSlice';
+import supportChatSlice from 'widgets/support-chat/model/supportChatSlice';
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
