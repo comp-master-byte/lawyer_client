@@ -34,6 +34,10 @@
         text-overflow: ellipsis;
     }
 
+    .defaultValueOption {
+        color: #96B6DB;
+    }
+
     .arrow {
         transform: rotate(-90deg);
         transition: transform .2s;

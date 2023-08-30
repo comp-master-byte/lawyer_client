@@ -16,7 +16,9 @@ const Select: React.FC<SelectProps> = (props) => {
         <div className={classNames(styles.selectWrapper, selectWrapperClassName)}>
             {label ? <label className={styles.selectLabel}>{label}</label> : <></>}
             <div className={classNames(styles.selectedOptionWrapper, selectOptionClassName)} onClick={toggleOptionsVisibility}>
-                <p className={styles.selectedOption}>
+                <p className={classNames(styles.selectedOption, {
+                    [styles.defaultValueOption]: !selectedOption?.value
+                })}>
                     {selectedOption?.value||defaultValue||"Выберите  тему обращения"}
                 </p>
                 <img className={classNames(styles.arrow, {[styles.openArrow]: isOptionsVisible})} src={arrowSvg} alt="" />
