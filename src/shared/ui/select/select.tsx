@@ -5,7 +5,8 @@ import arrowSvg from "./assets/arrow.svg";
 import { useSelect } from './hooks/useSelect';
 import classNames from 'classnames';
 
-const Select: React.FC<SelectProps> = ({options, selectedOption, label, onSelectOption, defaultValue, selectWrapperClassName}) => {
+const Select: React.FC<SelectProps> = (props) => {
+    const {options, selectedOption, label, onSelectOption, defaultValue, selectWrapperClassName, selectOptionClassName} = props;
     const {
         isOptionsVisible,
         toggleOptionsVisibility
@@ -14,16 +15,16 @@ const Select: React.FC<SelectProps> = ({options, selectedOption, label, onSelect
     return (
         <div className={classNames(styles.selectWrapper, selectWrapperClassName)}>
             {label ? <label className={styles.selectLabel}>{label}</label> : <></>}
-            <div className={styles.selectedOptionWrapper} onClick={toggleOptionsVisibility}>
-                <div className={styles.selectedOption}>
+            <div className={classNames(styles.selectedOptionWrapper, selectOptionClassName)} onClick={toggleOptionsVisibility}>
+                <p className={styles.selectedOption}>
                     {selectedOption?.value||defaultValue||"Выберите  тему обращения"}
-                </div>
+                </p>
                 <img className={classNames(styles.arrow, {[styles.openArrow]: isOptionsVisible})} src={arrowSvg} alt="" />
             </div>
             {isOptionsVisible && 
                 <div className={styles.optionsList}>
                     {options.map((option) => 
-                        <div 
+                        <p 
                             key={option.id}
                             className={styles.option} 
                             onClick={() => {
@@ -32,7 +33,7 @@ const Select: React.FC<SelectProps> = ({options, selectedOption, label, onSelect
                             }}
                         >
                             {option.value}
-                        </div>
+                        </p>
                     )}
                 </div>
             }

@@ -8,10 +8,11 @@ const AppRoutes: React.FC = () => {
     return (
         <Routes>
             <Route path='/' element={<Home />} />
-            {Cookies.get('token') 
+            {/* {Cookies.get('token') 
                 ? <Route path='/cabinet/appeals' element={<Appeals />} />
                 : <Route path='*' element={<Navigate to='/' replace />} />
-            }
+            } */}
+            <Route path='/cabinet/appeals' element={<Appeals />} />
         </Routes>
     )
 }

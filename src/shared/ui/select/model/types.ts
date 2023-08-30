@@ -9,6 +9,7 @@ export interface SelectProps {
     onSelectOption: (option: ISelectOption) => void;
     defaultValue?: string;
     selectWrapperClassName?: string;
+    selectOptionClassName?: string;
 }
 
 export interface ControllerSelectProps {

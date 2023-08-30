@@ -5,6 +5,7 @@ import Select from 'shared/ui/select/select';
 import { ISelectOption } from 'shared/model/types';
 import { APPEALS } from './constants/constants';
 import MyButton from 'shared/ui/MyButton/MyButton';
+import AppealsList from './components/appeals-list/appeals-list';
 
 const Appeals: React.FC = () => {
     const [selectedAppealOption, setSelectedAppealOption] = useState<ISelectOption|null>(null);
@@ -28,6 +29,7 @@ const Appeals: React.FC = () => {
                             onSelectOption={onSelectAppealOption}
                             selectedOption={selectedAppealOption}
                             selectWrapperClassName={styles.appealsFilter__select}
+                            selectOptionClassName={styles.selectOption}
                         />
                         <MyButton
                             color='primary'
@@ -37,6 +39,10 @@ const Appeals: React.FC = () => {
                             Задать вопрос
                         </MyButton>
                     </div>
+
+                    <AppealsList 
+                        appeals={[{id: 1}, {id: 2}, {id: 3}]}
+                    />
 
                 </div>
             </section>

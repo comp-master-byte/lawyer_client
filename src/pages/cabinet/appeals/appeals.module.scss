@@ -21,14 +21,31 @@
 .appealsFilter {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 51px;
 
     &__select {
         width: 70.984848485%;
+
+        p {
+            font-size: 30px !important;
+        }
+    }
+
+    .selectOption {
+        height: 77px;
+        border-radius: 50px;
+        padding-right: 32px;
+        padding-left: 40px;
+        
+        p {
+            color: #96B6DB !important;
+
+        }
     }
 
     .askQuestionButton {
         width: 371px;
-        height: 70px;
+        height: 77px;
         border-radius: 40px;
         font-size: 28px;
         font-style: normal;
