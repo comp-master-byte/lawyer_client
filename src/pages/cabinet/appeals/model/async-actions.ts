@@ -6,8 +6,13 @@ import { Appeal } from "./types";
 
 export const fetchAppeals = () => async (dispatch: AppDispatch) => {
     try {
-        const response = await $api.get<Appeal[]>('/api/users_questions');
-        dispatch(appealsSlice.actions.setAppeals(response.data));
+        const response = await $api.get<{results: Appeal[]}>('/api/users_questions', {
+            params: {
+                limit: 5,
+                offset: 1
+            }
+        });
+        dispatch(appealsSlice.actions.setAppeals(response.data.results));
     } catch(error: any) {
          // err
     }
