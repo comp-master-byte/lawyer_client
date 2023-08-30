@@ -8,6 +8,8 @@ import { SignInValues } from 'widgets/navigation/model/types';
 import Auth from 'widgets/navigation/api/Auth';
 import classNames from 'classnames';
 import AuthorizationModalLayout from 'entities/authorization/authorization-modal-layout/authorization-modal-layout';
+import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 
 interface SignInModalProps {
     isSignInModalVisible: boolean;
@@ -19,9 +21,15 @@ interface SignInModalProps {
 const SignInModal: React.FC<SignInModalProps> = (props) => {
     const {closeSignInModal, isSignInModalVisible, openSignUpModal, openForgetPasswordModal} = props;
     const {register, handleSubmit, formState: {errors}} = useForm<SignInValues>({mode: "all"});
+    const navigate = useNavigate();
 
     const onSignInFormSubmit: SubmitHandler<SignInValues> = async (data) => {
         const response = await Auth.login(data);
+        if(response.auth_token) {
+            const token = JSON.stringify(response.auth_token);
+            Cookies.set('token', token);
+            navigate('/cabinet/appeals');
+        }
     }
 
     return (

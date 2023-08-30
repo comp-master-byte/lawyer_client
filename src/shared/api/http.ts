@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 export const API_URL = "https://backend.juraprav.ru";
 
@@ -8,8 +9,8 @@ const $api = axios.create({
 });
 
 $api.interceptors.request.use((config) => {
-  config.headers.Authorization = `Token ${localStorage.getItem("token")}`;
-  return config;
+    config.headers.Authorization = `Token ${Cookies.get("token")}`;
+    return config;
 });
 
 export default $api;
