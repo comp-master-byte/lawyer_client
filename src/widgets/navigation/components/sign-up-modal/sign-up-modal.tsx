@@ -46,7 +46,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({isSignUpModalVisible, closeSig
                         register={register("full_name", {required: "Это поле обязательное!"})}
                     />
                     <ControllerSelect 
-                        name='type'
+                        name='is_lawyer'
                         defaultValue='Тип регистрации'
                         control={control}
                         options={REGISTER_TYPE}
