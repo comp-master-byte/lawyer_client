@@ -9,7 +9,7 @@ const $api = axios.create({
 });
 
 $api.interceptors.request.use((config) => {
-    config.headers.Authorization = `Token ${Cookies.get("token")}`;
+    config.headers.Authorization = `Token ${JSON.parse(Cookies.get("token") as string)}`;
     return config;
 });
 
