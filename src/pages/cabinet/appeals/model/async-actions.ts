@@ -1,19 +1,23 @@
 import { AppDispatch } from "app/providers/store";
 import $api from "shared/api/http";
 import { appealsSlice } from "./appealsSlice";
-import { Appeal } from "./types";
+import { Appeal, StatusQuery } from "./types";
 
 
-export const fetchAppeals = () => async (dispatch: AppDispatch) => {
+export const fetchAppeals = (offset: number, status?: StatusQuery) => async (dispatch: AppDispatch) => {
     try {
-        const response = await $api.get<{results: Appeal[]}>('/api/users_questions', {
+        const response = await $api.get<{results: Appeal[], count: number}>('/api/users_questions', {
             params: {
-                limit: 5,
-                offset: 1
+                limit: 10,
+                offset,
+                status
             }
         });
-        dispatch(appealsSlice.actions.setAppeals(response.data.results));
+        dispatch(appealsSlice.actions.incrementCurrentPage());
+        dispatch(appealsSlice.actions.setAppeals({fetchedAppeals: response.data.results, maxCount: response.data.count}));
     } catch(error: any) {
          // err
+    } finally {
+        dispatch(appealsSlice.actions.setFetchingStatus(false));
     }
 }

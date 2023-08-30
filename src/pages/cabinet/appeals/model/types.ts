@@ -10,5 +10,10 @@ export interface Appeal {
 }
 
 export interface AppealsState {
-    appeals: Appeal[]
+    appeals: Appeal[];
+    isFetching: boolean;
+    currentPage: number;
+    maxCount: number;
 }
+
+export type StatusQuery = 'new'|'active'|'complete'|'candidates'
