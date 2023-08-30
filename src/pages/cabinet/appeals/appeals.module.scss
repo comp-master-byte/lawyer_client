@@ -1,0 +1,39 @@
+.pageContent {
+    margin-top: 77px;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.pageTitle {
+    text-align: center;
+    color:  #013878;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 90%; 
+    letter-spacing: -1.2px;
+    margin-bottom: 52px;
+}
+
+.appealsFilter {
+    display: flex;
+    justify-content: space-between;
+
+    &__select {
+        width: 70.984848485%;
+    }
+
+    .askQuestionButton {
+        width: 371px;
+        height: 70px;
+        border-radius: 40px;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 87.023%; /* 24.366px */
+        letter-spacing: -0.7px;
+    }
+}

@@ -10,6 +10,7 @@ import { useAuthorization } from "./lib/hooks/useAuthorization";
 import ForgetPasswordModal from "./components/forget-password-modal/forget-password-modal";
 import SignInModal from "./components/sign-in-modal/sign-in-modal";
 import SignUpModal from "./components/sign-up-modal/sign-up-modal";
+import { isMobile } from "shared/lib/helpers/isMobile";
 
 const Navigation: React.FC = React.memo(function Navigation() {
     const {
@@ -60,9 +61,9 @@ const Navigation: React.FC = React.memo(function Navigation() {
           
             <div className={styles.container}>
                 <div className={styles.navigationInner}>
-                    <a href={VK_LINK} target="_blank">
+                    {isMobile && <a href={VK_LINK} target="_blank">
                       <img className={styles.navigationInner__vk} src={vk} alt="" />
-                    </a>
+                    </a>}
                     <div className={styles.navigationInner__logo}>
                         <img src={logo} alt="logo" />
                     </div>

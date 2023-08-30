@@ -3,11 +3,12 @@ import { ISelectOption } from "shared/model/types";
 
 
 export interface SelectProps {
-    selectedOption?: ISelectOption;
+    selectedOption?: ISelectOption|null;
     options: ISelectOption[];
     label?: string;
     onSelectOption: (option: ISelectOption) => void;
     defaultValue?: string;
+    selectWrapperClassName?: string;
 }
 
 export interface ControllerSelectProps {

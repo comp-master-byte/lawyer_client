@@ -9,7 +9,7 @@ export default class Auth {
     static async login(loginData: SignInValues) {
         try {
             const response = await axios.post(`${API_URL}/auth/token/login`, loginData)
-            return response;
+            return response.data;
         } catch(error: any) {
             for(let err of error.response.data.non_field_errors) {
                 toast(err, {type: "error"})

@@ -5,14 +5,14 @@ import arrowSvg from "./assets/arrow.svg";
 import { useSelect } from './hooks/useSelect';
 import classNames from 'classnames';
 
-const Select: React.FC<SelectProps> = ({options, selectedOption, label, onSelectOption, defaultValue}) => {
+const Select: React.FC<SelectProps> = ({options, selectedOption, label, onSelectOption, defaultValue, selectWrapperClassName}) => {
     const {
         isOptionsVisible,
         toggleOptionsVisibility
     } = useSelect();
 
     return (
-        <div className={styles.selectWrapper}>
+        <div className={classNames(styles.selectWrapper, selectWrapperClassName)}>
             {label ? <label className={styles.selectLabel}>{label}</label> : <></>}
             <div className={styles.selectedOptionWrapper} onClick={toggleOptionsVisibility}>
                 <div className={styles.selectedOption}>
