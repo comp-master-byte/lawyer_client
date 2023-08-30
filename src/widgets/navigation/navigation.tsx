@@ -11,8 +11,11 @@ import ForgetPasswordModal from "./components/forget-password-modal/forget-passw
 import SignInModal from "./components/sign-in-modal/sign-in-modal";
 import SignUpModal from "./components/sign-up-modal/sign-up-modal";
 import { isMobile } from "shared/lib/helpers/isMobile";
+import Cookies from "js-cookie";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navigation: React.FC = React.memo(function Navigation() {
+    const navigate = useNavigate();
     const {
       scrollToAboutUs,
       scrollToAdvantages,
@@ -64,9 +67,11 @@ const Navigation: React.FC = React.memo(function Navigation() {
                     {isMobile && <a href={VK_LINK} target="_blank">
                       <img className={styles.navigationInner__vk} src={vk} alt="" />
                     </a>}
-                    <div className={styles.navigationInner__logo}>
-                        <img src={logo} alt="logo" />
-                    </div>
+                    <Link to='/'>
+                      <div className={styles.navigationInner__logo}>
+                          <img src={logo} alt="logo" />
+                      </div>
+                    </Link>
                     <div className={classNames(styles.navigationLinks, {
                       [styles.activeMobileNavigation]: isNavigationMobileVisible,
                       [styles.closedMobileNavigation]: !isNavigationMobileVisible
@@ -95,18 +100,31 @@ const Navigation: React.FC = React.memo(function Navigation() {
                       >
                         Контакты
                       </div>
-                      <MyButton 
-                          size="small"
-                          color="primary" 
-                          variant="outlined" 
-                          btnClassName={styles.entranceBtnMobile} 
-                          onClick={() => {
-                            closeMobileNavigation();
-                            openSignInModal();
-                          }}
-                      >
-                        Войти
-                      </MyButton>
+                      {Cookies.get('token') 
+                        ? 
+                          <MyButton 
+                              size="small"
+                              color="primary" 
+                              variant="outlined" 
+                              btnClassName={styles.entranceBtnMobile} 
+                              onClick={() => navigate('/cabinet/appeals')}
+                          >
+                              Профиль
+                          </MyButton>
+                        : 
+                          <MyButton 
+                              size="small"
+                              color="primary" 
+                              variant="outlined" 
+                              btnClassName={styles.entranceBtnMobile} 
+                              onClick={() => {
+                                closeMobileNavigation();
+                                openSignInModal();
+                              }}
+                          >
+                            Войти
+                          </MyButton>
+                        }
                   </div>
 
 
@@ -119,15 +137,28 @@ const Navigation: React.FC = React.memo(function Navigation() {
                 </div>
 
                 <div className={styles.navigationEntrance}>
-                    <MyButton 
-                        size="small"
-                        color="primary" 
-                        variant="outlined" 
-                        onClick={openSignInModal}
-                        btnClassName={styles.entranceBtn} 
-                    >
-                        Войти
-                    </MyButton>
+                  {Cookies.get('token') 
+                    ?
+                        <MyButton 
+                            size="small"
+                            color="primary" 
+                            variant="outlined" 
+                            onClick={() => navigate('/cabinet/appeals')}
+                            btnClassName={styles.entranceBtn} 
+                        >
+                            Профиль
+                        </MyButton>
+                    :
+                        <MyButton 
+                            size="small"
+                            color="primary" 
+                            variant="outlined" 
+                            onClick={openSignInModal}
+                            btnClassName={styles.entranceBtn} 
+                        >
+                            Войти
+                        </MyButton>
+                    }
                 </div>
 
               </div>
