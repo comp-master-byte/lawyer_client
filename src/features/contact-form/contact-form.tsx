@@ -4,8 +4,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import MyButton from "shared/ui/MyButton/MyButton";
 import { ContractFormValues } from "./model/types";
 import QuestionForm from "./api/QuestionForm";
-import TextArea from "shared/ui/MyInput/textarea";
 import { EMAIL_REGEX } from "shared/constants/constants";
+import Checkbox from "shared/ui/checkbox/checkbox";
 
 const ContactForm: React.FC = React.memo(function ContactForm() {
   const {
@@ -51,11 +51,10 @@ const ContactForm: React.FC = React.memo(function ContactForm() {
         />
         {errors && errors.message && <p style={{color: "red"}}>{errors.message.message}</p>}
       </div>
-
-      <p className={styles.contactParagraph}>
-        Нажимая на кнопку &quot;отправить&quot; вы соглашаетесь с{" "}
-        <span>политикой конфиденциальности</span>
-      </p>
+      
+      <div className={styles.checkboxWrapper}>
+        <Checkbox />
+      </div>
 
       <MyButton btnClassName={styles.submitButton} color="primary" variant="contained" size="large">
         Отправить
