@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Themes.module.scss";
+import styles from "./themes.module.scss";
 import ThemeQuestion from "./components/themeQuestion/ThemeQuestion";
 import SectionTitle from "shared/styled-components/SectionTitle/SectionTitle";
 import line from "./assets/line.svg";

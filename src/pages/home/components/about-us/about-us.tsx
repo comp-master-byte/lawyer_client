@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styles from "./AboutUs.module.scss";
+import styles from "./about-us.module.scss";
 import AdditionalCard from "./components/additionalCard/AdditionalCard";
 import ProblemCard from "./components/problemCard/ProblemCard";
 import SolutionCard from "./components/solutionCard/SolutionCard";
