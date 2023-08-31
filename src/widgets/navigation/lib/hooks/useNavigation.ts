@@ -1,43 +1,42 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const useNavigation = () => {
-  const [isNavigationMobileVisible, setIsNavigationMobileVisible] = useState<boolean>(false);
+    const navigate = useNavigate();
+    const {pathname} = useLocation();
 
-  const openMobileMavigation = () => setIsNavigationMobileVisible(true);
-  const closeMobileNavigation = () => setIsNavigationMobileVisible(false);
+    const [isNavigationMobileVisible, setIsNavigationMobileVisible] = useState<boolean>(false);
 
-  const scrollToAboutUs = (e: React.MouseEvent<HTMLDivElement>) => {
-    window.scrollTo({
-      top: 993,
-      behavior: "smooth",
-    });
-    closeMobileNavigation();
-  };
+    const openMobileMavigation = () => setIsNavigationMobileVisible(true);
+    const closeMobileNavigation = () => setIsNavigationMobileVisible(false);
 
-  const scrollToAdvantages = (e: React.MouseEvent<HTMLDivElement>) => {
-    window.scrollTo({
-      top: 2604,
-      behavior: "smooth",
-    });
-    closeMobileNavigation();
-  };
+    const scrollToWindowElement = function(scrollTop: number) {
+        window.scrollTo({
+          top: scrollTop,
+          behavior: "smooth",
+        });
+        closeMobileNavigation();
+    }
 
-  const scrollToThemes = (e: React.MouseEvent<HTMLDivElement>) => {
-    window.scrollTo({
-      top: 3769,
-      behavior: "smooth",
-    });
-    closeMobileNavigation();
-  };
+    const syncCodeCompiler = function(scrollTop: number) {
+        return new Promise((resolve, reject) => {
+            if(pathname !== "/") {
+                resolve("on profile");
+            } else {  
+                reject("on main page");
+            }
+        }).then(() => navigate('/'))
+          .then(() => scrollToWindowElement(scrollTop))
+          .catch(() => scrollToWindowElement(scrollTop))
+    }
 
-  const scrollToContacts = (e: React.MouseEvent<HTMLDivElement>) => {
-    window.scrollTo({
-      top: 4737,
-      behavior: "smooth",
-    });
-    closeMobileNavigation();
-  };
+    const scrollToAboutUs = () => syncCodeCompiler(993);
 
+    const scrollToAdvantages = () => syncCodeCompiler(2604);
+
+    const scrollToThemes = () => syncCodeCompiler(3700);
+
+    const scrollToContacts = () => syncCodeCompiler(4737);
 
     useEffect(() => {
         if(isNavigationMobileVisible) {

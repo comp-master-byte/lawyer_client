@@ -48,9 +48,7 @@ const Navigation: React.FC = React.memo(function Navigation() {
                 openForgetPasswordModal={openForgetPasswordModal}
             />
 
-            <SignUpModal 
-                openSignInModal={openSignInModal}
-            />
+            <SignUpModal openSignInModal={openSignInModal} />
 
             <ForgetPasswordModal 
                 openSignInModal={backToSignInFromForget}
