@@ -4,7 +4,7 @@ import { Appeal, AppealsState } from "./types";
 const initialState: AppealsState = {
     appeals: [],
     isFetching: true,
-    currentPage: 1,
+    currentPage: 0,
     maxCount: 0
 } 
 
@@ -20,7 +20,7 @@ export const appealsSlice = createSlice({
             state.isFetching = action.payload;
         },
         incrementCurrentPage(state) {
-            state.currentPage += 1;
+            state.currentPage += 10;
         }
     }
 })
