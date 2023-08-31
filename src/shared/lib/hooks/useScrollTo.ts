@@ -23,10 +23,10 @@ export const useScrollTo = () => {
           .catch(() => scrollToWindowElement(scrollTop))
     }
 
-    const scrollToAboutUs = () => syncCodeCompiler(993);
-    const scrollToAdvantages = () => syncCodeCompiler(2604);
-    const scrollToThemes = () => syncCodeCompiler(3700);
-    const scrollToContacts = () => syncCodeCompiler(4737);
+    const scrollToAboutUs = (scrollTop: number) => syncCodeCompiler(scrollTop); // 993
+    const scrollToAdvantages = (scrollTop: number) => syncCodeCompiler(scrollTop); // 2604
+    const scrollToThemes = (scrollTop: number) => syncCodeCompiler(scrollTop); // 3700
+    const scrollToContacts = (scrollTop: number) => syncCodeCompiler(scrollTop); // 4737
 
     return {
         scrollToAboutUs,

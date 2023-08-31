@@ -78,8 +78,12 @@ const Navigation: React.FC = React.memo(function Navigation() {
                       <div
                         className={styles.navigationLinks__link}
                         onClick={() => {
-                          scrollToAboutUs();
-                          closeMobileNavigation();
+                            if(isMobile) {
+                              scrollToAboutUs(950);
+                              closeMobileNavigation();
+                            } else {
+                                scrollToAboutUs(993);
+                            }
                         }}
                       >
                         О нас
@@ -87,8 +91,12 @@ const Navigation: React.FC = React.memo(function Navigation() {
                       <div
                         className={styles.navigationLinks__link}
                         onClick={() => {
-                            scrollToAdvantages();
-                            closeMobileNavigation();
+                            if(isMobile) {
+                                scrollToAdvantages(2604);
+                                closeMobileNavigation();
+                            } else {
+                                scrollToAdvantages(2604);
+                            }
                         }}
                       >
                         Преимущества
@@ -96,8 +104,12 @@ const Navigation: React.FC = React.memo(function Navigation() {
                       <div
                         className={styles.navigationLinks__link}
                         onClick={() => {
-                          scrollToThemes();
-                          closeMobileNavigation();
+                          if(isMobile) {
+                              scrollToThemes(3770);
+                              closeMobileNavigation();
+                          } else {
+                              scrollToThemes(3700);
+                          }
                         }}
                       >
                         Категории и темы
@@ -105,8 +117,12 @@ const Navigation: React.FC = React.memo(function Navigation() {
                       <div
                         className={styles.navigationLinks__link}
                         onClick={() => {
-                            scrollToContacts();
-                            closeMobileNavigation();
+                            if(isMobile) {
+                                scrollToContacts(4777);
+                                closeMobileNavigation();
+                            } else {
+                              scrollToContacts(4737);
+                            }
                         }}
                       >
                         Контакты
