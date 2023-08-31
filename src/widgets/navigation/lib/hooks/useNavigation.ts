@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export const useNavigation = () => {
   const [isNavigationMobileVisible, setIsNavigationMobileVisible] = useState<boolean>(false);
@@ -37,6 +37,15 @@ export const useNavigation = () => {
     });
     closeMobileNavigation();
   };
+
+
+    useEffect(() => {
+        if(isNavigationMobileVisible) {
+            document.body.style.overflowY = 'hidden';
+        } else {
+            document.body.style.overflowY = 'auto';
+        }
+    }, [isNavigationMobileVisible])
 
   return {
     scrollToAboutUs,

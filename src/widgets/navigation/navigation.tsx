@@ -30,8 +30,6 @@ const Navigation: React.FC = React.memo(function Navigation() {
       isSignInModalVisible,
       openSignInModal,
       closeSignInModal,
-      closeSignUpModal,
-      isSignUpModalVisible,
       openSignUpModal,
       backToSignInFromForget,
       openForgetPasswordModal,
@@ -52,8 +50,6 @@ const Navigation: React.FC = React.memo(function Navigation() {
 
             <SignUpModal 
                 openSignInModal={openSignInModal}
-                isSignUpModalVisible={isSignUpModalVisible}
-                closeSignUpModal={closeSignUpModal} 
             />
 
             <ForgetPasswordModal 

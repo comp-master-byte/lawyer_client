@@ -1,17 +1,24 @@
 import { useCallback, useEffect, useState } from "react"
+import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
+import { authorizationSlice } from "widgets/navigation/model/authorizationSlice";
 
 
 export const useAuthorization = () => {
+    const dispatch = useAppDispatch();
+
+    const {toggleRegisterModalVisibility} = authorizationSlice.actions;
+
+    const {isRegisterModalVisible} = useTypedSelector((state) => state.authorizationSlice);
+
     const [isSignInModalVisible, setIsSignInModalVisible] = useState(false);
-    const [isSignUpModalVisible, setIsSignUpModalVisible] = useState(false);
     const [isForgetPasswordModalVisible, setIsForgetPasswordModalVisible] = useState(false);
 
     const openSignInModal = useCallback(() => {
-        if(isSignUpModalVisible) {
-            setIsSignUpModalVisible(false);
+        if(isRegisterModalVisible) {
+            dispatch(toggleRegisterModalVisibility(false));
         }
         setIsSignInModalVisible(true);
-    }, [isSignUpModalVisible])
+    }, [isRegisterModalVisible])
 
     const openForgetPasswordModal = useCallback(() => {
         setIsSignInModalVisible(false);
@@ -20,15 +27,11 @@ export const useAuthorization = () => {
 
     const openSignUpModal = useCallback(() => {
         setIsSignInModalVisible(false);
-        setIsSignUpModalVisible(true);
+        dispatch(toggleRegisterModalVisibility(true));
     }, [])
 
     const closeSignInModal = useCallback(() => {
         setIsSignInModalVisible(false);
-    }, [])
-
-    const closeSignUpModal = useCallback(() => {
-        setIsSignUpModalVisible(false);
     }, [])
 
     const closeForgetPasswordModal = useCallback(() => {
@@ -41,20 +44,18 @@ export const useAuthorization = () => {
     }, [])
 
     useEffect(() => {
-        if(isSignInModalVisible||isSignUpModalVisible||isForgetPasswordModalVisible) {
+        if(isSignInModalVisible||isRegisterModalVisible||isForgetPasswordModalVisible) {
             document.body.style.overflowY = 'hidden';
         } else {
             document.body.style.overflowY = 'auto';
         }
-    }, [isSignInModalVisible, isSignUpModalVisible, isForgetPasswordModalVisible])
+    }, [isSignInModalVisible, isRegisterModalVisible, isForgetPasswordModalVisible])
 
     return {
         isSignInModalVisible,
         openSignInModal,
         closeSignInModal,
-        closeSignUpModal,
         openSignUpModal,
-        isSignUpModalVisible,
         backToSignInFromForget,
         openForgetPasswordModal,
         closeForgetPasswordModal,

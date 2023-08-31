@@ -10,28 +10,31 @@ import Checkbox from 'shared/ui/checkbox/checkbox';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import Auth from 'widgets/navigation/api/Auth';
 import AuthorizationModalLayout from 'entities/authorization/authorization-modal-layout/authorization-modal-layout';
+import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
+import { authorizationSlice } from 'widgets/navigation/model/authorizationSlice';
 
 interface SignUpModalProps {
-    isSignUpModalVisible: boolean;
-    closeSignUpModal: () => void;
     openSignInModal: () => void;
 }
 
-const SignUpModal: React.FC<SignUpModalProps> = ({isSignUpModalVisible, closeSignUpModal, openSignInModal}) => {
+const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
     const {register, control, handleSubmit, formState: {errors}} = useForm<SignUpValues>({mode: "all"});
+
+    const dispatch = useAppDispatch();
+
+    const {isRegisterModalVisible} = useTypedSelector(state => state.authorizationSlice);
 
     const onSubmitSignUpForm: SubmitHandler<SignUpValues> = async (data) => {
         const response = await Auth.register(data);
-        console.log(response);
     }
 
     return (
         <AuthorizationModalLayout 
             authButtonText='Войти'
-            authTitle='Авторизация'
+            authTitle='Регистрация'
             authSubtitle='Еще не зарегистрированы?'
-            closeAuthModal={closeSignUpModal}
-            isModalVisible={isSignUpModalVisible}
+            closeAuthModal={() => dispatch(authorizationSlice.actions.toggleRegisterModalVisibility(false))}
+            isModalVisible={isRegisterModalVisible}
             openAnotherModalCallback={openSignInModal}
         >
             <form 

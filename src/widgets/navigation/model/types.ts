@@ -15,3 +15,7 @@ export interface SignUpValues {
 export interface ForgetPassword {
     email: string;
 }
+
+export interface AuthorizationState {
+    isRegisterModalVisible: boolean;
+}

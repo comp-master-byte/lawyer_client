@@ -7,12 +7,17 @@ import classNames from "classnames";
 import { supportChatSlice } from "widgets/support-chat/model/supportChatSlice";
 import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
 import { fetchMessageNode } from "widgets/support-chat/model/async-actions";
+import { authorizationSlice } from "widgets/navigation/model/authorizationSlice";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 
 const Primary: React.FC = React.memo(function PrimaryView() {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const {toggleSupportChatVisibility} = supportChatSlice.actions;
+  const {toggleRegisterModalVisibility} = authorizationSlice.actions;
 
   const {data, savedChains} = useTypedSelector((state) => state.supportChatSlice);
 
@@ -68,16 +73,32 @@ const Primary: React.FC = React.memo(function PrimaryView() {
               клиентов, то регистрируйся!
             </div>
             <div className={styles.viewRightColumn__btn}>
-              <MyButton color="secondary" size="large" variant="contained">
-                Зарегистрироваться
-              </MyButton>
+              {Cookies.get('token') && JSON.parse(Cookies.get('token') as string) 
+                ? 
+                  <MyButton onClick={() => navigate('/cabinet/appeals')} color="secondary" size="large" variant="contained">
+                    Войти в профиль
+                  </MyButton>
+                :
+              
+                  <MyButton onClick={() => dispatch(toggleRegisterModalVisibility(true))} color="secondary" size="large" variant="contained">
+                    Зарегистрироваться
+                  </MyButton>
+              }
             </div>
           </div>
 
           <div className={styles.mobileButton}>
-              <MyButton color="secondary" size="large" variant="contained">
-                Зарегистрироваться
-              </MyButton>
+              {Cookies.get('token') && JSON.parse(Cookies.get('token') as string) 
+                ? 
+                  <MyButton onClick={() => navigate('/cabinet/appeals')} color="secondary" size="large" variant="contained">
+                    Войти в профиль
+                  </MyButton>
+                :
+              
+                  <MyButton onClick={() => dispatch(toggleRegisterModalVisibility(true))} color="secondary" size="large" variant="contained">
+                    Зарегистрироваться
+                  </MyButton>
+              }
           </div>
           <img
             src={bigHuman}
