@@ -6,8 +6,12 @@ import MyButton from "shared/ui/MyButton/MyButton";
 import SectionTitle from "shared/styled-components/SectionTitle/SectionTitle";
 import mobileBgLine from "./assets/bg-line.svg";
 import { useSupportChatFeatures } from "features/support-chat/hooks/useSupportChatFeatures";
+import { useAppDispatch } from "shared/lib/hooks/redux";
+import { supportChatSlice } from "widgets/support-chat/model/supportChatSlice";
 
 const Advantages: React.FC = React.memo(function Advantages() {
+  const dispatch = useAppDispatch();
+
   const {openSupportChat} = useSupportChatFeatures();
 
   return (
@@ -48,6 +52,7 @@ const Advantages: React.FC = React.memo(function Advantages() {
               Воспользоваться бесплатным помощником Юрой
             </MyButton>
             <MyButton
+              onClick={() => dispatch(supportChatSlice.actions.toggleLegalAdviceModalVisibility(true))}
               btnClassName={styles.advantagesButtons__secondary}
               color="secondary"
               variant="contained"
@@ -100,6 +105,7 @@ const Advantages: React.FC = React.memo(function Advantages() {
               </MyButton>
               <MyButton
                 btnClassName={styles.advantagesButtons__secondary}
+                onClick={() => dispatch(supportChatSlice.actions.toggleLegalAdviceModalVisibility(true))}
                 color="secondary"
                 variant="contained"
                 size="small"
@@ -107,8 +113,6 @@ const Advantages: React.FC = React.memo(function Advantages() {
                 Задать вопрос юристу
               </MyButton>
             </div>
-
-
         </div>
       </div>
     </div>

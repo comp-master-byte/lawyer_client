@@ -12,4 +12,5 @@ export interface SupportChatState {
     savedChains: number[];
     isLoading: boolean;
     isSupportChatVisible: boolean;
+    isLegalAdviceModalVisible: boolean;
 }

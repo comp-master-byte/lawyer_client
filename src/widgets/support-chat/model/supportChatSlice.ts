@@ -6,6 +6,7 @@ const initialState: SupportChatState = {
     savedChains: [1],
     isLoading: false,
     isSupportChatVisible: false,
+    isLegalAdviceModalVisible: false,
 }
 
 export const supportChatSlice = createSlice({
@@ -29,6 +30,9 @@ export const supportChatSlice = createSlice({
         },
         toggleSupportChatVisibility(state, action: PayloadAction<boolean>) {
             state.isSupportChatVisible = action.payload;
+        },
+        toggleLegalAdviceModalVisibility(state, action: PayloadAction<boolean>) {
+            state.isLegalAdviceModalVisible = action.payload;
         }
     }
 })
