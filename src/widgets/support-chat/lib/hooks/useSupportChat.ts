@@ -6,23 +6,24 @@ import { supportChatSlice } from "widgets/support-chat/model/supportChatSlice";
 export const useSupportChat = () => {
     const dispatch = useAppDispatch();
 
-    const {data, savedChains} = useTypedSelector((state) => state.supportChatSlice);
+    const {toggleSupportChatVisibility} = supportChatSlice.actions;
 
-    const [isSupportChatVisible, setIsSupportChatVisible] = useState(false);
+    const {data, savedChains, isSupportChatVisible} = useTypedSelector((state) => state.supportChatSlice);
+
     const [isLegalAdviceModalVisible, setIsLegalAdviceModalVisible] = useState(false);
 
     const closeSupportChat = useCallback(() => {
-        setIsSupportChatVisible(false);
+        dispatch(toggleSupportChatVisibility(false));
     }, [])
 
     const openLegalAdviceModal = useCallback(() => {
-        setIsSupportChatVisible(false);
+        dispatch(toggleSupportChatVisibility(false));
         setIsLegalAdviceModalVisible(true);
     }, [])
 
     const backToSupportChatFromLegalModal = useCallback(() => {
         setIsLegalAdviceModalVisible(false);
-        setIsSupportChatVisible(true);
+        dispatch(toggleSupportChatVisibility(true));
     }, [])
 
     const closeLegalAdviceModal = useCallback(() => {
@@ -34,9 +35,9 @@ export const useSupportChat = () => {
             dispatch(supportChatSlice.actions.toggleLoadingStatus(true));
             const lastNodeId = savedChains[savedChains.length - 1];
             dispatch(fetchMessageNode(lastNodeId));
-            setIsSupportChatVisible(true);
+            dispatch(toggleSupportChatVisibility(true));
         } else {
-            setIsSupportChatVisible(true);
+            dispatch(toggleSupportChatVisibility(true));
         }
     }, [savedChains, data])
 

@@ -11,4 +11,5 @@ export interface SupportChatState {
     data: MessageData|null;
     savedChains: number[];
     isLoading: boolean;
+    isSupportChatVisible: boolean;
 }

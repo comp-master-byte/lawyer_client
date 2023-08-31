@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useCallback } from "react";
 import MyButton from "shared/ui/MyButton/MyButton";
-import styles from "./PrimaryView.module.scss";
+import styles from "./primary.module.scss";
 import pointer from "./assets/pointer.svg";
 import bigHuman from "./assets/big-yura.svg";
 import classNames from "classnames";
+import { supportChatSlice } from "widgets/support-chat/model/supportChatSlice";
+import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
+import { fetchMessageNode } from "widgets/support-chat/model/async-actions";
 
-const PrimaryView: React.FC = React.memo(function PrimaryView() {
+
+const Primary: React.FC = React.memo(function PrimaryView() {
+  const dispatch = useAppDispatch();
+
+  const {toggleSupportChatVisibility} = supportChatSlice.actions;
+
+  const {data, savedChains} = useTypedSelector((state) => state.supportChatSlice);
+
+  const openSupportChat = useCallback(() => {
+    if(!data) {
+        dispatch(supportChatSlice.actions.toggleLoadingStatus(true));
+        const lastNodeId = savedChains[savedChains.length - 1];
+        dispatch(fetchMessageNode(lastNodeId));
+        dispatch(toggleSupportChatVisibility(true));
+    } else {
+        dispatch(toggleSupportChatVisibility(true));
+    }
+}, [savedChains, data])
+
   return (
     <div className={styles.primaryViewWrapper}>
       <div className={styles.container}>
@@ -26,7 +47,7 @@ const PrimaryView: React.FC = React.memo(function PrimaryView() {
               </div>
             </div>
             <div className={styles.viewLeftColumn__btn}>
-              <MyButton color="primary" size="large" variant="contained">
+              <MyButton onClick={openSupportChat} color="primary" size="large" variant="contained">
                 Задать вопрос
               </MyButton>
             </div>
@@ -71,4 +92,4 @@ const PrimaryView: React.FC = React.memo(function PrimaryView() {
   );
 });
 
-export default PrimaryView;
+export default Primary;
