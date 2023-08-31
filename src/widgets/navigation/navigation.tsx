@@ -13,14 +13,19 @@ import SignUpModal from "./components/sign-up-modal/sign-up-modal";
 import { isMobile } from "shared/lib/helpers/isMobile";
 import Cookies from "js-cookie";
 import { Link, useNavigate } from "react-router-dom";
+import { useScrollTo } from "shared/lib/hooks/useScrollTo";
 
 const Navigation: React.FC = React.memo(function Navigation() {
     const navigate = useNavigate();
+
     const {
-      scrollToAboutUs,
-      scrollToAdvantages,
-      scrollToThemes,
-      scrollToContacts,
+      scrollToAboutUs, 
+      scrollToAdvantages, 
+      scrollToContacts, 
+      scrollToThemes
+    } = useScrollTo();
+
+    const {
       isNavigationMobileVisible,
       openMobileMavigation,
       closeMobileNavigation
@@ -72,25 +77,37 @@ const Navigation: React.FC = React.memo(function Navigation() {
                     })}>
                       <div
                         className={styles.navigationLinks__link}
-                        onClick={scrollToAboutUs}
+                        onClick={() => {
+                          scrollToAboutUs();
+                          closeMobileNavigation();
+                        }}
                       >
                         О нас
                       </div>
                       <div
                         className={styles.navigationLinks__link}
-                        onClick={scrollToAdvantages}
+                        onClick={() => {
+                            scrollToAdvantages();
+                            closeMobileNavigation();
+                        }}
                       >
                         Преимущества
                       </div>
                       <div
                         className={styles.navigationLinks__link}
-                        onClick={scrollToThemes}
+                        onClick={() => {
+                          scrollToThemes();
+                          closeMobileNavigation();
+                        }}
                       >
                         Категории и темы
                       </div>
                       <div
                         className={styles.navigationLinks__link}
-                        onClick={scrollToContacts}
+                        onClick={() => {
+                            scrollToContacts();
+                            closeMobileNavigation();
+                        }}
                       >
                         Контакты
                       </div>
