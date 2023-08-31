@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
-import { fetchMessageNode } from "widgets/support-chat/model/async-actions";
 import { supportChatSlice } from "widgets/support-chat/model/supportChatSlice";
 
 export const useSupportChat = () => {
@@ -8,7 +7,7 @@ export const useSupportChat = () => {
 
     const {toggleSupportChatVisibility} = supportChatSlice.actions;
 
-    const {data, savedChains, isSupportChatVisible} = useTypedSelector((state) => state.supportChatSlice);
+    const {isSupportChatVisible} = useTypedSelector((state) => state.supportChatSlice);
 
     const [isLegalAdviceModalVisible, setIsLegalAdviceModalVisible] = useState(false);
 
@@ -30,17 +29,6 @@ export const useSupportChat = () => {
         setIsLegalAdviceModalVisible(false);
     }, [])
 
-    const openSupportChat = useCallback(() => {
-        if(!data) {
-            dispatch(supportChatSlice.actions.toggleLoadingStatus(true));
-            const lastNodeId = savedChains[savedChains.length - 1];
-            dispatch(fetchMessageNode(lastNodeId));
-            dispatch(toggleSupportChatVisibility(true));
-        } else {
-            dispatch(toggleSupportChatVisibility(true));
-        }
-    }, [savedChains, data])
-
     useEffect(() => {
         if(isSupportChatVisible||isLegalAdviceModalVisible) {
             document.body.style.overflowY = 'hidden';
@@ -52,7 +40,6 @@ export const useSupportChat = () => {
     return {
         isSupportChatVisible,
         closeSupportChat,
-        openSupportChat,
         isLegalAdviceModalVisible,
         openLegalAdviceModal,
         closeLegalAdviceModal,

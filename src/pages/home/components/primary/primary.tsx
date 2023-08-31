@@ -1,36 +1,23 @@
-import React, { useCallback } from "react";
+import React from "react";
 import MyButton from "shared/ui/MyButton/MyButton";
 import styles from "./primary.module.scss";
 import pointer from "./assets/pointer.svg";
 import bigHuman from "./assets/big-yura.svg";
 import classNames from "classnames";
-import { supportChatSlice } from "widgets/support-chat/model/supportChatSlice";
-import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
-import { fetchMessageNode } from "widgets/support-chat/model/async-actions";
+import { useAppDispatch } from "shared/lib/hooks/redux";
 import { authorizationSlice } from "widgets/navigation/model/authorizationSlice";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import { useSupportChatFeatures } from "features/support-chat/hooks/useSupportChatFeatures";
 
 
 const Primary: React.FC = React.memo(function PrimaryView() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const {toggleSupportChatVisibility} = supportChatSlice.actions;
   const {toggleRegisterModalVisibility} = authorizationSlice.actions;
 
-  const {data, savedChains} = useTypedSelector((state) => state.supportChatSlice);
-
-  const openSupportChat = useCallback(() => {
-    if(!data) {
-        dispatch(supportChatSlice.actions.toggleLoadingStatus(true));
-        const lastNodeId = savedChains[savedChains.length - 1];
-        dispatch(fetchMessageNode(lastNodeId));
-        dispatch(toggleSupportChatVisibility(true));
-    } else {
-        dispatch(toggleSupportChatVisibility(true));
-    }
-}, [savedChains, data])
+  const {openSupportChat} = useSupportChatFeatures();
 
   return (
     <div className={styles.primaryViewWrapper}>

@@ -1,12 +1,15 @@
 import React from "react";
-import styles from "./Advantages.module.scss";
+import styles from "./advantages.module.scss";
 import WhiteCard from "./components/WhiteCard/WhiteCard";
 import BlueCard from "./components/BlueCard/BlueCard";
 import MyButton from "shared/ui/MyButton/MyButton";
 import SectionTitle from "shared/styled-components/SectionTitle/SectionTitle";
 import mobileBgLine from "./assets/bg-line.svg";
+import { useSupportChatFeatures } from "features/support-chat/hooks/useSupportChatFeatures";
 
 const Advantages: React.FC = React.memo(function Advantages() {
+  const {openSupportChat} = useSupportChatFeatures();
+
   return (
     <div className={styles.advantagesWrapper}>
       <SectionTitle>Юра тебе <span>подойдет</span>, <br /> если ты хочешь:</SectionTitle>
@@ -36,6 +39,7 @@ const Advantages: React.FC = React.memo(function Advantages() {
 
           <div className={styles.advantagesButtons}>
             <MyButton
+              onClick={openSupportChat}
               btnClassName={styles.advantagesButtons__primary}
               color="primary"
               variant="contained"
@@ -87,6 +91,7 @@ const Advantages: React.FC = React.memo(function Advantages() {
             <div className={styles.mobileButtons}>
               <MyButton
                 btnClassName={styles.advantagesButtons__primary}
+                onClick={openSupportChat}
                 color="primary"
                 variant="contained"
                 size="small"

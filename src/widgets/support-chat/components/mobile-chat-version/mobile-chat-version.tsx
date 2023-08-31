@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./mobile-chat-version.module.scss";
 import { useSupportChat } from 'widgets/support-chat/lib/hooks/useSupportChat';
-import SupportChatButton from 'features/support-chat-button/support-chat-button';
+import SupportChatButton from 'features/support-chat/components/support-chat-button/support-chat-button';
 import Modal from 'shared/ui/modal/modal';
 import logoSvg from "../../assets/logo.svg";
 import MobileChatHeader from './components/mobile-chat-header/mobile-chat-header';
@@ -14,7 +14,6 @@ const MobileChatVersion: React.FC = () => {
     const {
         isSupportChatVisible,
         closeSupportChat,
-        openSupportChat,
         isLegalAdviceModalVisible,
         openLegalAdviceModal,
         closeLegalAdviceModal,
@@ -23,7 +22,7 @@ const MobileChatVersion: React.FC = () => {
 
     return (
         <div className={styles.mobileChatVersionWrapper}>
-            <SupportChatButton openSupportChat={openSupportChat} />
+            <SupportChatButton />
 
             <LegalAdvice 
                 isModalVisible={isLegalAdviceModalVisible}

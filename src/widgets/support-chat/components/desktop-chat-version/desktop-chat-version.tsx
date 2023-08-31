@@ -4,7 +4,7 @@ import LeftSupportWindow from './components/left-support-window/left-support-win
 import MyButton from 'shared/ui/MyButton/MyButton';
 import { useSupportChat } from 'widgets/support-chat/lib/hooks/useSupportChat';
 import classNames from 'classnames';
-import SupportChatButton from 'features/support-chat-button/support-chat-button';
+import SupportChatButton from 'features/support-chat/components/support-chat-button/support-chat-button';
 import RightSupportWindow from './components/right-support-window/right-support-window';
 import LegalAdvice from 'entities/support-chat/legal-advice/legal-advice';
 
@@ -12,7 +12,6 @@ const DesktopChatVersion: React.FC = () => {
     const {
         isSupportChatVisible,
         closeSupportChat,
-        openSupportChat,
         isLegalAdviceModalVisible,
         openLegalAdviceModal,
         closeLegalAdviceModal,
@@ -21,7 +20,7 @@ const DesktopChatVersion: React.FC = () => {
 
     return (
         <div className={styles.desktopChatVersion}>
-            <SupportChatButton openSupportChat={openSupportChat} />
+            <SupportChatButton />
 
             <LegalAdvice 
                 isModalVisible={isLegalAdviceModalVisible} 
