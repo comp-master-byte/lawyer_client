@@ -46,7 +46,7 @@ const Primary: React.FC = React.memo(function PrimaryView() {
           </div>
 
           <div className={styles.mobileButton}>
-              <MyButton color="primary" size="large" variant="contained">
+              <MyButton onClick={openSupportChat} color="primary" size="large" variant="contained">
                   Задать вопрос
               </MyButton>
           </div>
@@ -92,8 +92,6 @@ const Primary: React.FC = React.memo(function PrimaryView() {
             className={styles.primaryViewInner__human}
             alt="human"
           />
-
-
         </div>
       </div>
     </div>
