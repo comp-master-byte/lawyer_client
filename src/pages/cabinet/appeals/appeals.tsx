@@ -7,6 +7,8 @@ import MyButton from 'shared/ui/MyButton/MyButton';
 import AppealsList from './components/appeals-list/appeals-list';
 import { useTypedSelector } from 'shared/lib/hooks/redux';
 import { useAppeals } from './lib/hooks/useAppeals';
+import EmptyPlaceholder from 'entities/empty-placeholder/empty-placeholder';
+import Footer from 'widgets/footer/footer';
 
 const Appeals: React.FC = () => {
     const {appeals} = useTypedSelector((state) => state.appealsSlice);
@@ -15,7 +17,7 @@ const Appeals: React.FC = () => {
     return (
         <div className={styles.appealsWrapper}>
             <Navigation />
-            <h1 style={{textAlign: "center", marginTop: 50}}>Тут будет заглушка</h1>
+            <EmptyPlaceholder />
             {/* <section className={styles.pageContent}>
                 <div className={styles.container}>
                     <h1 className={styles.pageTitle}>Мои обращения</h1>
@@ -43,6 +45,8 @@ const Appeals: React.FC = () => {
 
                 </div>
             </section> */}
+
+            <Footer />
         </div>
     )
 }
