@@ -20,7 +20,7 @@ export interface ControllerSelectProps {
     control: Control<any>;
     defaultValue?: string;
     validation?: {
-        required: "Это поле обязательное"
+        required: "Это поле обязательное!"
     }
     error?: any;
 }

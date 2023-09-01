@@ -65,7 +65,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
                         options={REGISTER_TYPE}
                         error={errors.is_lawyer}
                         validation={{
-                            required: "Это поле обязательное"
+                            required: "Это поле обязательное!"
                         }}
                     />
                     <MyInput 

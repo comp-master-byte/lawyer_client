@@ -22,14 +22,19 @@ const LegalForm: React.FC = () => {
                 name='topic'
                 label='Тема обращения'
                 options={THEMES}
+                error={errors.topic}
+                validation={{required: "Это поле обязательное!"}}
                 control={control}
             />
 
             <TextArea  
                 label='Вопрос' 
                 placeholder='Введите вопрос...' 
-                error={errors.question} 
-                register={register("question")} 
+                error={errors.question_text} 
+                inputClassName={styles.textareaRadius}
+                register={register("question_text", {
+                    required: "Это поле обязательное!"
+                })} 
             />
 
             <Checkbox />
