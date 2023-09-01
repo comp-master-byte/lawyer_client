@@ -63,6 +63,10 @@ const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
                         defaultValue='Тип регистрации'
                         control={control}
                         options={REGISTER_TYPE}
+                        error={errors.is_lawyer}
+                        validation={{
+                            required: "Это поле обязательное"
+                        }}
                     />
                     <MyInput 
                         placeholder='Email'

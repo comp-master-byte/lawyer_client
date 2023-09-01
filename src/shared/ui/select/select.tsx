@@ -6,7 +6,7 @@ import { useSelect } from './hooks/useSelect';
 import classNames from 'classnames';
 
 const Select: React.FC<SelectProps> = (props) => {
-    const {options, selectedOption, label, onSelectOption, defaultValue, selectWrapperClassName, selectOptionClassName} = props;
+    const {options, selectedOption, label, onSelectOption, defaultValue, selectWrapperClassName, selectOptionClassName, error} = props;
     const {
         isOptionsVisible,
         toggleOptionsVisibility
@@ -15,6 +15,7 @@ const Select: React.FC<SelectProps> = (props) => {
     return (
         <div className={classNames(styles.selectWrapper, selectWrapperClassName)}>
             {label ? <label className={styles.selectLabel}>{label}</label> : <></>}
+            {error ? <div className={styles.selectError}>{error.message}</div> : <></>}
             <div className={classNames(styles.selectedOptionWrapper, selectOptionClassName)} onClick={toggleOptionsVisibility}>
                 <p className={classNames(styles.selectedOption, {
                     [styles.defaultValueOption]: !selectedOption?.value

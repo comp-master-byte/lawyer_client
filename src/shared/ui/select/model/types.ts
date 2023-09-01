@@ -10,6 +10,7 @@ export interface SelectProps {
     defaultValue?: string;
     selectWrapperClassName?: string;
     selectOptionClassName?: string;
+    error?: any
 }
 
 export interface ControllerSelectProps {
@@ -18,4 +19,8 @@ export interface ControllerSelectProps {
     name: string;
     control: Control<any>;
     defaultValue?: string;
+    validation?: {
+        required: "Это поле обязательное"
+    }
+    error?: any;
 }

@@ -26,7 +26,6 @@ export default class Auth {
         } catch(error: any) {
             const err = error.response.data;
             for(let key in err) {
-                toast(err[key][0], {type: "error"});
                 setError(key, {
                     type: "validate",
                     message: err[key]
