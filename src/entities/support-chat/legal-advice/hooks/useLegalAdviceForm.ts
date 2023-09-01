@@ -5,6 +5,7 @@ import { authorizationSlice } from "widgets/navigation/model/authorizationSlice"
 import { supportChatSlice } from "widgets/support-chat/model/supportChatSlice";
 import AdviceForm from "../api/AdviceForm";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export interface LegalFormValues {
     question_text: string;
@@ -16,6 +17,7 @@ export interface LegalFormValues {
 
 export const useLegalAdviceForm = () => {
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
     const {register, control, formState: {errors}, handleSubmit, reset} = useForm<LegalFormValues>({mode: "all"});
 
     const {toggleLegalAdviceModalVisibility} = supportChatSlice.actions;
@@ -28,6 +30,7 @@ export const useLegalAdviceForm = () => {
             const response = await AdviceForm.createQuestion(data);
             if(response) {
                 reset({question_text: "", topic: {}});
+                navigate('/cabinet/appeals');
             }
         } else {
             toast("Чтобы задать вопрос нужно зарегистрироваться", {type: "info"})
