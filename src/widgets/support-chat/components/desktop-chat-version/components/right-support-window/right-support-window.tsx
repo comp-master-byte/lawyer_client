@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import closeSvg from "widgets/support-chat/assets/close.svg";
 import AnswersList from './components/answers-list/answers-list';
 import { useTypedSelector } from 'shared/lib/hooks/redux';
+import Loader from 'shared/ui/loader/loader';
 
 interface RightSupportWindowProps {
     closeSupportChatCallback: () => void;
@@ -19,9 +20,9 @@ const RightSupportWindow: React.FC<RightSupportWindowProps> = ({closeSupportChat
                     <img src={closeSvg} alt="" />
                 </div>
             </header>
-            {isLoading ? <h3>Загрузка...</h3> : <AnswersList />}
+            {isLoading ? <Loader loaderWrapperClassName={styles.loaderWrapper} /> : <AnswersList />}
         </div>
     )
 }
 
-export default RightSupportWindow
+export default RightSupportWindow;

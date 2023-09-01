@@ -1,0 +1,14 @@
+.loaderWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.loader {
+    color: #013878;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 105%; /* 18.9px */
+    letter-spacing: -0.45px;
+}
