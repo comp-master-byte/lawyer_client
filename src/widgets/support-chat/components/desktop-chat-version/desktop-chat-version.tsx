@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import SupportChatButton from 'features/support-chat/components/support-chat-button/support-chat-button';
 import RightSupportWindow from './components/right-support-window/right-support-window';
 import LegalAdvice from 'entities/support-chat/legal-advice/legal-advice';
+import { useClickOutside } from 'shared/lib/hooks/useClickOutside';
 
 const DesktopChatVersion: React.FC = () => {
     const {
@@ -17,6 +18,10 @@ const DesktopChatVersion: React.FC = () => {
         closeLegalAdviceModal,
         backToSupportChatFromLegalModal
     } = useSupportChat();
+
+    const supportChatContentRef = useClickOutside(() => {
+        closeSupportChat();
+    })
 
     return (
         <div className={styles.desktopChatVersion}>
@@ -29,7 +34,7 @@ const DesktopChatVersion: React.FC = () => {
             />
 
             <section className={classNames(styles.supportChatWrapper, {[styles.supportChatVisible]: isSupportChatVisible})}>
-                <div className={styles.supportChatContent}>
+                <div ref={supportChatContentRef} className={styles.supportChatContent}>
                     <div className={styles.supportChatWindow}>
                         <LeftSupportWindow />
                         <RightSupportWindow closeSupportChatCallback={closeSupportChat} />

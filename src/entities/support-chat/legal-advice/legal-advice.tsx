@@ -12,12 +12,10 @@ interface LegalAdviceProps {
 
 const LegalAdvice: React.FC<LegalAdviceProps> = ({isModalVisible, closeLegalAdviceModal, backToSupportChatFromLegalModal}) => {
     return (
-        <div className={styles.legalAdviceWrapper}>
-            <Modal isModalVisible={isModalVisible} modalContentClassName={styles.adviceContent}>
-                <TopAdviceContent closeLegalAdviceModal={closeLegalAdviceModal} backToChatCallback={backToSupportChatFromLegalModal} />
-                <LegalForm />
-            </Modal>
-        </div>
+        <Modal closeModal={closeLegalAdviceModal} isModalVisible={isModalVisible} modalContentClassName={styles.adviceContent}>
+            <TopAdviceContent closeLegalAdviceModal={closeLegalAdviceModal} backToChatCallback={backToSupportChatFromLegalModal} />
+            <LegalForm />
+        </Modal>
     )
 }
 
