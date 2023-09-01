@@ -13,6 +13,7 @@ const AppRoutes: React.FC = () => {
                 : <Route path='*' element={<Navigate to='/' replace />} />
             } */}
             <Route path='/cabinet/appeals' element={<Appeals />} />
+            {/* <Route path='*' element={<Navigate to='/' replace />} /> */}
         </Routes>
     )
 }
