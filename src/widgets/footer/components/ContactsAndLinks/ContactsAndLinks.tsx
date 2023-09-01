@@ -28,10 +28,10 @@ const ContactsAndLinks: React.FC = React.memo(function ContactsAndLinks() {
       <div className={styles.userRigths}>
         <p className={styles.userRigths__year}>2023</p>
         <div className={styles.emailsText}>
-          <Link to='/privacy-policy' className={styles.userRigths__paragraph}>
+          <Link to='/privacy-policy' target="_blank" className={styles.userRigths__paragraph}>
                 Политика конфиденциальности
           </Link>
-          <Link to='/terms-of-use' className={styles.userRigths__paragraph}>
+          <Link to='/terms-of-use' target="_blank" className={styles.userRigths__paragraph}>
             Пользовательское соглашение
           </Link>
         </div>
