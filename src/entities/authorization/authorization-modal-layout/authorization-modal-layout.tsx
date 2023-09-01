@@ -15,9 +15,11 @@ interface AuthorizationModalLayoutProps {
 
 const AuthorizationModalLayout: React.FC<AuthorizationModalLayoutProps> = (props) => {
     const {isModalVisible, children, closeAuthModal, openAnotherModalCallback, authButtonText, authSubtitle, authTitle} = props;
+
     return (
         <Modal 
             isModalVisible={isModalVisible} 
+            closeModal={closeAuthModal}
             modalContentClassName={styles.authModalContent}
         >
             <div className={styles.closeAuthModalButton} onClick={closeAuthModal}>
