@@ -23,8 +23,9 @@ export default class Auth {
             const response = await axios.post(`${API_URL}/api/auth/users/`, mappedRegisterData);
             return response.data;
         } catch(error: any) {
-            for(let err of error.response.data.non_field_errors) {
-                toast(err, {type: "error"})
+            const err = error.response.data;
+            for(let key in err) {
+                toast(err[key][0], {type: "error"})
             }
         }
     }
