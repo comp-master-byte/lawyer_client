@@ -14,12 +14,12 @@ const SuccessRegisterModal: React.FC<SuccessRegisterModalProps> = () => {
     const dispatch = useDispatch();
 
     const {isSuccessRegisterModalVisible} = useTypedSelector(state => state.authorizationSlice);
-
-    const {toggleSuccessRegisterModalVisibility} = authorizationSlice.actions;
+    
+    const {toggleSuccessRegisterModalVisibility, toggleSignInModalVisibility} = authorizationSlice.actions;
 
     return (
         <Modal 
-            isModalVisible={true} 
+            isModalVisible={isSuccessRegisterModalVisible} 
             modalContentClassName={styles.successRegisterContent}
         >
             <div className={styles.closeModalButton}>
@@ -32,6 +32,10 @@ const SuccessRegisterModal: React.FC<SuccessRegisterModalProps> = () => {
                     color='secondary' 
                     variant='contained'
                     btnClassName={styles.modalContent__button}
+                    onClick={() => {
+                        dispatch(toggleSuccessRegisterModalVisibility(false));
+                        dispatch(toggleSignInModalVisibility(true));
+                    }}
                 >
                     Войти в личный кабинет
                 </MyButton>

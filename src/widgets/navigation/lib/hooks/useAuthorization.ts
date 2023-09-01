@@ -6,32 +6,32 @@ import { authorizationSlice } from "widgets/navigation/model/authorizationSlice"
 export const useAuthorization = () => {
     const dispatch = useAppDispatch();
 
-    const {toggleRegisterModalVisibility} = authorizationSlice.actions;
+    const {toggleRegisterModalVisibility, toggleSignInModalVisibility} = authorizationSlice.actions;
 
-    const {isRegisterModalVisible} = useTypedSelector((state) => state.authorizationSlice);
+    const {isRegisterModalVisible, isSignInModalVisible} = useTypedSelector((state) => state.authorizationSlice);
 
-    const [isSignInModalVisible, setIsSignInModalVisible] = useState(false);
+    // const [isSignInModalVisible, setIsSignInModalVisible] = useState(false);
     const [isForgetPasswordModalVisible, setIsForgetPasswordModalVisible] = useState(false);
 
     const openSignInModal = useCallback(() => {
         if(isRegisterModalVisible) {
             dispatch(toggleRegisterModalVisibility(false));
         }
-        setIsSignInModalVisible(true);
+        dispatch(toggleSignInModalVisibility(true));
     }, [isRegisterModalVisible])
 
     const openForgetPasswordModal = useCallback(() => {
-        setIsSignInModalVisible(false);
+        dispatch(toggleSignInModalVisibility(false));
         setIsForgetPasswordModalVisible(true);
     }, [])
 
     const openSignUpModal = useCallback(() => {
-        setIsSignInModalVisible(false);
+        dispatch(toggleSignInModalVisibility(false));
         dispatch(toggleRegisterModalVisibility(true));
     }, [])
 
     const closeSignInModal = useCallback(() => {
-        setIsSignInModalVisible(false);
+        dispatch(toggleSignInModalVisibility(false));
     }, [])
 
     const closeForgetPasswordModal = useCallback(() => {
@@ -40,7 +40,7 @@ export const useAuthorization = () => {
 
     const backToSignInFromForget = useCallback(() => {
         setIsForgetPasswordModalVisible(false);
-        setIsSignInModalVisible(true);
+        dispatch(toggleSignInModalVisibility(true));
     }, [])
 
     useEffect(() => {

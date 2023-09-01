@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./sign-up-modal.module.scss";
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { SignUpValues } from 'widgets/navigation/model/types';
@@ -22,10 +22,20 @@ const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
 
     const dispatch = useAppDispatch();
 
+    const {toggleSuccessRegisterModalVisibility, toggleRegisterModalVisibility} = authorizationSlice.actions;
+
     const {isRegisterModalVisible} = useTypedSelector(state => state.authorizationSlice);
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const onSubmitSignUpForm: SubmitHandler<SignUpValues> = async (data) => {
+        setIsLoading(true);
         const response = await Auth.register(data);
+        setIsLoading(false);
+        if(response) {
+            dispatch(toggleRegisterModalVisibility(false));
+            dispatch(toggleSuccessRegisterModalVisibility(true));
+        } 
     }
 
     return (
@@ -74,6 +84,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
                 </div>
                 <Checkbox />
                 <MyButton 
+                    disabled={isLoading}
                     color='secondary' 
                     variant='contained'
                     btnClassName={styles.signUpButton}

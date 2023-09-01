@@ -41,6 +41,15 @@
   font-weight: 600;
 }
 
+// === disabled ===
+
+.disabled {
+    pointer-events: none;
+    opacity: .4;
+}
+
+// === disabled === 
+
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .small,.large {
     

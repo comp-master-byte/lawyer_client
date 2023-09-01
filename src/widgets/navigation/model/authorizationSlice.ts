@@ -3,7 +3,8 @@ import { AuthorizationState } from "./types";
 
 const initialState: AuthorizationState = {
     isRegisterModalVisible: false, 
-    isSuccessRegisterModalVisible: false
+    isSuccessRegisterModalVisible: false,
+    isSignInModalVisible: false
 }
 
 export const authorizationSlice = createSlice({
@@ -15,6 +16,9 @@ export const authorizationSlice = createSlice({
         },
         toggleSuccessRegisterModalVisibility(state, action: PayloadAction<boolean>) {
             state.isSuccessRegisterModalVisible = action.payload;
+        },
+        toggleSignInModalVisibility(state, action: PayloadAction<boolean>) {
+            state.isSignInModalVisible = action.payload;
         }
     }
 })

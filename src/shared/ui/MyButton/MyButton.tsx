@@ -9,6 +9,7 @@ interface MyButtonProps {
   children?: React.ReactNode;
   btnClassName?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
 const MyButton: FC<MyButtonProps> = ({
@@ -17,6 +18,7 @@ const MyButton: FC<MyButtonProps> = ({
     size,
     children,
     btnClassName,
+    disabled,
     ...props
 }) => {
   return (
@@ -29,6 +31,7 @@ const MyButton: FC<MyButtonProps> = ({
           color === "secondary" && variant === "contained",
         [styles.large]: size === "large",
         [styles.small]: size === "small",
+        [styles.disabled]: disabled
       })}
       {...props}
     >
