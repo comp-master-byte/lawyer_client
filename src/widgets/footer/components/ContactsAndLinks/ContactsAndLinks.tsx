@@ -31,9 +31,9 @@ const ContactsAndLinks: React.FC = React.memo(function ContactsAndLinks() {
           <Link to='/privacy-policy' className={styles.userRigths__paragraph}>
                 Политика конфиденциальности
           </Link>
-          <p className={styles.userRigths__paragraph}>
+          <Link to='/terms-of-use' className={styles.userRigths__paragraph}>
             Пользовательское соглашение
-          </p>
+          </Link>
         </div>
       </div>
     </div>

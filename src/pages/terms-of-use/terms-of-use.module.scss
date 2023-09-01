@@ -1,0 +1,42 @@
+.termsofUseWrapper {
+    margin: 108px 10px 80px 10px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.termsContent {
+    &__title {
+        color:  #013878;
+        text-align: center;
+        font-size: 34px;
+        font-weight: 600;
+        line-height: 90%; /* 30.6px */
+        letter-spacing: -0.85px;
+        max-width: 822px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+}
+
+.address {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 41px;
+}
+
+.paragraph {
+    color:  #013878;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 105%; /* 21px */
+    letter-spacing: -0.5px;
+
+    span {
+        color: #FD7900;
+    }
+}

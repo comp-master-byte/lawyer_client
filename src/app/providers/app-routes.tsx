@@ -4,6 +4,7 @@ import Home from 'pages/home/home';
 import Appeals from 'pages/cabinet/appeals/appeals';
 import PageLayout from 'entities/page-layout/page-layout';
 import PrivacyPolicy from 'pages/privacy-policy/privacy-policy';
+import TermsOfUse from 'pages/terms-of-use/terms-of-use';
 
 const AppRoutes: React.FC = () => {
     return (
@@ -11,6 +12,7 @@ const AppRoutes: React.FC = () => {
             <Route path='/' element={<Home />} />
             <Route path='/' element={<PageLayout />}>
                 <Route path='privacy-policy' element={<PrivacyPolicy />} />
+                <Route path='terms-of-use' element={<TermsOfUse />} />
             </Route>
             <Route path='/cabinet/appeals' element={<Appeals />} />
         </Routes>
