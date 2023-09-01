@@ -82,6 +82,10 @@
         padding: 0px 19px 0px 20px;
         height: 50px;
 
+        .selectedOption {
+            max-width: 220px;
+        }
+
         .arrow {
             width: 23px;
             height: 13px;
