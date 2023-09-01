@@ -18,7 +18,7 @@ interface SignUpModalProps {
 }
 
 const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
-    const {register, control, handleSubmit, formState: {errors}} = useForm<SignUpValues>({mode: "all"});
+    const {register, control, handleSubmit, formState: {errors}, setError} = useForm<SignUpValues>({mode: "all"});
 
     const dispatch = useAppDispatch();
 
@@ -30,7 +30,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
 
     const onSubmitSignUpForm: SubmitHandler<SignUpValues> = async (data) => {
         setIsLoading(true);
-        const response = await Auth.register(data);
+        const response = await Auth.register(data, setError);
         setIsLoading(false);
         if(response) {
             dispatch(toggleRegisterModalVisibility(false));
@@ -66,7 +66,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
                     />
                     <MyInput 
                         placeholder='Email'
-                        error={errors.password}
+                        error={errors.email}
                         register={register("email", {
                             required: "Это поле обязательное!",
                             pattern: {

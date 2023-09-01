@@ -6,6 +6,7 @@ const MyInput: React.FC<MyInputProps> = ({ register, error, placeholder, label, 
     return (
         <div className={styles.myInputWrapper}>
             {label ? <label className={styles.inputLabel}>{label}</label> : <></>}
+            {error && <div className={styles.inputError}>{error.message}</div>}
             <input
                 type={type ? type : "text"}
                 className={styles.myInput}

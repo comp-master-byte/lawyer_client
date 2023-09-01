@@ -20,14 +20,14 @@ interface SignInModalProps {
 
 const SignInModal: React.FC<SignInModalProps> = (props) => {
     const {closeSignInModal, isSignInModalVisible, openSignUpModal, openForgetPasswordModal} = props;
-    const {register, handleSubmit, formState: {errors}} = useForm<SignInValues>({mode: "all"});
+    const {register, handleSubmit, formState: {errors}, setError} = useForm<SignInValues>({mode: "all"});
     const navigate = useNavigate();
 
     const [isLoading, setIsLoading] = useState(false);
 
     const onSignInFormSubmit: SubmitHandler<SignInValues> = async (data) => {
         setIsLoading(true);
-        const response = await Auth.login(data);
+        const response = await Auth.login(data, setError);
         setIsLoading(false);
         if(response.auth_token) {
             const token = JSON.stringify(response.auth_token);
