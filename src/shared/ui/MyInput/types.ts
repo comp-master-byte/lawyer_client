@@ -3,5 +3,6 @@ export interface MyInputProps {
     error: any;
     register: any;
     label?: string;
-    type?: "password"|"text"
+    type?: "password"|"text";
+    inputClassName?: string;
 }
