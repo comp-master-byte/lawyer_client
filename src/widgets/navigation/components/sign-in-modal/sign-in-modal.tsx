@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./sign-in-modal.module.scss";
 import { SubmitHandler, useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
@@ -23,11 +23,16 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
     const {register, handleSubmit, formState: {errors}} = useForm<SignInValues>({mode: "all"});
     const navigate = useNavigate();
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const onSignInFormSubmit: SubmitHandler<SignInValues> = async (data) => {
+        setIsLoading(true);
         const response = await Auth.login(data);
+        setIsLoading(false);
         if(response.auth_token) {
             const token = JSON.stringify(response.auth_token);
             Cookies.set('token', token);
+            closeSignInModal();
             navigate('/cabinet/appeals');
         }
     }
@@ -74,6 +79,7 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
                     <MyButton 
                         color='secondary' 
                         variant='contained' 
+                        disabled={isLoading}
                         btnClassName={styles.submitButton}
                     >   
                         Войти
