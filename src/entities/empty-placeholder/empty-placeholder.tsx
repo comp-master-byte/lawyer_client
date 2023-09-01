@@ -19,7 +19,7 @@ const EmptyPlaceholder: React.FC = () => {
             >
                 На главную
             </MyButton>
-            <div>
+            <div className={styles.emptyPlaceholderSvg}>
                 <img src={personSvg} alt="" />
             </div>
         </div>

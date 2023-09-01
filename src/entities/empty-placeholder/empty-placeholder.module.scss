@@ -69,9 +69,11 @@
 }
 
 @media screen and (max-width: 640px) {
-    img {
-        width: 339.289px;
-        height: 364.153px;
+    .emptyPlaceholderSvg {
+        img {
+            width: 339.289px;
+            height: 364.153px;
+        }
     }
 }
 
@@ -166,8 +168,10 @@
         margin-bottom: 21px;
     }
 
-    img {
-        width: 339.289px;
-        height: 364.153px;
+    .emptyPlaceholderSvg {
+        img {
+            width: 339.289px;
+            height: 364.153px;
+        }
     }
 }
