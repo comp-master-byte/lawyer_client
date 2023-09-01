@@ -1,0 +1,64 @@
+.successRegisterContent {
+    width: 653px;
+    // height: 358px;
+    border-radius: 30px;
+    border: 3px solid #013878;
+    background: #FFF;
+    margin: 0 10px;
+    padding-bottom: 100px;
+}
+
+.closeModalButton {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 59px;
+    padding: 21px 20px 0 0;
+
+    img {
+        cursor: pointer;
+    }
+}
+
+.modalContent {
+    margin: 0 50px;
+
+    &__title {
+        text-align: center;
+        color: #013878;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 90%; 
+        letter-spacing: -0.75px;
+        margin-bottom: 34px;
+    }
+
+    &__button {
+        width: 100%;
+        height: 78px;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 87.023%; 
+        letter-spacing: -0.7px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .successRegisterContent {
+        padding-bottom: 50px;
+    }
+    .modalContent {
+        margin: 0 30px;
+
+        &__title {
+            // font-size: 20px;
+        }
+
+        &__button {
+            height: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 87.023%; 
+            letter-spacing: -0.45px;
+        }
+    }
+}

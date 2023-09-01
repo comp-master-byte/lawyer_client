@@ -14,6 +14,7 @@ import { isMobile } from "shared/lib/helpers/isMobile";
 import Cookies from "js-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import { useScrollTo } from "shared/lib/hooks/useScrollTo";
+import SuccessRegisterModal from "./components/success-register-modal/success-register-modal";
 
 const Navigation: React.FC = React.memo(function Navigation() {
     const navigate = useNavigate();
@@ -60,6 +61,8 @@ const Navigation: React.FC = React.memo(function Navigation() {
                 closeForgetPasswordModal={closeForgetPasswordModal}
                 isForgetPasswordModalVisible={isForgetPasswordModalVisible}
             />
+
+            <SuccessRegisterModal />
           
             <div className={styles.container}>
                 <div className={styles.navigationInner}>

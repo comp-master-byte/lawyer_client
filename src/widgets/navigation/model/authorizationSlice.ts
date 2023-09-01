@@ -12,6 +12,9 @@ export const authorizationSlice = createSlice({
     reducers: {
         toggleRegisterModalVisibility(state, action: PayloadAction<boolean>) {
             state.isRegisterModalVisible = action.payload;
+        },
+        toggleSuccessRegisterModalVisibility(state, action: PayloadAction<boolean>) {
+            state.isSuccessRegisterModalVisible = action.payload;
         }
     }
 })
