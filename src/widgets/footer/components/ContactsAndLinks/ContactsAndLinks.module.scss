@@ -6,6 +6,7 @@
   font-size: 20px;
   line-height: 17px;
   letter-spacing: -0.025em;
+  text-decoration: none;
 }
 
 .contactsAndLinksWrapper {
@@ -47,6 +48,10 @@
   &__paragraph {
     @include paragraph;
     text-align: right;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__year {

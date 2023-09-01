@@ -3,6 +3,7 @@ import styles from "./ContactsAndLinks.module.scss";
 import vk from "./assets/vk.svg";
 import tg from "./assets/tg.svg";
 import { TG_LINK, VK_LINK } from "shared/constants/constants";
+import { Link } from "react-router-dom";
 
 const ContactsAndLinks: React.FC = React.memo(function ContactsAndLinks() {
   return (
@@ -27,9 +28,9 @@ const ContactsAndLinks: React.FC = React.memo(function ContactsAndLinks() {
       <div className={styles.userRigths}>
         <p className={styles.userRigths__year}>2023</p>
         <div className={styles.emailsText}>
-          <p className={styles.userRigths__paragraph}>
-            Политика конфиденциальности
-          </p>
+          <Link to='/privacy-policy' className={styles.userRigths__paragraph}>
+                Политика конфиденциальности
+          </Link>
           <p className={styles.userRigths__paragraph}>
             Пользовательское соглашение
           </p>

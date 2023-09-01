@@ -1,0 +1,40 @@
+.privacyWrapper {
+    margin: 108px 10px 98px 10px;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.privacyContent {
+    &__title {
+        color: #013878;
+        text-align: center;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 90%; 
+        letter-spacing: -1.2px;
+        margin-bottom: 75px;
+    }
+}
+
+.privacyContentAddress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 41px;
+}
+
+.paragraph {
+    color:  #013878;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 105%; /* 21px */
+    letter-spacing: -0.5px;
+
+    span {
+        color: #FD7900;
+    }
+}

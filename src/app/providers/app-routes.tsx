@@ -1,19 +1,18 @@
 import React from 'react'
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from 'pages/home/home';
 import Appeals from 'pages/cabinet/appeals/appeals';
-import Cookies from 'js-cookie';
+import PageLayout from 'entities/page-layout/page-layout';
+import PrivacyPolicy from 'pages/privacy-policy/privacy-policy';
 
 const AppRoutes: React.FC = () => {
     return (
         <Routes>
             <Route path='/' element={<Home />} />
-            {/* {Cookies.get('token') 
-                ? <Route path='/cabinet/appeals' element={<Appeals />} />
-                : <Route path='*' element={<Navigate to='/' replace />} />
-            } */}
+            <Route path='/' element={<PageLayout />}>
+                <Route path='privacy-policy' element={<PrivacyPolicy />} />
+            </Route>
             <Route path='/cabinet/appeals' element={<Appeals />} />
-            {/* <Route path='*' element={<Navigate to='/' replace />} /> */}
         </Routes>
     )
 }
