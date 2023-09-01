@@ -1,5 +1,5 @@
 .termsofUseWrapper {
-    margin: 108px 10px 80px 10px;
+    margin: 108px 60px 80px 60px;
 }
 
 .container {
@@ -38,5 +38,88 @@
 
     span {
         color: #FD7900;
+    }
+}
+
+
+@media screen and (max-width: 1440px) and (min-width: 1025px) {
+    .termsofUseWrapper {
+        margin: 65px 45px 78px 45px;
+    }
+
+    .termsContent {
+        &__title {
+            font-size: 34px;
+            letter-spacing: -0.85px;
+            margin-bottom: 52px;
+        }
+    }
+
+    .paragraph {
+        font-size: 18px;
+        line-height: 105%; /* 18.9px */
+        letter-spacing: -0.45px;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 640px) {
+    .termsofUseWrapper {
+        margin: 55px 30px 119px 30px;
+    }
+    .termsContent {
+        &__title {
+            font-size: 38px;
+            line-height: 90%; /* 34.2px */
+            letter-spacing: -0.95px;
+        }
+    }
+
+    .paragraph {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 105%; /* 23.1px */
+        letter-spacing: -0.55px;
+    }
+}
+
+@media screen and (max-width: 649px) and (min-width: 481px) {
+    .termsofUseWrapper {
+        margin: 55px 15px 71px 15px;
+    }
+    .termsContent {
+        &__title {
+            font-size: 30px;
+            line-height: 90%; /* 27px */
+            letter-spacing: -0.75px;
+        }
+    }
+
+    .paragraph {
+        font-size: 18px;
+        line-height: 105%; /* 18.9px */
+        letter-spacing: -0.45px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .termsofUseWrapper {
+        margin: 50px 15px 71px 15px;
+    }
+    .termsContent {
+        &__title {
+            font-size: 30px;
+            line-height: 90%; /* 27px */
+            letter-spacing: -0.75px;
+        }
+    }
+
+    .paragraph {
+        font-size: 16px;
+        line-height: 105%; /* 18.9px */
+        letter-spacing: -0.4px;
+    }
+
+    .address {
+        margin-bottom: 35px;
     }
 }

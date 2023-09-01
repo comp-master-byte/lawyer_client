@@ -1,5 +1,5 @@
 .privacyWrapper {
-    margin: 108px 10px 98px 10px;
+    margin: 108px 60px 98px 60px;
 }
 
 .container {
@@ -36,5 +36,83 @@
 
     span {
         color: #FD7900;
+    }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1025px) {
+    .privacyWrapper {
+        margin: 65px 45px 78px 45px;
+    }
+
+    .privacyContent {
+        &__title {
+            font-size: 34px;
+            letter-spacing: -0.85px;
+            margin-bottom: 52px;
+        }
+    }
+
+    .paragraph {
+        font-size: 18px;
+        line-height: 105%; /* 18.9px */
+        letter-spacing: -0.45px;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 640px) {
+    .privacyWrapper {
+        margin: 55px 30px 119px 30px;
+    }
+    .privacyContent {
+        &__title {
+            font-size: 38px;
+            line-height: 90%; /* 34.2px */
+            letter-spacing: -0.95px;
+        }
+    }
+
+    .paragraph {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 105%; /* 23.1px */
+        letter-spacing: -0.55px;
+    }
+}
+
+@media screen and (max-width: 649px) and (min-width: 481px) {
+    .privacyWrapper {
+        margin: 55px 15px 71px 15px;
+    }
+    .privacyContent {
+        &__title {
+            font-size: 30px;
+            line-height: 90%; /* 27px */
+            letter-spacing: -0.75px;
+        }
+    }
+
+    .paragraph {
+        font-size: 18px;
+        line-height: 105%; /* 18.9px */
+        letter-spacing: -0.45px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .privacyWrapper {
+        margin: 50px 15px 71px 15px;
+    }
+    .privacyContent {
+        &__title {
+            font-size: 30px;
+            line-height: 90%; /* 27px */
+            letter-spacing: -0.75px;
+        }
+    }
+
+    .paragraph {
+        font-size: 16px;
+        line-height: 105%; /* 18.9px */
+        letter-spacing: -0.4px;
     }
 }
