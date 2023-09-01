@@ -18,4 +18,5 @@ export interface ForgetPassword {
 
 export interface AuthorizationState {
     isRegisterModalVisible: boolean;
+    isSuccessRegisterModalVisible: boolean;
 }

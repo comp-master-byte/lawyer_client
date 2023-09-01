@@ -15,7 +15,8 @@ const Appeals: React.FC = () => {
     return (
         <div className={styles.appealsWrapper}>
             <Navigation />
-            <section className={styles.pageContent}>
+            <h1 style={{textAlign: "center", marginTop: 50}}>Тут будет заглушка</h1>
+            {/* <section className={styles.pageContent}>
                 <div className={styles.container}>
                     <h1 className={styles.pageTitle}>Мои обращения</h1>
 
@@ -41,7 +42,7 @@ const Appeals: React.FC = () => {
                     <AppealsList appeals={appeals} />
 
                 </div>
-            </section>
+            </section> */}
         </div>
     )
 }

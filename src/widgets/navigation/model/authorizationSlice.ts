@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AuthorizationState } from "./types";
 
 const initialState: AuthorizationState = {
-    isRegisterModalVisible: false
+    isRegisterModalVisible: false, 
+    isSuccessRegisterModalVisible: false
 }
 
 export const authorizationSlice = createSlice({
