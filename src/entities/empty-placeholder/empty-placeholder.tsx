@@ -2,8 +2,11 @@ import React from 'react';
 import styles from "./empty-placeholder.module.scss";
 import MyButton from 'shared/ui/MyButton/MyButton';
 import personSvg from "./assets/person.png";
+import { useNavigate } from 'react-router-dom';
 
 const EmptyPlaceholder: React.FC = () => {
+    const navigate = useNavigate();
+
     return (
         <div className={styles.emptyPlaceholderWrapper}>
             <h1 className={styles.emptyPlaceholderTitle}>
@@ -16,6 +19,7 @@ const EmptyPlaceholder: React.FC = () => {
                 color='primary' 
                 variant='contained' 
                 btnClassName={styles.emptyPlaceholderButton}
+                onClick={() => navigate('/')}
             >
                 На главную
             </MyButton>
