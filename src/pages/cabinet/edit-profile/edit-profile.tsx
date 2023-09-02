@@ -1,34 +1,44 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./edit-profile.module.scss";
-import { useTypedSelector } from 'shared/lib/hooks/redux';
+import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { EMAIL_REGEX } from 'shared/constants/constants';
 import classNames from 'classnames';
-
-interface EditProfileValues {
-    full_name: string;
-    email: string;
-    password?: string;
-}
+import { EditProfileValues } from './model/types';
+import Edit from './api/Edit';
+import { userSlice } from 'app/store/userSlice';
 
 const EditProfile: React.FC = () => {
     const {register, formState: {errors}, handleSubmit, reset} = useForm<EditProfileValues>({mode: "all"});
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
 
     const {user} = useTypedSelector(state => state.userSlice);
 
     const [isAllowToEditPassword, setIsAllowToEditPassword] = useState(false);
+    const [isProfileEdited, setIsProfileEdited] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const togglePasswordEdit = function() {
         setIsAllowToEditPassword(prev => !prev);
     }
 
+    const onSubmitEditedForm: SubmitHandler<EditProfileValues> = async (data) => {
+        setIsLoading(true);
+        const updatedUser = await Edit.editProfile(data);
+        if(updatedUser) {
+            dispatch(userSlice.actions.setUser(updatedUser)) // Перезаписываем данные пользователя
+            setIsProfileEdited(true);
+        }
+        setIsLoading(false);
+    }
+
     useEffect(() => {
         if(user) {
-            reset(user);
+            reset({email: user.email, full_name: user.full_name});
         }
     }, [user])
 
@@ -47,7 +57,7 @@ const EditProfile: React.FC = () => {
                     </MyButton>
                 </section>
 
-                <form className={styles.editProfileForm}>
+                <form onSubmit={handleSubmit(onSubmitEditedForm)} className={styles.editProfileForm}>
                     <div className={styles.editFormInputs}>
                         <div className={styles.editInputWrapper}>
                             <div className={styles.inputName}>ФИО</div>
@@ -77,6 +87,7 @@ const EditProfile: React.FC = () => {
                             <div className={styles.inputName}>Пароль</div>
                                 {isAllowToEditPassword && 
                                     <MyInput 
+                                        type='password'
                                         placeholder='Введите пароль...'
                                         error={errors.password}
                                         inputClassName={styles.editInput}
@@ -102,13 +113,16 @@ const EditProfile: React.FC = () => {
                             type='submit'
                             color='secondary' 
                             variant='contained'
+                            disabled={isLoading}
                             btnClassName={styles.submitButton}
                         >
                             Сохранить
                         </MyButton>
-                        <p className={styles.submitSubTitle}>
-                            Вам на почту ivavan@gmail.com пришло письмо со ссылкой, перейдите по ней, чтобы подтвердить почту
-                        </p>
+                        {isProfileEdited && 
+                            <p className={styles.submitSubTitle}>
+                                Вам на почту {user?.email} пришло письмо со ссылкой, перейдите по ней, чтобы подтвердить почту
+                            </p>
+                        }
                     </div>
                 </form>
             </div>
