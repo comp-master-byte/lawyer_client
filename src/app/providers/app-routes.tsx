@@ -10,7 +10,6 @@ import EditProfile from 'pages/cabinet/edit-profile/edit-profile';
 const AppRoutes: React.FC = () => {
     return (
         <Routes>
-            <Route path='/' element={<Home />} />
             {/* Pulic Routes */}
             <Route path='/' element={<PageLayout />}>
                 <Route path='privacy-policy' element={<PrivacyPolicy />} />
@@ -19,8 +18,9 @@ const AppRoutes: React.FC = () => {
 
             {/* Private Routes */}
             <Route path='/' element={<PageLayout />}>
-                <Route path='/cabinet/appeals' element={<Appeals />} />
-                <Route path='/cabinet/edit-profile' element={<EditProfile />} />
+                <Route index element={<Home />} />
+                <Route path='cabinet/appeals' element={<Appeals />} />
+                <Route path='cabinet/edit-profile' element={<EditProfile />} />
             </Route>
         </Routes>
     )
