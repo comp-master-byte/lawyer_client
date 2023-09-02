@@ -30,7 +30,10 @@ const Navigation: React.FC = React.memo(function Navigation() {
     const {
       isNavigationMobileVisible,
       openMobileMavigation,
-      closeMobileNavigation
+      closeMobileNavigation,
+      isProfilePopupVisible,
+      profilePopupRef,
+      toggleProfilePopupVisibility
     } = useNavigation();
 
     const {
@@ -170,17 +173,17 @@ const Navigation: React.FC = React.memo(function Navigation() {
                 <div className={styles.navigationEntrance}>
                   {Cookies.get('token') 
                     ?
-                        <div className={styles.profilePopup}>
+                        <div ref={profilePopupRef} className={styles.profilePopup}>
                             <MyButton 
                                 size="small"
                                 color="primary" 
                                 variant="outlined" 
-                                onClick={() => navigate('/cabinet/appeals')}
+                                onClick={toggleProfilePopupVisibility}
                                 btnClassName={styles.entranceBtn} 
                             >
                                 Профиль
                             </MyButton>
-                            <ProfilePopup isPopupVisible={true} />
+                            <ProfilePopup isPopupVisible={isProfilePopupVisible} />
 
                         </div>
                     :

@@ -10,6 +10,12 @@
 
     padding: 13px 0;
     overflow: hidden;
+
+    display: none;
+}
+
+.visible {
+    display: block;
 }
 
 .profileMenuLinks {
