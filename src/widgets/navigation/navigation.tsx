@@ -15,6 +15,7 @@ import Cookies from "js-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import { useScrollTo } from "shared/lib/hooks/useScrollTo";
 import SuccessRegisterModal from "./components/success-register-modal/success-register-modal";
+import ProfilePopup from "./components/profile-popup/profile-popup";
 
 const Navigation: React.FC = React.memo(function Navigation() {
     const navigate = useNavigate();
@@ -132,15 +133,15 @@ const Navigation: React.FC = React.memo(function Navigation() {
                       </div>
                       {Cookies.get('token') 
                         ? 
-                          <MyButton 
-                              size="small"
-                              color="primary" 
-                              variant="outlined" 
-                              btnClassName={styles.entranceBtnMobile} 
-                              onClick={() => navigate('/cabinet/appeals')}
-                          >
-                              Профиль
-                          </MyButton>
+                            <MyButton 
+                                size="small"
+                                color="primary" 
+                                variant="outlined" 
+                                btnClassName={styles.entranceBtnMobile} 
+                                onClick={() => navigate('/cabinet/appeals')}
+                            >
+                                Профиль
+                            </MyButton>
                         : 
                           <MyButton 
                               size="small"
@@ -169,15 +170,19 @@ const Navigation: React.FC = React.memo(function Navigation() {
                 <div className={styles.navigationEntrance}>
                   {Cookies.get('token') 
                     ?
-                        <MyButton 
-                            size="small"
-                            color="primary" 
-                            variant="outlined" 
-                            onClick={() => navigate('/cabinet/appeals')}
-                            btnClassName={styles.entranceBtn} 
-                        >
-                            Профиль
-                        </MyButton>
+                        <div className={styles.profilePopup}>
+                            <MyButton 
+                                size="small"
+                                color="primary" 
+                                variant="outlined" 
+                                onClick={() => navigate('/cabinet/appeals')}
+                                btnClassName={styles.entranceBtn} 
+                            >
+                                Профиль
+                            </MyButton>
+                            <ProfilePopup isPopupVisible={true} />
+
+                        </div>
                     :
                         <MyButton 
                             size="small"

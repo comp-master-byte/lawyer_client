@@ -1,0 +1,37 @@
+.profilePopupWrapper {
+    width: 327px;
+    position: absolute;
+    top: calc(100% + 7px);
+    right: 0px;
+
+    border-radius: 30px;
+    border: 2px solid #013878;
+    background: #FFF;
+
+    padding: 13px 0;
+    overflow: hidden;
+}
+
+.profileMenuLinks {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+
+    .pageLink {
+        width: 100%;
+        padding: 4px 4px 4px 20px;
+        text-decoration: none;
+
+        color: #013878;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 90%; /* 21.6px */
+        letter-spacing: -0.6px;
+        transition: .2s;
+
+        &:hover {
+            background-color: #CFE5FF;
+            cursor: pointer;
+        }
+    }
+}
