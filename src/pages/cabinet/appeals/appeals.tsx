@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styles from "./appeals.module.scss";
-import Navigation from 'widgets/navigation/navigation';
 import Select from 'shared/ui/select/select';
 import { APPEALS } from './constants/constants';
 import MyButton from 'shared/ui/MyButton/MyButton';
@@ -8,7 +7,6 @@ import AppealsList from './components/appeals-list/appeals-list';
 import { useTypedSelector } from 'shared/lib/hooks/redux';
 import { useAppeals } from './lib/hooks/useAppeals';
 import EmptyPlaceholder from 'entities/empty-placeholder/empty-placeholder';
-import Footer from 'widgets/footer/footer';
 
 const Appeals: React.FC = () => {
     const {appeals} = useTypedSelector((state) => state.appealsSlice);
@@ -16,7 +14,6 @@ const Appeals: React.FC = () => {
 
     return (
         <div className={styles.appealsWrapper}>
-            <Navigation />
             <EmptyPlaceholder />
             {/* <section className={styles.pageContent}>
                 <div className={styles.container}>
@@ -45,8 +42,6 @@ const Appeals: React.FC = () => {
 
                 </div>
             </section> */}
-
-            <Footer />
         </div>
     )
 }

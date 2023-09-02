@@ -8,7 +8,7 @@ import { UseFormSetError } from "react-hook-form";
 export default class Auth {
     static async login(loginData: SignInValues, setError: UseFormSetError<SignInValues>) {
         try {
-            const response = await axios.post(`${API_URL}/auth/token/login`, loginData)
+            const response = await axios.post(`${API_URL}/auth/token/login`, loginData);
             return response.data;
         } catch(error: any) {
             setError("email", {

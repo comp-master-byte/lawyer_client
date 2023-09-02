@@ -5,16 +5,23 @@ import Appeals from 'pages/cabinet/appeals/appeals';
 import PageLayout from 'entities/page-layout/page-layout';
 import PrivacyPolicy from 'pages/privacy-policy/privacy-policy';
 import TermsOfUse from 'pages/terms-of-use/terms-of-use';
+import EditProfile from 'pages/cabinet/edit-profile/edit-profile';
 
 const AppRoutes: React.FC = () => {
     return (
         <Routes>
             <Route path='/' element={<Home />} />
+            {/* Pulic Routes */}
             <Route path='/' element={<PageLayout />}>
                 <Route path='privacy-policy' element={<PrivacyPolicy />} />
                 <Route path='terms-of-use' element={<TermsOfUse />} />
             </Route>
-            <Route path='/cabinet/appeals' element={<Appeals />} />
+
+            {/* Private Routes */}
+            <Route path='/' element={<PageLayout />}>
+                <Route path='/cabinet/appeals' element={<Appeals />} />
+                <Route path='/cabinet/edit-profile' element={<EditProfile />} />
+            </Route>
         </Routes>
     )
 }

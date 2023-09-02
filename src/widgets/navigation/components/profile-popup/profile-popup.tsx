@@ -30,7 +30,7 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({isPopupVisible}) => {
             <div className={styles.profileMenuLinks}>
                 <Link to='/cabinet/appeals' className={styles.pageLink}>Мои обращения</Link>
                 <Link to='/cabinet/appeals' className={styles.pageLink}>Чаты</Link>
-                <Link to='/cabinet/appeals' className={styles.pageLink}>Редактировать профиль</Link>
+                <Link to='/cabinet/edit-profile' className={styles.pageLink}>Редактировать профиль</Link>
                 <div 
                     onClick={logout} 
                     className={styles.pageLink}
