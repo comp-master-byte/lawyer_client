@@ -1,5 +1,8 @@
 
 
 export interface UserState {
-    user: any;
+    user: {
+        full_name: string;
+        email: string;
+    }|null;
 }

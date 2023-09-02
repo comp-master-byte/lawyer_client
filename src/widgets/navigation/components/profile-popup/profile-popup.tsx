@@ -8,9 +8,10 @@ import $api from 'shared/api/http';
 
 interface ProfilePopupProps {
     isPopupVisible: boolean;
+    closeProfilePopup: () => void;
 }
 
-const ProfilePopup: React.FC<ProfilePopupProps> = ({isPopupVisible}) => {
+const ProfilePopup: React.FC<ProfilePopupProps> = ({isPopupVisible, closeProfilePopup}) => {
     const navigate = useNavigate();
 
     const logout = async function() {
@@ -28,9 +29,27 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({isPopupVisible}) => {
             [styles.visible]: isPopupVisible
         })}>
             <div className={styles.profileMenuLinks}>
-                <Link to='/cabinet/appeals' className={styles.pageLink}>Мои обращения</Link>
-                <Link to='/cabinet/appeals' className={styles.pageLink}>Чаты</Link>
-                <Link to='/cabinet/edit-profile' className={styles.pageLink}>Редактировать профиль</Link>
+                <Link 
+                    to='/cabinet/appeals' 
+                    onClick={closeProfilePopup} 
+                    className={styles.pageLink}
+                >
+                    Мои обращения
+                </Link>
+                <Link 
+                    to='/cabinet/appeals' 
+                    onClick={closeProfilePopup} 
+                    className={styles.pageLink}
+                >
+                    Чаты
+                </Link>
+                <Link 
+                    to='/cabinet/edit-profile' 
+                    onClick={closeProfilePopup} 
+                    className={styles.pageLink}
+                >
+                    Редактировать профиль
+                </Link>
                 <div 
                     onClick={logout} 
                     className={styles.pageLink}

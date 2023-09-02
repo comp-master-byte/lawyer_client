@@ -10,6 +10,7 @@ interface MyButtonProps {
   btnClassName?: string;
   onClick?: () => void;
   disabled?: boolean;
+  type?: "submit"|"button"
 }
 
 const MyButton: FC<MyButtonProps> = ({
@@ -19,10 +20,12 @@ const MyButton: FC<MyButtonProps> = ({
     children,
     btnClassName,
     disabled,
+    type,
     ...props
 }) => {
   return (
     <button
+      type={type||"submit"}
       className={classNames(styles.myButton, btnClassName, {
         [styles.primaryContained]:
           color === "primary" && variant === "contained",

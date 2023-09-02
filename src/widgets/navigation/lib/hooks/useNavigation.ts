@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useClickOutside } from "shared/lib/hooks/useClickOutside";
 
 export const useNavigation = () => {
@@ -9,6 +9,10 @@ export const useNavigation = () => {
     const closeMobileNavigation = () => setIsNavigationMobileVisible(false);
 
     const toggleProfilePopupVisibility = () => setIsProfilePopupVisible(prev => !prev);
+
+    const closeProfilePopup = useCallback(() => {
+        setIsProfilePopupVisible(false);
+    }, [])
 
     const profilePopupRef = useClickOutside(() => {
         setIsProfilePopupVisible(false);
@@ -24,6 +28,7 @@ export const useNavigation = () => {
 
     return {
         profilePopupRef,
+        closeProfilePopup,
         isNavigationMobileVisible,
         openMobileMavigation,
         closeMobileNavigation,

@@ -33,6 +33,7 @@ const Navigation: React.FC = React.memo(function Navigation() {
       closeMobileNavigation,
       isProfilePopupVisible,
       profilePopupRef,
+      closeProfilePopup,
       toggleProfilePopupVisibility
     } = useNavigation();
 
@@ -183,7 +184,7 @@ const Navigation: React.FC = React.memo(function Navigation() {
                             >
                                 Профиль
                             </MyButton>
-                            <ProfilePopup isPopupVisible={isProfilePopupVisible} />
+                            <ProfilePopup closeProfilePopup={closeProfilePopup} isPopupVisible={isProfilePopupVisible} />
 
                         </div>
                     :
