@@ -27,7 +27,7 @@ const PageLayout: React.FC = () => {
         <div>
             <Helmet>
                 <title>Юра прав - твой цифровой юридический помощник</title>
-                <meta name="description" content='Задайте свой вопрос бесплатному помощнику Юре или составьте обращение к юристу' />
+                <meta name="description" content='Задайте свой вопрос бесплатному помощнику Юре или составьте обращение к юристу' data-rh="true"  />
                 <link rel="canonical" href={pathname} />
             </Helmet>
             <Navigation />  
