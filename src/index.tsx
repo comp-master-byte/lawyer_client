@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./app";
 import { setupStore } from "app/providers/store";
 import { Provider } from "react-redux";
+import { HelmetProvider } from "react-helmet-async";
 
 const store = setupStore();
 
@@ -13,9 +14,11 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-    <BrowserRouter>
-      <Provider store={store}>
-          <App />
-      </Provider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Provider store={store}>
+            <App />
+        </Provider>
+      </BrowserRouter>
+    </HelmetProvider>
 );
