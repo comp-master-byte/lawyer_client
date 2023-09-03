@@ -1,0 +1,9 @@
+{
+    "name": "Юра прав - твой цифровой юридический помощник",
+    "description": "Задайте свой вопрос бесплатному помощнику Юре или составьте обращение к юристу",
+    "lang": "ru-RU",
+    "start_url": "/",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "id": "https://juraprav.ru"
+}
