@@ -12,13 +12,13 @@ const AppRoutes: React.FC = () => {
         <Routes>
             {/* Pulic Routes */}
             <Route path='/' element={<PageLayout />}>
+                <Route index element={<Home />} />
                 <Route path='privacy-policy' element={<PrivacyPolicy />} />
                 <Route path='terms-of-use' element={<TermsOfUse />} />
             </Route>
 
             {/* Private Routes */}
             <Route path='/' element={<PageLayout />}>
-                <Route index element={<Home />} />
                 <Route path='cabinet/appeals' element={<Appeals />} />
                 <Route path='cabinet/edit-profile' element={<EditProfile />} />
             </Route>
