@@ -3,9 +3,3 @@ https://juraprav.ru/cabinet/appeals
 https://juraprav.ru/cabinet/edit-profile
 https://juraprav.ru/privacy-policy
 https://juraprav.ru/terms-of-use
-
-https://yura-prav-client.netlify.app
-https://yura-prav-client.netlify.app/cabinet/appeals
-https://yura-prav-client.netlify.app/cabinet/edit-profile
-https://yura-prav-client.netlify.app/privacy-policy
-https://yura-prav-client.netlify.app/terms-of-use
