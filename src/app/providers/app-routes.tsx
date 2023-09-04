@@ -6,6 +6,7 @@ import PageLayout from 'entities/page-layout/page-layout';
 import PrivacyPolicy from 'pages/privacy-policy/privacy-policy';
 import TermsOfUse from 'pages/terms-of-use/terms-of-use';
 import EditProfile from 'pages/cabinet/edit-profile/edit-profile';
+import WaitingLawyerAppeal from 'pages/cabinet/waiting-lawyer-appeal/waiting-lawyer-appeal';
 
 const AppRoutes: React.FC = () => {
     return (
@@ -18,9 +19,10 @@ const AppRoutes: React.FC = () => {
             </Route>
 
             {/* Private Routes */}
-            <Route path='/' element={<PageLayout />}>
-                <Route path='cabinet/appeals' element={<Appeals />} />
-                <Route path='cabinet/edit-profile' element={<EditProfile />} />
+            <Route path='/cabinet/' element={<PageLayout />}>
+                <Route path='appeals' element={<Appeals />} />
+                <Route path='appeals/:id' element={<WaitingLawyerAppeal />} />
+                <Route path='edit-profile' element={<EditProfile />} />
             </Route>
         </Routes>
     )
