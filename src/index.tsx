@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./app/styles/global.scss";
 import { BrowserRouter } from "react-router-dom";
 import App from "./app";
-import { setupStore } from "app/providers/store";
+import { setupStore } from "app/store/store";
 import { Provider } from "react-redux";
 import { HelmetProvider } from "react-helmet-async";
 

@@ -1,4 +1,4 @@
-import { AppDispatch } from "app/providers/store";
+import { AppDispatch } from "app/store/store";
 import axios from "axios";
 import { API_URL } from "shared/api/http";
 import { supportChatSlice } from "./supportChatSlice";

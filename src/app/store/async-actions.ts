@@ -1,4 +1,4 @@
-import { AppDispatch } from "app/providers/store";
+import { AppDispatch } from "app/store/store";
 import $api from "shared/api/http";
 import { userSlice } from "./userSlice";
 
