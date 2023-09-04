@@ -5,11 +5,11 @@ import MyButton from 'shared/ui/MyButton/MyButton';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { EMAIL_REGEX } from 'shared/constants/constants';
-import classNames from 'classnames';
 import { EditProfileValues } from './model/types';
 import Edit from './api/Edit';
 import { userSlice } from 'app/store/userSlice';
 import StaticUserInformation from './components/static-user-information/static-user-information';
+import EditPasswordModal from './components/edit-password-modal/edit-password-modal';
 
 const EditProfile: React.FC = () => {
     const {register, formState: {errors}, handleSubmit, reset} = useForm<EditProfileValues>({mode: "all"});
@@ -23,6 +23,10 @@ const EditProfile: React.FC = () => {
 
     const openEditPasswordModal = function() {
         setIsEditPasswordModalVisible(true);
+    }
+
+    const closeEditPasswordModal = function() {
+        setIsEditPasswordModalVisible(false);
     }
 
     const onSubmitEditedForm: SubmitHandler<EditProfileValues> = async (data) => {
@@ -45,6 +49,10 @@ const EditProfile: React.FC = () => {
         <div className={styles.editProfileWrapper}>
             <div className={styles.container}>
                 <StaticUserInformation />
+                <EditPasswordModal 
+                    closeEditPasswordModal={closeEditPasswordModal}
+                    isEditPasswordModalVisible={isEditPasswordModalVisible}
+                />
 
                 <form onSubmit={handleSubmit(onSubmitEditedForm)} className={styles.editProfileForm}>
                     <div className={styles.editFormInputs}>
@@ -74,15 +82,15 @@ const EditProfile: React.FC = () => {
                         </div>
                         <div className={styles.editInputWrapper}>
                             <div className={styles.inputName}>Пароль</div>
-                                <MyButton 
-                                    type='button'
-                                    color='primary' 
-                                    variant='contained'
-                                    onClick={openEditPasswordModal}
-                                    btnClassName={styles.passwordButton}
-                                >
-                                    Изменить   
-                                </MyButton>
+                            <MyButton 
+                                type='button'
+                                color='primary' 
+                                variant='contained'
+                                onClick={openEditPasswordModal}
+                                btnClassName={styles.passwordButton}
+                            >
+                                Изменить   
+                            </MyButton>
                         </div>
                     </div>
 

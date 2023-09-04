@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from "./modal.module.scss";
 import classNames from 'classnames';
 import { useClickOutside } from 'shared/lib/hooks/useClickOutside';
@@ -14,6 +14,14 @@ const Modal: React.FC<ModalProps> = ({children, isModalVisible, modalContentClas
     const modalContentRef = useClickOutside(() => {
         closeModal && closeModal();
     })
+
+    useEffect(() => {
+        if(isModalVisible) {
+            document.body.style.overflowY = 'hidden'
+        } else {
+            document.body.style.overflowY = 'auto'
+        }
+    }, [isModalVisible])
 
     return (
         <section className={classNames(styles.modalWrapper, {[styles.modalVisible]: isModalVisible})}>

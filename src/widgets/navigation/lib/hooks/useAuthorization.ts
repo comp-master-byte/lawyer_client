@@ -42,14 +42,6 @@ export const useAuthorization = () => {
         dispatch(toggleSignInModalVisibility(true));
     }, [])
 
-    useEffect(() => {
-        if(isSignInModalVisible||isRegisterModalVisible||isForgetPasswordModalVisible||isSuccessRegisterModalVisible) {
-            document.body.style.overflowY = 'hidden';
-        } else {
-            document.body.style.overflowY = 'auto';
-        }
-    }, [isSignInModalVisible, isRegisterModalVisible, isForgetPasswordModalVisible, isSuccessRegisterModalVisible])
-
     return {
         isSignInModalVisible,
         openSignInModal,

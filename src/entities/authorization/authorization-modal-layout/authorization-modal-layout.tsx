@@ -7,10 +7,10 @@ interface AuthorizationModalLayoutProps {
     isModalVisible: boolean;
     children: React.ReactNode;
     closeAuthModal: () => void;
-    openAnotherModalCallback: () => void;
+    openAnotherModalCallback?: () => void;
     authTitle: string;
-    authSubtitle: string;
-    authButtonText: string;
+    authSubtitle?: string;
+    authButtonText?: string;
 }
 
 const AuthorizationModalLayout: React.FC<AuthorizationModalLayoutProps> = (props) => {
@@ -27,8 +27,8 @@ const AuthorizationModalLayout: React.FC<AuthorizationModalLayoutProps> = (props
             </div>
             <article className={styles.authModalTitle}>
                 <h2 className={styles.authModalTitle__title}>{authTitle}</h2>
-                <p className={styles.authModalTitle__text}>{authSubtitle}</p>
-                <div className={styles.inlineButton} onClick={openAnotherModalCallback}>{authButtonText}</div>
+                {authSubtitle && <p className={styles.authModalTitle__text}>{authSubtitle}</p>}
+                {authButtonText && <div className={styles.inlineButton} onClick={openAnotherModalCallback}>{authButtonText}</div>}
             </article>
             {children}
         </Modal>
