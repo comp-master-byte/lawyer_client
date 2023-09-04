@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import { useAppDispatch } from 'shared/lib/hooks/redux';
 import { fetchInterestedLawyers } from './model/async-actions';
+import LawyerItem from './components/lawyer-item/lawyer-item';
 
 const WaitingLawyerAppeal: React.FC = () => {
     const navigate = useNavigate();
@@ -33,6 +34,8 @@ const WaitingLawyerAppeal: React.FC = () => {
                     <h2 className={styles.lawyerAppealTitle__h2}>Ожидает выбора юриста</h2>
                 </div>
             </header>
+
+            <LawyerItem />
 
         </div>
     )
