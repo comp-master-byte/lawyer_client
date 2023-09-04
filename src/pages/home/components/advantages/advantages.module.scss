@@ -100,7 +100,7 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .advantagesWrapper {
-    padding: 70px 45px 80px 45px;
+    padding: 70px 0px 80px 0px;
     .advantagesContent {
       height: auto;
     }
@@ -132,7 +132,6 @@
 
 @media screen and (max-width: 1024px) {
   .advantagesWrapper {
-    padding: 0 15px;
     margin-bottom: 70px;
     
     .advantagesContent {
@@ -162,7 +161,7 @@
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
   .advantagesWrapper {
-    padding: 77px 30px 90px 30px;
+    padding: 77px 0px 90px 0px;
   }
 
   .advantagesMobileContent {
@@ -218,8 +217,6 @@
 
 @media screen and (max-width: 639px) {
   .advantagesWrapper {
-    padding: 0 15px;
-
     .advantagesButtons {
       &__secondary,
       &__primary {

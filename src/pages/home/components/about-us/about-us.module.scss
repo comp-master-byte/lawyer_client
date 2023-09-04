@@ -43,9 +43,6 @@
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
-  .aboutUsWrapper {
-    padding: 45px 45px 0 45px;
-  }
   .titleText {
     width: 764.07px;
     margin: 0 auto;
@@ -76,12 +73,6 @@
 }
 
 @media screen and (min-width: 640px) and (max-width: 1024px) {
-  .aboutUsWrapper {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 60px;
-  }
-
   .titleText {
     width: 579.57px;
   }
@@ -94,10 +85,6 @@
 }
 
 @media screen and (max-width: 639px) {
-  .aboutUsWrapper {
-    padding: 0 15px 60px 15px;
-  }
-
   .aboutUsInner {
     .aboutUsCards {
       margin-bottom: 70px;

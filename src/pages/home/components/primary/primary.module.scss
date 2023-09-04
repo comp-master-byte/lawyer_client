@@ -132,10 +132,6 @@
 
 // === MEDIA ===
 @media screen and (min-width: 1440px) and (max-width: 1920px) {
-  .primaryViewWrapper {
-    margin-bottom: 200px;
-  }
-
   @mixin columnView-1440 {
     // width: 645px;
     height: 656px;
@@ -149,10 +145,6 @@
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
-  .primaryViewWrapper {
-    margin-bottom: 184px;
-  }
-
   .primaryViewInner {
     column-gap: 20px;
   }
@@ -236,10 +228,6 @@
 }
 
 @media screen and (min-width: 640px) and (max-width: 1024px) { 
-  .primaryViewWrapper {
-    padding: 0 30px;
-    margin-bottom: 80px;
-  }
 
   .primaryViewInner {
     row-gap: 17px;
@@ -312,10 +300,6 @@
 }
 
 @media screen and (max-width: 639px) {
-  .primaryViewWrapper {
-    padding: 0 15px;
-  }
-
   .viewLeftColumn,.viewRightColumn {
     width: 100%;
     padding: 0;

@@ -107,9 +107,6 @@
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
-  .contactsWrapper {
-    padding: 0 45px;
-  }
   .contactsContent {
     height: auto;
     padding: 36px 28px 35px 26px;
@@ -177,7 +174,6 @@
 
 @media screen and (min-width: 640px) and (max-width: 1023px) {
   .contactsWrapper {
-    padding: 0 30px;
     margin-bottom: 90px;
   }
 
@@ -233,7 +229,6 @@
 
 @media screen and (max-width: 639px) {
   .contactsWrapper {
-    padding: 0 15px;
     margin-bottom: 70px;
   }
 

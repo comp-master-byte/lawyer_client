@@ -71,9 +71,6 @@ const Navigation: React.FC = React.memo(function Navigation() {
           
             <div className={styles.container}>
                 <div className={styles.navigationInner}>
-                    {isMobile && <a href={VK_LINK} target="_blank">
-                      <img className={styles.navigationInner__vk} src={vk} alt="" />
-                    </a>}
                     <Link to='/'>
                       <div className={styles.navigationInner__logo}>
                           <img src={logo} alt="logo" />
