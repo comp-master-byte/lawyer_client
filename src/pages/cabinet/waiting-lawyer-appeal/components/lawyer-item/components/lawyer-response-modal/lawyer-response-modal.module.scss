@@ -1,0 +1,51 @@
+
+.modalContent {
+    width: 653px;
+    // height: 580px;
+
+    border-radius: 30px;
+    border: 3px solid #013878;
+    background: #FFF;
+    padding-bottom: 30px;
+}
+
+.closeModalIcon {
+    padding: 21px 20px 0 0;
+    text-align: right;
+
+    img {
+        cursor: pointer;
+    }
+}
+
+.lawyerContent {
+    margin-top: 9px;
+    padding: 0 50px 0 50px;
+}
+
+.lawyerTitle {
+    color: #013878;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 90%; 
+    letter-spacing: -0.75px;
+    margin-bottom: 16px;
+}
+
+.lawyerResponse {
+    width: 100%;
+    height: auto;
+    padding: 29px 30px 60px 30px;
+    border-radius: 30px;
+    border: 3px solid #013878;
+    background: #FFF;
+    margin-bottom: 18px;
+}
+
+.paragraph {
+    color:#013878;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 100%; /* 18px */
+    letter-spacing: -0.45px;
+}
