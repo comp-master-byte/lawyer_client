@@ -16,12 +16,8 @@
   line-height: 21px;
 }
 
-.container {
-  @include container;
-}
 .contactsWrapper {
   margin-bottom: 180px;
-  padding: 0 60px;
 
   &__title {
     @include page-title;

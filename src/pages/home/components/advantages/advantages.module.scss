@@ -5,12 +5,8 @@
   width: 100%;
 }
 
-.container {
-  @include container;
-}
-
 .advantagesWrapper {
-  padding: 150px 60px 180px 60px;
+  padding: 150px 0px 180px 0px;
 
   &__title {
     @include page-title();

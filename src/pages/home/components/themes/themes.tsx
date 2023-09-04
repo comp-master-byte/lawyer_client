@@ -8,7 +8,6 @@ const Themes: React.FC = React.memo(function Themes() {
   return (
     <div className={styles.themesWrapper}>
       <SectionTitle>Категории и темы</SectionTitle>
-      <div className={styles.container}>
         <div className={styles.themesContent}>
           <img src={line} className={styles.line} alt="" />
           <ThemeQuestion 
@@ -102,7 +101,6 @@ const Themes: React.FC = React.memo(function Themes() {
           />
 
         </div>
-      </div>
     </div>
   );
 });

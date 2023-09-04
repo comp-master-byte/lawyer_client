@@ -17,7 +17,6 @@ const Advantages: React.FC = React.memo(function Advantages() {
   return (
     <div className={styles.advantagesWrapper}>
       <SectionTitle>Юра тебе <span>подойдет</span>, <br /> если ты хочешь:</SectionTitle>
-      <div className={styles.container}>
         <div className={styles.advantagesContent}>
           <div className={styles.cardsList}>
             <WhiteCard cardClassName={styles.whiteCardLeft}>Получить понятный ответ на свой юридический вопрос</WhiteCard>
@@ -114,7 +113,6 @@ const Advantages: React.FC = React.memo(function Advantages() {
               </MyButton>
             </div>
         </div>
-      </div>
     </div>
   );
 });

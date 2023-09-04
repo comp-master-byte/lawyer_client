@@ -14,32 +14,29 @@ const Appeals: React.FC = () => {
     return (
         <div className={styles.appealsWrapper}>
             <section className={styles.pageContent}>
-                <div className={styles.container}>
-                    <h1 className={styles.pageTitle}>Мои обращения</h1>
-                    <div className={styles.appealsFilter}>
-                        <Select 
-                            defaultValue='Статус обращения'
-                            options={APPEALS}
-                            onSelectOption={onSelectAppealOption}
-                            selectedOption={selectedAppealOption}
-                            selectWrapperClassName={styles.appealsFilter__select}
-                            selectOptionClassName={styles.selectOption}
-                        />
-                        <MyButton
-                            color='primary'
-                            variant='contained'
-                            btnClassName={styles.askQuestionButton}
-                        >
-                            Задать вопрос
-                        </MyButton>
-                    </div>
-
-                    <AppealsList appeals={appeals} />
-
+                <h1 className={styles.pageTitle}>Мои обращения</h1>
+                <div className={styles.appealsFilter}>
+                    <Select 
+                        defaultValue='Статус обращения'
+                        options={APPEALS}
+                        onSelectOption={onSelectAppealOption}
+                        selectedOption={selectedAppealOption}
+                        selectWrapperClassName={styles.appealsFilter__select}
+                        selectOptionClassName={styles.selectOption}
+                    />
+                    <MyButton
+                        color='primary'
+                        variant='contained'
+                        btnClassName={styles.askQuestionButton}
+                    >
+                        Задать вопрос
+                    </MyButton>
                 </div>
+
+                <AppealsList appeals={appeals} />
             </section>
         </div>
     )
 }
 
-export default Appeals
+export default Appeals;

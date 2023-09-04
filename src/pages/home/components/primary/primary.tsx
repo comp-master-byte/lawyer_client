@@ -21,7 +21,6 @@ const Primary: React.FC = React.memo(function PrimaryView() {
 
   return (
     <div className={styles.primaryViewWrapper}>
-      <div className={styles.container}>
         <div className={styles.primaryViewInner}>
           <div className={styles.viewLeftColumn}>
             <div className={classNames(styles.viewLeftColumn__title, styles.titleText)}>
@@ -93,7 +92,6 @@ const Primary: React.FC = React.memo(function PrimaryView() {
             alt="human"
           />
         </div>
-      </div>
     </div>
   );
 });

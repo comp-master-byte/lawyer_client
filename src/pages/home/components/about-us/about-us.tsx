@@ -10,7 +10,6 @@ import SupportChat from "widgets/support-chat/support-chat";
 const AboutUs: FC = React.memo(function AboutUs() {
   return (
     <div className={styles.aboutUsWrapper}>
-      <div className={styles.container}>
         <div className={styles.aboutUsInner}>
           <div className={styles.titleTextAndSupportBot}>
             <SectionTitle titleClassName={styles.titleText}>
@@ -35,7 +34,6 @@ const AboutUs: FC = React.memo(function AboutUs() {
 
           <LawyerAssistant />
         </div>
-      </div>
     </div>
   );
 });

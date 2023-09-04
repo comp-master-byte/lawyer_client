@@ -12,7 +12,6 @@ const Contacts: React.FC = React.memo(function Contacts() {
   return (
     <div className={styles.contactsWrapper}>
       <SectionTitle>Контакты</SectionTitle>
-      <div className={styles.container}>
         <div className={styles.contactsContent}>
           <div className={styles.contentLeftColumn}>
             <div className={styles.leftColumnIcons}>
@@ -59,7 +58,6 @@ const Contacts: React.FC = React.memo(function Contacts() {
             <ContactForm />
           </div>
         </div>
-      </div>
     </div>
   );
 });
