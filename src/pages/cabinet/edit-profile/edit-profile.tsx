@@ -47,71 +47,69 @@ const EditProfile: React.FC = () => {
 
     return (
         <div className={styles.editProfileWrapper}>
-            <div className={styles.container}>
-                <StaticUserInformation />
-                <EditPasswordModal 
-                    closeEditPasswordModal={closeEditPasswordModal}
-                    isEditPasswordModalVisible={isEditPasswordModalVisible}
-                />
+            <StaticUserInformation />
+            <EditPasswordModal 
+                closeEditPasswordModal={closeEditPasswordModal}
+                isEditPasswordModalVisible={isEditPasswordModalVisible}
+            />
 
-                <form onSubmit={handleSubmit(onSubmitEditedForm)} className={styles.editProfileForm}>
-                    <div className={styles.editFormInputs}>
-                        <div className={styles.editInputWrapper}>
-                            <div className={styles.inputName}>ФИО</div>
-                            <MyInput 
-                                error={errors.full_name}
-                                inputClassName={styles.editInput}
-                                register={register('full_name', {
-                                    required: "Это поле обязательное!"
-                                })}
-                            />
-                        </div>
-                        <div className={styles.editInputWrapper}>
-                            <div className={styles.inputName}>Email</div>
-                            <MyInput 
-                                error={errors.email}
-                                inputClassName={styles.editInput}
-                                register={register('email', {
-                                    required: "Это поле обязательное!",
-                                    pattern: {
-                                        value: EMAIL_REGEX,
-                                        message: "Email введен некорректно!"
-                                    }
-                                })}
-                            />
-                        </div>
-                        <div className={styles.editInputWrapper}>
-                            <div className={styles.inputName}>Пароль</div>
-                            <MyButton 
-                                type='button'
-                                color='primary' 
-                                variant='contained'
-                                onClick={openEditPasswordModal}
-                                btnClassName={styles.passwordButton}
-                            >
-                                Изменить   
-                            </MyButton>
-                        </div>
+            <form onSubmit={handleSubmit(onSubmitEditedForm)} className={styles.editProfileForm}>
+                <div className={styles.editFormInputs}>
+                    <div className={styles.editInputWrapper}>
+                        <div className={styles.inputName}>ФИО</div>
+                        <MyInput 
+                            error={errors.full_name}
+                            inputClassName={styles.editInput}
+                            register={register('full_name', {
+                                required: "Это поле обязательное!"
+                            })}
+                        />
                     </div>
-
-                    <div className={styles.submitButtonWrapper}>
+                    <div className={styles.editInputWrapper}>
+                        <div className={styles.inputName}>Email</div>
+                        <MyInput 
+                            error={errors.email}
+                            inputClassName={styles.editInput}
+                            register={register('email', {
+                                required: "Это поле обязательное!",
+                                pattern: {
+                                    value: EMAIL_REGEX,
+                                    message: "Email введен некорректно!"
+                                }
+                            })}
+                        />
+                    </div>
+                    <div className={styles.editInputWrapper}>
+                        <div className={styles.inputName}>Пароль</div>
                         <MyButton 
-                            type='submit'
-                            color='secondary' 
+                            type='button'
+                            color='primary' 
                             variant='contained'
-                            disabled={isLoading}
-                            btnClassName={styles.submitButton}
+                            onClick={openEditPasswordModal}
+                            btnClassName={styles.passwordButton}
                         >
-                            Сохранить
+                            Изменить   
                         </MyButton>
-                        {isProfileEdited && 
-                            <p className={styles.submitSubTitle}>
-                                Вам на почту {user?.email} пришло письмо со ссылкой, перейдите по ней, чтобы подтвердить почту
-                            </p>
-                        }
                     </div>
-                </form>
-            </div>
+                </div>
+
+                <div className={styles.submitButtonWrapper}>
+                    <MyButton 
+                        type='submit'
+                        color='secondary' 
+                        variant='contained'
+                        disabled={isLoading}
+                        btnClassName={styles.submitButton}
+                    >
+                        Сохранить
+                    </MyButton>
+                    {isProfileEdited && 
+                        <p className={styles.submitSubTitle}>
+                            Вам на почту {user?.email} пришло письмо со ссылкой, перейдите по ней, чтобы подтвердить почту
+                        </p>
+                    }
+                </div>
+            </form>
         </div>
     )
 }

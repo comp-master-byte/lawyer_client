@@ -1,13 +1,5 @@
 @import 'app/styles/_exports.scss';
 
-.aboutUsWrapper {
-  padding: 0px 60px 0 60px;
-}
-
-.container {
-  @include container;
-}
-
 .titleText {
   width: 1081px;
   margin: 0 auto;

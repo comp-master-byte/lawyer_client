@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import styles from "./page-layout.module.scss";
 import { fetchUser } from 'app/store/async-actions';
 import { userSlice } from 'app/store/userSlice';
 import { Outlet, useLocation } from 'react-router-dom';
@@ -31,7 +32,11 @@ const PageLayout: React.FC = () => {
                 <link rel="canonical" href={pathname} />
             </Helmet>
             <Navigation />  
-            <Outlet />
+            <div className={styles.pageContentWrapper}>
+                <div className={styles.container}>
+                    <Outlet />
+                </div>
+            </div>
             <Footer />
         </div>
     )
