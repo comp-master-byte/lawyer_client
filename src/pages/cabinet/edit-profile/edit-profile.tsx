@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styles from "./edit-profile.module.scss";
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import MyButton from 'shared/ui/MyButton/MyButton';
-import { useNavigate } from 'react-router-dom';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { EMAIL_REGEX } from 'shared/constants/constants';
@@ -10,20 +9,20 @@ import classNames from 'classnames';
 import { EditProfileValues } from './model/types';
 import Edit from './api/Edit';
 import { userSlice } from 'app/store/userSlice';
+import StaticUserInformation from './components/static-user-information/static-user-information';
 
 const EditProfile: React.FC = () => {
     const {register, formState: {errors}, handleSubmit, reset} = useForm<EditProfileValues>({mode: "all"});
-    const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
     const {user} = useTypedSelector(state => state.userSlice);
 
-    const [isAllowToEditPassword, setIsAllowToEditPassword] = useState(false);
+    const [isEditPasswordModalVisible, setIsEditPasswordModalVisible] = useState(false);
     const [isProfileEdited, setIsProfileEdited] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    const togglePasswordEdit = function() {
-        setIsAllowToEditPassword(prev => !prev);
+    const openEditPasswordModal = function() {
+        setIsEditPasswordModalVisible(true);
     }
 
     const onSubmitEditedForm: SubmitHandler<EditProfileValues> = async (data) => {
@@ -45,17 +44,7 @@ const EditProfile: React.FC = () => {
     return (
         <div className={styles.editProfileWrapper}>
             <div className={styles.container}>
-                <section className={styles.editProfileContent}>
-                    <div className={styles.userFioInformation}>{user?.full_name}</div>
-                    <MyButton 
-                        color='primary' 
-                        variant='contained'
-                        onClick={() => navigate(-1)}
-                        btnClassName={styles.goBackButton}
-                    >
-                        Назад   
-                    </MyButton>
-                </section>
+                <StaticUserInformation />
 
                 <form onSubmit={handleSubmit(onSubmitEditedForm)} className={styles.editProfileForm}>
                     <div className={styles.editFormInputs}>
@@ -85,23 +74,12 @@ const EditProfile: React.FC = () => {
                         </div>
                         <div className={styles.editInputWrapper}>
                             <div className={styles.inputName}>Пароль</div>
-                                {isAllowToEditPassword && 
-                                    <MyInput 
-                                        type='password'
-                                        placeholder='Введите пароль...'
-                                        error={errors.password}
-                                        inputClassName={styles.editInput}
-                                        register={register('password')}
-                                    />
-                                }
                                 <MyButton 
                                     type='button'
                                     color='primary' 
                                     variant='contained'
-                                    onClick={togglePasswordEdit}
-                                    btnClassName={classNames(styles.passwordButton, {
-                                        [styles.editButtonMode]: isAllowToEditPassword
-                                    })}
+                                    onClick={openEditPasswordModal}
+                                    btnClassName={styles.passwordButton}
                                 >
                                     Изменить   
                                 </MyButton>
