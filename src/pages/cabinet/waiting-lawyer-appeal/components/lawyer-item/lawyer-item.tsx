@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import styles from "./lawyer-item.module.scss";
 import personSvg from "../../assets/person.svg";
 import MyButton from 'shared/ui/MyButton/MyButton';
@@ -6,30 +6,22 @@ import classNames from 'classnames';
 import LawyerResponseModal from './components/lawyer-response-modal/lawyer-response-modal';
 import { InterestedLawyer } from '../../model/types';
 import SelectLawyerModal from './components/select-lawyer-modal/select-lawyer-modal';
+import { useLawyerItem } from '../../lib/hooks/useLawyerItem';
 
 interface LawyerItemProps {
     interestedLawyer: InterestedLawyer;
 }
 
 const LawyerItem: React.FC<LawyerItemProps> = ({interestedLawyer}) => {
-    const [isLawyerResponseModalVisible, setIsLawyerResponseModalVisible] = useState(false);
-    const [isSelectLawyerModalVisible, setIsSelectLawyerModalVisible] = useState(false);
-
-    const closeLawyerResponseModal = useCallback(() => {
-        setIsLawyerResponseModalVisible(false);
-    }, [])
-
-    const closeSelectLawyerModal = useCallback(() => {
-        setIsSelectLawyerModalVisible(false);
-    }, [])
-
-    const openLawyerResponseModal = useCallback(() => {
-        setIsLawyerResponseModalVisible(true);
-    }, [])
-
-    const openSelectLawyerModal = useCallback(() => {
-        setIsSelectLawyerModalVisible(true);
-    }, [])
+    
+    const {
+        isLawyerResponseModalVisible,
+        isSelectLawyerModalVisible,
+        closeLawyerResponseModal,
+        closeSelectLawyerModal,
+        openLawyerResponseModal,
+        openSelectLawyerModal,
+    } = useLawyerItem();
 
 
     return (
