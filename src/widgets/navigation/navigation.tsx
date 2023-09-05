@@ -135,44 +135,47 @@ const Navigation: React.FC = React.memo(function Navigation() {
                   </div>
                 </div>
 
-                <div className={styles.navigationEntrance}>
-                  {Cookies.get('token') 
-                    ?
-                        <div ref={profilePopupRef} className={styles.profilePopup}>
+                <div className={styles.burgerAndProfileButton}>
+                    <div className={styles.navigationEntrance}>
+                      {Cookies.get('token') 
+                        ?
+                            <div ref={profilePopupRef} className={styles.profilePopup}>
+                                <MyButton 
+                                    size="small"
+                                    color="primary" 
+                                    variant="outlined" 
+                                    onClick={toggleProfilePopupVisibility}
+                                    btnClassName={styles.entranceBtn} 
+                                >
+                                    Профиль
+                                </MyButton>
+                                <ProfilePopup closeProfilePopup={closeProfilePopup} isPopupVisible={isProfilePopupVisible} />
+                            </div>
+                        :
                             <MyButton 
                                 size="small"
                                 color="primary" 
                                 variant="outlined" 
-                                onClick={toggleProfilePopupVisibility}
+                                onClick={openSignInModal}
                                 btnClassName={styles.entranceBtn} 
                             >
-                                Профиль
+                                Войти
                             </MyButton>
-                            <ProfilePopup closeProfilePopup={closeProfilePopup} isPopupVisible={isProfilePopupVisible} />
-                        </div>
-                    :
-                        <MyButton 
-                            size="small"
-                            color="primary" 
-                            variant="outlined" 
-                            onClick={openSignInModal}
-                            btnClassName={styles.entranceBtn} 
-                        >
-                            Войти
-                        </MyButton>
-                    }
+                        }
+                    </div>
+
+                    <div 
+                        onClick={isNavigationMobileVisible ? closeMobileNavigation : openMobileMavigation} 
+                        className={classNames(styles.burgerMenu, {
+                            [styles.openedNavigationBurgerMenu]: isNavigationMobileVisible,
+                        })}
+                    >
+                        <div className={classNames(styles.burgerMenu__line, styles.line1)}></div>
+                        <div className={classNames(styles.burgerMenu__line, styles.line2)}></div>
+                        <div className={classNames(styles.burgerMenu__line, styles.line3)}></div>
+                    </div>
                 </div>
 
-                <div 
-                    onClick={isNavigationMobileVisible ? closeMobileNavigation : openMobileMavigation} 
-                    className={classNames(styles.burgerMenu, {
-                        [styles.openedNavigationBurgerMenu]: isNavigationMobileVisible,
-                    })}
-                >
-                    <div className={classNames(styles.burgerMenu__line, styles.line1)}></div>
-                    <div className={classNames(styles.burgerMenu__line, styles.line2)}></div>
-                    <div className={classNames(styles.burgerMenu__line, styles.line3)}></div>
-                </div>
               </div>
             </div>
         </header>
