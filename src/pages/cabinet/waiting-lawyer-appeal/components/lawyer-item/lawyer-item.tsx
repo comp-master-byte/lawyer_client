@@ -36,6 +36,7 @@ const LawyerItem: React.FC<LawyerItemProps> = ({interestedLawyer}) => {
             <SelectLawyerModal 
                 closeModal={closeSelectLawyerModal}
                 isModalVisible={isSelectLawyerModalVisible}
+                interestedLawyerId={interestedLawyer.lawyer.id}
             />
 
             <div className={styles.interestedLawyerItem}>
