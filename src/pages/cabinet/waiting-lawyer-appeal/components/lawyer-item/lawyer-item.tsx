@@ -4,9 +4,10 @@ import personSvg from "../../assets/person.svg";
 import MyButton from 'shared/ui/MyButton/MyButton';
 import classNames from 'classnames';
 import LawyerResponseModal from './components/lawyer-response-modal/lawyer-response-modal';
+import { InterestedLawyer } from '../../model/types';
 
 interface LawyerItemProps {
-    interestedLawyer: any;
+    interestedLawyer: InterestedLawyer;
 }
 
 const LawyerItem: React.FC<LawyerItemProps> = ({interestedLawyer}) => {
@@ -40,13 +41,13 @@ const LawyerItem: React.FC<LawyerItemProps> = ({interestedLawyer}) => {
                 </div>
 
                 <div className={styles.lawyerDataWrapper}>
-                    <p className={styles.lawyerDataWrapper__fio}>Иванов Иван Александрович</p>
+                    <p className={styles.lawyerDataWrapper__fio}>{interestedLawyer.lawyer.full_name}</p>
                     <p className={styles.lawyerDataWrapper__age}>35 лет</p>
                 </div>
 
                 <div className={styles.lawyerPriceWrapper}>
                     <p className={styles.lawyerPriceWrapper__text}>Стоимость</p>
-                    <p className={styles.lawyerPriceWrapper__text}>3 000 руб</p>
+                    <p className={styles.lawyerPriceWrapper__text}>{interestedLawyer.cost} руб</p>
                 </div>
 
                 <div className={styles.timeToComplete}>
