@@ -23,19 +23,22 @@ const AppRoutes: React.FC = () => {
                 <Route path='terms-of-use' element={<TermsOfUse />} />
             </Route>
 
-            {/* Private Routes */}
-            {!user?.is_lawyer &&
+            {/* Private Routes and Client */}
+            {!user?.is_lawyer && Cookies.get("token") ?
                 <Route path='/cabinet/' element={<PageLayout />}>
                     <Route path='appeals' element={<Appeals />} />
                     <Route path='appeals/:id' element={<WaitingLawyerAppeal />} />
                     <Route path='edit-profile' element={<EditProfile />} />
                 </Route>
+                : <Route path='*' element={<Navigate to='/' replace />} />
             }
 
-            {user?.is_lawyer && 
+            {/* Private Routes and Lawyer */}
+            {user?.is_lawyer && Cookies.get("token") ?
                 <Route path='/lawyer-cabinet/' element={<PageLayout />}>
                     <Route path='profile' element={<LawyerProfile />} />
                 </Route>
+                : <Route path='*' element={<Navigate to='/' replace />} />
             }
 
         </Routes>
