@@ -36,6 +36,10 @@
   align-items: flex-end;
 }
 
+.primaryViewWrapper {
+  margin-top: 42px;
+}
+
 .primaryViewInner {
   position: relative;
   display: flex;
@@ -132,16 +136,16 @@
 
 // === MEDIA ===
 @media screen and (min-width: 1440px) and (max-width: 1920px) {
-  @mixin columnView-1440 {
-    // width: 645px;
-    height: 656px;
-    padding: 38px 35px 60px 40px;
-  }
+  // @mixin columnView-1440 {
+  //   // width: 645px;
+  //   height: 656px;
+  //   padding: 38px 35px 60px 40px;
+  // }
 
-  .viewLeftColumn,
-  .viewRightColumn {
-    @include columnView-1440;
-  }
+  // .viewLeftColumn,
+  // .viewRightColumn {
+  //   @include columnView-1440;
+  // }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {

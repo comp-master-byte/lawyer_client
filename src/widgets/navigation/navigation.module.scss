@@ -3,6 +3,7 @@
 .navigationWrapper {
   padding: 42px 60px 0 60px;
 }
+
 .container {
   @include container;
 }
@@ -37,8 +38,7 @@
 
 .navigationInner__vk,
 .burgerMenu,
-.closeNavigationMobileButton,
-.entranceBtnMobile {
+.closeNavigationMobileButton {
   display: none;
 }
 
@@ -153,18 +153,6 @@
     transform: translateX(calc(-100%));
     opacity: 0;
   }
-
-  .entranceBtnMobile {
-    display: inline-block;
-    width: 126px !important;
-    height: auto !important;
-    padding: 9px 28px 11px 28px !important;
-    background-color: transparent !important;
-  }
-
-  .navigationEntrance {
-    display: none;
-  }
 }
 
 
@@ -204,7 +192,8 @@
 
 @media screen and (max-width: 639px) {
   .navigationWrapper {
-    padding-top: 15px;
+      padding-top: 15px;
+      padding-left: 15px;
   }
 
   .burgerMenu {
@@ -239,8 +228,27 @@
 }
 
 @media screen and (max-width: 479px) {
-  .navigationInner__logo img {
-    width: 75.44px;
-    height: 54.18px;
-  }
+    .navigationInner {
+      justify-content: start;
+    }
+
+    .navigationInner__logo img {
+      width: 75.44px;
+      height: 54.18px;
+      flex-grow: 1;
+    }
+
+    .entranceBtn {
+        width: 102px;
+        height: 31px;
+        border-radius: 16px;
+        border: 2px solid #013878;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 90%; /* 16.2px */
+        letter-spacing: -0.45px;
+        padding: 0;
+        flex-grow: 1;
+        margin-right: 13px;
+    }
 }
