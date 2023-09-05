@@ -4,10 +4,10 @@ import { ToastContainer } from 'react-toastify';
 
 const App: React.FC = () => {
     return (
-        <div>
+        <React.Fragment>
             <AppRoutes />
             <ToastContainer />
-        </div>
+        </React.Fragment>
     )
 }
 

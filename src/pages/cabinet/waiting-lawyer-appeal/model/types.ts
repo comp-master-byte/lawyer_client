@@ -9,4 +9,5 @@ export interface InterestedLawyer {
 
 export interface InterestedLawyersState {
     interestedLawyers: InterestedLawyer[];
+    isLawyersLoading: boolean;
 }

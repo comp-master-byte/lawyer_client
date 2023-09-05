@@ -5,6 +5,7 @@ import MyButton from 'shared/ui/MyButton/MyButton';
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { fetchInterestedLawyers } from './model/async-actions';
 import LawyersList from './components/lawyers-list/lawyers-list';
+import Loader from 'shared/ui/loader/loader';
 
 const WaitingLawyerAppeal: React.FC = () => {
     const navigate = useNavigate();
@@ -12,11 +13,19 @@ const WaitingLawyerAppeal: React.FC = () => {
 
     const {id} = useParams();
 
-    const {interestedLawyers} = useTypedSelector((state) => state.interestedLawyersSlice);
+    const {interestedLawyers, isLawyersLoading} = useTypedSelector((state) => state.interestedLawyersSlice);
 
     useEffect(() => {
         dispatch(fetchInterestedLawyers(id as string))
     }, [])
+
+    if(isLawyersLoading) {
+        return (
+            <div className={styles.loaderWrapper}>
+                <Loader />
+            </div>
+        )
+    }
 
     return (
         <div className={styles.lawyerAppealWrapper}>

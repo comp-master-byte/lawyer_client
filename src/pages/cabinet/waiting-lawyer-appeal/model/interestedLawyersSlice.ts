@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { InterestedLawyer, InterestedLawyersState } from "./types";
 
 const initialState: InterestedLawyersState = {
-    interestedLawyers: []
+    interestedLawyers: [],
+    isLawyersLoading: false,
 }
 
 export const interestedLawyersSlice = createSlice({
@@ -11,6 +12,9 @@ export const interestedLawyersSlice = createSlice({
     reducers: {
         setInterestedLawyers(state, action: PayloadAction<InterestedLawyer[]>) {
             state.interestedLawyers = action.payload
+        },
+        toggleLawyersLoading(state, action: PayloadAction<boolean>) {
+            state.isLawyersLoading = action.payload;
         }
     }
 })
