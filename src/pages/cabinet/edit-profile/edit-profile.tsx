@@ -10,9 +10,10 @@ import Edit from './api/Edit';
 import { userSlice } from 'app/store/userSlice';
 import StaticUserInformation from './components/static-user-information/static-user-information';
 import EditPasswordModal from './components/edit-password-modal/edit-password-modal';
+import classNames from 'classnames';
 
 const EditProfile: React.FC = () => {
-    const {register, formState: {errors}, handleSubmit, reset} = useForm<EditProfileValues>({mode: "all"});
+    const {register, formState: {errors, isDirty, isSubmitSuccessful}, handleSubmit, reset} = useForm<EditProfileValues>({mode: "all"});
     const dispatch = useAppDispatch();
 
     const {user} = useTypedSelector(state => state.userSlice);
@@ -92,8 +93,9 @@ const EditProfile: React.FC = () => {
                         </MyButton>
                     </div>
                 </div>
-
-                <div className={styles.submitButtonWrapper}>
+                <div className={classNames(styles.submitButtonWrapper, {
+                    [styles.visibility]: isDirty||isSubmitSuccessful
+                })}>
                     <MyButton 
                         type='submit'
                         color='secondary' 
@@ -109,6 +111,7 @@ const EditProfile: React.FC = () => {
                         </p>
                     }
                 </div>
+                
             </form>
         </div>
     )
