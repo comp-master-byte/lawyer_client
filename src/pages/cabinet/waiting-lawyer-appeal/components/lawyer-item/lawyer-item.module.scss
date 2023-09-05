@@ -6,6 +6,7 @@
 .interestedLawyerItem {
     width: 296px;
     height: 466px;
+    position: relative;
 
     border-radius: 35px;
     border: 3px solid #013878;
@@ -77,7 +78,7 @@
 .lawyerPriceWrapper {
     border-top: 3px solid #013878;
     border-bottom: 3px solid #013878;
-    padding: 10px 21px;
+    padding: 9px 21px;
 
     display: flex;
     align-items: center;
@@ -104,7 +105,6 @@
     letter-spacing: -0.45px;
 
     margin-top: 9px;
-    margin-bottom: 19px;
 
     &__time {
         max-width: 134px;
@@ -112,6 +112,13 @@
 }
 
 .lawyerButtons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: calc(100% - 48px);
+    left: 50%;
+    transform: translateX(-50%);
+
     .button {
         width: 295px;
         height: 55px;
@@ -122,10 +129,10 @@
         letter-spacing: -0.55px;
     }
     .lawyerAnswerButton {
-        border: 3px solid #013878;
+        // border: 3px solid #013878;
     }
 
     .lawyerSelectButton {
-        border: 3px solid #FD7900;
+        // border: 3px solid #FD7900;
     }
 }
