@@ -38,7 +38,11 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
             Cookies.set('token', token);
             dispatch(userSlice.actions.setUser(response.user));
             closeSignInModal();
-            navigate('/cabinet/appeals');
+            if(response.user.is_lawyer) {
+                navigate('/lawyer-cabinet/profile');
+            } else {
+                navigate('/cabinet/appeals');
+            }
         }
     }
 

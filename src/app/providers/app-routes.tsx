@@ -9,11 +9,10 @@ import EditProfile from 'pages/cabinet/edit-profile/edit-profile';
 import WaitingLawyerAppeal from 'pages/cabinet/waiting-lawyer-appeal/waiting-lawyer-appeal';
 import { useTypedSelector } from 'shared/lib/hooks/redux';
 import Cookies from 'js-cookie';
+import LawyerProfile from 'pages/lawyer-cabinet/lawyer-profile/lawyer-profile';
 
 const AppRoutes: React.FC = () => {
     const {user} = useTypedSelector((state) => state.userSlice);
-    console.log(Cookies.get('token'));
-    
 
     return (
         <Routes>
@@ -25,13 +24,18 @@ const AppRoutes: React.FC = () => {
             </Route>
 
             {/* Private Routes */}
-            {!user?.is_lawyer 
-                &&
-                    <Route path='/cabinet/' element={<PageLayout />}>
-                        <Route path='appeals' element={<Appeals />} />
-                        <Route path='appeals/:id' element={<WaitingLawyerAppeal />} />
-                        <Route path='edit-profile' element={<EditProfile />} />
-                    </Route>
+            {!user?.is_lawyer &&
+                <Route path='/cabinet/' element={<PageLayout />}>
+                    <Route path='appeals' element={<Appeals />} />
+                    <Route path='appeals/:id' element={<WaitingLawyerAppeal />} />
+                    <Route path='edit-profile' element={<EditProfile />} />
+                </Route>
+            }
+
+            {user?.is_lawyer && 
+                <Route path='/lawyer-cabinet/' element={<PageLayout />}>
+                    <Route path='profile' element={<LawyerProfile />} />
+                </Route>
             }
 
         </Routes>
