@@ -5,6 +5,7 @@ import MyButton from 'shared/ui/MyButton/MyButton';
 import classNames from 'classnames';
 import LawyerResponseModal from './components/lawyer-response-modal/lawyer-response-modal';
 import { InterestedLawyer } from '../../model/types';
+import SelectLawyerModal from './components/select-lawyer-modal/select-lawyer-modal';
 
 interface LawyerItemProps {
     interestedLawyer: InterestedLawyer;
@@ -12,13 +13,22 @@ interface LawyerItemProps {
 
 const LawyerItem: React.FC<LawyerItemProps> = ({interestedLawyer}) => {
     const [isLawyerResponseModalVisible, setIsLawyerResponseModalVisible] = useState(false);
+    const [isSelectLawyerModalVisible, setIsSelectLawyerModalVisible] = useState(false);
 
     const closeLawyerResponseModal = useCallback(() => {
         setIsLawyerResponseModalVisible(false);
     }, [])
 
+    const closeSelectLawyerModal = useCallback(() => {
+        setIsSelectLawyerModalVisible(false);
+    }, [])
+
     const openLawyerResponseModal = useCallback(() => {
         setIsLawyerResponseModalVisible(true);
+    }, [])
+
+    const openSelectLawyerModal = useCallback(() => {
+        setIsSelectLawyerModalVisible(true);
     }, [])
 
 
@@ -28,6 +38,11 @@ const LawyerItem: React.FC<LawyerItemProps> = ({interestedLawyer}) => {
             <LawyerResponseModal 
                 closeLawyerResponse={closeLawyerResponseModal}
                 isLawyerResponseVisible={isLawyerResponseModalVisible}
+            />
+
+            <SelectLawyerModal 
+                closeModal={closeSelectLawyerModal}
+                isModalVisible={isSelectLawyerModalVisible}
             />
 
             <div className={styles.interestedLawyerItem}>
@@ -69,6 +84,7 @@ const LawyerItem: React.FC<LawyerItemProps> = ({interestedLawyer}) => {
                         color='secondary'
                         variant='contained'
                         btnClassName={classNames(styles.button, styles.lawyerSelectButton)}
+                        onClick={openSelectLawyerModal}
                     >
                         Выбрать
                     </MyButton>
