@@ -5,6 +5,7 @@ import { useAppDispatch } from 'shared/lib/hooks/redux';
 import { fetchAppeals } from 'pages/cabinet/appeals/model/async-actions';
 import { useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
+import ApplicationsList from './components/applications-list/applications-list';
 
 const ChatsApplications: React.FC = () => {
     const {register} = useForm<{search: ""}>()
@@ -23,6 +24,8 @@ const ChatsApplications: React.FC = () => {
                     placeholder='Поиск по сообщениям'
                     register={register("search")}
                 />
+
+                <ApplicationsList applications={[{question_id: 1}, {question_id: 2}, {question_id: 3}]} />
             </div>
 
             <Outlet />
