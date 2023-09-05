@@ -7,6 +7,7 @@ import { useAppDispatch } from 'shared/lib/hooks/redux';
 import Footer from 'widgets/footer/footer';
 import Navigation from 'widgets/navigation/navigation';
 import { Helmet } from 'react-helmet-async';
+import SupportChat from 'widgets/support-chat/support-chat';
 
 const PageLayout: React.FC = () => {
     const dispatch = useAppDispatch();
@@ -15,9 +16,6 @@ const PageLayout: React.FC = () => {
     useEffect(() => {
         const user = localStorage.getItem('user');
 
-        console.log(user);
-        
-        
         if(!user) {
             dispatch(fetchUser());
             return;
@@ -40,6 +38,7 @@ const PageLayout: React.FC = () => {
                     <Outlet />
                 </div>
             </div>
+            <SupportChat />
             <Footer />
         </div>
     )

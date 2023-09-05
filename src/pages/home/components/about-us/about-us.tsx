@@ -5,7 +5,6 @@ import ProblemCard from "./components/problemCard/ProblemCard";
 import SolutionCard from "./components/solutionCard/SolutionCard";
 import LawyerAssistant from "./components/lawyerAssistant/LawyerAssistant";
 import SectionTitle from "shared/styled-components/SectionTitle/SectionTitle";
-import SupportChat from "widgets/support-chat/support-chat";
 
 const AboutUs: FC = React.memo(function AboutUs() {
   return (
@@ -17,7 +16,6 @@ const AboutUs: FC = React.memo(function AboutUs() {
               понятной обычному пользователю
             </SectionTitle>
 
-            <SupportChat />
           </div>
 
           <div className={styles.aboutUsCards}>
