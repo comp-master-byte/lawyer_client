@@ -42,3 +42,18 @@
         }
     }
 }
+
+@media screen and (max-width: 480px) {
+    .profilePopupWrapper {
+        width: 244px;
+    }
+
+    .profileMenuLinks {
+        .pageLink {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 90%; /* 16.2px */
+            letter-spacing: -0.45px;
+        }
+    }
+}
