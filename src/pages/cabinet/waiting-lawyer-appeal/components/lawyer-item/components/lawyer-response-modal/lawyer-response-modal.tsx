@@ -6,9 +6,10 @@ import InterestedLawyerModal from 'entities/insterested-lawyer-modal/insterested
 interface LawyerResponseModalProps {
     isLawyerResponseVisible: boolean;
     closeLawyerResponse: () => void;
+    openConfirmationModal: () => void;
 }
 
-const LawyerResponseModal: React.FC<LawyerResponseModalProps> = ({closeLawyerResponse, isLawyerResponseVisible}) => {
+const LawyerResponseModal: React.FC<LawyerResponseModalProps> = ({closeLawyerResponse, isLawyerResponseVisible, openConfirmationModal}) => {
     return (
         <InterestedLawyerModal 
             closeModal={closeLawyerResponse}
@@ -31,6 +32,7 @@ const LawyerResponseModal: React.FC<LawyerResponseModalProps> = ({closeLawyerRes
                     color='secondary'
                     variant='contained'
                     size='large'
+                    onClick={openConfirmationModal}
                 >
                     Выбрать юриста и ответить
                 </MyButton>

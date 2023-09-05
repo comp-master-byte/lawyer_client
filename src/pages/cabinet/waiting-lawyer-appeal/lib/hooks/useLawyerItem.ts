@@ -18,8 +18,11 @@ export const useLawyerItem = () => {
     }, [])
 
     const openSelectLawyerModal = useCallback(() => {
+        if(isLawyerResponseModalVisible) {
+            setIsLawyerResponseModalVisible(false);
+        }
         setIsSelectLawyerModalVisible(true);
-    }, [])
+    }, [isLawyerResponseModalVisible])
 
     return {
         isLawyerResponseModalVisible,

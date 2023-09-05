@@ -30,6 +30,7 @@ const LawyerItem: React.FC<LawyerItemProps> = ({interestedLawyer}) => {
             <LawyerResponseModal 
                 closeLawyerResponse={closeLawyerResponseModal}
                 isLawyerResponseVisible={isLawyerResponseModalVisible}
+                openConfirmationModal={openSelectLawyerModal}
             />
 
             <SelectLawyerModal 
