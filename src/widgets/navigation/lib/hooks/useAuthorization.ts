@@ -8,7 +8,7 @@ export const useAuthorization = () => {
 
     const {toggleRegisterModalVisibility, toggleSignInModalVisibility} = authorizationSlice.actions;
 
-    const {isSignInModalVisible} = useTypedSelector((state) => state.authorizationSlice);
+    const {isSignInModalVisible, isRegisterModalVisible, isSuccessRegisterModalVisible} = useTypedSelector((state) => state.authorizationSlice);
 
     const [isForgetPasswordModalVisible, setIsForgetPasswordModalVisible] = useState(false);
 
@@ -43,6 +43,25 @@ export const useAuthorization = () => {
         setIsForgetPasswordModalVisible(false);
         dispatch(toggleSignInModalVisibility(true));
     }, [])
+
+    
+    useEffect(() => {
+        if(
+            isSignInModalVisible||
+            isRegisterModalVisible||
+            isSuccessRegisterModalVisible||
+            isForgetPasswordModalVisible
+        ) {
+            document.body.style.overflowY = 'hidden';
+        } else {
+            document.body.style.overflowY = 'auto';
+        }
+    }, [
+        isSignInModalVisible, 
+        isRegisterModalVisible, 
+        isSuccessRegisterModalVisible, 
+        isForgetPasswordModalVisible
+    ])
 
     return {
         isSignInModalVisible,
