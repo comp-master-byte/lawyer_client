@@ -1,0 +1,16 @@
+.modalContent {
+    width: 653px;
+    border-radius: 30px;
+    border: 3px solid #013878;
+    background: #FFF;
+    padding-bottom: 30px;
+}
+
+.closeModalIcon {
+    padding: 21px 20px 0 0;
+    text-align: right;
+
+    img {
+        cursor: pointer;
+    }
+}

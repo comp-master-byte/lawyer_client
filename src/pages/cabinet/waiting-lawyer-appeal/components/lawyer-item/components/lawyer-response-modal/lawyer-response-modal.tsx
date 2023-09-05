@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from "./lawyer-response-modal.module.scss";
-import Modal from 'shared/ui/modal/modal';
-import closeSvg from "../../../../assets/close-button.svg";
 import MyButton from 'shared/ui/MyButton/MyButton';
+import InterestedLawyerModal from 'entities/insterested-lawyer-modal/insterested-lawyer-modal';
 
 interface LawyerResponseModalProps {
     isLawyerResponseVisible: boolean;
@@ -11,15 +10,10 @@ interface LawyerResponseModalProps {
 
 const LawyerResponseModal: React.FC<LawyerResponseModalProps> = ({closeLawyerResponse, isLawyerResponseVisible}) => {
     return (
-        <Modal 
+        <InterestedLawyerModal 
             closeModal={closeLawyerResponse}
             isModalVisible={isLawyerResponseVisible} 
-            modalContentClassName={styles.modalContent}
         >
-            <div className={styles.closeModalIcon}>
-                <img src={closeSvg} onClick={closeLawyerResponse} alt="" />
-            </div>
-
             <section className={styles.lawyerContent}>
                 <h2 className={styles.lawyerTitle}>Иванов Иван Александрович пишет:</h2>
                 <article className={styles.lawyerResponse}>
@@ -41,8 +35,7 @@ const LawyerResponseModal: React.FC<LawyerResponseModalProps> = ({closeLawyerRes
                     Выбрать юриста и ответить
                 </MyButton>
             </section>
-
-        </Modal>
+        </InterestedLawyerModal>
     )
 }
 
