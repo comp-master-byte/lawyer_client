@@ -12,7 +12,7 @@ export default class Auth {
             const responseUser = await axios.get(`${API_URL}/api/auth/users/me/`, {headers: {"Authorization": `Token ${responseToken.data.auth_token}`}});
             const toStringUser = JSON.stringify(responseUser.data);
             localStorage.setItem('user', toStringUser);
-            return responseToken.data;
+            return {auth_token: responseToken.data.auth_token, user: responseUser.data};
         } catch(error: any) {
             setError("email", {
                 type: "server",

@@ -10,7 +10,8 @@ import classNames from 'classnames';
 import AuthorizationModalLayout from 'entities/authorization/authorization-modal-layout/authorization-modal-layout';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
-import { useTypedSelector } from 'shared/lib/hooks/redux';
+import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
+import { userSlice } from 'app/store/userSlice';
 
 interface SignInModalProps {
     closeSignInModal: () => void;
@@ -22,6 +23,7 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
     const {closeSignInModal, openSignUpModal, openForgetPasswordModal} = props;
     const {register, handleSubmit, formState: {errors}, setError} = useForm<SignInValues>({mode: "all"});
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
 
     const {isSignInModalVisible} = useTypedSelector(state => state.authorizationSlice);
 
@@ -31,9 +33,10 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
         setIsLoading(true);
         const response = await Auth.login(data, setError);
         setIsLoading(false);
-        if(response.auth_token) {
+        if(response) {
             const token = JSON.stringify(response.auth_token);
             Cookies.set('token', token);
+            dispatch(userSlice.actions.setUser(response.user));
             closeSignInModal();
             navigate('/cabinet/appeals');
         }
