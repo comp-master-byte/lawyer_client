@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./sign-in-modal.module.scss";
 import { SubmitHandler, useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
@@ -10,18 +10,20 @@ import classNames from 'classnames';
 import AuthorizationModalLayout from 'entities/authorization/authorization-modal-layout/authorization-modal-layout';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
+import { useTypedSelector } from 'shared/lib/hooks/redux';
 
 interface SignInModalProps {
-    isSignInModalVisible: boolean;
     closeSignInModal: () => void;
     openSignUpModal: () => void;
     openForgetPasswordModal: () => void;
 }
 
 const SignInModal: React.FC<SignInModalProps> = (props) => {
-    const {closeSignInModal, isSignInModalVisible, openSignUpModal, openForgetPasswordModal} = props;
+    const {closeSignInModal, openSignUpModal, openForgetPasswordModal} = props;
     const {register, handleSubmit, formState: {errors}, setError} = useForm<SignInValues>({mode: "all"});
     const navigate = useNavigate();
+
+    const {isSignInModalVisible} = useTypedSelector(state => state.authorizationSlice);
 
     const [isLoading, setIsLoading] = useState(false);
 
@@ -36,6 +38,15 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
             navigate('/cabinet/appeals');
         }
     }
+
+    useEffect(() => {
+        if(isSignInModalVisible) {
+            document.body.style.overflowY = 'hidden';
+        } else {
+            document.body.style.overflowY = 'auto';
+        }
+    }, [isSignInModalVisible])
+    
 
     return (
         <AuthorizationModalLayout

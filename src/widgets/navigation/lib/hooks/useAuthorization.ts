@@ -8,16 +8,18 @@ export const useAuthorization = () => {
 
     const {toggleRegisterModalVisibility, toggleSignInModalVisibility} = authorizationSlice.actions;
 
-    const {isRegisterModalVisible, isSignInModalVisible, isSuccessRegisterModalVisible} = useTypedSelector((state) => state.authorizationSlice);
+    const {isSignInModalVisible} = useTypedSelector((state) => state.authorizationSlice);
 
     const [isForgetPasswordModalVisible, setIsForgetPasswordModalVisible] = useState(false);
 
     const openSignInModal = useCallback(() => {
-        if(isRegisterModalVisible) {
-            dispatch(toggleRegisterModalVisibility(false));
-        }
         dispatch(toggleSignInModalVisibility(true));
-    }, [isRegisterModalVisible])
+    }, [])
+
+    const openSignInCloseSignUp = useCallback(() => {
+        dispatch(toggleRegisterModalVisibility(false));
+        dispatch(toggleSignInModalVisibility(true));
+    }, [])
 
     const openForgetPasswordModal = useCallback(() => {
         dispatch(toggleSignInModalVisibility(false));
@@ -50,6 +52,7 @@ export const useAuthorization = () => {
         backToSignInFromForget,
         openForgetPasswordModal,
         closeForgetPasswordModal,
-        isForgetPasswordModalVisible
+        isForgetPasswordModalVisible,
+        openSignInCloseSignUp
     }
 }

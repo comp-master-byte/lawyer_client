@@ -7,19 +7,19 @@ interface ModalProps {
     children: React.ReactNode;
     isModalVisible: boolean;
     modalContentClassName?: string;
-    closeModal?: () => void;
+    closeModal: () => void;
 }
 
 const Modal: React.FC<ModalProps> = ({children, isModalVisible, modalContentClassName, closeModal}) => {
     const modalContentRef = useClickOutside(() => {
-        closeModal && closeModal();
+        closeModal();
     })
 
     useEffect(() => {
         if(isModalVisible) {
-            document.body.style.overflowY = 'hidden'
+            document.body.style.overflowY = 'hidden';
         } else {
-            document.body.style.overflowY = 'auto'
+            document.body.style.overflowY = 'auto';
         }
     }, [isModalVisible])
 

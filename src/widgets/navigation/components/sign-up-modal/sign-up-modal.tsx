@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./sign-up-modal.module.scss";
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { SignUpValues } from 'widgets/navigation/model/types';

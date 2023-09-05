@@ -31,6 +31,7 @@ const MobileChatVersion: React.FC = () => {
             />
 
             <Modal 
+                closeModal={closeSupportChat}
                 isModalVisible={isSupportChatVisible} 
                 modalContentClassName={styles.mobileChatContent}
             >

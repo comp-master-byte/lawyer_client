@@ -19,6 +19,7 @@ const SuccessRegisterModal: React.FC<SuccessRegisterModalProps> = () => {
 
     return (
         <Modal 
+            closeModal={() => dispatch(toggleSuccessRegisterModalVisibility(false))}
             isModalVisible={isSuccessRegisterModalVisible} 
             modalContentClassName={styles.successRegisterContent}
         >

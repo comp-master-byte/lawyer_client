@@ -35,4 +35,4 @@ const AuthorizationModalLayout: React.FC<AuthorizationModalLayoutProps> = (props
     )
 }
 
-export default AuthorizationModalLayout
+export default AuthorizationModalLayout;

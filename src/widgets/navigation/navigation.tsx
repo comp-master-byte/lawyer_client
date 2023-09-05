@@ -45,7 +45,8 @@ const Navigation: React.FC = React.memo(function Navigation() {
       backToSignInFromForget,
       openForgetPasswordModal,
       closeForgetPasswordModal,
-      isForgetPasswordModalVisible
+      isForgetPasswordModalVisible,
+      openSignInCloseSignUp
     } = useAuthorization();
 
     return (
@@ -55,11 +56,10 @@ const Navigation: React.FC = React.memo(function Navigation() {
             <SignInModal 
                 openSignUpModal={openSignUpModal}
                 closeSignInModal={closeSignInModal} 
-                isSignInModalVisible={isSignInModalVisible}
                 openForgetPasswordModal={openForgetPasswordModal}
             />
 
-            <SignUpModal openSignInModal={openSignInModal} />
+            <SignUpModal openSignInModal={openSignInCloseSignUp} />
 
             <ForgetPasswordModal 
                 openSignInModal={backToSignInFromForget}
