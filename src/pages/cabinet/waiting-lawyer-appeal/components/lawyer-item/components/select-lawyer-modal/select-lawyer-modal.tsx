@@ -23,7 +23,7 @@ const SelectLawyerModal: React.FC<SelectLawyerModalProps> = ({closeModal, isModa
             const response = await Lawyer.choose_lawyer(+id, interestedLawyerId);
             setIsLoading(false);
             if(response) {
-                navigate(`/cabinet/chat`)
+                navigate(`/cabinet/chats`)
             }
         }        
     }

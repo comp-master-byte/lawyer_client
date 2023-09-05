@@ -38,7 +38,7 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({isPopupVisible, closeProfile
                     Мои обращения
                 </Link>
                 <Link 
-                    to='/cabinet/appeals' 
+                    to='/cabinet/chats' 
                     onClick={closeProfilePopup} 
                     className={styles.pageLink}
                 >

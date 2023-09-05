@@ -10,7 +10,7 @@ import WaitingLawyerAppeal from 'pages/cabinet/waiting-lawyer-appeal/waiting-law
 import { useTypedSelector } from 'shared/lib/hooks/redux';
 import Cookies from 'js-cookie';
 import LawyerProfile from 'pages/lawyer-cabinet/lawyer-profile/lawyer-profile';
-import Chat from 'pages/cabinet/chat/chat';
+import Chats from 'pages/cabinet/chats/chats';
 
 const AppRoutes: React.FC = () => {
     const {user} = useTypedSelector((state) => state.userSlice);
@@ -30,7 +30,7 @@ const AppRoutes: React.FC = () => {
                     <Route path='appeals' element={<Appeals />} />
                     <Route path='appeals/:id' element={<WaitingLawyerAppeal />} />
                     <Route path='edit-profile' element={<EditProfile />} />
-                    <Route path='chat' element={<Chat />} />
+                    <Route path='chats' element={<Chats />} />
                 </Route>
                 : <Route path='*' element={<Navigate to='/' replace />} />
             }
