@@ -14,6 +14,9 @@ const PageLayout: React.FC = () => {
 
     useEffect(() => {
         const user = localStorage.getItem('user');
+
+        console.log(user);
+        
         
         if(!user) {
             dispatch(fetchUser());

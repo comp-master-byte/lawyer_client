@@ -8,8 +8,11 @@ import { UseFormSetError } from "react-hook-form";
 export default class Auth {
     static async login(loginData: SignInValues, setError: UseFormSetError<SignInValues>) {
         try {
-            const response = await axios.post(`${API_URL}/auth/token/login`, loginData);
-            return response.data;
+            const responseToken = await axios.post(`${API_URL}/auth/token/login`, loginData);
+            const responseUser = await axios.get(`${API_URL}/api/auth/users/me/`, {headers: {"Authorization": `Token ${responseToken.data.auth_token}`}});
+            const toStringUser = JSON.stringify(responseUser.data);
+            localStorage.setItem('user', toStringUser);
+            return responseToken.data;
         } catch(error: any) {
             setError("email", {
                 type: "server",

@@ -18,6 +18,7 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({isPopupVisible, closeProfile
         try {
             const response = await $api.post('/auth/token/logout');
             Cookies.remove('token');
+            localStorage.removeItem('user');
             navigate('/');
         } catch(error: any) {
             toast("Ошибки при выходе из профиля. Мы уже работает над этим!", {type: "error"})
