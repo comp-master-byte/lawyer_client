@@ -1,8 +1,9 @@
 export interface MyInputProps {
     placeholder?: string;
-    error: any;
+    error?: any;
     register: any;
     label?: string;
     type?: "password"|"text";
     inputClassName?: string;
+    hasSearch?: boolean;
 }

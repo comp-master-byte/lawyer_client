@@ -1,8 +1,19 @@
 .chatsApplicationsWrapper {
     display: flex;
+    height: 778px;
+    margin-top: 60px;
+    margin-bottom: 107px;
 }
 
 .applications {
-    max-width: 469px;
-    width: 100%;
+    width: 35.53030303%;
+}
+
+.searchInput {
+    height: 77px !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 90% !important; /* 21.6px */
+    letter-spacing: -0.6px !important;
+    padding-left: 29px !important;
 }

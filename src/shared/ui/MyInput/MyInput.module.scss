@@ -1,7 +1,8 @@
 @import "app/styles/exports";
 
 .myInputWrapper {
-  width: 100%;
+  position: relative;
+    width: 100%;
 }
 
 .myInput {
@@ -32,6 +33,13 @@
     line-height: 105%; /* 18.9px */
     letter-spacing: -0.45px;
     margin-left: 20px;
+}
+
+.searchIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 37px;
 }
 
 textarea.myInput {
