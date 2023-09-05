@@ -28,13 +28,13 @@
 
 // === media ===
 
-@media screen and (min-width: 1440px) and (max-width: 1900px) {
-  // .additionalCardWrapper {
-  //   width: 437px;
-  // } 
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+  .additionalCardWrapper {
+    width: 437px;
+  } 
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1440px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .additionalCardWrapper {
     margin-top: 0;
     width: 100%;

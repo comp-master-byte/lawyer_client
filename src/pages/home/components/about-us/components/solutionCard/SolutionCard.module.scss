@@ -40,13 +40,13 @@
   }
 }
 
-@media screen and (min-width: 1440px) and (max-width: 1920px) {
-  // .solutionCardWrapper {
-  //   width: 447px;
-  // }
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+  .solutionCardWrapper {
+    width: 447px;
+  }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1439px) {
   .solutionCardPosition__pointer {
     display: none;
   }
@@ -57,7 +57,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1440px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .solutionCardWrapper {
     width: 100%;
 
