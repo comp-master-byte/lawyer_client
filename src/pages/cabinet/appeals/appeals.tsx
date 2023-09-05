@@ -4,10 +4,13 @@ import Select from 'shared/ui/select/select';
 import { APPEALS } from './constants/constants';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import AppealsList from './components/appeals-list/appeals-list';
-import { useTypedSelector } from 'shared/lib/hooks/redux';
+import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { useAppeals } from './lib/hooks/useAppeals';
+import { supportChatSlice } from 'widgets/support-chat/model/supportChatSlice';
 
 const Appeals: React.FC = () => {
+    const dispatch = useAppDispatch();
+
     const {appeals} = useTypedSelector((state) => state.appealsSlice);
     const {selectedAppealOption, onSelectAppealOption} = useAppeals();
 
@@ -28,6 +31,7 @@ const Appeals: React.FC = () => {
                         color='primary'
                         variant='contained'
                         btnClassName={styles.askQuestionButton}
+                        onClick={() => dispatch(supportChatSlice.actions.toggleLegalAdviceModalVisibility(true))}
                     >
                         Задать вопрос
                     </MyButton>
