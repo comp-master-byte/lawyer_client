@@ -11,6 +11,7 @@ import { useTypedSelector } from 'shared/lib/hooks/redux';
 import Cookies from 'js-cookie';
 import LawyerProfile from 'pages/lawyer-cabinet/lawyer-profile/lawyer-profile';
 import Chats from 'pages/cabinet/chats/chats';
+import ChatsApplications from 'entities/chats-applications/chats-applications';
 
 const AppRoutes: React.FC = () => {
     const {user} = useTypedSelector((state) => state.userSlice);
@@ -30,7 +31,9 @@ const AppRoutes: React.FC = () => {
                     <Route path='appeals' element={<Appeals />} />
                     <Route path='appeals/:id' element={<WaitingLawyerAppeal />} />
                     <Route path='edit-profile' element={<EditProfile />} />
-                    <Route path='chats' element={<Chats />} />
+                    <Route path='chats/' element={<ChatsApplications />}>
+                        <Route path=':id' element={<Chats />} />
+                    </Route>
                 </Route>
                 : <Route path='*' element={<Navigate to='/' replace />} />
             }

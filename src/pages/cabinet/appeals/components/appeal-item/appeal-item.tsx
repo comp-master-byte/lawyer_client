@@ -12,7 +12,13 @@ const AppealItem: React.FC<AppealItemProps> = ({appeal}) => {
 
     const onSelectAppeal = function(appeal: Appeal) {
         if(appeal.status === "candidates") {
-            navigate(`/cabinet/appeals/${appeal.question_id}`)
+            navigate(`/cabinet/appeals/${appeal.question_id}`);
+            return;
+        }
+
+        if(appeal.status === "active") {
+            navigate(`/cabinet/chats/${appeal.question_id}`);
+            return;
         }
     }
 
