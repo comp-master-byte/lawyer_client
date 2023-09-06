@@ -14,6 +14,6 @@ export interface Appeal {
 export interface AppealsState {
     appeals: Appeal[];
     isFetching: boolean;
-    currentPage: number;
+    offset: number;
     maxCount: number;
 }
