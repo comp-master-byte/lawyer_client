@@ -1,0 +1,49 @@
+
+.messageItemWrapper {
+    display: flex;
+
+    .messageWrapper {
+        max-width: 471px;
+        width: 100%;
+        height: auto;
+        white-space: pre-wrap;
+        padding: 18px 42px 27px 23px;
+        background-color: #fff;
+        border-radius: 30px;
+    
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 87.023%; /* 17.405px */
+        letter-spacing: -0.5px;
+        color: #013878;
+    }
+
+    .messageLabel {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 87.023%; /* 20.885px */
+        letter-spacing: -0.6px;
+    }
+}
+
+.receivedMessageItemWrapper {
+    justify-content: flex-start;
+    .messageWrapper {
+        border: 3px solid #013878;
+    }
+
+    .messageLabel {
+        color: #013878;
+    }
+}
+
+.sentMessageItemWrapper {
+    justify-content: flex-end;
+    .messageWrapper {
+        border: 3px solid #FD7900;
+    }
+
+    .messageLabel {
+        color: #FD7900;
+    }
+}

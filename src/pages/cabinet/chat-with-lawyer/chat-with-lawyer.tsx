@@ -3,6 +3,7 @@ import styles from "./chat-with-lawyer.module.scss";
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import MyButton from 'shared/ui/MyButton/MyButton';
+import MessageList from './components/message-list/message-list';
 
 interface IChatValues {
     message: string
@@ -19,7 +20,11 @@ const ChatWithLawyer: React.FC = () => {
 
     return (
         <div className={styles.chatWithLawyerWrapper}>
-            <div className={styles.chatWindow}></div>
+            <div className={styles.chatWindow}>
+                <MessageList 
+                    messageList={[{id: 1, status: 'receive'}, {id: 2, status: 'send'}]}
+                />
+            </div>
             <form onSubmit={handleSubmit(onSendMessage)} className={styles.sendMessageWrapper}>
                 <MyInput 
                     hasFile
