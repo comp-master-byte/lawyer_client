@@ -4,16 +4,22 @@ import { SelectProps } from './model/types';
 import arrowSvg from "./assets/arrow.svg";
 import { useSelect } from './hooks/useSelect';
 import classNames from 'classnames';
+import { useClickOutside } from 'shared/lib/hooks/useClickOutside';
 
 const Select: React.FC<SelectProps> = (props) => {
     const {options, selectedOption, label, onSelectOption, defaultValue, selectWrapperClassName, selectOptionClassName, error} = props;
     const {
         isOptionsVisible,
+        closeSelectOptions,
         toggleOptionsVisibility
     } = useSelect();
 
+    const selectWrapperRef = useClickOutside(() => {
+        closeSelectOptions();
+    })
+
     return (
-        <div className={classNames(styles.selectWrapper, selectWrapperClassName)}>
+        <div ref={selectWrapperRef} className={classNames(styles.selectWrapper, selectWrapperClassName)}>
             {label ? <label className={styles.selectLabel}>{label}</label> : <></>}
             {error ? <div className={styles.selectError}>{error.message}</div> : <></>}
             <div className={classNames(styles.selectedOptionWrapper, selectOptionClassName)} onClick={toggleOptionsVisibility}>

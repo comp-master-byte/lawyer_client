@@ -10,24 +10,38 @@
     padding: 0 49px;
     margin-top: -3px;
     cursor: pointer;
+    transition: .25s;
 
     &:first-child {
         margin-top: 0;
     }
-}
 
-.appealTitle {
-    color: #013878;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 90%; /* 27px */
-    letter-spacing: -0.75px;
-}
+    &:hover {
+        background-color: #013878;
+        cursor: pointer;
+    }
 
-.appealStatus {
-    color: #96B6DB;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 90%; 
-    letter-spacing: -0.75px;
+    &:hover .appealTitle{
+        color: #fff;
+    }
+
+    &:hover .appealStatus {
+        color: #fff;
+    }
+
+    .appealTitle {
+        color: #013878;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 90%; /* 27px */
+        letter-spacing: -0.75px;
+    }
+
+    .appealStatus {
+        color: #96B6DB;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 90%; 
+        letter-spacing: -0.75px;
+    }
 }

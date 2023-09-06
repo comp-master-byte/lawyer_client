@@ -8,8 +8,13 @@ export const useSelect = () => {
         setIsOptionsVisible(prev => !prev);
     }
 
+    const closeSelectOptions = function() {
+        setIsOptionsVisible(false);
+    }
+
     return {
         isOptionsVisible,
+        closeSelectOptions,
         toggleOptionsVisibility
     }
 }
