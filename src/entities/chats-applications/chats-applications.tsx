@@ -1,18 +1,25 @@
 import React, { useEffect } from 'react';
 import styles from "./chats-applications.module.scss";
 import { Outlet } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/redux';
-import { fetchAppeals } from 'pages/cabinet/appeals/model/async-actions';
+import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import ApplicationsList from './components/applications-list/applications-list';
+import { fetchChatList } from './model/async-actions';
+
+interface ApplicationsValues {
+    search: string;
+}
 
 const ChatsApplications: React.FC = () => {
-    const {register} = useForm<{search: ""}>()
+    const {register} = useForm<ApplicationsValues>();
+
     const dispatch = useAppDispatch();
 
+    const {chatList} = useTypedSelector(state => state.chatsApplicationsSlice);
+
     useEffect(() => {
-        dispatch(fetchAppeals(0, "active"));
+        dispatch(fetchChatList());
     }, [])
 
     return (
@@ -25,7 +32,7 @@ const ChatsApplications: React.FC = () => {
                     register={register("search")}
                 />
 
-                <ApplicationsList applications={[{question_id: 1}, {question_id: 2}, {question_id: 3}]} />
+                <ApplicationsList applications={chatList} />
             </div>
 
             <Outlet />

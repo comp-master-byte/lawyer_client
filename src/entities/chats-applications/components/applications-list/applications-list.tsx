@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from "./applications-list.module.scss";
 import ApplicationItem from '../application-item/application-item';
+import { ChatItem } from 'entities/chats-applications/model/types';
 
 interface ApplicationsListProps {
-    applications: any[]
+    applications: ChatItem[]
 }
 
 const ApplicationsList: React.FC<ApplicationsListProps> = ({applications}) => {
@@ -11,7 +12,7 @@ const ApplicationsList: React.FC<ApplicationsListProps> = ({applications}) => {
         <div className={styles.scrollWrapper}>
             <div className={styles.applicationsList}>
                 {applications.map((item) => 
-                    <ApplicationItem key={item.question_id} application={item} />
+                    <ApplicationItem key={item.chat_id} application={item} />
                 )}
             </div>
         </div>

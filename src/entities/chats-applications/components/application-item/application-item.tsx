@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from "./application-item.module.scss";
+import { ChatItem } from 'entities/chats-applications/model/types';
 
 interface ApplicationItemProps {
-    application: any;
+    application: ChatItem;
 }
 
 const ApplicationItem: React.FC<ApplicationItemProps> = ({application}) => {
     return (
         <div className={styles.applicationWrapper}>
-            Заявка {application.question_id}
+            Заявка {application.chat_id}
         </div>
     )
 }
