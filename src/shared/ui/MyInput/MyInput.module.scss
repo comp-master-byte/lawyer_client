@@ -41,6 +41,15 @@
     transform: translateY(-50%);
     right: 37px;
 }
+.fileIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 27px;
+  width: 49px;
+  height: 49px;
+  z-index: 10;
+}
 
 textarea.myInput {
   resize: none;

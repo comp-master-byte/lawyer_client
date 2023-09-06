@@ -6,4 +6,5 @@ export interface MyInputProps {
     type?: "password"|"text";
     inputClassName?: string;
     hasSearch?: boolean;
+    hasFile?: boolean;
 }
