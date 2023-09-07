@@ -3,3 +3,25 @@
     flex-direction: column;
     row-gap: .1px;
 }
+
+.noAppealText {
+    color: #013878;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 100%; /* 30px */
+    letter-spacing: -0.75px;
+    max-width: 696px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+    .noAppealText {
+        max-width: 330px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 100%; /* 18px */
+        letter-spacing: -0.45px;
+    }
+}

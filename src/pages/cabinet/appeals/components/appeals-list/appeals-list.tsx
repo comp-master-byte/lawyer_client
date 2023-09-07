@@ -15,7 +15,7 @@ const AppealsList: React.FC<AppealsListProps> = ({appeals}) => {
                 <div className={styles.appealList}>{appeals.map((item) => 
                     <AppealItem key={item.question_id} appeal={item} />)}
                 </div> 
-                : <h3>У вас пока нет обращений</h3>
+                : <h3 className={styles.noAppealText}>У вас пока нет обращений, нажмите на кнопку «Задать вопрос», чтобы его создать</h3>
             }
         </div>
     )
