@@ -100,3 +100,59 @@
     visibility: visible;
     pointer-events: all;
 }
+
+@media screen and (max-width: 480px) {
+    .editProfileWrapper {
+        margin-top: 15px;
+    }
+
+    .editFormInputs {
+        row-gap: 10px;
+        margin-bottom: 36px;
+    }
+
+    .editInputWrapper {
+        height: 50px;
+
+        .inputName {
+            border: 2px solid #013878;
+            max-width: 97px;
+
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 105%; /* 18.9px */
+            letter-spacing: -0.45px;
+        }
+
+        .editInput {
+            height: 50px !important;
+        }
+    }
+
+    .passwordButton {
+        width: 129px;
+        height: 50px;
+
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 87.023%; /* 15.664px */
+        letter-spacing: -0.45px;
+    }
+
+    .submitButton {
+        width: 145px;
+        height: 50px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 87.023%; /* 15.664px */
+        letter-spacing: -0.45px;
+    }
+
+    .submitSubTitle {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 94.523%; /* 17.014px */
+        letter-spacing: -0.45px;
+        max-width: 276px;
+    }
+}

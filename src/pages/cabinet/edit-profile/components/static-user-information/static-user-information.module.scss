@@ -1,4 +1,3 @@
-
 .editProfileContent {
     position: relative;
     height: 78px;
@@ -30,4 +29,38 @@
         line-height: 87.023%; /* 24.366px */
         letter-spacing: -0.7px;
     }
+}
+
+@media screen and (max-width: 480px) {
+    .editProfileContent {
+        height: auto;
+        position: static;
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 15px;
+
+        .userFioInformation {
+            height: auto;
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 105%; /* 23.1px */
+            letter-spacing: -0.55px;
+        }
+
+        .goBackButton {
+            width: 102px;
+            height: 50px;
+            position: static;
+            align-self: flex-end;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 87.023%; /* 15.664px */
+            letter-spacing: -0.45px;
+
+        }
+    }
+
 }

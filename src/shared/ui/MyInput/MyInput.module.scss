@@ -90,7 +90,12 @@ textarea::-webkit-scrollbar-thumb {
 
 @media screen and (max-width: 490px) {
   .myInput {
-    border: 2px solid $blue-color;
-    height: 50px;
+      border: 2px solid $blue-color;
+      height: 50px;
+      font-size: 18px !important;
+      font-style: normal !important;
+      font-weight: 600 !important;
+      line-height: 105% !important; /* 18.9px */
+      letter-spacing: -0.45px !important;
   }
 }
