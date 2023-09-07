@@ -15,6 +15,7 @@ export const useNavigation = () => {
             return [
                 {to: '/lawyer-cabinet/market', name: 'Маркет заявок'},
                 {to: '/lawyer-cabinet/applications', name: 'Мои заявки'},
+                {to: "/lawyer-cabinet/profile", name: 'Профиль'}
             ]
         } else {
             return [
