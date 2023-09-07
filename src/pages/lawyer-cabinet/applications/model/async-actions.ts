@@ -5,7 +5,7 @@ import { applicationsSlice } from "./applicationsSlice";
 
 export const fetchApplications = () => async (dispatch: AppDispatch) => {
     try {
-        const response = await $api.get('/api/free_questions');
+        const response = await $api.get('/api/lawyer_questions');
         dispatch(applicationsSlice.actions.setApplications(response.data))
     } catch(error) {
         // err

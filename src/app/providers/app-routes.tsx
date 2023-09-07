@@ -41,14 +41,11 @@ const AppRoutes: React.FC = () => {
             }
 
             {/* Private Routes and Lawyer */}
-            {user?.is_lawyer && Cookies.get("token") ?
                 <Route path='/lawyer-cabinet/' element={<PageLayout />}>
                     <Route path='market' element={<Market />} />
                     <Route path='profile' element={<LawyerProfile />} />
                     <Route path='applications' element={<Applications />} />
                 </Route>
-                : <Route path='*' element={<Navigate to='/' replace />} />
-            }
 
         </Routes>
     )
