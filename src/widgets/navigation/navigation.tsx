@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import styles from "./navigation.module.scss";
 import MyButton from "shared/ui/MyButton/MyButton";
 import logo from "./assets/logo.svg";
@@ -10,15 +10,12 @@ import SignInModal from "./components/sign-in-modal/sign-in-modal";
 import SignUpModal from "./components/sign-up-modal/sign-up-modal";
 import { isMobile } from "shared/lib/helpers/isMobile";
 import Cookies from "js-cookie";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useScrollTo } from "shared/lib/hooks/useScrollTo";
 import SuccessRegisterModal from "./components/success-register-modal/success-register-modal";
 import ProfilePopup from "./components/profile-popup/profile-popup";
-import { ProfileLink } from "./model/types";
 
 const Navigation: React.FC = React.memo(function Navigation() {
-    const navigate = useNavigate();
-
     const {
       scrollToAboutUs, 
       scrollToAdvantages, 

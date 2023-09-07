@@ -1,43 +1,41 @@
 import React from 'react';
 import styles from "./appeals.module.scss";
-import Select from 'shared/ui/select/select';
 import { APPEALS } from './constants/constants';
-import MyButton from 'shared/ui/MyButton/MyButton';
-import AppealsList from './components/appeals-list/appeals-list';
-import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
+import { useTypedSelector } from 'shared/lib/hooks/redux';
 import { useAppeals } from './lib/hooks/useAppeals';
-import { supportChatSlice } from 'widgets/support-chat/model/supportChatSlice';
+import AppealsList from 'entities/appeals/appeals-list/appeals-list';
+import { useNavigate } from 'react-router-dom';
+import { AppealAndApplication } from 'shared/model/types';
+import AppealsFilter from 'entities/appeals/appeals-filter/appeals-filter';
 
 const Appeals: React.FC = () => {
-    const dispatch = useAppDispatch();
-
     const {appeals} = useTypedSelector((state) => state.appealsSlice);
     const {selectedAppealOption, onSelectAppealOption} = useAppeals();
+
+    const navigate = useNavigate();
+
+    const onSelectAppeal = function(appeal: AppealAndApplication) {
+        if(appeal.status === "candidates") {
+            navigate(`/cabinet/appeals/${appeal.question_id}`);
+            return;
+        }
+
+        if(appeal.status === "active") {
+            navigate(`/cabinet/chats/${appeal.question_id}`);
+            return;
+        }
+    }
 
     return (
         <div className={styles.appealsWrapper}>
             <section className={styles.pageContent}>
                 <h1 className={styles.pageTitle}>Мои обращения</h1>
-                <div className={styles.appealsFilter}>
-                    <Select 
-                        defaultValue='Статус обращения'
-                        options={APPEALS}
-                        onSelectOption={onSelectAppealOption}
-                        selectedOption={selectedAppealOption}
-                        selectWrapperClassName={styles.appealsFilter__select}
-                        selectOptionClassName={styles.selectOption}
-                    />
-                    <MyButton
-                        color='primary'
-                        variant='contained'
-                        btnClassName={styles.askQuestionButton}
-                        onClick={() => dispatch(supportChatSlice.actions.toggleLegalAdviceModalVisibility(true))}
-                    >
-                        Задать вопрос
-                    </MyButton>
-                </div>
-
-                <AppealsList appeals={appeals} />
+                <AppealsFilter 
+                    options={APPEALS}
+                    selectedAppealOption={selectedAppealOption}
+                    onSelectAppealOption={onSelectAppealOption}
+                />
+                <AppealsList appeals={appeals} onSelectAppeal={onSelectAppeal} />
             </section>
         </div>
     )

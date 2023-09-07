@@ -5,6 +5,7 @@ import authorizationSlice from 'widgets/navigation/model/authorizationSlice';
 import appealsSlice from 'pages/cabinet/appeals/model/appealsSlice';
 import supportChatSlice from 'widgets/support-chat/model/supportChatSlice';
 import chatsApplicationsSlice from 'entities/chats-applications/model/chatsApplicationsSlice';
+import applicationsSlice from 'pages/lawyer-cabinet/applications/model/applicationsSlice';
 
 const rootReducer = combineReducers({
     userSlice,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
     appealsSlice,
     authorizationSlice,
     interestedLawyersSlice,
-    chatsApplicationsSlice
+    chatsApplicationsSlice,
+    applicationsSlice
 })
 
 export const setupStore = () => {

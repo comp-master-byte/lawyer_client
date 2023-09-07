@@ -1,0 +1,28 @@
+.applicationsWrapper {
+    margin-bottom: 77px;
+    margin-top: 77px;
+}
+
+.pageTitle {
+    text-align: center;
+    color:  #013878;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 90%; 
+    letter-spacing: -1.2px;
+    margin-bottom: 52px;
+}
+
+@media screen and (max-width: 480px) {
+    .applicationsWrapper {
+        margin-top: 40px;
+        margin-bottom: 55px;
+    }
+    .pageTitle {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 90%; /* 27px */
+        letter-spacing: -0.75px;
+        margin-bottom: 23px;
+    }
+}

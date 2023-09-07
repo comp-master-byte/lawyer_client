@@ -13,7 +13,8 @@ export const useNavigation = () => {
     const memoizedProfileLinks: ProfileLink[] = useMemo(() => {
         if(user?.is_lawyer) {
             return [
-                {to: '/lawyer-cabinet/applications', name: 'Мои заявки'}
+                {to: '/lawyer-cabinet/market', name: 'Маркет заявок'},
+                {to: '/lawyer-cabinet/applications', name: 'Мои заявки'},
             ]
         } else {
             return [
