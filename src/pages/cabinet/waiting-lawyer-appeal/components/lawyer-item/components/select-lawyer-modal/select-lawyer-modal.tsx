@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styles from "./select-lawyer-modal.module.scss";
-import InterestedLawyerModal from 'entities/insterested-lawyer-modal/insterested-lawyer-modal';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import { useNavigate, useParams } from 'react-router-dom';
 import Lawyer from 'pages/cabinet/waiting-lawyer-appeal/api/Lawyer';
+import InterestedLawyerModal from 'entities/layouts/insterested-lawyer-modal/insterested-lawyer-modal';
 
 interface SelectLawyerModalProps {
     isModalVisible: boolean;

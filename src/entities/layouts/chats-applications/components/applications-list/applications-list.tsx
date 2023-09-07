@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./applications-list.module.scss";
 import ApplicationItem from '../application-item/application-item';
-import { ChatItem } from 'entities/chats-applications/model/types';
+import { ChatItem } from '../../model/types';
 
 interface ApplicationsListProps {
     applications: ChatItem[]

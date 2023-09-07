@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from "./edit-password-modal.module.scss";
-import AuthorizationModalLayout from 'entities/authorization/authorization-modal-layout/authorization-modal-layout';
+import AuthorizationModalLayout from 'entities/layouts/authorization-modal-layout/authorization-modal-layout';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import MyButton from 'shared/ui/MyButton/MyButton';

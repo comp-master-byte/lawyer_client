@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./lawyer-response-modal.module.scss";
 import MyButton from 'shared/ui/MyButton/MyButton';
-import InterestedLawyerModal from 'entities/insterested-lawyer-modal/insterested-lawyer-modal';
+import InterestedLawyerModal from 'entities/layouts/insterested-lawyer-modal/insterested-lawyer-modal';
 
 interface LawyerResponseModalProps {
     isLawyerResponseVisible: boolean;

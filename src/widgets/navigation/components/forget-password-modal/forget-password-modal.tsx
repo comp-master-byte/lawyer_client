@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./forget-password-modal.module.scss";
-import AuthorizationModalLayout from 'entities/authorization/authorization-modal-layout/authorization-modal-layout';
+import AuthorizationModalLayout from 'entities/layouts/authorization-modal-layout/authorization-modal-layout';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { ForgetPassword } from 'widgets/navigation/model/types';

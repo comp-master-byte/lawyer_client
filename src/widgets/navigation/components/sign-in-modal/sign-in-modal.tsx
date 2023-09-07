@@ -7,7 +7,7 @@ import MyButton from 'shared/ui/MyButton/MyButton';
 import { SignInValues } from 'widgets/navigation/model/types';
 import Auth from 'widgets/navigation/api/Auth';
 import classNames from 'classnames';
-import AuthorizationModalLayout from 'entities/authorization/authorization-modal-layout/authorization-modal-layout';
+import AuthorizationModalLayout from 'entities/layouts/authorization-modal-layout/authorization-modal-layout';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';

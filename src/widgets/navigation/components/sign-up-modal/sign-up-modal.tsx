@@ -9,7 +9,7 @@ import { REGISTER_TYPE } from 'widgets/navigation/constants/constants';
 import Checkbox from 'shared/ui/checkbox/checkbox';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import Auth from 'widgets/navigation/api/Auth';
-import AuthorizationModalLayout from 'entities/authorization/authorization-modal-layout/authorization-modal-layout';
+import AuthorizationModalLayout from 'entities/layouts/authorization-modal-layout/authorization-modal-layout';
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { authorizationSlice } from 'widgets/navigation/model/authorizationSlice';
 

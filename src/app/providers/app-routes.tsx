@@ -2,7 +2,6 @@ import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from 'pages/home/home';
 import Appeals from 'pages/cabinet/appeals/appeals';
-import PageLayout from 'entities/page-layout/page-layout';
 import PrivacyPolicy from 'pages/privacy-policy/privacy-policy';
 import TermsOfUse from 'pages/terms-of-use/terms-of-use';
 import EditProfile from 'pages/cabinet/edit-profile/edit-profile';
@@ -10,10 +9,11 @@ import WaitingLawyerAppeal from 'pages/cabinet/waiting-lawyer-appeal/waiting-law
 import { useTypedSelector } from 'shared/lib/hooks/redux';
 import Cookies from 'js-cookie';
 import LawyerProfile from 'pages/lawyer-cabinet/lawyer-profile/lawyer-profile';
-import ChatsApplications from 'entities/chats-applications/chats-applications';
 import ChatWithLawyer from 'pages/cabinet/chat-with-lawyer/chat-with-lawyer';
 import Applications from 'pages/lawyer-cabinet/applications/applications';
 import Market from 'pages/lawyer-cabinet/market/market';
+import PageLayout from 'entities/layouts/page-layout/page-layout';
+import ChatsApplications from 'entities/layouts/chats-applications/chats-applications';
 
 const AppRoutes: React.FC = () => {
     const {user} = useTypedSelector((state) => state.userSlice);
