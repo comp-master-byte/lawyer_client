@@ -39,7 +39,7 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
             dispatch(userSlice.actions.setUser(response.user));
             closeSignInModal();
             if(response.user.is_lawyer) {
-                navigate('/lawyer-cabinet/profile');
+                navigate('/lawyer-cabinet/applications');
             } else {
                 navigate('/cabinet/appeals');
             }

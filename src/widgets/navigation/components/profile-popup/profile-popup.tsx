@@ -5,13 +5,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { toast } from 'react-toastify';
 import $api from 'shared/api/http';
+import { ProfileLink } from 'widgets/navigation/model/types';
 
 interface ProfilePopupProps {
     isPopupVisible: boolean;
     closeProfilePopup: () => void;
+    profileLinks: ProfileLink[];
 }
 
-const ProfilePopup: React.FC<ProfilePopupProps> = ({isPopupVisible, closeProfilePopup}) => {
+const ProfilePopup: React.FC<ProfilePopupProps> = ({isPopupVisible, closeProfilePopup, profileLinks}) => {
     const navigate = useNavigate();
 
     const logout = async function() {
@@ -30,12 +32,23 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({isPopupVisible, closeProfile
             [styles.visible]: isPopupVisible
         })}>
             <div className={styles.profileMenuLinks}>
+                {profileLinks.map((link) => 
+                    <Link 
+                        key={link.to}
+                        to={link.to} 
+                        onClick={closeProfilePopup} 
+                        className={styles.pageLink}
+                    >
+                        {link.name}
+                    </Link>
+                )}
+{/* 
                 <Link 
                     to='/cabinet/appeals' 
                     onClick={closeProfilePopup} 
                     className={styles.pageLink}
                 >
-                    Мои обращения
+                   
                 </Link>
                 <Link 
                     to='/cabinet/chats' 
@@ -49,8 +62,8 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({isPopupVisible, closeProfile
                     onClick={closeProfilePopup} 
                     className={styles.pageLink}
                 >
-                    Редактировать профиль
-                </Link>
+                    
+                </Link> */}
                 <div 
                     onClick={logout} 
                     className={styles.pageLink}

@@ -12,6 +12,7 @@ import Cookies from 'js-cookie';
 import LawyerProfile from 'pages/lawyer-cabinet/lawyer-profile/lawyer-profile';
 import ChatsApplications from 'entities/chats-applications/chats-applications';
 import ChatWithLawyer from 'pages/cabinet/chat-with-lawyer/chat-with-lawyer';
+import Applications from 'pages/lawyer-cabinet/applications/applications';
 
 const AppRoutes: React.FC = () => {
     const {user} = useTypedSelector((state) => state.userSlice);
@@ -42,6 +43,7 @@ const AppRoutes: React.FC = () => {
             {user?.is_lawyer && Cookies.get("token") ?
                 <Route path='/lawyer-cabinet/' element={<PageLayout />}>
                     <Route path='profile' element={<LawyerProfile />} />
+                    <Route path='applications' element={<Applications />} />
                 </Route>
                 : <Route path='*' element={<Navigate to='/' replace />} />
             }

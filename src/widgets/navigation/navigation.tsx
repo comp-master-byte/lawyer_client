@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "./navigation.module.scss";
 import MyButton from "shared/ui/MyButton/MyButton";
 import logo from "./assets/logo.svg";
-import vk from "./assets/vk.svg";
 import { useNavigation } from "./lib/hooks/useNavigation";
 import classNames from "classnames";
-import { VK_LINK } from "shared/constants/constants";
 import { useAuthorization } from "./lib/hooks/useAuthorization";
 import ForgetPasswordModal from "./components/forget-password-modal/forget-password-modal";
 import SignInModal from "./components/sign-in-modal/sign-in-modal";
@@ -16,6 +14,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useScrollTo } from "shared/lib/hooks/useScrollTo";
 import SuccessRegisterModal from "./components/success-register-modal/success-register-modal";
 import ProfilePopup from "./components/profile-popup/profile-popup";
+import { ProfileLink } from "./model/types";
 
 const Navigation: React.FC = React.memo(function Navigation() {
     const navigate = useNavigate();
@@ -33,12 +32,12 @@ const Navigation: React.FC = React.memo(function Navigation() {
       closeMobileNavigation,
       isProfilePopupVisible,
       profilePopupRef,
+      memoizedProfileLinks,
       closeProfilePopup,
       toggleProfilePopupVisibility
     } = useNavigation();
 
     const {
-      isSignInModalVisible,
       openSignInModal,
       closeSignInModal,
       openSignUpModal,
@@ -149,7 +148,11 @@ const Navigation: React.FC = React.memo(function Navigation() {
                                 >
                                     Профиль
                                 </MyButton>
-                                <ProfilePopup closeProfilePopup={closeProfilePopup} isPopupVisible={isProfilePopupVisible} />
+                                <ProfilePopup 
+                                    profileLinks={memoizedProfileLinks}
+                                    closeProfilePopup={closeProfilePopup} 
+                                    isPopupVisible={isProfilePopupVisible} 
+                                />
                             </div>
                         :
                             <MyButton 

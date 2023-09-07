@@ -21,3 +21,8 @@ export interface AuthorizationState {
     isRegisterModalVisible: boolean;
     isSuccessRegisterModalVisible: boolean;
 }
+
+export interface ProfileLink {
+    to: string;
+    name: string;
+}
