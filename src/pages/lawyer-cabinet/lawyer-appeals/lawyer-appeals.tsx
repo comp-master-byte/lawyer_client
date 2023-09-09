@@ -8,8 +8,10 @@ import ApplicationItem from './components/lawyer-appeal-item/lawyer-appeal-item'
 import AppealsList from 'entities/appeals/appeals-list/appeals-list';
 import { LAWYER_APPEALS } from './constants/constants';
 import { ISelectOption, LawyerStatus } from 'shared/model/types';
+import { useNavigate } from 'react-router-dom';
 
 const LawyerAppeals: React.FC = () => {
+    const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
     const {applications} = useTypedSelector(state => state.lawyerAppealsSlice);
@@ -38,6 +40,8 @@ const LawyerAppeals: React.FC = () => {
                     options={LAWYER_APPEALS}
                     onSelectAppealOption={onSelectFilterOption}
                     selectedAppealOption={selectedOption}
+                    blueButtonCallback={() => navigate('/lawyer-cabinet/market')}
+                    blueButtonText='Маркет заявок'
                 />
                 <AppealsList 
                     appeals={applications} 

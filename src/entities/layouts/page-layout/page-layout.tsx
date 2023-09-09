@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from "./page-layout.module.scss";
 import { Outlet, useLocation } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/redux';
+import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import Footer from 'widgets/footer/footer';
 import Navigation from 'widgets/navigation/navigation';
 import { Helmet } from 'react-helmet-async';
@@ -12,6 +12,8 @@ import { fetchUser } from 'features/user/model/async-actions';
 const PageLayout: React.FC = () => {
     const dispatch = useAppDispatch();
     const {pathname} = useLocation();
+
+    const {user} = useTypedSelector(state => state.userSlice);
 
     useEffect(() => {
         const user = localStorage.getItem('user');
@@ -38,7 +40,7 @@ const PageLayout: React.FC = () => {
                     <Outlet />
                 </div>
             </div>
-            <SupportChat />
+            {!user?.is_lawyer && <SupportChat />}
             <Footer />
         </div>
     )

@@ -2,19 +2,17 @@ import React from 'react';
 import styles from "./appeals-filter.module.scss";
 import Select from 'shared/ui/select/select';
 import { ISelectOption } from 'shared/model/types';
-import { useAppDispatch } from 'shared/lib/hooks/redux';
-import { supportChatSlice } from 'widgets/support-chat/model/supportChatSlice';
 import MyButton from 'shared/ui/MyButton/MyButton';
 
 interface AppealsFilterProps {
     options: ISelectOption[];
     selectedAppealOption: ISelectOption|null;
     onSelectAppealOption: (option: ISelectOption) => void;
+    blueButtonCallback: () => void;
+    blueButtonText: string;
 }
 
-const AppealsFilter: React.FC<AppealsFilterProps> = ({onSelectAppealOption, options, selectedAppealOption}) => {
-    const dispatch = useAppDispatch();
-
+const AppealsFilter: React.FC<AppealsFilterProps> = ({onSelectAppealOption, options, selectedAppealOption, blueButtonCallback, blueButtonText}) => {
     return (
         <div className={styles.appealsFilter}>
             <Select 
@@ -29,9 +27,9 @@ const AppealsFilter: React.FC<AppealsFilterProps> = ({onSelectAppealOption, opti
                 color='primary'
                 variant='contained'
                 btnClassName={styles.askQuestionButton}
-                onClick={() => dispatch(supportChatSlice.actions.toggleLegalAdviceModalVisibility(true))}
+                onClick={blueButtonCallback}
             >
-                Задать вопрос
+                {blueButtonText}
             </MyButton>
         </div>
 
