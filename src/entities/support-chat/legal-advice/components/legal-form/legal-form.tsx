@@ -41,9 +41,11 @@ const LegalForm: React.FC = () => {
                 })} 
             />
 
-            <Checkbox isChecked={isChecked} onChecked={onChecked} />
+            <div>
+                <Checkbox isChecked={isChecked} onChecked={onChecked} />
+                {triggerCheckedError && <ErrorText />}
+            </div>
 
-            {triggerCheckedError && <ErrorText />}
 
             <MyButton 
                 color='secondary' 
