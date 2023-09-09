@@ -10,4 +10,5 @@ export interface AppealAndApplication {
     status: string;
 }
 
-export type StatusQuery = 'new'|'active'|'complete'|'candidates'
+export type StatusQuery = 'new'|'active'|'complete'|'candidates';
+export type LawyerStatus = 'active'|'deny'|'complete'|'candidates';

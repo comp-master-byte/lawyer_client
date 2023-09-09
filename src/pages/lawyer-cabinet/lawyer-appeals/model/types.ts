@@ -1,4 +1,4 @@
-import { StatusQuery } from "shared/model/types";
+import { LawyerStatus } from "shared/model/types";
 
 export interface Application {
     cost: number;
@@ -8,7 +8,7 @@ export interface Application {
         created_by: number;
         question_id: number;
         question_text: string;
-        status: StatusQuery;
+        status: LawyerStatus;
         status_name: string;
         topic: string;
     }
