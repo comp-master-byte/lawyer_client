@@ -5,7 +5,7 @@ const initialState: ApplicationsState = {
     applications: []
 }
 
-export const applicationsSlice = createSlice({
+export const lawyerAppealsSlice = createSlice({
     name: 'applications-slice',
     initialState,
     reducers: {
@@ -15,4 +15,4 @@ export const applicationsSlice = createSlice({
     }
 })
 
-export default applicationsSlice.reducer;
+export default lawyerAppealsSlice.reducer;

@@ -1,9 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
-import { ISelectOption } from "shared/model/types";
+import { ISelectOption, StatusQuery } from "shared/model/types";
 import { fetchAppeals } from "../../model/async-actions";
 import { appealsSlice } from "../../model/appealsSlice";
-import { StatusQuery } from "../../model/types";
 
 export const useAppeals = () => {
     const dispatch = useAppDispatch();

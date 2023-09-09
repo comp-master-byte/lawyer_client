@@ -1,10 +1,10 @@
-export type StatusQuery = 'new'|'active'|'complete'|'candidates'
+import { StatusQuery } from "shared/model/types";
 
 export interface Appeal {
     question_id: number;
-    question_text: string,
-    topic: string,
-    created_by: number,
+    question_text: string;
+    topic: string;
+    created_by: number;
     status: StatusQuery,
     status_name: string,
     interested_lawyers: any[],

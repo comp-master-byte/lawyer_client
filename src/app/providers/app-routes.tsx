@@ -10,10 +10,10 @@ import { useTypedSelector } from 'shared/lib/hooks/redux';
 import Cookies from 'js-cookie';
 import LawyerProfile from 'pages/lawyer-cabinet/lawyer-profile/lawyer-profile';
 import ChatWithLawyer from 'pages/cabinet/chat-with-lawyer/chat-with-lawyer';
-import Applications from 'pages/lawyer-cabinet/applications/applications';
 import Market from 'pages/lawyer-cabinet/market/market';
 import PageLayout from 'entities/layouts/page-layout/page-layout';
 import ChatsApplications from 'entities/layouts/chats-applications/chats-applications';
+import LawyerAppeals from 'pages/lawyer-cabinet/lawyer-appeals/lawyer-appeals';
 
 const AppRoutes: React.FC = () => {
     const {user} = useTypedSelector((state) => state.userSlice);
@@ -44,7 +44,7 @@ const AppRoutes: React.FC = () => {
                 <Route path='/lawyer-cabinet/' element={<PageLayout />}>
                     <Route path='market' element={<Market />} />
                     <Route path='profile' element={<LawyerProfile />} />
-                    <Route path='applications' element={<Applications />} />
+                    <Route path='applications' element={<LawyerAppeals />} />
                 </Route>
 
         </Routes>

@@ -1,15 +1,13 @@
 import React from 'react';
 import styles from "./appeal-item.module.scss";
-import { AppealAndApplication } from 'shared/model/types';
+import { Appeal } from 'pages/cabinet/appeals/model/types';
 
 interface AppealItemProps {
-    appeal: AppealAndApplication;
-    onSelectAppeal: (appeal: AppealAndApplication) => void;
+    appeal: Appeal;
+    onSelectAppeal: (appeal: Appeal) => void;
 }
 
 const AppealItem: React.FC<AppealItemProps> = ({appeal, onSelectAppeal}) => {
-    
-
     return (
         <div onClick={() => onSelectAppeal(appeal)} className={styles.appealItemWrapper}>
             <h3 className={styles.appealTitle}>Обращение {appeal.question_id}</h3>

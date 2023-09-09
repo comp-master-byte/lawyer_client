@@ -1,7 +1,8 @@
 import { AppDispatch } from "app/store/store";
 import $api from "shared/api/http";
 import { appealsSlice } from "./appealsSlice";
-import { Appeal, StatusQuery } from "./types";
+import { Appeal } from "./types";
+import { StatusQuery } from "shared/model/types";
 
 
 export const fetchAppeals = (offset: number, status?: StatusQuery) => async (dispatch: AppDispatch) => {

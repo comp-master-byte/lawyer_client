@@ -7,6 +7,8 @@ import AppealsList from 'entities/appeals/appeals-list/appeals-list';
 import { useNavigate } from 'react-router-dom';
 import { AppealAndApplication } from 'shared/model/types';
 import AppealsFilter from 'entities/appeals/appeals-filter/appeals-filter';
+import { Appeal } from './model/types';
+import AppealItem from 'entities/appeals/appeal-item/appeal-item';
 
 const Appeals: React.FC = () => {
     const {appeals} = useTypedSelector((state) => state.appealsSlice);
@@ -35,7 +37,10 @@ const Appeals: React.FC = () => {
                     selectedAppealOption={selectedAppealOption}
                     onSelectAppealOption={onSelectAppealOption}
                 />
-                <AppealsList appeals={appeals} onSelectAppeal={onSelectAppeal} />
+                <AppealsList 
+                    appeals={appeals}
+                    renderItem={(item: Appeal) => <AppealItem key={item.question_id} appeal={item} onSelectAppeal={onSelectAppeal} />}
+                />
             </section>
         </div>
     )

@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
-import styles from "./applications.module.scss";
+import styles from "./lawyer-appeals.module.scss";
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { fetchApplications } from './model/async-actions';
-import AppealsList from 'entities/appeals/appeals-list/appeals-list';
-import { AppealAndApplication } from 'shared/model/types';
 import AppealsFilter from 'entities/appeals/appeals-filter/appeals-filter';
+import { Application } from './model/types';
+import ApplicationItem from './components/lawyer-appeal-item/lawyer-appeal-item';
+import AppealsList from 'entities/appeals/appeals-list/appeals-list';
 
-const Applications: React.FC = () => {
+const LawyerAppeals: React.FC = () => {
     const dispatch = useAppDispatch();
 
-    const {applications} = useTypedSelector(state => state.applicationsSlice);
+    const {applications} = useTypedSelector(state => state.lawyerAppealsSlice);
 
-    const onSelectAppeal = (appeal: AppealAndApplication) => {
+    const onSelectAppeal = (appeal: Application) => {
 
     }
 
@@ -29,10 +30,15 @@ const Applications: React.FC = () => {
                     onSelectAppealOption={(item) => ''}
                     selectedAppealOption={null}
                 />
-                <AppealsList appeals={applications} onSelectAppeal={onSelectAppeal} />
+                <AppealsList 
+                    appeals={applications} 
+                    renderItem={(item: Application) => 
+                        <ApplicationItem key={item.question.question_id} onSelectItem={onSelectAppeal} item={item} />
+                    }
+                />
             </div>
         </section>
     )
 }
 
-export default Applications;
+export default LawyerAppeals;

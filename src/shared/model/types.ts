@@ -9,3 +9,5 @@ export interface AppealAndApplication {
     status_name: string;
     status: string;
 }
+
+export type StatusQuery = 'new'|'active'|'complete'|'candidates'
