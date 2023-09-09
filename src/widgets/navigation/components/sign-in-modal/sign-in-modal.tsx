@@ -21,7 +21,7 @@ interface SignInModalProps {
 
 const SignInModal: React.FC<SignInModalProps> = (props) => {
     const {closeSignInModal, openSignUpModal, openForgetPasswordModal} = props;
-    const {register, handleSubmit, formState: {errors}, setError} = useForm<SignInValues>({mode: "all"});
+    const {register, handleSubmit, formState: {errors}, setError, reset} = useForm<SignInValues>({mode: "all"});
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
@@ -43,6 +43,7 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
             } else {
                 navigate('/cabinet/appeals');
             }
+            reset({email: "", password: ""})
         }
     }
 
