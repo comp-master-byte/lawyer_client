@@ -18,7 +18,7 @@ const FreeQuestionItem: React.FC<ApplicationItemProps> = ({application}) => {
                         <p className={styles.topic}>{application.topic}</p>
                     </div>
                 </div>
-                <div className={styles.applicationWrapper}>
+                <div className={styles.applicationButtonWrapper}>
                     <MyButton
                         color='primary'
                         variant='contained'
@@ -38,6 +38,7 @@ const FreeQuestionItem: React.FC<ApplicationItemProps> = ({application}) => {
                 </div>
             </div>
         </div>
+
     )
 }
 
