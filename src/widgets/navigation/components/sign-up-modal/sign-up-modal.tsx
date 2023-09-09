@@ -12,6 +12,7 @@ import Auth from 'widgets/navigation/api/Auth';
 import AuthorizationModalLayout from 'entities/layouts/authorization-modal-layout/authorization-modal-layout';
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { authorizationSlice } from 'widgets/navigation/model/authorizationSlice';
+import ErrorText from 'shared/styled-components/error-text/error-text';
 
 interface SignUpModalProps {
     openSignInModal: () => void;
@@ -27,8 +28,24 @@ const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
     const {isRegisterModalVisible} = useTypedSelector(state => state.authorizationSlice);
 
     const [isLoading, setIsLoading] = useState(false);
+    const [isChecked, setIsChecked] = useState(false);
+    const [triggerCheckedError, setIsTriggerCheckedError] = useState(false);
+
+    const onChecked = function(e: React.ChangeEvent<HTMLInputElement>) {
+        const checked = e.target.checked
+        setIsChecked(checked);
+
+        if(checked) {
+            setIsTriggerCheckedError(false);
+        }
+    }
 
     const onSubmitSignUpForm: SubmitHandler<SignUpValues> = async (data) => {
+        if(!isChecked) {
+            setIsTriggerCheckedError(true);
+            return;
+        }
+
         setIsLoading(true);
         const response = await Auth.register(data, setError);
         setIsLoading(false);
@@ -86,7 +103,8 @@ const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
                         register={register("password", {required: "Это поле обязательное!"})}
                     />
                 </div>
-                <Checkbox />
+                <Checkbox isChecked={isChecked} onChecked={onChecked} />
+                {triggerCheckedError && <ErrorText />} 
                 <MyButton 
                     disabled={isLoading}
                     color='secondary' 

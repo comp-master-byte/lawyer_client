@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./contact-form.module.scss";
 import { useForm, SubmitHandler } from "react-hook-form";
 import MyButton from "shared/ui/MyButton/MyButton";
@@ -8,17 +8,35 @@ import { EMAIL_REGEX } from "shared/constants/constants";
 import Checkbox from "shared/ui/checkbox/checkbox";
 import MyInput from "shared/ui/MyInput/MyInput";
 import TextArea from "shared/ui/MyInput/textarea";
+import ErrorText from "shared/styled-components/error-text/error-text";
 
 const ContactForm: React.FC = React.memo(function ContactForm() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<ContractFormValues>({mode: "all"});
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm<ContractFormValues>({mode: "all"});
 
-  const onSubmit: SubmitHandler<ContractFormValues> = async (data) => {
-      return await QuestionForm.questionToEmail(data);
-  };
+    const [isChecked, setIsChecked] = useState(false);
+    const [triggerCheckedError, setIsTriggerCheckedError] = useState(false);
+
+    const onChecked = function(e: React.ChangeEvent<HTMLInputElement>) {
+      const checked = e.target.checked
+      setIsChecked(checked);
+
+      if(checked) {
+          setIsTriggerCheckedError(false);
+      }
+  }
+
+    const onSubmit: SubmitHandler<ContractFormValues> = async (data) => {
+        if(!isChecked) {
+          setIsTriggerCheckedError(true);
+          return;
+        }
+        
+        return await QuestionForm.questionToEmail(data);
+    };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.contactForm}>
@@ -54,7 +72,8 @@ const ContactForm: React.FC = React.memo(function ContactForm() {
       </div>
       
       <div className={styles.checkboxWrapper}>
-        <Checkbox />
+        <Checkbox isChecked={isChecked} onChecked={onChecked} />
+        {triggerCheckedError && <ErrorText />}
       </div>
 
       <MyButton btnClassName={styles.submitButton} color="primary" variant="contained" size="large">

@@ -25,13 +25,13 @@
   margin-bottom: 9px;
 
   &__input {
-    border-radius: 30px;
+    border-radius: 30px !important;
   }
 
   &__textarea {
-    width: 100%;
-    height: 222px;
-    border-radius: 30px;
+    width: 100% !important;
+    height: 222px !important;
+    border-radius: 30px !important;
 
     &::placeholder {
       opacity: 0.4;

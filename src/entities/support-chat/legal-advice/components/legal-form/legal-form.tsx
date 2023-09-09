@@ -6,13 +6,17 @@ import Checkbox from 'shared/ui/checkbox/checkbox';
 import { THEMES } from 'shared/constants/constants';
 import ControllerSelect from 'shared/ui/select/controller-select';
 import { useLegalAdviceForm } from '../../hooks/useLegalAdviceForm';
+import ErrorText from 'shared/styled-components/error-text/error-text';
 
 const LegalForm: React.FC = () => {
     const {
         register,
         errors,
-        handleSubmit,
         control,
+        isChecked, 
+        onChecked,
+        handleSubmit,
+        triggerCheckedError,
         onSubmitAdviceForm
     } = useLegalAdviceForm();
 
@@ -37,7 +41,9 @@ const LegalForm: React.FC = () => {
                 })} 
             />
 
-            <Checkbox />
+            <Checkbox isChecked={isChecked} onChecked={onChecked} />
+
+            {triggerCheckedError && <ErrorText />}
 
             <MyButton 
                 color='secondary' 
