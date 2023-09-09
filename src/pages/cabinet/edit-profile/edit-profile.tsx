@@ -7,10 +7,10 @@ import MyInput from 'shared/ui/MyInput/MyInput';
 import { EMAIL_REGEX } from 'shared/constants/constants';
 import { EditProfileValues } from './model/types';
 import Edit from './api/Edit';
-import { userSlice } from 'app/store/userSlice';
 import StaticUserInformation from './components/static-user-information/static-user-information';
 import EditPasswordModal from './components/edit-password-modal/edit-password-modal';
 import classNames from 'classnames';
+import { userSlice } from 'features/user/model/userSlice';
 
 const EditProfile: React.FC = () => {
     const {register, formState: {errors, isDirty, isSubmitSuccessful}, handleSubmit, reset} = useForm<EditProfileValues>({mode: "all"});

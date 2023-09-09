@@ -1,12 +1,12 @@
 import marketSlice from 'pages/lawyer-cabinet/market/model/marketSlice';
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import interestedLawyersSlice from 'pages/cabinet/waiting-lawyer-appeal/model/interestedLawyersSlice';
-import userSlice from './userSlice';
 import authorizationSlice from 'widgets/navigation/model/authorizationSlice';
 import appealsSlice from 'pages/cabinet/appeals/model/appealsSlice';
 import supportChatSlice from 'widgets/support-chat/model/supportChatSlice';
 import lawyerAppealsSlice from 'pages/lawyer-cabinet/lawyer-appeals/model/lawyerAppealsSlice';
 import chatsApplicationsSlice from 'entities/layouts/chats-applications/model/chatsApplicationsSlice';
+import userSlice from 'features/user/model/userSlice'
 
 const rootReducer = combineReducers({
     userSlice,

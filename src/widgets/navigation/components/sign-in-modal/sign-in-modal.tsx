@@ -11,7 +11,7 @@ import AuthorizationModalLayout from 'entities/layouts/authorization-modal-layou
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
-import { userSlice } from 'app/store/userSlice';
+import { userSlice } from 'features/user/model/userSlice';
 
 interface SignInModalProps {
     closeSignInModal: () => void;

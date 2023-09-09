@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import styles from "./page-layout.module.scss";
-import { fetchUser } from 'app/store/async-actions';
-import { userSlice } from 'app/store/userSlice';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useAppDispatch } from 'shared/lib/hooks/redux';
 import Footer from 'widgets/footer/footer';
 import Navigation from 'widgets/navigation/navigation';
 import { Helmet } from 'react-helmet-async';
 import SupportChat from 'widgets/support-chat/support-chat';
+import { userSlice } from 'features/user/model/userSlice';
+import { fetchUser } from 'features/user/model/async-actions';
 
 const PageLayout: React.FC = () => {
     const dispatch = useAppDispatch();
