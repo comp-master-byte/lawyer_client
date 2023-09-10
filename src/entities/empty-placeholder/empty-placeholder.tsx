@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from "./empty-placeholder.module.scss";
 import MyButton from 'shared/ui/MyButton/MyButton';
-import personSvg from "./assets/person.png";
 import { useNavigate } from 'react-router-dom';
 
 const EmptyPlaceholder: React.FC = () => {
@@ -9,23 +8,18 @@ const EmptyPlaceholder: React.FC = () => {
 
     return (
         <div className={styles.emptyPlaceholderWrapper}>
-            <h1 className={styles.emptyPlaceholderTitle}>
-                Этот раздел сейчас в разработке, но будет запущен уже совсем скоро! 
-            </h1>
-            <p className={styles.emptyPlaceholderText}>
-                По всем вопросам вы можете написать нам на почту <span>support@juraprav.ru</span>
+            <p className={styles.emptyText}>
+                Вам сначала требуется заполнить профиль и пройти верификацию, чтобы получить доступ к заявкам
             </p>
-            <MyButton 
-                color='primary' 
-                variant='contained' 
-                btnClassName={styles.emptyPlaceholderButton}
-                onClick={() => navigate('/')}
+            <MyButton
+                color='secondary'
+                variant='contained'
+                size='large'
+                btnClassName={styles.emptyButton}
+                onClick={() => navigate('/lawyer-cabinet/profile')}
             >
-                На главную
+                Перейти к заполнению профиля
             </MyButton>
-            <div className={styles.emptyPlaceholderSvg}>
-                <img src={personSvg} alt="" />
-            </div>
         </div>
     )
 }

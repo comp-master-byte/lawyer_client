@@ -35,6 +35,14 @@
     margin-left: 20px;
 }
 
+.secondary {
+    border: 3px solid $orange-color;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
 .searchIcon {
     position: absolute;
     top: 50%;

@@ -15,6 +15,7 @@ const PageLayout: React.FC = () => {
 
     const {user} = useTypedSelector(state => state.userSlice);
 
+
     useEffect(() => {
         const user = localStorage.getItem('user');
 
@@ -35,11 +36,11 @@ const PageLayout: React.FC = () => {
                 <link rel="canonical" href={pathname} />
             </Helmet>
             <Navigation />  
-            <div className={styles.pageContentWrapper}>
-                <div className={styles.container}>
-                    <Outlet />
+                <div className={styles.pageContentWrapper}>
+                    <div className={styles.container}>
+                        <Outlet />
+                    </div>
                 </div>
-            </div>
             {!user?.is_lawyer && <SupportChat />}
             <Footer />
         </div>

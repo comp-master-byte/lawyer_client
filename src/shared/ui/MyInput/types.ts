@@ -7,4 +7,7 @@ export interface MyInputProps {
     inputClassName?: string;
     hasSearch?: boolean;
     hasFile?: boolean;
+    variant?: 'primary'|'secondary';
+    disabled?: boolean;
+    labelClassName?: string;
 }

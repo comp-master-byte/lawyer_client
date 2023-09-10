@@ -9,10 +9,14 @@ import AppealsList from 'entities/appeals/appeals-list/appeals-list';
 import { LAWYER_APPEALS } from './constants/constants';
 import { ISelectOption, LawyerStatus } from 'shared/model/types';
 import { useNavigate } from 'react-router-dom';
+import { useVarification } from 'shared/lib/hooks/useVarification';
+import EmptyPlaceholder from 'entities/empty-placeholder/empty-placeholder';
 
 const LawyerAppeals: React.FC = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
+
+    const {isLawyerCompletedProfile} = useVarification()
 
     const {applications} = useTypedSelector(state => state.lawyerAppealsSlice);
 
@@ -36,19 +40,25 @@ const LawyerAppeals: React.FC = () => {
             <div className={styles.applicationContent}>
                 <h1 className={styles.pageTitle}>Мои заявки</h1>
 
-                <AppealsFilter 
-                    options={LAWYER_APPEALS}
-                    onSelectAppealOption={onSelectFilterOption}
-                    selectedAppealOption={selectedOption}
-                    blueButtonCallback={() => navigate('/lawyer-cabinet/market')}
-                    blueButtonText='Маркет заявок'
-                />
-                <AppealsList 
-                    appeals={applications} 
-                    renderItem={(item: Application) => 
-                        <ApplicationItem key={item.question.question_id} onSelectItem={onSelectAppeal} item={item} />
-                    }
-                />
+                {isLawyerCompletedProfile ? 
+                    <React.Fragment>
+                        <AppealsFilter 
+                            options={LAWYER_APPEALS}
+                            onSelectAppealOption={onSelectFilterOption}
+                            selectedAppealOption={selectedOption}
+                            blueButtonCallback={() => navigate('/lawyer-cabinet/market')}
+                            blueButtonText='Маркет заявок'
+                        />
+                        <AppealsList 
+                            appeals={applications} 
+                            renderItem={(item: Application) => 
+                                <ApplicationItem key={item.question.question_id} onSelectItem={onSelectAppeal} item={item} />
+                            }
+                        />
+                    </React.Fragment>
+
+                    : <EmptyPlaceholder />  
+                }
             </div>
         </section>
     )

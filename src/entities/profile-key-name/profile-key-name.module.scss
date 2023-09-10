@@ -1,0 +1,22 @@
+.keyName {
+    height: 81px;
+    max-width: 167px;
+    width: 100%;
+    border-radius: 40.5px;
+    border: 3px solid #013878;
+    background: #FFF;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #013878;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 87.023%; /* 20.885px */
+    letter-spacing: -0.6px;
+}
+
+.secondary {
+    border: 3px solid #FD7900;
+}
