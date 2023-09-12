@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./free-question-item.module.scss";
 import { MarketQuestion } from '../../model/types';
 import MyButton from 'shared/ui/MyButton/MyButton';
+import ClientQuestionModal from 'entities/market/client-question-modal/client-question-modal';
 
 interface ApplicationItemProps {
     application: MarketQuestion;
 }
 
 const FreeQuestionItem: React.FC<ApplicationItemProps> = ({application}) => {
+    const [isClientQuestionModalVisible, setIsClientModalVisible] = useState(false);
+
+    const openClientQuestionModal = () => setIsClientModalVisible(true);
+    const closeClientQuestionModal = () => setIsClientModalVisible(false);
+
     return (
         <div className={styles.applicationItemWrapper}>
+            <ClientQuestionModal
+                question={application} 
+                closeAuthModal={closeClientQuestionModal}
+                isModalVisible={isClientQuestionModalVisible}
+            />
+
             <div className={styles.applicationItem}>
                 <div className={styles.applicationContent}>
                     <h4 className={styles.applicationContent__title}>Заявка {application.question_id}</h4>
@@ -24,6 +36,7 @@ const FreeQuestionItem: React.FC<ApplicationItemProps> = ({application}) => {
                         variant='contained'
                         size='small'
                         btnClassName={styles.applicationButton}
+                        onClick={openClientQuestionModal}
                     >
                         Посмотреть заявку
                     </MyButton>

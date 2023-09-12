@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from "./authorization-modal-layout.module.scss";
+import styles from "./modal-with-title.module.scss";
 import Modal from 'shared/ui/modal/modal';
 import closeModalSvg from "./assets/close-modal.svg";
 
-interface AuthorizationModalLayoutProps {
+interface ModalWithTitleProps {
     isModalVisible: boolean;
     children: React.ReactNode;
     closeAuthModal: () => void;
@@ -13,7 +13,7 @@ interface AuthorizationModalLayoutProps {
     authButtonText?: string;
 }
 
-const AuthorizationModalLayout: React.FC<AuthorizationModalLayoutProps> = (props) => {
+const ModalWithTitle: React.FC<ModalWithTitleProps> = (props) => {
     const {isModalVisible, children, closeAuthModal, openAnotherModalCallback, authButtonText, authSubtitle, authTitle} = props;
 
     return (
@@ -35,4 +35,4 @@ const AuthorizationModalLayout: React.FC<AuthorizationModalLayoutProps> = (props
     )
 }
 
-export default AuthorizationModalLayout;
+export default ModalWithTitle;

@@ -1,0 +1,43 @@
+.clientData {
+    display: flex;
+    flex-direction: column;
+    row-gap: 11px;
+    margin-bottom: 29px;
+
+    .infoBlock {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .paragraph {
+            color: #013878;
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 90%; /* 22.5px */
+            letter-spacing: -0.625px;
+        }
+    }
+}
+
+.questionWrapper {
+    width: 100%;
+    min-height: 342px;
+    padding: 30px;
+    border-radius: 30px;
+    border: 3px solid #013878;
+    background: #FFF;
+
+    color: #013878;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 100%; /* 18px */
+    letter-spacing: -0.45px;
+
+    margin-bottom: 30px;
+}
+
+.questionButtons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}

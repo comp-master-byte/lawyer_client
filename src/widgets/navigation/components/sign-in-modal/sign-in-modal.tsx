@@ -7,7 +7,7 @@ import MyButton from 'shared/ui/MyButton/MyButton';
 import { SignInValues } from 'widgets/navigation/model/types';
 import Auth from 'widgets/navigation/api/Auth';
 import classNames from 'classnames';
-import AuthorizationModalLayout from 'entities/layouts/authorization-modal-layout/authorization-modal-layout';
+import ModalWithTitle from 'shared/ui/modal-with-title/modal-with-title';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
@@ -57,7 +57,7 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
     
 
     return (
-        <AuthorizationModalLayout
+        <ModalWithTitle
             authTitle='Авторизация'
             authButtonText='Зарегистрироваться'
             authSubtitle='Еще не зарегистрированы?'
@@ -112,7 +112,7 @@ const SignInModal: React.FC<SignInModalProps> = (props) => {
                 </div>
 
             </form>
-        </AuthorizationModalLayout>
+        </ModalWithTitle>
     )
 }
 

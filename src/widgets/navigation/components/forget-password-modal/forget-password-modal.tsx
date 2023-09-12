@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./forget-password-modal.module.scss";
-import AuthorizationModalLayout from 'entities/layouts/authorization-modal-layout/authorization-modal-layout';
+import ModalWithTitle from 'shared/ui/modal-with-title/modal-with-title';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { ForgetPassword } from 'widgets/navigation/model/types';
@@ -23,7 +23,7 @@ const ForgetPasswordModal: React.FC<ForgetPasswordModalProps> = (props) => {
     }
 
     return (
-        <AuthorizationModalLayout
+        <ModalWithTitle
             authTitle='Восстановление пароля'
             authSubtitle='Уже зарегистрированы?'
             authButtonText='Войти'
@@ -53,7 +53,7 @@ const ForgetPasswordModal: React.FC<ForgetPasswordModalProps> = (props) => {
             </form>
 
             
-        </AuthorizationModalLayout>
+        </ModalWithTitle>
     )
 }
 

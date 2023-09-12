@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from "./sign-up-modal.module.scss";
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { SignUpValues } from 'widgets/navigation/model/types';
@@ -9,7 +9,7 @@ import { REGISTER_TYPE } from 'widgets/navigation/constants/constants';
 import Checkbox from 'shared/ui/checkbox/checkbox';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import Auth from 'widgets/navigation/api/Auth';
-import AuthorizationModalLayout from 'entities/layouts/authorization-modal-layout/authorization-modal-layout';
+import ModalWithTitle from 'shared/ui/modal-with-title/modal-with-title';
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { authorizationSlice } from 'widgets/navigation/model/authorizationSlice';
 import ErrorText from 'shared/styled-components/error-text/error-text';
@@ -56,7 +56,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
     }
 
     return (
-        <AuthorizationModalLayout 
+        <ModalWithTitle 
             authButtonText='Войти'
             authTitle='Регистрация'
             authSubtitle='Еще не зарегистрированы?'
@@ -114,7 +114,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
                     Зарегистрироваться
                 </MyButton>
             </form>
-        </AuthorizationModalLayout>
+        </ModalWithTitle>
     )
 }
 

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./edit-password-modal.module.scss";
-import AuthorizationModalLayout from 'entities/layouts/authorization-modal-layout/authorization-modal-layout';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import Edit from '../../../api/Edit';
 import { PasswordsValues } from 'features/edit-profile/model/types';
+import ModalWithTitle from 'shared/ui/modal-with-title/modal-with-title';
 
 interface EditPasswordModalProps {
     isEditPasswordModalVisible: boolean;
@@ -35,7 +35,7 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({closeEditPasswordM
     }, [isEditPasswordModalVisible])
 
     return (
-        <AuthorizationModalLayout 
+        <ModalWithTitle 
             authTitle='Изменение пароля'
             isModalVisible={isEditPasswordModalVisible} 
             closeAuthModal={closeEditPasswordModal}
@@ -76,7 +76,7 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({closeEditPasswordM
                     Сохранить
                 </MyButton>
             </form>
-        </AuthorizationModalLayout>
+        </ModalWithTitle>
     )
 }
 
