@@ -5,10 +5,12 @@ import personSvg from "./assets/avatar.svg";
 import MyButton from 'shared/ui/MyButton/MyButton';
 import ProfileKeyName from 'entities/profile-key-name/profile-key-name';
 import MyInput from 'shared/ui/MyInput/MyInput';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { EMAIL_REGEX } from 'shared/constants/constants';
 import { useTypedSelector } from 'shared/lib/hooks/redux';
 import TextArea from 'shared/ui/MyInput/textarea';
+import InputMask from 'shared/ui/MyInput/input-mask';
+import Edit from 'features/edit-profile/api/Edit';
 
 interface EditProfileValues {
     full_name: string;
@@ -21,11 +23,17 @@ interface EditProfileValues {
 }
 
 const LawyerProfile: React.FC = () => {
-    const {register, handleSubmit, formState: {errors}, reset} = useForm<EditProfileValues>();
+    const {register, handleSubmit, formState: {errors}, reset, control} = useForm<EditProfileValues>();
 
     const {user} = useTypedSelector(state => state.userSlice);
 
-    const [isEditLawyer, setIsEditLawyer] = useState(false);
+    const [isEditLawyer, setIsEditLawyer] = useState(true);
+
+    const onSubmitEditedProfile: SubmitHandler<EditProfileValues> = async (data) => {
+        return await Edit.editProfile(data);
+    }
+
+    const toggleProfileEdit = () => setIsEditLawyer(prev => !prev);
 
     useEffect(() => {
         reset({
@@ -50,20 +58,20 @@ const LawyerProfile: React.FC = () => {
                         variant='contained'
                         size='large'
                         btnClassName={styles.avatarWrapper__button}
+                        onClick={toggleProfileEdit}
                     >
-                        Редактировать профиль
+                        {isEditLawyer ? "Отменить редактирование" : "Редактировать профиль"}
                     </MyButton>
                 </article>
             </div>
 
-            <form className={styles.editLawyerProfileForm}>
+            <form onSubmit={handleSubmit(onSubmitEditedProfile)} className={styles.editLawyerProfileForm}>
                 <div className={styles.editInputs}>
                     <div className={styles.inputWrapper}>
                         <ProfileKeyName variant='secondary'>ФИО</ProfileKeyName>
                         <MyInput 
                             disabled={!isEditLawyer}
                             variant='secondary'
-                            error={errors.full_name}
                             inputClassName={styles.input}
                             register={register("full_name", {
                                 required: "Это поле обязательное!"
@@ -75,7 +83,6 @@ const LawyerProfile: React.FC = () => {
                         <MyInput 
                             disabled={!isEditLawyer}
                             variant='secondary'
-                            error={errors.email}
                             inputClassName={styles.input}
                             register={register("email", {
                                 required: "Это поле обязательное!",
@@ -88,27 +95,33 @@ const LawyerProfile: React.FC = () => {
                     </div>
 
                     <div className={styles.inputWrapper}>
-                        <ProfileKeyName variant='secondary'>Возраст</ProfileKeyName>
-                        <MyInput 
-                            disabled={!isEditLawyer}
+                        <ProfileKeyName variant='secondary'>Дата рождения</ProfileKeyName>
+                        <InputMask 
+                            name='birthday'
                             variant='secondary'
-                            error={errors.birthday}
+                            mask='99.99.9999'
+                            control={control}
+                            disabled={!isEditLawyer}
                             inputClassName={styles.input}
-                            register={register("birthday", {
-                                required: "Это поле обязательное!",
-                            })}
+                            validation={{
+                                required: 'Это поле обязательное!'
+                            }}
                         />
                     </div>
 
-                    <div className={styles.inputWrapper}>
-                        <ProfileKeyName variant='secondary'>Пароль</ProfileKeyName>
-                        <MyButton 
-                            color='primary'
-                            variant='contained'
-                            size='large'
-                            btnClassName={styles.passwordButton}
-                        >Изменить</MyButton>
-                    </div>
+                    {isEditLawyer && 
+                        <div className={styles.inputWrapper}>
+                            <ProfileKeyName variant='secondary'>Пароль</ProfileKeyName>
+                            <MyButton 
+                                color='primary'
+                                variant='contained'
+                                size='large'
+                                btnClassName={styles.passwordButton}
+                            >
+                                Изменить
+                            </MyButton>
+                        </div>
+                    }
                 </div>
 
                 <div className={styles.profileTextAreas}>
@@ -117,7 +130,6 @@ const LawyerProfile: React.FC = () => {
                         label='Обо мне (Напишите несколько предложений о себе, чтобы заинтересовать потенциальных клиентов)'
                         variant='secondary'
                         disabled={!isEditLawyer}
-                        error={errors.about_lawyer}
                         inputClassName={styles.profileTextAreas__area}
                         register={register("about_lawyer", {
                             required: "Это поле обязательное!",
@@ -128,7 +140,6 @@ const LawyerProfile: React.FC = () => {
                         variant='secondary'
                         label='Образование и повышение квалификации'
                         disabled={!isEditLawyer}
-                        error={errors.education}
                         inputClassName={styles.profileTextAreas__area}
                         register={register("education", {
                             required: "Это поле обязательное!",
@@ -139,7 +150,6 @@ const LawyerProfile: React.FC = () => {
                         label='Опыт работы'
                         variant='secondary'
                         disabled={!isEditLawyer}
-                        error={errors.experience}
                         inputClassName={styles.profileTextAreas__area}
                         register={register("experience", {
                             required: "Это поле обязательное!",
@@ -153,7 +163,11 @@ const LawyerProfile: React.FC = () => {
                         variant='contained'
                         size='large'
                         btnClassName={styles.button}
-                    >Сохранить изменения</MyButton>
+                    >
+                        Сохранить изменения
+                    </MyButton>
+
+                    {Object.keys(errors).length ? <p className={styles.errorText}>Для верификации профиля требуется заполнить все поля</p> : <></>}
                 </div>
             </form>
         </section>

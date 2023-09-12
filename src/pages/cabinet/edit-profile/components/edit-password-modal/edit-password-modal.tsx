@@ -4,7 +4,7 @@ import AuthorizationModalLayout from 'entities/layouts/authorization-modal-layou
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import MyButton from 'shared/ui/MyButton/MyButton';
-import Edit from '../../api/Edit';
+import Edit from '../../../../../features/edit-profile/api/Edit';
 import { PasswordsValues } from '../../model/types';
 
 

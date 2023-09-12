@@ -70,13 +70,29 @@
     &__area {
         border-radius: 30px;
         margin-top: 15px;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 87.023%; /* 20.885px */
+        letter-spacing: -0.6px;
     }
 }
 
 .submitButton {
+    display: flex;
+    align-items: center;
+    column-gap: 19px;
     .button {
         width: 427px;
         height: 81px;
+    }
+
+    .errorText {
+        width: 365px;
+        color: #FD7900;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 87.023%; /* 20.885px */
+        letter-spacing: -0.6px;
     }
 }
 

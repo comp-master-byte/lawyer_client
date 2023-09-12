@@ -1,11 +1,10 @@
 import $api from "shared/api/http";
-import { EditProfileValues, PasswordsValues } from "../model/types";
 import { toast } from "react-toastify";
 import { editProfileMapper } from "./mapper/edit-profile-mapper";
 import { UseFormSetError } from "react-hook-form";
 
 export default class Edit {
-    static async editProfile(data: Partial<EditProfileValues>) {
+    static async editProfile(data: Partial<any>) {
         try {
             const mappedData = editProfileMapper(data);
             const response = await $api.patch('/api/auth/users/me/', mappedData);
@@ -18,7 +17,7 @@ export default class Edit {
         }
     }
 
-    static async setNewPassword(data: PasswordsValues, setError: UseFormSetError<any>) {
+    static async setNewPassword(data: any, setError: UseFormSetError<any>) {
         try {
             const response = await $api.post('/api/auth/users/set_password/', data);
             toast("Пароль успешно изменен!", {type: "success"});

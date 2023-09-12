@@ -6,7 +6,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { EMAIL_REGEX } from 'shared/constants/constants';
 import { EditProfileValues } from './model/types';
-import Edit from './api/Edit';
+import Edit from '../../../features/edit-profile/api/Edit';
 import StaticUserInformation from './components/static-user-information/static-user-information';
 import EditPasswordModal from './components/edit-password-modal/edit-password-modal';
 import classNames from 'classnames';

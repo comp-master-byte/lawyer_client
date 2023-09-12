@@ -13,11 +13,11 @@ const MyInput: React.FC<MyInputProps> = ({ register, error, placeholder, label, 
             {hasFile && <img src={filePng} className={styles.fileIcon} alt="" /> }
             <input
                 type={type ? type : "text"}
+                placeholder={placeholder}
                 className={classNames(styles.myInput, inputClassName, {
                     [styles.secondary]: variant === 'secondary',
                     [styles.disabled]: disabled
                 })}
-                placeholder={placeholder}
                 {...register}
             />
             {hasSearch && <img className={styles.searchIcon} src={searchSvg} alt="" /> }

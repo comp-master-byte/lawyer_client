@@ -1,13 +1,25 @@
-export interface MyInputProps {
+interface InputProps {
     placeholder?: string;
     error?: any;
-    register: any;
     label?: string;
     type?: "password"|"text";
     inputClassName?: string;
-    hasSearch?: boolean;
-    hasFile?: boolean;
     variant?: 'primary'|'secondary';
     disabled?: boolean;
     labelClassName?: string;
+}
+
+export interface MyInputProps extends InputProps {
+    register?: any;
+    hasSearch?: boolean;
+    hasFile?: boolean;
+}
+
+export interface MaskInputProps extends InputProps {
+    mask: string;
+    control: any;
+    name: string;
+    validation?: {
+        required: 'Это поле обязательное!'
+    }
 }
