@@ -8,9 +8,9 @@ import { EMAIL_REGEX } from 'shared/constants/constants';
 import { EditProfileValues } from './model/types';
 import Edit from '../../../features/edit-profile/api/Edit';
 import StaticUserInformation from './components/static-user-information/static-user-information';
-import EditPasswordModal from './components/edit-password-modal/edit-password-modal';
 import classNames from 'classnames';
 import { userSlice } from 'features/user/model/userSlice';
+import EditPassword from 'features/edit-profile/edit-password/edit-password';
 
 const EditProfile: React.FC = () => {
     const {register, formState: {errors, isDirty, isSubmitSuccessful}, handleSubmit, reset} = useForm<EditProfileValues>({mode: "all"});
@@ -18,17 +18,8 @@ const EditProfile: React.FC = () => {
 
     const {user} = useTypedSelector(state => state.userSlice);
 
-    const [isEditPasswordModalVisible, setIsEditPasswordModalVisible] = useState(false);
     const [isProfileEdited, setIsProfileEdited] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-
-    const openEditPasswordModal = function() {
-        setIsEditPasswordModalVisible(true);
-    }
-
-    const closeEditPasswordModal = function() {
-        setIsEditPasswordModalVisible(false);
-    }
 
     const onSubmitEditedForm: SubmitHandler<EditProfileValues> = async (data) => {
         setIsLoading(true);
@@ -49,11 +40,6 @@ const EditProfile: React.FC = () => {
     return (
         <div className={styles.editProfileWrapper}>
             <StaticUserInformation />
-            <EditPasswordModal 
-                closeEditPasswordModal={closeEditPasswordModal}
-                isEditPasswordModalVisible={isEditPasswordModalVisible}
-            />
-
             <form onSubmit={handleSubmit(onSubmitEditedForm)} className={styles.editProfileForm}>
                 <div className={styles.editFormInputs}>
                     <div className={styles.editInputWrapper}>
@@ -80,18 +66,7 @@ const EditProfile: React.FC = () => {
                             })}
                         />
                     </div>
-                    <div className={styles.editInputWrapper}>
-                        <div className={styles.inputName}>Пароль</div>
-                        <MyButton 
-                            type='button'
-                            color='primary' 
-                            variant='contained'
-                            onClick={openEditPasswordModal}
-                            btnClassName={styles.passwordButton}
-                        >
-                            Изменить   
-                        </MyButton>
-                    </div>
+                    <EditPassword />
                 </div>
                 <div className={classNames(styles.submitButtonWrapper, {
                     [styles.visibility]: isDirty||isSubmitSuccessful

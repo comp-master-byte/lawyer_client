@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./edit-password-modal.module.scss";
 import AuthorizationModalLayout from 'entities/layouts/authorization-modal-layout/authorization-modal-layout';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import MyButton from 'shared/ui/MyButton/MyButton';
-import Edit from '../../../../../features/edit-profile/api/Edit';
-import { PasswordsValues } from '../../model/types';
-
-
+import Edit from '../../../api/Edit';
+import { PasswordsValues } from 'features/edit-profile/model/types';
 
 interface EditPasswordModalProps {
     isEditPasswordModalVisible: boolean;
@@ -15,7 +13,7 @@ interface EditPasswordModalProps {
 }
 
 const EditPasswordModal: React.FC<EditPasswordModalProps> = ({closeEditPasswordModal, isEditPasswordModalVisible}) => {
-    const {register, formState: {errors}, handleSubmit, setError} = useForm<PasswordsValues>({mode: "all"});
+    const {register, formState: {errors}, handleSubmit, setError, clearErrors, reset} = useForm<PasswordsValues>({mode: "all"});
 
     const [isLoading, setIsLoading] = useState(false);
 
@@ -29,14 +27,20 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({closeEditPasswordM
         }
     }
 
+    useEffect(() => {
+        if(!isEditPasswordModalVisible) {
+            clearErrors();
+            reset({current_password: '', new_password: ''});
+        }
+    }, [isEditPasswordModalVisible])
+
     return (
         <AuthorizationModalLayout 
             authTitle='Изменение пароля'
             isModalVisible={isEditPasswordModalVisible} 
             closeAuthModal={closeEditPasswordModal}
-
         >
-            <form onSubmit={handleSubmit(onSubmitEditPasswordForm)}>
+            <form>
                 <div className={styles.passwordInputsWrapper}>
                     <div className={styles.passwordInput}>
                         <div className={styles.passwordLabel}>Старый пароль</div>
@@ -62,11 +66,12 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({closeEditPasswordM
                 </div>
                 
                 <MyButton
-                    type='submit'
+                    type='button'
                     color='secondary'
                     variant='contained'
                     disabled={isLoading}
                     btnClassName={styles.submitFormButton}
+                    onClick={handleSubmit(onSubmitEditPasswordForm)}
                 >
                     Сохранить
                 </MyButton>

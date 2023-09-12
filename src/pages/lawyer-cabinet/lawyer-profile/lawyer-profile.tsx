@@ -11,6 +11,7 @@ import { useTypedSelector } from 'shared/lib/hooks/redux';
 import TextArea from 'shared/ui/MyInput/textarea';
 import InputMask from 'shared/ui/MyInput/input-mask';
 import Edit from 'features/edit-profile/api/Edit';
+import EditPassword from 'features/edit-profile/edit-password/edit-password';
 
 interface EditProfileValues {
     full_name: string;
@@ -27,7 +28,7 @@ const LawyerProfile: React.FC = () => {
 
     const {user} = useTypedSelector(state => state.userSlice);
 
-    const [isEditLawyer, setIsEditLawyer] = useState(true);
+    const [isEditLawyer, setIsEditLawyer] = useState(false);
 
     const onSubmitEditedProfile: SubmitHandler<EditProfileValues> = async (data) => {
         return await Edit.editProfile(data);
@@ -109,19 +110,7 @@ const LawyerProfile: React.FC = () => {
                         />
                     </div>
 
-                    {isEditLawyer && 
-                        <div className={styles.inputWrapper}>
-                            <ProfileKeyName variant='secondary'>Пароль</ProfileKeyName>
-                            <MyButton 
-                                color='primary'
-                                variant='contained'
-                                size='large'
-                                btnClassName={styles.passwordButton}
-                            >
-                                Изменить
-                            </MyButton>
-                        </div>
-                    }
+                    {isEditLawyer && <EditPassword />}
                 </div>
 
                 <div className={styles.profileTextAreas}>
