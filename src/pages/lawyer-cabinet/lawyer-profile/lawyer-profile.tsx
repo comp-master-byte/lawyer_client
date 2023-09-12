@@ -12,6 +12,7 @@ import TextArea from 'shared/ui/MyInput/textarea';
 import InputMask from 'shared/ui/MyInput/input-mask';
 import Edit from 'features/edit-profile/api/Edit';
 import EditPassword from 'features/edit-profile/edit-password/edit-password';
+import ModalCloseButton from 'entities/layouts/modal-close-button/modal-close-button';
 
 interface EditProfileValues {
     full_name: string;

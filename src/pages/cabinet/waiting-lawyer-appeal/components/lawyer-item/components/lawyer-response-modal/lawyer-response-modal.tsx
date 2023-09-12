@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./lawyer-response-modal.module.scss";
 import MyButton from 'shared/ui/MyButton/MyButton';
-import InterestedLawyerModal from 'entities/layouts/insterested-lawyer-modal/insterested-lawyer-modal';
+import ModalCloseButton from 'entities/layouts/modal-close-button/modal-close-button';
 
 interface LawyerResponseModalProps {
     isLawyerResponseVisible: boolean;
@@ -11,7 +11,7 @@ interface LawyerResponseModalProps {
 
 const LawyerResponseModal: React.FC<LawyerResponseModalProps> = ({closeLawyerResponse, isLawyerResponseVisible, openConfirmationModal}) => {
     return (
-        <InterestedLawyerModal 
+        <ModalCloseButton
             closeModal={closeLawyerResponse}
             isModalVisible={isLawyerResponseVisible} 
         >
@@ -37,7 +37,7 @@ const LawyerResponseModal: React.FC<LawyerResponseModalProps> = ({closeLawyerRes
                     Выбрать юриста и ответить
                 </MyButton>
             </section>
-        </InterestedLawyerModal>
+        </ModalCloseButton>
     )
 }
 

@@ -1,15 +1,15 @@
 import React from 'react';
-import styles from "./insterested-lawyer-modal.module.scss";
+import styles from "./modal-close-button.module.scss";
 import Modal from 'shared/ui/modal/modal';
 import closeSvg from "./assets/close-button.svg";
 
-interface InterestedLawyerModalProps {
+interface ModalCloseButtonProps {
     closeModal: () => void;
     isModalVisible: boolean;
     children: React.ReactNode;
 }
 
-const InterestedLawyerModal: React.FC<InterestedLawyerModalProps> = ({closeModal, isModalVisible, children}) => {
+const ModalCloseButton: React.FC<ModalCloseButtonProps> = ({closeModal, isModalVisible, children}) => {
     return (
         <Modal
             closeModal={closeModal}
@@ -24,4 +24,4 @@ const InterestedLawyerModal: React.FC<InterestedLawyerModalProps> = ({closeModal
     )
 }
 
-export default InterestedLawyerModal;
+export default ModalCloseButton;

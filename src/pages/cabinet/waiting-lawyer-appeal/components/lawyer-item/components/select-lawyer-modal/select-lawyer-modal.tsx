@@ -3,7 +3,7 @@ import styles from "./select-lawyer-modal.module.scss";
 import MyButton from 'shared/ui/MyButton/MyButton';
 import { useNavigate, useParams } from 'react-router-dom';
 import Lawyer from 'pages/cabinet/waiting-lawyer-appeal/api/Lawyer';
-import InterestedLawyerModal from 'entities/layouts/insterested-lawyer-modal/insterested-lawyer-modal';
+import ModalCloseButton from 'entities/layouts/modal-close-button/modal-close-button';
 
 interface SelectLawyerModalProps {
     isModalVisible: boolean;
@@ -29,7 +29,7 @@ const SelectLawyerModal: React.FC<SelectLawyerModalProps> = ({closeModal, isModa
     }
 
     return (
-        <InterestedLawyerModal
+        <ModalCloseButton
             closeModal={closeModal}
             isModalVisible={isModalVisible}
         >
@@ -52,7 +52,7 @@ const SelectLawyerModal: React.FC<SelectLawyerModalProps> = ({closeModal, isModa
                     Да, я уверен(а)
                 </MyButton>
             </div>
-        </InterestedLawyerModal>
+        </ModalCloseButton>
     )
 }
 
