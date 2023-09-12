@@ -1,9 +1,12 @@
 .profileWrapper {
-    margin: 77px 0;
+    margin: 77px 0 83px 0;
+    position: relative;
 }
 
-.profileWrapper {
-    margin-bottom: 83px;
+.goBackButton {
+    width: 183px;
+    position: absolute;
+    top: -25px;
 }
 
 .title {

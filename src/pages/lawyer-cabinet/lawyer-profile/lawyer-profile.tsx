@@ -12,7 +12,7 @@ import TextArea from 'shared/ui/MyInput/textarea';
 import InputMask from 'shared/ui/MyInput/input-mask';
 import Edit from 'features/edit-profile/api/Edit';
 import EditPassword from 'features/edit-profile/edit-password/edit-password';
-import ModalCloseButton from 'entities/layouts/modal-close-button/modal-close-button';
+import { useNavigate } from 'react-router-dom';
 
 interface EditProfileValues {
     full_name: string;
@@ -25,17 +25,15 @@ interface EditProfileValues {
 }
 
 const LawyerProfile: React.FC = () => {
-    const {register, handleSubmit, formState: {errors}, reset, control} = useForm<EditProfileValues>();
+    const {register, handleSubmit, formState: {errors, isDirty}, reset, control} = useForm<EditProfileValues>();
+
+    const navigate = useNavigate();
 
     const {user} = useTypedSelector(state => state.userSlice);
-
-    const [isEditLawyer, setIsEditLawyer] = useState(false);
 
     const onSubmitEditedProfile: SubmitHandler<EditProfileValues> = async (data) => {
         return await Edit.editProfile(data);
     }
-
-    const toggleProfileEdit = () => setIsEditLawyer(prev => !prev);
 
     useEffect(() => {
         reset({
@@ -50,19 +48,27 @@ const LawyerProfile: React.FC = () => {
 
     return (
         <section className={styles.profileWrapper}>
+            <MyButton
+                color='primary'
+                variant='outlined'
+                size='large'
+                btnClassName={styles.goBackButton}
+                onClick={() => navigate(-1)}
+            >
+                Назад
+            </MyButton>
             <SectionTitle titleClassName={styles.title}>Профиль юриста</SectionTitle>
 
             <div className={styles.avatarSectionWrapper}>
                 <article className={styles.avatarWrapper}>
                     <img src={personSvg} className={styles.avatarWrapper__img} alt="" />
                     <MyButton
-                        color='secondary'
+                        color='primary'
                         variant='contained'
                         size='large'
                         btnClassName={styles.avatarWrapper__button}
-                        onClick={toggleProfileEdit}
                     >
-                        {isEditLawyer ? "Отменить редактирование" : "Редактировать профиль"}
+                        Загрузить фото
                     </MyButton>
                 </article>
             </div>
@@ -72,7 +78,6 @@ const LawyerProfile: React.FC = () => {
                     <div className={styles.inputWrapper}>
                         <ProfileKeyName variant='secondary'>ФИО</ProfileKeyName>
                         <MyInput 
-                            disabled={!isEditLawyer}
                             variant='secondary'
                             inputClassName={styles.input}
                             register={register("full_name", {
@@ -83,7 +88,6 @@ const LawyerProfile: React.FC = () => {
                     <div className={styles.inputWrapper}>
                         <ProfileKeyName variant='secondary'>Email</ProfileKeyName>
                         <MyInput 
-                            disabled={!isEditLawyer}
                             variant='secondary'
                             inputClassName={styles.input}
                             register={register("email", {
@@ -103,7 +107,6 @@ const LawyerProfile: React.FC = () => {
                             variant='secondary'
                             mask='99.99.9999'
                             control={control}
-                            disabled={!isEditLawyer}
                             inputClassName={styles.input}
                             validation={{
                                 required: 'Это поле обязательное!'
@@ -111,7 +114,7 @@ const LawyerProfile: React.FC = () => {
                         />
                     </div>
 
-                    {isEditLawyer && <EditPassword />}
+                    <EditPassword />
                 </div>
 
                 <div className={styles.profileTextAreas}>
@@ -119,7 +122,6 @@ const LawyerProfile: React.FC = () => {
                         labelClassName={styles.label}
                         label='Обо мне (Напишите несколько предложений о себе, чтобы заинтересовать потенциальных клиентов)'
                         variant='secondary'
-                        disabled={!isEditLawyer}
                         inputClassName={styles.profileTextAreas__area}
                         register={register("about_lawyer", {
                             required: "Это поле обязательное!",
@@ -129,7 +131,6 @@ const LawyerProfile: React.FC = () => {
                         labelClassName={styles.label}
                         variant='secondary'
                         label='Образование и повышение квалификации'
-                        disabled={!isEditLawyer}
                         inputClassName={styles.profileTextAreas__area}
                         register={register("education", {
                             required: "Это поле обязательное!",
@@ -139,7 +140,6 @@ const LawyerProfile: React.FC = () => {
                         labelClassName={styles.label}
                         label='Опыт работы'
                         variant='secondary'
-                        disabled={!isEditLawyer}
                         inputClassName={styles.profileTextAreas__area}
                         register={register("experience", {
                             required: "Это поле обязательное!",
@@ -147,18 +147,20 @@ const LawyerProfile: React.FC = () => {
                     />
                 </div>
 
-                <div className={styles.submitButton}>
-                    <MyButton
-                        color='secondary'
-                        variant='contained'
-                        size='large'
-                        btnClassName={styles.button}
-                    >
-                        Сохранить изменения
-                    </MyButton>
+                {isDirty && 
+                    <div className={styles.submitButton}>
+                        <MyButton
+                            color='secondary'
+                            variant='contained'
+                            size='large'
+                            btnClassName={styles.button}
+                        >
+                            Сохранить изменения
+                        </MyButton>
 
-                    {Object.keys(errors).length ? <p className={styles.errorText}>Для верификации профиля требуется заполнить все поля</p> : <></>}
-                </div>
+                        {Object.keys(errors).length ? <p className={styles.errorText}>Для верификации профиля требуется заполнить все поля</p> : <></>}
+                    </div>
+                }
             </form>
         </section>
     )
