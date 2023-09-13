@@ -1,10 +1,15 @@
 import { fetchUser } from "features/user/model/async-actions";
 import { userSlice } from "features/user/model/userSlice";
+import Cookies from "js-cookie";
 import { useEffect, useRef } from "react"
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
 
 export const useCabinetLayout = () => {
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+
+    const {pathname} = useLocation();
 
     const websocket = useRef<WebSocket>();
 
@@ -14,16 +19,18 @@ export const useCabinetLayout = () => {
 
 
     useEffect(() => {
-        const user = localStorage.getItem('user');
-
-        if(!user) {
-            dispatch(fetchUser());
-            return;
-        } 
-
-        const parsedUser = JSON.parse(user);
-        dispatch(setUser(parsedUser));
-    }, [])
+        if(pathname !== '/') {
+            const user = localStorage.getItem('user');
+    
+            if(!user) {
+                dispatch(fetchUser());
+                return;
+            } 
+    
+            const parsedUser = JSON.parse(user);
+            dispatch(setUser(parsedUser));
+        }
+    }, [pathname])
 
     useEffect(() => {
         if(user?.is_lawyer && !user?.is_lawyer_confirmed) {
@@ -50,4 +57,11 @@ export const useCabinetLayout = () => {
             }
         }
     }, [user])
+
+    useEffect(() => {
+        const token = Cookies.get('token');
+        if(!token) {
+            navigate('/')
+        }
+    }, [])
 }

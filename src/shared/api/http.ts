@@ -18,10 +18,10 @@ $api.interceptors.response.use(
       return response;
   },
   error => {
-      if (error.response.status === 403) {
-          window.location.href = "/";
+      if (error.response.status === 401) {
           localStorage.removeItem('user');
           Cookies.remove('token');
+          window.location.href = '/';
       }
       return Promise.reject(error);
   },
