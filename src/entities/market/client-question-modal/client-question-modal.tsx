@@ -5,16 +5,17 @@ import ModalWithTitle from 'shared/ui/modal-with-title/modal-with-title';
 import MyButton from 'shared/ui/MyButton/MyButton';
 
 interface ClientQuestionModalProps {
-    closeAuthModal: () => void;
+    closeQuestionModal: () => void;
+    openResponseModal: () => void;
     isModalVisible: boolean;
     question: MarketQuestion;
 }
 
-const ClientQuestionModal: React.FC<ClientQuestionModalProps> = ({closeAuthModal, isModalVisible, question}) => {
+const ClientQuestionModal: React.FC<ClientQuestionModalProps> = ({closeQuestionModal, isModalVisible, question, openResponseModal}) => {
     return (
         <ModalWithTitle
             authTitle={`Заявка ${question.question_id}`}
-            closeAuthModal={closeAuthModal}
+            closeAuthModal={closeQuestionModal}
             isModalVisible={isModalVisible}
         >
             <article className={styles.clientData}>
@@ -44,6 +45,10 @@ const ClientQuestionModal: React.FC<ClientQuestionModalProps> = ({closeAuthModal
                     color='secondary'
                     variant='contained'
                     size='large'
+                    onClick={() => {
+                        closeQuestionModal();
+                        openResponseModal();
+                    }}
                 >
                     Написать отклик
                 </MyButton>

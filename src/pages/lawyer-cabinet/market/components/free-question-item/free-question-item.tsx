@@ -3,6 +3,8 @@ import styles from "./free-question-item.module.scss";
 import { MarketQuestion } from '../../model/types';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import ClientQuestionModal from 'entities/market/client-question-modal/client-question-modal';
+import ModalCloseButton from 'entities/layouts/modal-close-button/modal-close-button';
+import ResponseModal from 'entities/market/response-modal/response-modal';
 
 interface ApplicationItemProps {
     application: MarketQuestion;
@@ -10,16 +12,27 @@ interface ApplicationItemProps {
 
 const FreeQuestionItem: React.FC<ApplicationItemProps> = ({application}) => {
     const [isClientQuestionModalVisible, setIsClientModalVisible] = useState(false);
+    const [isResponseModalVisible, setIsResponseModalVisible] = useState(false);
 
     const openClientQuestionModal = () => setIsClientModalVisible(true);
     const closeClientQuestionModal = () => setIsClientModalVisible(false);
+
+    const closeResponseModal = () => setIsResponseModalVisible(false);
+    const openResponseModal = () => setIsResponseModalVisible(true);
 
     return (
         <div className={styles.applicationItemWrapper}>
             <ClientQuestionModal
                 question={application} 
-                closeAuthModal={closeClientQuestionModal}
+                closeQuestionModal={closeClientQuestionModal}
                 isModalVisible={isClientQuestionModalVisible}
+                openResponseModal={openResponseModal}
+            />
+
+            <ResponseModal 
+                closeModal={closeResponseModal}
+                isModalVisible={isResponseModalVisible}
+                questionId={application.question_id}
             />
 
             <div className={styles.applicationItem}>
@@ -45,6 +58,7 @@ const FreeQuestionItem: React.FC<ApplicationItemProps> = ({application}) => {
                         variant='contained'
                         size='small'
                         btnClassName={styles.applicationButton}
+                        onClick={openResponseModal}
                     >
                         Написать отклик
                     </MyButton>
