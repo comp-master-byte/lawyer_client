@@ -6,4 +6,5 @@ export const APPEALS: ISelectOption[] = [
     {id: 3, value: 'Идет диалог с юристом', label: 'active'},
     {id: 4, value: 'Черновик', label: 'draft'},
     {id: 5, value: 'Завершено', label: 'complete'},
+    {id: 6, value: 'Ожидает откликов от юристов', label: 'new'}
 ]

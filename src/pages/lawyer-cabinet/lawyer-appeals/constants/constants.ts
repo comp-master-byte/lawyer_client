@@ -7,5 +7,4 @@ export const LAWYER_APPEALS: ISelectOption[] = [
     {id: 3, value: "Отказ", label: 'deny'},
     {id: 4, value: "Завершено", label: 'complete'},
     {id: 5, value: "Идет выбор юриста", label: 'candidates'},
-    {id: 6, value: 'Ожидает откликов юриста', label: 'new'}
 ]
