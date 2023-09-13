@@ -23,7 +23,7 @@ const EditProfile: React.FC = () => {
 
     const onSubmitEditedForm: SubmitHandler<EditProfileValues> = async (data) => {
         setIsLoading(true);
-        const updatedUser = await Edit.editProfile(data);
+        const updatedUser = await Edit.editClientProfile(data);
         if(updatedUser) {
             dispatch(userSlice.actions.setUser(updatedUser)) // Перезаписываем данные пользователя
             setIsProfileEdited(true);
@@ -66,7 +66,7 @@ const EditProfile: React.FC = () => {
                             })}
                         />
                     </div>
-                    <EditPassword />
+                    <EditPassword variant='primary' />
                 </div>
                 <div className={classNames(styles.submitButtonWrapper, {
                     [styles.visibility]: isDirty||isSubmitSuccessful

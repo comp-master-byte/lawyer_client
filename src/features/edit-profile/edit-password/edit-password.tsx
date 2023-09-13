@@ -4,7 +4,11 @@ import ProfileKeyName from 'entities/profile-key-name/profile-key-name';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import EditPasswordModal from './components/edit-password-modal/edit-password-modal';
 
-const EditPassword: React.FC = () => {
+interface EditPasswordProps {
+    variant: 'primary'|'secondary'
+}
+
+const EditPassword: React.FC<EditPasswordProps> = ({variant}) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const closeEditModal = useCallback(() => {
@@ -20,7 +24,7 @@ const EditPassword: React.FC = () => {
                 isEditPasswordModalVisible={isModalVisible}
             />
             <div className={styles.inputWrapper}>
-                <ProfileKeyName variant='secondary'>Пароль</ProfileKeyName>
+                <ProfileKeyName variant={variant}>Пароль</ProfileKeyName>
                 <MyButton 
                     type='button'
                     color='primary'

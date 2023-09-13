@@ -9,6 +9,7 @@ export default class Edit {
             const mappedData = editProfileMapper(data);
             const response = await $api.patch('/api/auth/users/me/', mappedData);
             const remappedData = reEditBirthday(response.data);
+            
             const toStringUpdatedUser = JSON.stringify(remappedData);
             localStorage.setItem('user', toStringUpdatedUser);
             toast("Ваши данные успешно изменены!", {type: "success"});
@@ -31,6 +32,18 @@ export default class Edit {
                     type: "validate"
                 })
             }
+        }
+    }
+
+    static async editClientProfile(data: Partial<any>) {
+        try {
+            const response = await $api.patch('/api/auth/users/me/', data);
+            const toStringUpdatedUser = JSON.stringify(response.data);
+            localStorage.setItem('user', toStringUpdatedUser);
+            toast("Ваши данные успешно изменены!", {type: "success"});
+            return response.data;
+        } catch(error: any) {
+            // error
         }
     }
 }

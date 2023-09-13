@@ -114,7 +114,7 @@ const LawyerProfile: React.FC = () => {
                         />
                     </div>
 
-                    <EditPassword />
+                    <EditPassword variant='secondary' />
                 </div>
 
                 <div className={styles.profileTextAreas}>
