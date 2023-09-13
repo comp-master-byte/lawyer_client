@@ -1,6 +1,6 @@
 import $api from "shared/api/http";
 import { toast } from "react-toastify";
-import { editProfileMapper } from "./mapper/edit-profile-mapper";
+import { editProfileMapper, reEditBirthday } from "./mapper/edit-profile-mapper";
 import { UseFormSetError } from "react-hook-form";
 
 export default class Edit {
@@ -8,8 +8,9 @@ export default class Edit {
         try {
             const mappedData = editProfileMapper(data);
             const response = await $api.patch('/api/auth/users/me/', mappedData);
-            const toStringUpdatedUser = JSON.stringify(response.data);
-            localStorage.setItem('user', toStringUpdatedUser)
+            const remappedData = reEditBirthday(response.data);
+            const toStringUpdatedUser = JSON.stringify(remappedData);
+            localStorage.setItem('user', toStringUpdatedUser);
             toast("Ваши данные успешно изменены!", {type: "success"});
             return response.data;
         } catch(error: any) {

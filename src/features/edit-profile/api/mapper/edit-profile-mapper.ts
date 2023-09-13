@@ -7,12 +7,23 @@ export const editProfileMapper = function(data: any) {
         }
     }
 
-    if('birthday' in data) {
+    if('birthday' in data ) {
         let newBirth;
         const splitBirth = data.birthday.split('.');
         newBirth = splitBirth[2] + '-' + splitBirth[1] + '-' + splitBirth[0];
         result.birthday = newBirth;
     }
+
+    return result;
+}
+
+export const reEditBirthday = function(data: any) {
+    const result = {...data};
+
+    let newBirth;
+    const splitBirth = data.birthday.split('-');
+    newBirth = splitBirth[2] + '.' + splitBirth[1] + '.' + splitBirth[0];
+    result.birthday = newBirth;
 
     return result;
 }
