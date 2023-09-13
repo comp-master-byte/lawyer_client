@@ -10,13 +10,14 @@ import { LAWYER_APPEALS } from './constants/constants';
 import { ISelectOption, LawyerStatus } from 'shared/model/types';
 import { useNavigate } from 'react-router-dom';
 import { useVarification } from 'shared/lib/hooks/useVarification';
-import EmptyPlaceholder from 'entities/empty-placeholder/empty-placeholder';
+import EmptyPlaceholder from 'entities/empty-placeholders/empty-placeholder/empty-placeholder';
+import LawyerOnVerification from 'entities/empty-placeholders/lawyer-on-verification/lawyer-on-verification';
 
 const LawyerAppeals: React.FC = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
-    const {isLawyerCompletedProfile} = useVarification()
+    const varificationStatus = useVarification()
 
     const {applications} = useTypedSelector(state => state.lawyerAppealsSlice);
 
@@ -39,8 +40,9 @@ const LawyerAppeals: React.FC = () => {
         <section className={styles.applicationsWrapper}>
             <div className={styles.applicationContent}>
                 <h1 className={styles.pageTitle}>Мои заявки</h1>
-
-                {isLawyerCompletedProfile ? 
+                {varificationStatus === 'complete_profile' && <EmptyPlaceholder /> }
+                {varificationStatus === 'wait_varification' && <LawyerOnVerification />}
+                {varificationStatus === "active" && 
                     <React.Fragment>
                         <AppealsFilter 
                             options={LAWYER_APPEALS}
@@ -56,8 +58,6 @@ const LawyerAppeals: React.FC = () => {
                             }
                         />
                     </React.Fragment>
-
-                    : <EmptyPlaceholder />  
                 }
             </div>
         </section>
