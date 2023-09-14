@@ -3,6 +3,7 @@ import styles from "./client-question-modal.module.scss";
 import { MarketQuestion } from 'pages/lawyer-cabinet/market/model/types';
 import ModalWithTitle from 'shared/ui/modal-with-title/modal-with-title';
 import MyButton from 'shared/ui/MyButton/MyButton';
+import { createdBy } from './lib/helpers/createdBy';
 
 interface ClientQuestionModalProps {
     closeQuestionModal: () => void;
@@ -25,7 +26,7 @@ const ClientQuestionModal: React.FC<ClientQuestionModalProps> = ({closeQuestionM
                 </div>
                 <div className={styles.infoBlock}>
                     <p className={styles.paragraph}>Клиент:</p>
-                    <p className={styles.paragraph}>Карэн А.</p>
+                    <p className={styles.paragraph}>{createdBy(question.created_by.full_name)}</p>
                 </div>
             </article>
 

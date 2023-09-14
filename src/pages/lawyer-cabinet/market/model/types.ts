@@ -1,5 +1,7 @@
 export interface MarketQuestion {
-    created_by: number;
+    created_by: {
+        full_name: string;
+    };
     question_id: number;
     question_text: string;
     status: string;
