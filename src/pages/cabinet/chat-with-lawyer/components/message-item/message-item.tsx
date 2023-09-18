@@ -1,21 +1,23 @@
 import React from 'react';
 import styles from "./message-item.module.scss";
 import classNames from 'classnames';
+import { useTypedSelector } from 'shared/lib/hooks/redux';
 
 interface MessageItemProps {
-    status: 'receive'|'send'
+    message: any;
 }
 
-const MessageItem: React.FC<MessageItemProps> = ({status}) => {
+const MessageItem: React.FC<MessageItemProps> = ({message}) => {
+    const {user} = useTypedSelector(state => state.userSlice);
     return (
         <div className={classNames(styles.messageItemWrapper, {
-            [styles.receivedMessageItemWrapper]: status === "receive",
-            [styles.sentMessageItemWrapper]: status === "send",
+            [styles.receivedMessageItemWrapper]: user?.id !== message.sender,
+            [styles.sentMessageItemWrapper]: user?.id === message.sender,
         })}>
             <div className={styles.messageContent}>
                 <div className={styles.messageLabel}>Вы</div>
                 <div className={styles.messageWrapper}>
-                    Акопьян Карэн Арсэнович пришел к вам в гости и написал весь Фронтенд!
+                    {message.text}
                 </div>
             </div>
         </div>

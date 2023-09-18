@@ -4,6 +4,7 @@ import MyInput from 'shared/ui/MyInput/MyInput';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import MessageList from './components/message-list/message-list';
+import { useTypedSelector } from 'shared/lib/hooks/redux';
 
 interface IChatValues {
     message: string
@@ -11,6 +12,8 @@ interface IChatValues {
 
 const ChatWithLawyer: React.FC = () => {
     const {register, reset, handleSubmit} = useForm<IChatValues>();
+
+    const {messages} = useTypedSelector(state => state.clientChatSlice);
 
     const onSendMessage: SubmitHandler<IChatValues> = (data) => {
         console.log(data);
@@ -21,7 +24,7 @@ const ChatWithLawyer: React.FC = () => {
     return (
         <div className={styles.chatWithLawyerWrapper}>
             <div className={styles.chatWindow}>
-                <MessageList  messageList={[]} />
+                <MessageList  messageList={messages} />
             </div>
             <form onSubmit={handleSubmit(onSendMessage)} className={styles.sendMessageWrapper}>
                 <MyInput 

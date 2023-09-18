@@ -16,11 +16,11 @@ const ApplicationItem: React.FC<ApplicationItemProps> = ({application, onSelectA
 
     return (
         <Link 
+            to={`/cabinet/chats/${application.chat_id}`} 
+            onClick={() => onSelectAndConnectChat(application.chat_id, user!.id)}
             className={classNames(styles.applicationWrapper, {
                 [styles.selectedChat]: id && +id === +(application.chat_id)
             })}
-            to={`/cabinet/chats/${application.chat_id}`} 
-            onClick={() => onSelectAndConnectChat(application.chat_id, user!.id)}
         >
             Заявка {application.chat_id}
         </Link>

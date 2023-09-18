@@ -10,7 +10,7 @@ const MessageList: React.FC<MessageListProps> = ({messageList}) => {
     return (
         <div className={styles.messageListWrapper}>
             {messageList.map((item) => 
-                <MessageItem key={item.id} status={item.status} />
+                <MessageItem key={item.id} message={item} />
             )}
         </div>
     )
