@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import styles from "./chats-applications.module.scss";
-import { Outlet } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
 import ApplicationsList from './components/applications-list/applications-list';
 import { fetchChatList } from './model/async-actions';
+import EmptyChat from './components/empty-chat/empty-chat';
 
 interface ApplicationsValues {
     search: string;
@@ -16,11 +17,16 @@ const ChatsApplications: React.FC = () => {
 
     const dispatch = useAppDispatch();
 
+    const {id} = useParams();
+
     const {chatList} = useTypedSelector(state => state.chatsApplicationsSlice);
 
     useEffect(() => {
         dispatch(fetchChatList());
     }, [])
+
+    console.log(id);
+    
 
     return (
         <div className={styles.chatsApplicationsWrapper}>
@@ -35,7 +41,7 @@ const ChatsApplications: React.FC = () => {
                 <ApplicationsList applications={chatList} />
             </div>
 
-            <Outlet />
+            {!id ? <EmptyChat></EmptyChat> : <Outlet />}            
         </div>
     )
 }

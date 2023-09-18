@@ -1,4 +1,3 @@
-
 .applicationWrapper {
     width: 100%;
     height: 77px;
@@ -15,6 +14,7 @@
     letter-spacing: -0.75px;
     margin-top: -3px;
     transition: .25s;
+    text-decoration: none;
 
     &:hover {
         color: #fff;
