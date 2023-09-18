@@ -1,5 +1,22 @@
 .messageListWrapper {
     display: flex;
     flex-direction: column;
-    row-gap: 31px;
+    row-gap: 12px;
+    overflow-y: auto;
+    height: 100%;
+    padding-right: 26px;
+}
+
+.messageListWrapper::-webkit-scrollbar {
+    width: 9px;
+}
+
+.messageListWrapper::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.messageListWrapper::-webkit-scrollbar-thumb {
+    width: 9px;
+    border-radius: 7px;
+    background-color: #FD7900;
 }

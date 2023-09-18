@@ -7,7 +7,7 @@
         width: 100%;
         height: auto;
         white-space: pre-wrap;
-        padding: 18px 42px 27px 23px;
+        padding: 18px 42px 18px 23px;
         background-color: #fff;
         border-radius: 30px;
     
@@ -16,6 +16,10 @@
         line-height: 87.023%; /* 17.405px */
         letter-spacing: -0.5px;
         color: #013878;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .messageLabel {
