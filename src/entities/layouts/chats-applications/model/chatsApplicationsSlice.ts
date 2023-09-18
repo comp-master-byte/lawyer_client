@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ChatItem, ChatsApplicationsState } from "./types";
 
 const initialState: ChatsApplicationsState = {
-    chatList: []
+    chatList: [],
+    isWebsocketConnected: false,
 }
 
 export const chatsApplicationsSlice = createSlice({
@@ -11,6 +12,9 @@ export const chatsApplicationsSlice = createSlice({
     reducers: {
         setChatList(state, action: PayloadAction<ChatItem[]>) {
             state.chatList = action.payload;
+        },
+        toggleWebsocketConnection(state, action: PayloadAction<boolean>) {
+            state.isWebsocketConnected = action.payload;
         }
     }
 })

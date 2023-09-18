@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import styles from "./chat-with-lawyer.module.scss";
 import MyInput from 'shared/ui/MyInput/MyInput';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -15,15 +15,13 @@ const ChatWithLawyer: React.FC = () => {
     const onSendMessage: SubmitHandler<IChatValues> = (data) => {
         console.log(data);
         
-        reset({message: ""})
-    }
+        // reset({message: ""})
+    }    
 
     return (
         <div className={styles.chatWithLawyerWrapper}>
             <div className={styles.chatWindow}>
-                <MessageList 
-                    messageList={[{id: 1, status: 'receive'}, {id: 2, status: 'send'}]}
-                />
+                <MessageList  messageList={[]} />
             </div>
             <form onSubmit={handleSubmit(onSendMessage)} className={styles.sendMessageWrapper}>
                 <MyInput 

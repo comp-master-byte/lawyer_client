@@ -17,10 +17,16 @@
     text-decoration: none;
 
     &:hover {
-        color: #fff;
-        background-color: #013878;
-        cursor: pointer;
+        // color: #fff;
+        // background-color: #013878;
+        // cursor: pointer;
     }
+}
+
+.selectedChat {
+    color: #fff;
+    background-color: #013878;
+    cursor: pointer;
 }
 
 .activeApplication {

@@ -14,6 +14,9 @@ export const clientChatSlice = createSlice({
         },
         resetMessages(state) {
             state.messages = [];
+        },
+        sendMessage(state, action: PayloadAction<any>) {
+            state.messages.push(action.payload);
         }
     }
 })

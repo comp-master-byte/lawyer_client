@@ -11,4 +11,5 @@ export interface ChatItem {
 
 export interface ChatsApplicationsState {
     chatList: ChatItem[];
+    isWebsocketConnected: boolean;
 }
