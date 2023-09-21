@@ -7,6 +7,7 @@ import MessageList from './components/message-list/message-list';
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { chatsApplicationsSlice } from 'entities/layouts/chats-applications/model/chatsApplicationsSlice';
 import { useParams } from 'react-router-dom';
+import { clientChatSlice } from './model/clientChatSlice';
 
 interface IChatValues {
     message: string
@@ -20,22 +21,28 @@ const ChatWithLawyer: React.FC = () => {
 
     const {user} = useTypedSelector(state => state.userSlice);
     const {messages} = useTypedSelector(state => state.clientChatSlice);
-    const {toggleWebsocketConnection} = chatsApplicationsSlice.actions;
     const {isWebsocketConnected} = useTypedSelector(state => state.chatsApplicationsSlice);
+
+    const {toggleWebsocketConnection} = chatsApplicationsSlice.actions;
+    const {sendMessage} = clientChatSlice.actions;
 
     const onSendMessage: SubmitHandler<IChatValues> = (data) => {
         const toStringData = JSON.stringify(data);
         websocket.current?.send(toStringData);
+        const message = {
+            text: data.message,
+            sender: {
+                id: user?.id as number,
+                full_name: user?.full_name as string
+            }
+        }
+        dispatch(sendMessage(message));
         reset({message: ""});
     }    
 
     useEffect(() => {
         if(isWebsocketConnected) {
-            websocket.current!.onclose = function(event) {
-                // закрываем предыдущее соединение если оно есть
-                console.log("Обрываем соединение");
-            }
-            dispatch(toggleWebsocketConnection(false));
+            
         }
     
         if(id && user) {

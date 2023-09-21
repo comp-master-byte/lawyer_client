@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ClientChatSlice } from "./types";
+import { ClientChatSlice, Message } from "./types";
 
 const initialState: ClientChatSlice = {
     messages: []
@@ -15,7 +15,7 @@ export const clientChatSlice = createSlice({
         resetMessages(state) {
             state.messages = [];
         },
-        sendMessage(state, action: PayloadAction<any>) {
+        sendMessage(state, action: PayloadAction<Message>) {
             state.messages.push(action.payload);
         }
     }
