@@ -42,20 +42,17 @@ const ChatWithLawyer: React.FC = () => {
 
     useEffect(() => {
         if(isWebsocketConnected) {
-            
+            dispatch(toggleWebsocketConnection(false));
         }
     
         if(id && user) {
-            console.log(id);
-            
             websocket.current = new WebSocket(`wss://backend.juraprav.ru/ws/chat/${id}/${user.id}`);
             websocket.current.onopen = function() {
-                console.log('Соединение с чатом установлена', id);
+                console.log('Соединение с чатом установлено', id);
             }
             dispatch(toggleWebsocketConnection(true));
         }
-    }, [id, user])
-
+    }, [])
 
     return (
         <div className={styles.chatWithLawyerWrapper}>

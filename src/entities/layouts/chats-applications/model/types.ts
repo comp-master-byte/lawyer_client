@@ -7,6 +7,7 @@ export interface ChatItem {
         text: string;
     };
     receiver: number;
+    question: number;
 }
 
 export interface ChatsApplicationsState {

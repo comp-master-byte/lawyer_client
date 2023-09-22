@@ -5,7 +5,7 @@ import { ChatItem } from '../../model/types';
 
 interface ApplicationsListProps {
     applications: ChatItem[];
-    onSelectAndConnectChat: (id: number, userId: number) => void;
+    onSelectAndConnectChat: (id: number) => void;
 }
 
 const ApplicationsList: React.FC<ApplicationsListProps> = ({applications, onSelectAndConnectChat}) => {

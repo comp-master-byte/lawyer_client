@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from "./chats-applications.module.scss";
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { useForm } from 'react-hook-form';
 import MyInput from 'shared/ui/MyInput/MyInput';
@@ -26,7 +26,7 @@ const ChatsApplications: React.FC = () => {
 
     const onSelectAndConnectChat = (chatId: number) => {
         dispatch(resetMessages());
-        dispatch(fetchMessages(chatId));        
+        dispatch(fetchMessages(chatId));      
     }
 
     useEffect(() => {
