@@ -1,16 +1,17 @@
 import React from 'react';
 import styles from "./message-list.module.scss";
 import MessageItem from '../message-item/message-item';
+import { Message } from '../../model/types';
 
 interface MessageListProps {
-    messageList: any[]
+    messageList: Message[]
 }
 
 const MessageList: React.FC<MessageListProps> = ({messageList}) => {
     return (
         <div className={styles.messageListWrapper}>
-            {messageList.map((item) => 
-                <MessageItem key={item.id} message={item} />
+            {messageList.map((item, index) => 
+                <MessageItem key={index} message={item} />
             )}
         </div>
     )

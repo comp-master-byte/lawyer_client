@@ -4,6 +4,7 @@ import { ChatItem, ChatsApplicationsState } from "./types";
 const initialState: ChatsApplicationsState = {
     chatList: [],
     isWebsocketConnected: false,
+    chatId: null
 }
 
 export const chatsApplicationsSlice = createSlice({
@@ -15,6 +16,9 @@ export const chatsApplicationsSlice = createSlice({
         },
         toggleWebsocketConnection(state, action: PayloadAction<boolean>) {
             state.isWebsocketConnected = action.payload;
+        },
+        setChatId(state, action: PayloadAction<number>) {
+            state.chatId = action.payload;
         }
     }
 })

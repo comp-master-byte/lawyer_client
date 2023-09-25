@@ -9,6 +9,7 @@ import { fetchChatList } from './model/async-actions';
 import EmptyChat from './components/empty-chat/empty-chat';
 import { fetchMessages } from 'pages/cabinet/chat-with-lawyer/model/async-actions';
 import { clientChatSlice } from 'pages/cabinet/chat-with-lawyer/model/clientChatSlice';
+import { chatsApplicationsSlice } from './model/chatsApplicationsSlice';
 
 interface ApplicationsValues {
     search: string;
@@ -21,17 +22,28 @@ const ChatsApplications: React.FC = () => {
 
 
     const {resetMessages} = clientChatSlice.actions;
+    const {setChatId} = chatsApplicationsSlice.actions;
 
     const {chatList} = useTypedSelector(state => state.chatsApplicationsSlice);
 
     const onSelectAndConnectChat = (chatId: number) => {
         dispatch(resetMessages());
-        dispatch(fetchMessages(chatId));      
+        dispatch(fetchMessages(chatId));    
+        dispatch(setChatId(chatId));  
     }
 
     useEffect(() => {
         dispatch(fetchChatList());
     }, [])
+
+    useEffect(() => {
+        if(id && chatList.length) {
+            const chat = chatList.find((item) => item.question === +id);
+            if(chat) {
+                dispatch(fetchMessages(chat.chat_id));
+            }
+        }
+    }, [chatList])
 
     return (
         <div className={styles.chatsApplicationsWrapper}>
