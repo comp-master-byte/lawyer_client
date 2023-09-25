@@ -4,6 +4,7 @@ import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { useParams } from 'react-router-dom';
 import $api from 'shared/api/http';
 import { clientChatSlice } from '../../model/clientChatSlice';
+import Message from '../../api/Message';
 
 interface IChatValues {
     message: string
@@ -32,24 +33,25 @@ export const useChatWithLawyer = () => {
         reset({message: ""});
         if(!chatId && id) {
             const chat = chatList.find((item) => item.question === +id);            
-            return await $api.post(`/api/send_message/${chat?.chat_id}`, {message: data.message});
+            return await Message.sendMessage({message: data.message}, chat?.chat_id as number);
         } else {
-            return await $api.post(`/api/send_message/${chatId}`, {message: data.message});
+            return await Message.sendMessage({message: data.message}, chatId as number);
         }
     }    
 
+    const websocketConnection = (chatId: number) => {
+        websocket.current = new WebSocket(`wss://backend.juraprav.ru/ws/chat/${chatId}`);
+        websocket.current.onopen = function() {
+            console.log('Соединение с чатом установлено', id);
+        }
+    }
+
     useEffect(() => {
         if(chatId) {
-            websocket.current = new WebSocket(`wss://backend.juraprav.ru/ws/chat/${chatId}`);
-            websocket.current.onopen = function() {
-                console.log('Соединение с чатом установлено', id);
-            }
+            websocketConnection(chatId);
         } else if(chatList.length && id) {
             const chat = chatList.find((item) => item.question === +id);      
-            websocket.current = new WebSocket(`wss://backend.juraprav.ru/ws/chat/${chat?.chat_id}`);
-            websocket.current.onopen = function() {
-                console.log('Соединение с чатом установлено', id);
-            }
+            websocketConnection(chat?.chat_id as number)
         }
     }, [chatId, chatList]) 
 
