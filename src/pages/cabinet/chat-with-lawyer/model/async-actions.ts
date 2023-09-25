@@ -8,7 +8,7 @@ export const fetchMessages = (chatId: number) => async (dispatch: AppDispatch) =
             limit: 10,
             offset: 0
         }});
-        const messages = await response.data.results;
+        const messages = await response.data.results.reverse();
         dispatch(clientChatSlice.actions.setMessages(messages));
     } catch(error) {}
 }
