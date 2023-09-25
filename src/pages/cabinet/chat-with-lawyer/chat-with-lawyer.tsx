@@ -11,13 +11,14 @@ const ChatWithLawyer: React.FC = () => {
     const {
         register,
         handleSubmit,
-        onSendMessage
+        onSendMessage,
+        chatWindowRef,
     } = useChatWithLawyer();
 
     return (
         <div className={styles.chatWithLawyerWrapper}>
             <div className={styles.chatWindow}>
-                <MessageList messageList={messages} />
+                <MessageList ref={chatWindowRef} messageList={messages} />
             </div>
             <form onSubmit={handleSubmit(onSendMessage)} className={styles.sendMessageWrapper}>
                 <MyInput 

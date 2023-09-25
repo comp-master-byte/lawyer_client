@@ -2,7 +2,6 @@ import { useEffect, useRef }  from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { useParams } from 'react-router-dom';
-import $api from 'shared/api/http';
 import { clientChatSlice } from '../../model/clientChatSlice';
 import Message from '../../api/Message';
 
@@ -12,9 +11,12 @@ interface IChatValues {
 
 export const useChatWithLawyer = () => {
     const {register, reset, handleSubmit} = useForm<IChatValues>();
+
     const websocket = useRef<WebSocket|null>(null);
-    const dispatch = useAppDispatch();
+    const chatWindowRef = useRef<HTMLDivElement|null>(null);
+
     const {id} = useParams();
+    const dispatch = useAppDispatch();
 
     const {user} = useTypedSelector(state => state.userSlice);
     const {chatId, chatList} = useTypedSelector(state => state.chatsApplicationsSlice);
@@ -31,11 +33,17 @@ export const useChatWithLawyer = () => {
         }
         dispatch(sendMessage(message));
         reset({message: ""});
-        if(!chatId && id) {
+        if(!chatId && id && chatWindowRef && chatWindowRef.current) {
             const chat = chatList.find((item) => item.question === +id);            
-            return await Message.sendMessage({message: data.message}, chat?.chat_id as number);
+            const res = await Message.sendMessage({message: data.message}, chat?.chat_id as number);
+            chatWindowRef.current.scrollTo({
+                top: chatWindowRef.current.scrollHeight
+            })
         } else {
-            return await Message.sendMessage({message: data.message}, chatId as number);
+            const res = await Message.sendMessage({message: data.message}, chatId as number);
+            chatWindowRef.current?.scrollTo({
+                top: chatWindowRef.current.scrollHeight
+            })
         }
     }    
 
@@ -55,9 +63,18 @@ export const useChatWithLawyer = () => {
         }
     }, [chatId, chatList]) 
 
+    useEffect(() => {
+        if(chatList?.length && websocket.current?.readyState !== websocket.current?.CLOSED) {
+            chatWindowRef.current?.scrollTo({
+                top: 1000
+            })
+        }
+    }, [chatList, websocket.current])
+
     return {
         register,
         handleSubmit,
-        onSendMessage
+        onSendMessage,
+        chatWindowRef,
     }
 }

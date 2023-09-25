@@ -22,7 +22,6 @@ export const useNavigation = () => {
               {to: '/cabinet/appeals', name: 'Мои обращения'},
               {to: '/cabinet/chats', name: 'Чаты'},
               {to: '/cabinet/edit-profile', name: 'Редактировать профиль'},
-
             ]
         }
     }, [user])
