@@ -3,7 +3,8 @@ import { ClientChatSlice, Message } from "./types";
 
 const initialState: ClientChatSlice = {
     messages: [],
-    fetching: false
+    fetching: false,
+    offset: 0
 }
 
 export const clientChatSlice = createSlice({
@@ -11,7 +12,7 @@ export const clientChatSlice = createSlice({
     initialState,
     reducers: {
         setMessages(state, action: PayloadAction<any[]>) {
-            state.messages = action.payload;
+            state.messages = [...action.payload, ...state.messages];
         },
         resetMessages(state) {
             state.messages = [];
@@ -21,6 +22,9 @@ export const clientChatSlice = createSlice({
         },
         toggleFetching(state, action: PayloadAction<boolean>) {
             state.fetching = action.payload;
+        },
+        incrementOffset(state) {
+            state.offset += 10;
         }
     }
 })

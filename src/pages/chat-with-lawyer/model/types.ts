@@ -11,4 +11,5 @@ export interface Message {
 export interface ClientChatSlice {
     messages: Message[];
     fetching: boolean;
+    offset: number;
 }

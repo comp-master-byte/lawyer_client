@@ -6,9 +6,10 @@ import { clientChatSlice } from '../../model/clientChatSlice';
 import Message from '../../api/Message';
 import { messageMapper } from '../helpers/message-mapper';
 import { User } from 'features/user/model/types';
+import { fetchMessages } from 'pages/chat-with-lawyer/model/async-actions';
 
 interface IChatValues {
-    text: string
+    text: string;
 }
 
 export const useChatWithLawyer = () => {
@@ -22,18 +23,17 @@ export const useChatWithLawyer = () => {
 
     const {user} = useTypedSelector(state => state.userSlice);
     const {chatId, chatList} = useTypedSelector(state => state.chatsApplicationsSlice);
+    const {fetching, offset} = useTypedSelector(state => state.clientChatSlice);
 
-    const {addMessageToArray} = clientChatSlice.actions;
+    const {addMessageToArray, toggleFetching} = clientChatSlice.actions;
 
     const scrollHandler = (event: any) => {
-        if(event.target.scrollTop < 100) {
-
+        if(event.target.scrollTop < 40) {
+            dispatch(toggleFetching(true))
         }
     }
 
     const onSendMessage: SubmitHandler<IChatValues> = async (data) => {
-        console.log('render');
-        
         let result: boolean|undefined = false;
         if(!chatId && id && chatWindowRef.current) {
             const chat = chatList.find((item) => item.question === +id);            
@@ -44,8 +44,9 @@ export const useChatWithLawyer = () => {
 
         if(result && chatWindowRef.current) {
             dispatch(addMessageToArray(messageMapper(data, user as User)));
+            console.log(chatWindowRef.current.scrollHeight + 1000);
             chatWindowRef.current.scrollTo({
-                top: 1000
+                top: chatWindowRef.current.scrollHeight 
             })
             reset({text: ""});
         }
@@ -58,14 +59,21 @@ export const useChatWithLawyer = () => {
         }
         websocket.current.onmessage = function(event) {
             const parsedMessage = JSON.parse(event.data);
-            if(parsedMessage.sender.id !== user?.id) {
+            if(parsedMessage.sender.id !== user?.id && chatWindowRef.current) {
                 dispatch(addMessageToArray(parsedMessage));    
-                chatWindowRef?.current?.scrollTo({
-                    top: 1000
+                
+                chatWindowRef.current.scrollTo({
+                    top: chatWindowRef.current.scrollHeight
                 })
             } 
         }
     }
+
+    useEffect(() => {
+        if(fetching) {
+            dispatch(fetchMessages(chatId as number, offset))
+        }
+    }, [fetching, chatId, offset])
 
     useEffect(() => {        
         if(chatId) {
@@ -87,7 +95,6 @@ export const useChatWithLawyer = () => {
     useEffect(() => {
         if(chatWindowRef?.current) {
             chatWindowRef.current.addEventListener('scroll', scrollHandler);
-    
         }
 
         if(chatWindowRef?.current) {

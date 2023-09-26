@@ -23,7 +23,7 @@ const ChatsApplications: React.FC = () => {
     const {resetMessages} = clientChatSlice.actions;
     const {setChatId} = chatsApplicationsSlice.actions;
 
-    const {chatList} = useTypedSelector(state => state.chatsApplicationsSlice);
+    const {chatList, chatId} = useTypedSelector(state => state.chatsApplicationsSlice);
 
     const onSelectAndConnectChat = (chatId: number) => {
         dispatch(resetMessages());
@@ -34,6 +34,13 @@ const ChatsApplications: React.FC = () => {
     useEffect(() => {
         dispatch(fetchChatList());
     }, [])
+
+    useEffect(() => {
+        if(!chatId && chatList?.length && id) {
+            const chat = chatList.find((item) => item.question === +id);
+            dispatch(setChatId(chat?.chat_id as number))
+        }
+    }, [chatId, chatList])
 
     useEffect(() => {
         if(id && chatList.length) {
