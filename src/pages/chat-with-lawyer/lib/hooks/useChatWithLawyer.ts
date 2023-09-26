@@ -23,12 +23,14 @@ export const useChatWithLawyer = () => {
 
     const {user} = useTypedSelector(state => state.userSlice);
     const {chatId, chatList} = useTypedSelector(state => state.chatsApplicationsSlice);
-    const {fetching, offset} = useTypedSelector(state => state.clientChatSlice);
+    const {fetching, offset, messages, maxCount} = useTypedSelector(state => state.clientChatSlice);
 
     const {addMessageToArray, toggleFetching} = clientChatSlice.actions;
 
     const scrollHandler = (event: any) => {
-        if(event.target.scrollTop < 40) {
+        console.log(maxCount);
+        
+        if(event.target.scrollTop < 40 && messages.length < maxCount) {
             dispatch(toggleFetching(true))
         }
     }
@@ -73,7 +75,7 @@ export const useChatWithLawyer = () => {
         if(fetching) {
             dispatch(fetchMessages(chatId as number, offset))
         }
-    }, [fetching, chatId, offset])
+    }, [fetching, chatId, offset, maxCount])
 
     useEffect(() => {        
         if(chatId) {

@@ -4,7 +4,8 @@ import { ClientChatSlice, Message } from "./types";
 const initialState: ClientChatSlice = {
     messages: [],
     fetching: false,
-    offset: 0
+    offset: 0,
+    maxCount: 0
 }
 
 export const clientChatSlice = createSlice({
@@ -25,6 +26,9 @@ export const clientChatSlice = createSlice({
         },
         incrementOffset(state) {
             state.offset += 10;
+        },
+        setMaxCount(state, action: PayloadAction<number>) {
+            state.maxCount = action.payload;
         }
     }
 })
