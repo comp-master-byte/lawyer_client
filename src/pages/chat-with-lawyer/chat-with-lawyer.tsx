@@ -24,7 +24,7 @@ const ChatWithLawyer: React.FC = () => {
                 <MyInput 
                     hasFile
                     placeholder='Написать сообщение'
-                    register={register("message")}
+                    register={register("text")}
                     inputClassName={styles.messageInput}
                 />
                 <MyButton   

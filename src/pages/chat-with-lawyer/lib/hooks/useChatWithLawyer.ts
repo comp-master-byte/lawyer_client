@@ -4,9 +4,11 @@ import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { useParams } from 'react-router-dom';
 import { clientChatSlice } from '../../model/clientChatSlice';
 import Message from '../../api/Message';
+import { messageMapper } from '../helpers/message-mapper';
+import { User } from 'features/user/model/types';
 
 interface IChatValues {
-    message: string
+    text: string
 }
 
 export const useChatWithLawyer = () => {
@@ -23,27 +25,27 @@ export const useChatWithLawyer = () => {
 
     const {addMessageToArray} = clientChatSlice.actions;
 
-    const onSendMessage: SubmitHandler<IChatValues> = async (data) => {
-        const message = {
-            text: data.message,
-            sender: {
-                id: user?.id as number,
-                full_name: user?.full_name as string
-            }
+    const scrollHandler = (event: any) => {
+        if(event.target.scrollTop < 100) {
+
         }
-        dispatch(addMessageToArray(message));
-        reset({message: ""});
-        if(!chatId && id && chatWindowRef && chatWindowRef.current) {
+    }
+
+    const onSendMessage: SubmitHandler<IChatValues> = async (data) => {
+        let result: boolean|undefined = false;
+        if(!chatId && id && chatWindowRef.current) {
             const chat = chatList.find((item) => item.question === +id);            
-            const res = await Message.sendMessage({message: data.message}, chat?.chat_id as number);
-            chatWindowRef?.current?.scrollTo({
-                top: chatWindowRef.current.scrollHeight
-            })
+            result = await Message.sendMessage({message: data.text}, chat?.chat_id as number);
         } else {
-            const res = await Message.sendMessage({message: data.message}, chatId as number);
-            chatWindowRef?.current?.scrollTo({
-                top: chatWindowRef.current.scrollHeight
+            result = await Message.sendMessage({message: data.text}, chatId as number);
+        }
+
+        if(result && chatWindowRef.current) {
+            dispatch(addMessageToArray(messageMapper(data, user as User)));
+            chatWindowRef.current.scrollTo({
+                top: 1000
             })
+            reset({text: ""});
         }
     }    
 
@@ -54,18 +56,16 @@ export const useChatWithLawyer = () => {
         }
         websocket.current.onmessage = function(event) {
             const parsedMessage = JSON.parse(event.data);
-            const message = {
-                text: parsedMessage.text,
-                sender: {
-                    id: user?.id as number,
-                    full_name: user?.full_name as string
-                }
-            }
-            dispatch(addMessageToArray(message));    
+            if(parsedMessage.sender.id !== user?.id) {
+                dispatch(addMessageToArray(messageMapper(parsedMessage, user as User)));    
+                chatWindowRef?.current?.scrollTo({
+                    top: 1000
+                })
+            } 
         }
     }
 
-    useEffect(() => {
+    useEffect(() => {        
         if(chatId) {
             websocketConnection(chatId);
         } else if(chatList.length && id) {
@@ -81,6 +81,19 @@ export const useChatWithLawyer = () => {
             })
         }
     }, [chatList, websocket.current])
+
+    useEffect(() => {
+        if(chatWindowRef?.current) {
+            chatWindowRef.current.addEventListener('scroll', scrollHandler);
+    
+        }
+
+        if(chatWindowRef?.current) {
+            return function() {
+                chatWindowRef.current?.removeEventListener('scroll', scrollHandler);
+            }
+        }
+    }, [])
 
     return {
         register,

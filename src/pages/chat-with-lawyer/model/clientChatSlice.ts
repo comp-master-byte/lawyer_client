@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ClientChatSlice, Message } from "./types";
 
 const initialState: ClientChatSlice = {
-    messages: []
+    messages: [],
+    fetching: false
 }
 
 export const clientChatSlice = createSlice({
@@ -17,6 +18,9 @@ export const clientChatSlice = createSlice({
         },
         addMessageToArray(state, action: PayloadAction<Message>) {
             state.messages.push(action.payload);
+        },
+        toggleFetching(state, action: PayloadAction<boolean>) {
+            state.fetching = action.payload;
         }
     }
 })
