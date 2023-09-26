@@ -13,7 +13,7 @@ const MessageItem: React.FC<MessageItemProps> = ({message}) => {
 
     const IS_LAWYER = useMemo(() => {
         return user?.id === message.sender.id
-    }, [user]);
+    }, [user, message]);
 
     return (
         <div className={classNames(styles.messageItemWrapper, {

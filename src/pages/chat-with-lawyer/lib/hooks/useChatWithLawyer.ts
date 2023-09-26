@@ -32,6 +32,8 @@ export const useChatWithLawyer = () => {
     }
 
     const onSendMessage: SubmitHandler<IChatValues> = async (data) => {
+        console.log('render');
+        
         let result: boolean|undefined = false;
         if(!chatId && id && chatWindowRef.current) {
             const chat = chatList.find((item) => item.question === +id);            
@@ -57,7 +59,7 @@ export const useChatWithLawyer = () => {
         websocket.current.onmessage = function(event) {
             const parsedMessage = JSON.parse(event.data);
             if(parsedMessage.sender.id !== user?.id) {
-                dispatch(addMessageToArray(messageMapper(parsedMessage, user as User)));    
+                dispatch(addMessageToArray(parsedMessage));    
                 chatWindowRef?.current?.scrollTo({
                     top: 1000
                 })
