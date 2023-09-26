@@ -15,12 +15,13 @@ export const useNavigation = () => {
             return [
                 {to: '/lawyer-cabinet/market', name: 'Маркет заявок'},
                 {to: '/lawyer-cabinet/applications', name: 'Мои заявки'},
-                {to: "/lawyer-cabinet/profile", name: 'Профиль'}
+                {to: '/chats', name: 'Чаты'},
+                {to: "/lawyer-cabinet/profile", name: 'Профиль'},
             ]
         } else {
             return [
               {to: '/cabinet/appeals', name: 'Мои обращения'},
-              {to: '/cabinet/chats', name: 'Чаты'},
+              {to: '/chats', name: 'Чаты'},
               {to: '/cabinet/edit-profile', name: 'Редактировать профиль'},
             ]
         }

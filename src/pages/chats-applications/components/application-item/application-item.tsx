@@ -14,7 +14,7 @@ const ApplicationItem: React.FC<ApplicationItemProps> = ({application, onSelectA
 
     return (
         <Link 
-            to={`/cabinet/chats/${application.question}`} 
+            to={`/chats/${application.question}`} 
             onClick={() => onSelectAndConnectChat(application.chat_id)}
             className={classNames(styles.applicationWrapper, {
                 [styles.selectedChat]: id && +id === +(application.question)

@@ -9,11 +9,11 @@ import WaitingLawyerAppeal from 'pages/cabinet/waiting-lawyer-appeal/waiting-law
 import { useTypedSelector } from 'shared/lib/hooks/redux';
 import Cookies from 'js-cookie';
 import LawyerProfile from 'pages/lawyer-cabinet/lawyer-profile/lawyer-profile';
-import ChatWithLawyer from 'pages/cabinet/chat-with-lawyer/chat-with-lawyer';
 import Market from 'pages/lawyer-cabinet/market/market';
 import PageLayout from 'entities/layouts/page-layout/page-layout';
-import ChatsApplications from 'entities/layouts/chats-applications/chats-applications';
 import LawyerAppeals from 'pages/lawyer-cabinet/lawyer-appeals/lawyer-appeals';
+import ChatsApplications from 'pages/chats-applications/chats-applications';
+import ChatWithLawyer from 'pages/chat-with-lawyer/chat-with-lawyer';
 
 const AppRoutes: React.FC = () => {
     const {user} = useTypedSelector((state) => state.userSlice);
@@ -33,12 +33,14 @@ const AppRoutes: React.FC = () => {
                     <Route path='appeals' element={<Appeals />} />
                     <Route path='appeals/:id' element={<WaitingLawyerAppeal />} />
                     <Route path='edit-profile' element={<EditProfile />} />
-                    <Route path='chats/' element={<ChatsApplications />}>
-                        <Route path=':id' element={<ChatWithLawyer />} />
-                    </Route>
                 </Route>
                 : <Route path='*' element={<Navigate to='/' replace />} />
             }
+            <Route path="/chats/" element={<PageLayout />}>
+                <Route path="/chats/" element={<ChatsApplications />}>
+                    <Route path=':id' element={<ChatWithLawyer />} />
+                </Route>
+            </Route>
 
             {/* Private Routes and Lawyer */}
                 <Route path='/lawyer-cabinet/' element={<PageLayout />}>

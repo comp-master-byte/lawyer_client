@@ -25,7 +25,7 @@ const Appeals: React.FC = () => {
         }
 
         if(appeal.status === "active") {
-            navigate(`/cabinet/chats/${appeal.question_id}`);
+            navigate(`/chats/${appeal.question_id}`);
             return;
         }
     }

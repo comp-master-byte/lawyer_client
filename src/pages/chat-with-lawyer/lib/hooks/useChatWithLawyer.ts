@@ -21,7 +21,7 @@ export const useChatWithLawyer = () => {
     const {user} = useTypedSelector(state => state.userSlice);
     const {chatId, chatList} = useTypedSelector(state => state.chatsApplicationsSlice);
 
-    const {sendMessage} = clientChatSlice.actions;
+    const {addMessageToArray} = clientChatSlice.actions;
 
     const onSendMessage: SubmitHandler<IChatValues> = async (data) => {
         const message = {
@@ -31,17 +31,17 @@ export const useChatWithLawyer = () => {
                 full_name: user?.full_name as string
             }
         }
-        dispatch(sendMessage(message));
+        dispatch(addMessageToArray(message));
         reset({message: ""});
         if(!chatId && id && chatWindowRef && chatWindowRef.current) {
             const chat = chatList.find((item) => item.question === +id);            
             const res = await Message.sendMessage({message: data.message}, chat?.chat_id as number);
-            chatWindowRef.current.scrollTo({
+            chatWindowRef?.current?.scrollTo({
                 top: chatWindowRef.current.scrollHeight
             })
         } else {
             const res = await Message.sendMessage({message: data.message}, chatId as number);
-            chatWindowRef.current?.scrollTo({
+            chatWindowRef?.current?.scrollTo({
                 top: chatWindowRef.current.scrollHeight
             })
         }
@@ -51,6 +51,17 @@ export const useChatWithLawyer = () => {
         websocket.current = new WebSocket(`wss://backend.juraprav.ru/ws/chat/${chatId}`);
         websocket.current.onopen = function() {
             console.log('Соединение с чатом установлено', id);
+        }
+        websocket.current.onmessage = function(event) {
+            const parsedMessage = JSON.parse(event.data);
+            const message = {
+                text: parsedMessage.text,
+                sender: {
+                    id: user?.id as number,
+                    full_name: user?.full_name as string
+                }
+            }
+            dispatch(addMessageToArray(message));    
         }
     }
 
