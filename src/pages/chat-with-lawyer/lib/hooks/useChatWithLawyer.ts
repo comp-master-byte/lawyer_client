@@ -28,8 +28,6 @@ export const useChatWithLawyer = () => {
     const {addMessageToArray, toggleFetching} = clientChatSlice.actions;
 
     const scrollHandler = (event: any) => {
-        console.log(maxCount);
-        
         if(event.target.scrollTop < 40 && messages.length < maxCount) {
             dispatch(toggleFetching(true))
         }

@@ -29,7 +29,9 @@ const LawyerAppeals: React.FC = () => {
     }, [])
 
     const onSelectAppeal = useCallback((appeal: Application) => {
-
+        if(appeal.question.status === 'active') {
+            navigate(`/chats/${appeal.question.question_id}`);
+        }
     }, [])
 
     useEffect(() => {
