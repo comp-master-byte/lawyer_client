@@ -85,12 +85,12 @@ export const useChatWithLawyer = () => {
     }, [chatId, chatList]) 
 
     useEffect(() => {
-        if(chatList?.length && websocket.current?.readyState !== websocket.current?.CLOSED) {
+        if(messages?.length && websocket.current?.readyState !== websocket.current?.CLOSED) {
             chatWindowRef.current?.scrollTo({
                 top: 1000
             })
         }
-    }, [chatList, websocket.current])
+    }, [messages, websocket.current])
 
     useEffect(() => {
         if(chatWindowRef?.current) {
