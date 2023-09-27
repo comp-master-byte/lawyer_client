@@ -7,6 +7,8 @@ import InputMask from 'shared/ui/MyInput/input-mask';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import Respond from './api/Respond';
 import { toast } from 'react-toastify';
+import { useAppDispatch } from 'shared/lib/hooks/redux';
+import { marketSlice } from 'pages/lawyer-cabinet/market/model/marketSlice';
 
 interface ResponseModalProps {
     closeModal: () => void;
@@ -23,9 +25,13 @@ export interface ResponseValues {
 const ResponseModal: React.FC<ResponseModalProps> = ({closeModal, isModalVisible, questionId}) => {
     const {register, formState: {errors}, control, handleSubmit} = useForm<ResponseValues>();
 
+    const dispatch = useAppDispatch();
+    const {deleteFreeQuestion} = marketSlice.actions;
+
     const onSubmitRespond: SubmitHandler<ResponseValues> = async (data) => {
         const response = await Respond.sendResponse(data, questionId);
         if(response) {
+            dispatch(deleteFreeQuestion(questionId));
             closeModal();
             toast("Ваш отклик успешно отправлен!", {
                 type: "success"
