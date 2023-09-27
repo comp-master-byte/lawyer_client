@@ -25,6 +25,7 @@ export const appealsSlice = createSlice({
         nullAppealsCurrentPage(state) {
             state.appeals = [];
             state.offset = 0;
+            state.isFetching = true;
         }
     }
 })

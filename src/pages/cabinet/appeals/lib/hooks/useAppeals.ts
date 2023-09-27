@@ -38,5 +38,11 @@ export const useAppeals = () => {
         }
     }, [appeals, maxCount])
 
+    useEffect(() => {
+        return function() {
+            dispatch(nullAppealsCurrentPage());
+        }
+    }, [])
+
     return {selectedAppealOption, onSelectAppealOption}
 }
