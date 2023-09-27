@@ -2,7 +2,7 @@ import { ResponseValues } from "../../response-modal";
 
 interface Result {
     cost: number;
-    response: string;
+    note: string;
     days: number;
     hours: number;
     question_id: number
@@ -10,7 +10,7 @@ interface Result {
 
 export const mapResponseData = (data: ResponseValues, question_id: number) => {
     const result: Result = {
-        response: data.response,
+        note: data.note,
         cost: Number(parseInt(data.cost.split('руб')[0])),
         days: Number(data.period.split('дн')[0]),
         hours: Number(data.period.split('дн')[1].split('ч')[0].trim()),

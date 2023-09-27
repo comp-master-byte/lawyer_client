@@ -19,7 +19,7 @@ interface ResponseModalProps {
 export interface ResponseValues {
     cost: string;
     period: string;
-    response: string;
+    note: string;
 }
 
 const ResponseModal: React.FC<ResponseModalProps> = ({closeModal, isModalVisible, questionId}) => {
@@ -48,8 +48,8 @@ const ResponseModal: React.FC<ResponseModalProps> = ({closeModal, isModalVisible
                 <h2 className={styles.title}>Напишите ваш отклик</h2>
                 <TextArea 
                     inputClassName={styles.textarea}
-                    error={errors.response}
-                    register={register("response", {
+                    error={errors.note}
+                    register={register("note", {
                         required: "Это поле обязательное!"
                     })}
                 />
