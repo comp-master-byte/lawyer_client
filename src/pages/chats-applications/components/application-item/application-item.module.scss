@@ -21,6 +21,10 @@
         // background-color: #013878;
         // cursor: pointer;
     }
+
+    &:first-child {
+        // margin-top: 0;
+    }
 }
 
 .selectedChat {

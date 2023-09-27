@@ -1,5 +1,31 @@
 .applicationsList {
-    margin-right: -15px;
     display: flex;
     flex-direction: column;
+    margin-right: -15px;
 }
+
+.scrollWrapper {
+    max-height: 643px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-bottom: 3px solid #013878;
+}
+
+// .scrollWrapper::-webkit-scrollbar {
+//     width: 15px;
+//     border-radius: 7.5px;
+//     border: 3px solid #013878;
+// }
+
+// .scrollWrapper::-webkit-scrollbar-track {
+//     background-color: transparent;
+//     width: 15px;
+    
+// }
+
+// .scrollWrapper::-webkit-scrollbar-thumb {
+//     max-width: 1px;
+//     border-radius: 7.5px;
+//     border: 1px solid #FD7900;
+//     background-color: #FD7900;
+// }
