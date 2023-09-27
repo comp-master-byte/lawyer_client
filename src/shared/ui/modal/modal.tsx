@@ -21,7 +21,7 @@ const Modal: React.FC<ModalProps> = ({children, isModalVisible, modalContentClas
         } else {
             document.body.style.overflowY = 'auto';
         }
-    }, [isModalVisible])
+    }, [isModalVisible, closeModal])
 
     return (
         <section className={classNames(styles.modalWrapper, {[styles.modalVisible]: isModalVisible})}>
