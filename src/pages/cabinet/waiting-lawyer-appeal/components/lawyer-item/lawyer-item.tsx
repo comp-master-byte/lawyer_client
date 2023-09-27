@@ -13,7 +13,6 @@ interface LawyerItemProps {
 }
 
 const LawyerItem: React.FC<LawyerItemProps> = ({interestedLawyer}) => {
-    
     const {
         isLawyerResponseModalVisible,
         isSelectLawyerModalVisible,

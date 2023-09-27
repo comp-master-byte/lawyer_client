@@ -57,7 +57,7 @@ const ResponseModal: React.FC<ResponseModalProps> = ({closeModal, isModalVisible
                     />
                     <InputMask 
                         name='period'
-                        mask='**дн **ч'
+                        mask='***дн **ч'
                         label='Время выполнения'
                         control={control}
                         inputClassName={styles.input}
