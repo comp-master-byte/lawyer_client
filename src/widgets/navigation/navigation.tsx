@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import { useScrollTo } from "shared/lib/hooks/useScrollTo";
 import SuccessRegisterModal from "./components/success-register-modal/success-register-modal";
 import ProfilePopup from "./components/profile-popup/profile-popup";
-import { useTypedSelector } from "shared/lib/hooks/redux";
 import ResetPasswordModal from "./components/reset-password-modal/reset-password-modal";
 
 const Navigation: React.FC = React.memo(function Navigation() {
@@ -47,8 +46,6 @@ const Navigation: React.FC = React.memo(function Navigation() {
       openSignInCloseSignUp
     } = useAuthorization();
 
-    const {isSuccessResetPassword} = useTypedSelector(state => state.authorizationSlice);
-
     return (
         <header className={classNames(styles.navigationWrapper, {
           [styles.mobileNavigationWrapper]: isNavigationMobileVisible
@@ -68,7 +65,7 @@ const Navigation: React.FC = React.memo(function Navigation() {
             />
 
             <ResetPasswordModal 
-                
+
             />
 
             <SuccessRegisterModal />

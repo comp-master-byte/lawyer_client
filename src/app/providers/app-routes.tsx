@@ -23,6 +23,7 @@ const AppRoutes: React.FC = () => {
             {/* Pulic Routes */}
             <Route path='/' element={<PageLayout />}>
                 <Route index element={<Home />} />
+                <Route path='/reset_password/:uid/:token' element={<Home />} /> 
                 <Route path='privacy-policy' element={<PrivacyPolicy />} />
                 <Route path='terms-of-use' element={<TermsOfUse />} />
             </Route>
@@ -34,7 +35,7 @@ const AppRoutes: React.FC = () => {
                     <Route path='appeals/:id' element={<WaitingLawyerAppeal />} />
                     <Route path='edit-profile' element={<EditProfile />} />
                 </Route>
-                : <Route path='*' element={<Navigate to='/' replace />} />
+                : <></>
             }
             <Route path="/chats/" element={<PageLayout />}>
                 <Route path="/chats/" element={<ChatsApplications />}>

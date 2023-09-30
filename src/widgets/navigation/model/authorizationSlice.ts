@@ -6,7 +6,9 @@ const initialState: AuthorizationState = {
     isSuccessRegisterModalVisible: false,
     isSignInModalVisible: false,
     isSuccessResetPassword: false,
-    isResetPasswordModalVisible: true,
+    isResetPasswordModalVisible: false,
+    token: '',
+    uid: ''
 }
 
 export const authorizationSlice = createSlice({
@@ -28,6 +30,11 @@ export const authorizationSlice = createSlice({
         toggleResetPasswordModalVisibility(state, action: PayloadAction<boolean>) {
             state.isResetPasswordModalVisible = action.payload;
         },
+        setResetPasswordParams(state, action: PayloadAction<{token: string, uid: string}>) {
+            state.uid = action.payload.uid;
+            state.token = action.payload.token;
+            state.isResetPasswordModalVisible = true;
+        }
     }
 })
 

@@ -22,6 +22,8 @@ export interface AuthorizationState {
     isSuccessRegisterModalVisible: boolean;
     isSuccessResetPassword: boolean;
     isResetPasswordModalVisible: boolean;
+    uid: string;
+    token: string;
 }
 
 export interface ProfileLink {

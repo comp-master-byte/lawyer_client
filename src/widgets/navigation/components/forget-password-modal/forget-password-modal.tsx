@@ -9,6 +9,7 @@ import MyButton from 'shared/ui/MyButton/MyButton';
 import Auth from 'widgets/navigation/api/Auth';
 import { useAppDispatch } from 'shared/lib/hooks/redux';
 import { authorizationSlice } from 'widgets/navigation/model/authorizationSlice';
+import { toast } from 'react-toastify';
 
 interface ForgetPasswordModalProps {
     closeForgetPasswordModal: () => void;
@@ -18,12 +19,16 @@ interface ForgetPasswordModalProps {
 
 const ForgetPasswordModal: React.FC<ForgetPasswordModalProps> = (props) => {
     const {closeForgetPasswordModal, isForgetPasswordModalVisible, openSignInModal} = props;
-    const {register, handleSubmit, formState: {errors}} = useForm<ForgetPassword>();
+    const {register, handleSubmit, formState: {errors}, reset} = useForm<ForgetPassword>();
 
     const onSubmitEmail: SubmitHandler<ForgetPassword> = async (data) => {
         const response = await Auth.resetPassword(data);
         if(response) {
             closeForgetPasswordModal();
+            reset({email: ''});
+            toast("Ссылка успешно отправлена вам на почту", {
+                type: "success"
+            })
         }
     }
 

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react"
+import { useParams } from "react-router-dom";
 import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
 import { authorizationSlice } from "widgets/navigation/model/authorizationSlice";
 
@@ -6,7 +7,9 @@ import { authorizationSlice } from "widgets/navigation/model/authorizationSlice"
 export const useAuthorization = () => {
     const dispatch = useAppDispatch();
 
-    const {toggleRegisterModalVisibility, toggleSignInModalVisibility} = authorizationSlice.actions;
+    const {uid, token} = useParams();
+
+    const {toggleRegisterModalVisibility, toggleSignInModalVisibility, setResetPasswordParams} = authorizationSlice.actions;
 
     const {isSignInModalVisible, isRegisterModalVisible, isSuccessRegisterModalVisible} = useTypedSelector((state) => state.authorizationSlice);
 
@@ -44,6 +47,11 @@ export const useAuthorization = () => {
         dispatch(toggleSignInModalVisibility(true));
     }, [])
 
+    useEffect(() => {
+        if(uid||token) {
+            dispatch(setResetPasswordParams({token, uid} as {token: string; uid: string}))
+        }
+    }, [])
     
     useEffect(() => {
         if(

@@ -9,7 +9,6 @@ export const useNavigation = () => {
     const [isNavigationMobileVisible, setIsNavigationMobileVisible] = useState(false);
     const [isProfilePopupVisible, setIsProfilePopupVisible] = useState(false);
 
-
     const memoizedProfileLinks: ProfileLink[] = useMemo(() => {
         if(user?.is_lawyer) {
             return [
