@@ -8,12 +8,20 @@ interface Result {
     question_id: number
 }
 
+const normalizeStringFormatter = (str: string) => {
+    return Number(str.split("").map(Number).filter(item => Number.isInteger(item)).join(''));
+}
+
 export const mapResponseData = (data: ResponseValues, question_id: number) => {
+    const {period} = data;
+
+    const [days, hours] = period.split(" ");
+    
     const result: Result = {
         note: data.note,
         cost: Number(parseInt(data.cost.split('руб')[0])),
-        days: Number(data.period.split('дн')[0]),
-        hours: Number(data.period.split('дн')[1].split('ч')[0].trim()),
+        days: normalizeStringFormatter(days),
+        hours: normalizeStringFormatter(hours),
         question_id
     };
     
