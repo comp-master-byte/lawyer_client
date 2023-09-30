@@ -10,8 +10,8 @@ export const fetchMessages = (chatId: number, offset?: number) => async (dispatc
         }});
         const messages = await response.data.results.reverse();
         dispatch(clientChatSlice.actions.setMessages(messages));
-        dispatch(clientChatSlice.actions.incrementOffset());
         dispatch(clientChatSlice.actions.setMaxCount(response.data.count));
+        dispatch(clientChatSlice.actions.incrementOffset());
     } catch(error) {
 
     } finally {
