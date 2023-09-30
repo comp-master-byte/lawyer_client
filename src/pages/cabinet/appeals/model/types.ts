@@ -16,4 +16,5 @@ export interface AppealsState {
     isFetching: boolean;
     offset: number;
     maxCount: number;
+    selectedAppeal: Appeal|null;
 }

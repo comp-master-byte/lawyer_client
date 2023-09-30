@@ -1,0 +1,38 @@
+.waitingResponseWrapper {
+    margin-top: 77px;
+
+    &__title {
+        text-align: center;
+        color:  #013878;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 90%; /* 43.2px */
+        letter-spacing: -1.2px;
+        margin-bottom: 47px;
+    }
+
+    .noteWrapper {
+        width: 100%;
+        min-height: 214px;
+        padding: 34px 44px;
+        border-radius: 30px;
+        border: 3px solid #013878;
+        background: #FFF;
+        margin-bottom: 24px;
+
+        .note {
+            color: #013878;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 100%; /* 20px */
+            letter-spacing: -0.5px;
+        }
+    }
+    .rejectButtonWrapper {
+        text-align: right;
+        .rejectAppealButton {
+            width: fit-content;
+            padding: 0 50px;
+        }
+    }
+}

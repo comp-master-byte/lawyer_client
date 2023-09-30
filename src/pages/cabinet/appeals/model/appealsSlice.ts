@@ -5,7 +5,8 @@ const initialState: AppealsState = {
     appeals: [],
     isFetching: true,
     offset: 0,
-    maxCount: 0
+    maxCount: 0,
+    selectedAppeal: null
 } 
 
 export const appealsSlice = createSlice({
@@ -26,6 +27,9 @@ export const appealsSlice = createSlice({
             state.appeals = [];
             state.offset = 0;
             state.isFetching = true;
+        },
+        setSelectedAppeal(state, action: PayloadAction<Appeal>) {
+            state.selectedAppeal = action.payload;
         }
     }
 })

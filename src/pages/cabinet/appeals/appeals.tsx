@@ -5,12 +5,12 @@ import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { useAppeals } from './lib/hooks/useAppeals';
 import AppealsList from 'entities/appeals/appeals-list/appeals-list';
 import { useNavigate } from 'react-router-dom';
-import { AppealAndApplication } from 'shared/model/types';
 import AppealsFilter from 'entities/appeals/appeals-filter/appeals-filter';
 import { Appeal } from './model/types';
 import AppealItem from 'entities/appeals/appeal-item/appeal-item';
 import { supportChatSlice } from 'widgets/support-chat/model/supportChatSlice';
 import { literalNavigation } from './lib/helpers/literalNavigation';
+import { appealsSlice } from './model/appealsSlice';
 
 const Appeals: React.FC = () => {
     const {appeals} = useTypedSelector((state) => state.appealsSlice);
@@ -19,7 +19,8 @@ const Appeals: React.FC = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
-    const onSelectAppeal = function(appeal: AppealAndApplication) {
+    const onSelectAppeal = function(appeal: Appeal) {
+        dispatch(appealsSlice.actions.setSelectedAppeal(appeal))
         const status = literalNavigation(appeal);
         navigate(status);
     }
