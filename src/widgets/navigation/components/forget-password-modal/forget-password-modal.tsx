@@ -7,6 +7,8 @@ import { ForgetPassword } from 'widgets/navigation/model/types';
 import { EMAIL_REGEX } from 'shared/constants/constants';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import Auth from 'widgets/navigation/api/Auth';
+import { useAppDispatch } from 'shared/lib/hooks/redux';
+import { authorizationSlice } from 'widgets/navigation/model/authorizationSlice';
 
 interface ForgetPasswordModalProps {
     closeForgetPasswordModal: () => void;
@@ -20,6 +22,9 @@ const ForgetPasswordModal: React.FC<ForgetPasswordModalProps> = (props) => {
 
     const onSubmitEmail: SubmitHandler<ForgetPassword> = async (data) => {
         const response = await Auth.resetPassword(data);
+        if(response) {
+            closeForgetPasswordModal();
+        }
     }
 
     return (

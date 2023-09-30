@@ -20,6 +20,8 @@ export interface AuthorizationState {
     isSignInModalVisible: boolean;
     isRegisterModalVisible: boolean;
     isSuccessRegisterModalVisible: boolean;
+    isSuccessResetPassword: boolean;
+    isResetPasswordModalVisible: boolean;
 }
 
 export interface ProfileLink {
