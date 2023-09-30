@@ -13,22 +13,33 @@ interface ModalWithTitleProps {
     authSubtitle?: string;
     authButtonText?: string;
     modalContentWrapper?: string;
+    modalWrapperContent?: string;
 }
 
 const ModalWithTitle: React.FC<ModalWithTitleProps> = (props) => {
-    const {isModalVisible, children, closeAuthModal, openAnotherModalCallback, authButtonText, authSubtitle, authTitle, modalContentWrapper} = props;
+    const {
+        isModalVisible, 
+        children, 
+        closeAuthModal, 
+        openAnotherModalCallback, 
+        authButtonText, 
+        authSubtitle,
+        authTitle, 
+        modalContentWrapper,
+        modalWrapperContent
+    } = props;
 
     return (
         <Modal 
             isModalVisible={isModalVisible} 
             closeModal={closeAuthModal}
-            modalContentClassName={styles.authModalContent}
+            modalContentClassName={classNames(styles.authModalContent, modalWrapperContent)}
         >
             <div className={styles.closeAuthModalButton} onClick={closeAuthModal}>
                 <img src={closeModalSvg} alt="" />
             </div>
             <article className={classNames(styles.authModalTitle, modalContentWrapper)}>
-                <h2 className={styles.authModalTitle__title}>{authTitle}</h2>
+                {authTitle && <h2 className={styles.authModalTitle__title}>{authTitle}</h2>}
                 {authSubtitle && <p className={styles.authModalTitle__text}>{authSubtitle}</p>}
                 {authButtonText && <div className={styles.inlineButton} onClick={openAnotherModalCallback}>{authButtonText}</div>}
             </article>

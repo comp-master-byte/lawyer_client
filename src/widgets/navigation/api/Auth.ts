@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API_URL } from "shared/api/http";
-import { ForgetPassword, SignInValues, SignUpValues } from "../model/types";
+import { ForgetPassword, ResetPasswordConfirm, SignInValues, SignUpValues } from "../model/types";
 import { toast } from "react-toastify";
 import { signUpMapper } from "./mappers/signUpMapper";
 import { UseFormSetError } from "react-hook-form";
@@ -46,5 +46,12 @@ export default class Auth {
                 toast(err, {type: "error"})
             }
         }
+    }
+
+    static async resetPasswordConfirm(resetData: ResetPasswordConfirm) {
+        try {
+            const response = await axios.post(`${API_URL}/api/auth/users/reset_password_confirm/`, resetData);
+            return 200;
+        } catch(err) {}
     }
 }

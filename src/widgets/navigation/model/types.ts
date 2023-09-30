@@ -30,3 +30,9 @@ export interface ProfileLink {
     to: string;
     name: string;
 }
+
+export interface ResetPasswordConfirm {
+    uid: string;
+    token: string;
+    new_password: string;
+}
