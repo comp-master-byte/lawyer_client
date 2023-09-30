@@ -44,7 +44,6 @@ export const useChatWithLawyer = () => {
 
         if(result && chatWindowRef.current) {
             dispatch(addMessageToArray(messageMapper(data, user as User)));
-            console.log(chatWindowRef.current.scrollHeight + 1000);
             chatWindowRef.current.scrollTo({
                 top: chatWindowRef.current.scrollHeight 
             })
@@ -59,12 +58,8 @@ export const useChatWithLawyer = () => {
         }
         websocket.current.onmessage = function(event) {
             const parsedMessage = JSON.parse(event.data);
-            if(parsedMessage.sender.id !== user?.id && chatWindowRef.current) {
+            if(parsedMessage.sender.id !== user?.id) {
                 dispatch(addMessageToArray(parsedMessage));    
-                
-                chatWindowRef.current.scrollTo({
-                    top: chatWindowRef.current.scrollHeight
-                })
             } 
         }
     }
@@ -78,10 +73,14 @@ export const useChatWithLawyer = () => {
     useEffect(() => {        
         if(chatId) {
             websocketConnection(chatId);
-        } else if(chatList.length && id) {
-            const chat = chatList.find((item) => item.question === +id);      
-            websocketConnection(chat?.chat_id as number)
-        }
+            return;
+        } 
+        
+        // if(chatList.length && id) {
+        //     const chat = chatList.find((item) => item.question === +id);      
+        //     websocketConnection(chat?.chat_id as number);
+        //     return;
+        // }
     }, [chatId, chatList]) 
 
     useEffect(() => {
