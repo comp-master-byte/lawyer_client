@@ -23,7 +23,7 @@ export interface ResponseValues {
 }
 
 const ResponseModal: React.FC<ResponseModalProps> = ({closeModal, isModalVisible, questionId}) => {
-    const {register, formState: {errors}, control, handleSubmit, watch} = useForm<ResponseValues>();
+    const {register, formState: {errors}, control, handleSubmit} = useForm<ResponseValues>();
 
     const dispatch = useAppDispatch();
     const {deleteFreeQuestion} = marketSlice.actions;
@@ -56,7 +56,7 @@ const ResponseModal: React.FC<ResponseModalProps> = ({closeModal, isModalVisible
                 <div className={styles.formInputs}>
                     <InputMask 
                         name='cost'
-                        mask={`****руб`}
+                        mask={`*************руб`}
                         label='Стоимость услуги'
                         control={control}
                         inputClassName={styles.input}
