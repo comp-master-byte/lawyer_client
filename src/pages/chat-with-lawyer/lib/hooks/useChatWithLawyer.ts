@@ -28,6 +28,8 @@ export const useChatWithLawyer = () => {
     const {addMessageToArray, toggleFetching} = clientChatSlice.actions;
 
     const scrollHandler = (event: any) => {
+        console.log();
+        
         if(event.target.scrollTop < 40 && messages.length < maxCount) {
             dispatch(toggleFetching(true))
         }
@@ -57,6 +59,8 @@ export const useChatWithLawyer = () => {
             console.log('Соединение с чатом установлено', id);
         }
         websocket.current.onmessage = function(event) {
+            console.log("event");
+            
             const parsedMessage = JSON.parse(event.data);
             if(parsedMessage.sender.id !== user?.id) {
                 dispatch(addMessageToArray(parsedMessage));    
@@ -75,12 +79,6 @@ export const useChatWithLawyer = () => {
             websocketConnection(chatId);
             return;
         } 
-        
-        // if(chatList.length && id) {
-        //     const chat = chatList.find((item) => item.question === +id);      
-        //     websocketConnection(chat?.chat_id as number);
-        //     return;
-        // }
     }, [chatId, chatList]) 
 
     useEffect(() => {
