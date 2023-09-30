@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from 'pages/home/home';
 import Appeals from 'pages/cabinet/appeals/appeals';
 import PrivacyPolicy from 'pages/privacy-policy/privacy-policy';
@@ -14,6 +14,7 @@ import PageLayout from 'entities/layouts/page-layout/page-layout';
 import LawyerAppeals from 'pages/lawyer-cabinet/lawyer-appeals/lawyer-appeals';
 import ChatsApplications from 'pages/chats-applications/chats-applications';
 import ChatWithLawyer from 'pages/chat-with-lawyer/chat-with-lawyer';
+import WaitingResponseAppeal from 'pages/cabinet/waiting-response-appeal/waiting-response-appeal';
 
 const AppRoutes: React.FC = () => {
     const {user} = useTypedSelector((state) => state.userSlice);
@@ -32,7 +33,8 @@ const AppRoutes: React.FC = () => {
             {!user?.is_lawyer && Cookies.get("token") ?
                 <Route path='/cabinet/' element={<PageLayout />}>
                     <Route path='appeals' element={<Appeals />} />
-                    <Route path='appeals/:id' element={<WaitingLawyerAppeal />} />
+                    <Route path='appeals/candidates/:id' element={<WaitingLawyerAppeal />} />
+                    <Route path='appeals/new/:appealId' element={<WaitingResponseAppeal />} />
                     <Route path='edit-profile' element={<EditProfile />} />
                 </Route>
                 : <></>

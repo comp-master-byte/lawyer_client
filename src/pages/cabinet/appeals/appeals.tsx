@@ -10,6 +10,7 @@ import AppealsFilter from 'entities/appeals/appeals-filter/appeals-filter';
 import { Appeal } from './model/types';
 import AppealItem from 'entities/appeals/appeal-item/appeal-item';
 import { supportChatSlice } from 'widgets/support-chat/model/supportChatSlice';
+import { literalNavigation } from './lib/helpers/literalNavigation';
 
 const Appeals: React.FC = () => {
     const {appeals} = useTypedSelector((state) => state.appealsSlice);
@@ -19,15 +20,8 @@ const Appeals: React.FC = () => {
     const dispatch = useAppDispatch();
 
     const onSelectAppeal = function(appeal: AppealAndApplication) {
-        if(appeal.status === "candidates") {
-            navigate(`/cabinet/appeals/${appeal.question_id}`);
-            return;
-        }
-
-        if(appeal.status === "active") {
-            navigate(`/chats/${appeal.question_id}`);
-            return;
-        }
+        const status = literalNavigation(appeal);
+        navigate(status);
     }
 
     return (

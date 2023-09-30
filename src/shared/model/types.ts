@@ -7,7 +7,7 @@ export interface ISelectOption {
 export interface AppealAndApplication {
     question_id: number;
     status_name: string;
-    status: string;
+    status: StatusQuery;
 }
 
 export type StatusQuery = 'new'|'active'|'complete'|'candidates';
