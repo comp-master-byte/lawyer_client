@@ -43,7 +43,7 @@ export const useChatWithLawyer = () => {
         }
 
         if(result && chatWindowRef.current) {
-            dispatch(addMessageToArray(messageMapper(data, user as User)));
+            // dispatch(addMessageToArray(messageMapper(data, user as User)));
             chatWindowRef.current.scrollTo({
                 top: chatWindowRef.current.scrollHeight 
             })
@@ -60,9 +60,7 @@ export const useChatWithLawyer = () => {
             console.log("event");
             
             const parsedMessage = JSON.parse(event.data);
-            if(parsedMessage.sender.id !== user?.id) {
                 dispatch(addMessageToArray(parsedMessage));    
-            } 
         }
     }
 
