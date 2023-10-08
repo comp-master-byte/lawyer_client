@@ -1,6 +1,7 @@
 export interface InterestedLawyer {
     cost: number;
-    deadline: null;
+    days: number;
+    hours: number;
     note: string;
     lawyer: {
         id: number;

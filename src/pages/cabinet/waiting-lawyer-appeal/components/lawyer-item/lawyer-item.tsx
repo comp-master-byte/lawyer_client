@@ -22,6 +22,9 @@ const LawyerItem: React.FC<LawyerItemProps> = ({interestedLawyer}) => {
         openSelectLawyerModal,
     } = useLawyerItem();
 
+    console.log(interestedLawyer);
+    
+
     return (
         <div className={styles.interestedLawyerItemWrapper}>
 
@@ -60,7 +63,7 @@ const LawyerItem: React.FC<LawyerItemProps> = ({interestedLawyer}) => {
 
                 <div className={styles.timeToComplete}>
                     <p className={styles.timeToComplete__time}>Срок выполнения</p>
-                    <p className={styles.timeToComplete__text}>0 дн 10 ч</p>
+                    <p className={styles.timeToComplete__text}>{interestedLawyer.days && `${interestedLawyer.days} дн`} {interestedLawyer.hours && `${interestedLawyer.hours} ч`}</p>
                 </div>
 
                 <div className={styles.lawyerButtons}>
