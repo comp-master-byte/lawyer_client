@@ -22,7 +22,6 @@ const LawyerItem: React.FC<LawyerItemProps> = ({interestedLawyer}) => {
         openSelectLawyerModal,
     } = useLawyerItem();
 
-
     return (
         <div className={styles.interestedLawyerItemWrapper}>
 

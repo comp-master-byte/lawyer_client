@@ -43,7 +43,6 @@ export const useChatWithLawyer = () => {
         }
 
         if(result && chatWindowRef.current) {
-            // dispatch(addMessageToArray(messageMapper(data, user as User)));
             chatWindowRef.current.scrollTo({
                 top: chatWindowRef.current.scrollHeight 
             })
@@ -57,10 +56,8 @@ export const useChatWithLawyer = () => {
             console.log('Соединение с чатом установлено', id);
         }
         websocket.current.onmessage = function(event) {
-            console.log("event");
-            
             const parsedMessage = JSON.parse(event.data);
-                dispatch(addMessageToArray(parsedMessage));    
+            dispatch(addMessageToArray(parsedMessage));    
         }
     }
 

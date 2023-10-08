@@ -17,6 +17,10 @@ export const appealsSlice = createSlice({
             state.appeals = [...state.appeals, ...action.payload.fetchedAppeals];
             state.maxCount = action.payload.maxCount
         },
+        addAppeal(state, action: PayloadAction<any>) {
+            state.appeals.unshift(action.payload);
+            state.maxCount += 1;
+        },
         setFetchingStatus(state, action: PayloadAction<boolean>) {
             state.isFetching = action.payload;
         },
