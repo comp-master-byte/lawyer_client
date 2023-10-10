@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styles from "./client-question-modal.module.scss";
 import { MarketQuestion } from 'pages/lawyer-cabinet/market/model/types';
 import ModalWithTitle from 'shared/ui/modal-with-title/modal-with-title';
@@ -10,9 +10,23 @@ interface ClientQuestionModalProps {
     openResponseModal: () => void;
     isModalVisible: boolean;
     question: MarketQuestion;
+    openChainQuestionsModal: () => void;
 }
 
-const ClientQuestionModal: React.FC<ClientQuestionModalProps> = ({closeQuestionModal, isModalVisible, question, openResponseModal}) => {
+const ClientQuestionModal: React.FC<ClientQuestionModalProps> = (props) => {
+    const {
+        closeQuestionModal, 
+        isModalVisible, 
+        question, 
+        openResponseModal,
+        openChainQuestionsModal
+    } = props;
+
+    const writeLawyerResponse = useCallback(() => {
+        closeQuestionModal();
+        openResponseModal();
+    }, [])
+
     return (
         <ModalWithTitle
             authTitle={`Заявка ${question.question_id}`}
@@ -39,6 +53,7 @@ const ClientQuestionModal: React.FC<ClientQuestionModalProps> = ({closeQuestionM
                     color='primary'
                     variant='contained'
                     size='large'
+                    onClick={openChainQuestionsModal}
                 >
                     Посмотреть переписку с ботом
                 </MyButton>
@@ -46,10 +61,7 @@ const ClientQuestionModal: React.FC<ClientQuestionModalProps> = ({closeQuestionM
                     color='secondary'
                     variant='contained'
                     size='large'
-                    onClick={() => {
-                        closeQuestionModal();
-                        openResponseModal();
-                    }}
+                    onClick={writeLawyerResponse}
                 >
                     Написать отклик
                 </MyButton>
