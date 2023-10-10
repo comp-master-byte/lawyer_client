@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from "./desktop-chat-version.module.scss";
-import LeftSupportWindow from './components/left-support-window/left-support-window';
-import MyButton from 'shared/ui/MyButton/MyButton';
 import { useSupportChat } from 'widgets/support-chat/lib/hooks/useSupportChat';
-import classNames from 'classnames';
 import SupportChatButton from 'features/support-chat/components/support-chat-button/support-chat-button';
-import RightSupportWindow from './components/right-support-window/right-support-window';
 import LegalAdvice from 'entities/support-chat/legal-advice/legal-advice';
-import { useClickOutside } from 'shared/lib/hooks/useClickOutside';
+import SupportChatModal from 'entities/support-chat/support-chat-modal/support-chat-modal';
+import MyButton from 'shared/ui/MyButton/MyButton';
+import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
+import { fetchMessageNode } from 'widgets/support-chat/model/async-actions';
+import { supportChatSlice } from 'widgets/support-chat/model/supportChatSlice';
 
 const DesktopChatVersion: React.FC = () => {
     const {
@@ -19,9 +19,14 @@ const DesktopChatVersion: React.FC = () => {
         backToSupportChatFromLegalModal
     } = useSupportChat();
 
-    const supportChatContentRef = useClickOutside(() => {
-        closeSupportChat();
-    })
+    const {data, isLoading} = useTypedSelector(state => state.supportChatSlice);
+
+    const dispatch = useAppDispatch();
+
+    const moveToTheNextChain = function(nodeId: number) {
+        dispatch(fetchMessageNode(nodeId));
+        dispatch(supportChatSlice.actions.pushChainToArray(nodeId));
+    }
 
     return (
         <div className={styles.desktopChatVersion}>
@@ -33,23 +38,25 @@ const DesktopChatVersion: React.FC = () => {
                 backToSupportChatFromLegalModal={backToSupportChatFromLegalModal}
             />
 
-            <section className={classNames(styles.supportChatWrapper, {[styles.supportChatVisible]: isSupportChatVisible})}>
-                <div ref={supportChatContentRef} className={styles.supportChatContent}>
-                    <div className={styles.supportChatWindow}>
-                        <LeftSupportWindow />
-                        <RightSupportWindow closeSupportChatCallback={closeSupportChat} />
-                    </div>
-                    <MyButton 
-                        color='secondary' 
-                        variant='contained'
-                        size='large' 
-                        btnClassName={styles.lawyerConsultationButton}
-                        onClick={openLegalAdviceModal}
-                    >
-                        Нужна консультация юриста
-                    </MyButton>
-                </div>
-            </section>
+            <div className={styles.chatWrapper}>
+                <SupportChatModal
+                    chainData={data}
+                    isChainLoading={isLoading}
+                    closeSupportChat={closeSupportChat}
+                    moveToTheNextChain={moveToTheNextChain}
+                    isSupportChatVisible={isSupportChatVisible}
+                />
+
+                <MyButton 
+                    color='secondary' 
+                    variant='contained'
+                    size='large' 
+                    btnClassName={styles.lawyerConsultationButton}
+                    onClick={openLegalAdviceModal}
+                >
+                    Нужна консультация юриста
+                </MyButton>
+            </div>
         </div>
     )
 }

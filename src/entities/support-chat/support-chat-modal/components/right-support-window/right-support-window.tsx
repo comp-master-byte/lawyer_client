@@ -3,16 +3,17 @@ import styles from "./right-support-window.module.scss";
 import classNames from 'classnames';
 import closeSvg from "widgets/support-chat/assets/close.svg";
 import AnswersList from './components/answers-list/answers-list';
-import { useTypedSelector } from 'shared/lib/hooks/redux';
 import Loader from 'shared/ui/loader/loader';
+import { MessageData } from 'widgets/support-chat/model/types';
 
 interface RightSupportWindowProps {
     closeSupportChatCallback: () => void;
+    isLoading: boolean;
+    chainData: MessageData|null;
+    moveToTheNextChain: (nodeId: number) => void;
 }
 
-const RightSupportWindow: React.FC<RightSupportWindowProps> = ({closeSupportChatCallback}) => {
-    const {isLoading} = useTypedSelector(state => state.supportChatSlice);
-    
+const RightSupportWindow: React.FC<RightSupportWindowProps> = ({closeSupportChatCallback, isLoading, chainData, moveToTheNextChain}) => {
     return (
         <div className={classNames(styles.chatContentWrapper, styles.rightSupportChatWindow)}>
             <header className={styles.rightWindowHeader}>
@@ -20,7 +21,7 @@ const RightSupportWindow: React.FC<RightSupportWindowProps> = ({closeSupportChat
                     <img src={closeSvg} alt="" />
                 </div>
             </header>
-            {isLoading ? <Loader loaderWrapperClassName={styles.loaderWrapper} /> : <AnswersList />}
+            {isLoading ? <Loader loaderWrapperClassName={styles.loaderWrapper} /> : <AnswersList chainData={chainData} moveToTheNextChain={moveToTheNextChain} />}
         </div>
     )
 }

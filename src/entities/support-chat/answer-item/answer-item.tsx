@@ -7,20 +7,14 @@ import { useAppDispatch } from 'shared/lib/hooks/redux';
 
 interface AnswerItemProps {
     answer: [string, number];
+    forwardCallback: (nodeId: number) => void;
 }
 
-const AnswerItem: React.FC<AnswerItemProps> = ({answer}) => {
-    const dispatch = useAppDispatch();
-
-    const moveToTheNextChain = function(nodeId: number) {
-        dispatch(fetchMessageNode(nodeId));
-        dispatch(supportChatSlice.actions.pushChainToArray(nodeId));
-    }
-
+const AnswerItem: React.FC<AnswerItemProps> = ({answer, forwardCallback}) => {
     return (
         <div 
             key={answer[1]} 
-            onClick={() =>  moveToTheNextChain(answer[1])}
+            onClick={() =>  forwardCallback(answer[1])}
             className={classNames(styles.answerItem, {
                 [styles.halfAnswerWidth]: answer[0] === 'Да'|| answer[0] === 'Нет',
             })}
