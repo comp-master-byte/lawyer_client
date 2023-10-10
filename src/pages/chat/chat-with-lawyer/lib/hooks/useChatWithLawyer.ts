@@ -6,7 +6,7 @@ import { clientChatSlice } from '../../model/clientChatSlice';
 import Message from '../../api/Message';
 import { messageMapper } from '../helpers/message-mapper';
 import { User } from 'features/user/model/types';
-import { fetchMessages } from 'pages/chat-with-lawyer/model/async-actions';
+import { fetchMessages } from 'pages/chat/chat-with-lawyer/model/async-actions';
 
 interface IChatValues {
     text: string;

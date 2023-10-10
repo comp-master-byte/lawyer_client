@@ -7,8 +7,8 @@ import MyInput from 'shared/ui/MyInput/MyInput';
 import ApplicationsList from './components/applications-list/applications-list';
 import { fetchChatList } from './model/async-actions';
 import EmptyChat from './components/empty-chat/empty-chat';
-import { fetchMessages } from 'pages/chat-with-lawyer/model/async-actions';
-import { clientChatSlice } from 'pages/chat-with-lawyer/model/clientChatSlice';
+import { fetchMessages } from 'pages/chat/chat-with-lawyer/model/async-actions';
+import { clientChatSlice } from 'pages/chat/chat-with-lawyer/model/clientChatSlice';
 import { chatsApplicationsSlice } from './model/chatsApplicationsSlice';
 
 interface ApplicationsValues {

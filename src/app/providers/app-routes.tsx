@@ -12,8 +12,8 @@ import LawyerProfile from 'pages/lawyer-cabinet/lawyer-profile/lawyer-profile';
 import Market from 'pages/lawyer-cabinet/market/market';
 import PageLayout from 'entities/layouts/page-layout/page-layout';
 import LawyerAppeals from 'pages/lawyer-cabinet/lawyer-appeals/lawyer-appeals';
-import ChatsApplications from 'pages/chats-applications/chats-applications';
-import ChatWithLawyer from 'pages/chat-with-lawyer/chat-with-lawyer';
+import ChatsApplications from 'pages/chat/chats-applications/chats-applications';
+import ChatWithLawyer from 'pages/chat/chat-with-lawyer/chat-with-lawyer';
 import WaitingResponseAppeal from 'pages/cabinet/waiting-response-appeal/waiting-response-appeal';
 
 const AppRoutes: React.FC = () => {
