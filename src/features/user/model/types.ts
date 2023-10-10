@@ -9,6 +9,7 @@ export interface User {
     experience: string|null;
     photo: string|null;
     is_lawyer_confirmed: boolean;
+    chain: number[];
 }
 
 export interface UserState {

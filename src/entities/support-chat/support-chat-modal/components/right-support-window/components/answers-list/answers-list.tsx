@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from "./answers-list.module.scss";
 import AnswerItem from 'entities/support-chat/answer-item/answer-item';
-import { MessageData } from 'widgets/support-chat/model/types';
+import { QuestionFromChain } from 'shared/model/types';
 
 interface AnswersListProps {
-    chainData: MessageData|null;
+    chainData: QuestionFromChain|null;
     moveToTheNextChain: (nodeId: number) => void;
 }
 

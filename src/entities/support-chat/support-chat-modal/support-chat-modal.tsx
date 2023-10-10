@@ -4,12 +4,12 @@ import classNames from 'classnames';
 import LeftSupportWindow from './components/left-support-window/left-support-window';
 import RightSupportWindow from './components/right-support-window/right-support-window';
 import { useClickOutside } from 'shared/lib/hooks/useClickOutside';
-import { MessageData } from 'widgets/support-chat/model/types';
+import { QuestionFromChain } from 'shared/model/types';
 
 interface SupportchatModalProps {
     isSupportChatVisible: boolean;
     closeSupportChat: () => void;
-    chainData: MessageData|null;
+    chainData: QuestionFromChain|null;
     isChainLoading: boolean;
     moveToTheNextChain: (nodeId: number) => void;
 }

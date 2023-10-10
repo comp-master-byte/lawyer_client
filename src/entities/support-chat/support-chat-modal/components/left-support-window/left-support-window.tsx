@@ -3,10 +3,10 @@ import styles from "./left-support-window.module.scss";
 import logoSvg from "widgets/support-chat/assets/logo.svg";
 import LeftWindowHeader from './components/left-window-header/left-window-header';
 import StaticContent from 'entities/support-chat/static-content/static-content';
-import { MessageData } from 'widgets/support-chat/model/types';
+import { QuestionFromChain } from 'shared/model/types';
 
 interface LeftSupportWindowProps {
-    chainData: MessageData|null;
+    chainData: QuestionFromChain|null;
     isChainLoading: boolean;
 }
 

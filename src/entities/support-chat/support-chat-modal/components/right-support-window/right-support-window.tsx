@@ -4,12 +4,12 @@ import classNames from 'classnames';
 import closeSvg from "widgets/support-chat/assets/close.svg";
 import AnswersList from './components/answers-list/answers-list';
 import Loader from 'shared/ui/loader/loader';
-import { MessageData } from 'widgets/support-chat/model/types';
+import { QuestionFromChain } from 'shared/model/types';
 
 interface RightSupportWindowProps {
     closeSupportChatCallback: () => void;
     isLoading: boolean;
-    chainData: MessageData|null;
+    chainData: QuestionFromChain|null;
     moveToTheNextChain: (nodeId: number) => void;
 }
 

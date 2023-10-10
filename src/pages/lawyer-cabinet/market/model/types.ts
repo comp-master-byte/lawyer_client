@@ -1,3 +1,5 @@
+import { QuestionFromChain } from "shared/model/types";
+
 export interface MarketQuestion {
     created_by: {
         full_name: string;
@@ -10,5 +12,7 @@ export interface MarketQuestion {
 }
 
 export interface MarketState {
-    freeQuestions: MarketQuestion[]
+    freeQuestions: MarketQuestion[];
+    chainQuestion: QuestionFromChain|null;
+    isChainLoading: boolean;
 }

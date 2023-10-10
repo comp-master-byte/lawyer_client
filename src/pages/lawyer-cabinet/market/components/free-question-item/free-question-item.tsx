@@ -4,15 +4,24 @@ import { MarketQuestion } from '../../model/types';
 import MyButton from 'shared/ui/MyButton/MyButton';
 import ClientQuestionModal from 'entities/market/client-question-modal/client-question-modal';
 import ResponseModal from 'entities/market/response-modal/response-modal';
+import SupportChatModal from 'entities/support-chat/support-chat-modal/support-chat-modal';
+import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
+import { getChainForQuestion } from '../../model/async-actions';
 
 interface ApplicationItemProps {
     application: MarketQuestion;
 }
 
 const FreeQuestionItem: React.FC<ApplicationItemProps> = ({application}) => {
+    const dispatch = useAppDispatch();
+
+    const {chainQuestion, isChainLoading} = useTypedSelector(state => state.marketSlice);
+    const {user} = useTypedSelector(state => state.userSlice);
+
     const [isClientQuestionModalVisible, setIsClientModalVisible] = useState(false);
     const [isResponseModalVisible, setIsResponseModalVisible] = useState(false);
     const [isChainQuestionsModalVisible, setIsChainQuestionsModalVisible] = useState(false);
+    const [isChainQuestionsLoading, setIsChainQuestionsLoading] = useState(false);
 
     const openClientQuestionModal = () => setIsClientModalVisible(true);
     const closeClientQuestionModal = () => setIsClientModalVisible(false);
@@ -21,9 +30,15 @@ const FreeQuestionItem: React.FC<ApplicationItemProps> = ({application}) => {
     const openResponseModal = () => setIsResponseModalVisible(true);
 
     const openChainQuestionsModal = useCallback(() => {
-        setIsClientModalVisible(false);
-        setIsChainQuestionsModalVisible(true);
-    }, []);
+        dispatch(getChainForQuestion(user?.chain[0] as number));
+
+            setIsClientModalVisible(false);
+            setIsChainQuestionsModalVisible(true);
+    }, [chainQuestion]);
+
+    const closeChainQuestionModal = useCallback(() => {
+        setIsChainQuestionsModalVisible(false);
+    }, [])
 
     return (
         <div className={styles.applicationItemWrapper}>
@@ -39,6 +54,14 @@ const FreeQuestionItem: React.FC<ApplicationItemProps> = ({application}) => {
                 closeModal={closeResponseModal}
                 isModalVisible={isResponseModalVisible}
                 questionId={application.question_id}
+            />
+
+            <SupportChatModal 
+                chainData={chainQuestion}
+                isChainLoading={isChainLoading}
+                moveToTheNextChain={() => ''}
+                closeSupportChat={closeChainQuestionModal}
+                isSupportChatVisible={isChainQuestionsModalVisible}
             />
 
             <div className={styles.applicationItem}>

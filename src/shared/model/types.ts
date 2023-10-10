@@ -10,5 +10,14 @@ export interface AppealAndApplication {
     status: StatusQuery;
 }
 
+export interface QuestionFromChain {
+    answers: {
+        [key: string]: number;
+    };
+    message: string;
+    node_id: number;
+    q_or_a: 'q'|'a'
+}
+
 export type StatusQuery = 'new'|'active'|'complete'|'candidates';
 export type LawyerStatus = 'active'|'deny'|'complete'|'candidates';

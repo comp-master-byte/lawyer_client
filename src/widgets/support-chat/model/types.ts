@@ -1,14 +1,7 @@
-export interface MessageData {
-    answers: {
-        [key: string]: number;
-    };
-    message: string;
-    node_id: number;
-    q_or_a: 'q'|'a'
-}
+import { QuestionFromChain } from "shared/model/types";
 
 export interface SupportChatState {
-    data: MessageData|null;
+    data: QuestionFromChain|null;
     savedChains: number[];
     isLoading: boolean;
     isSupportChatVisible: boolean;
