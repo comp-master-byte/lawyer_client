@@ -58,6 +58,8 @@ const FreeQuestionItem: React.FC<ApplicationItemProps> = ({application}) => {
             />
 
             <ChainQuestionsModal 
+                chainData={chainQuestion}
+                isChainLoading={isChainLoading}
                 closeModal={closeChainQuestionModal}
                 isModalVisible={isChainQuestionsModalVisible}
             />

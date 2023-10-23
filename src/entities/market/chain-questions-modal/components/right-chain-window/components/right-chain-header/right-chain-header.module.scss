@@ -1,0 +1,17 @@
+.rightChainWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+        color: #013878;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 105%; /* 23.1px */
+        letter-spacing: -0.55px;
+    }
+
+    .img {
+        cursor: pointer;
+    }
+}
