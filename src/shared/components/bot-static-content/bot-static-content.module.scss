@@ -1,0 +1,26 @@
+.contentMainTitle {
+    max-width: 312px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--unnamed, #013878);
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90%; /* 19.8px */
+    letter-spacing: -0.55px;
+}
+
+.contentHelperText {
+    max-width: 346px;
+    margin: 0 auto;
+    margin-top: 16px;
+    color: var(--unnamed, #013878);
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 105%; /* 18.9px */
+    letter-spacing: -0.45px;
+    white-space: pre-wrap;
+}

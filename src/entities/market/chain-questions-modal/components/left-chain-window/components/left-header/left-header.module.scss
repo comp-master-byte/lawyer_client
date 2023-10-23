@@ -1,0 +1,16 @@
+.topHeaderButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .headerButton {
+        width: 92px;
+        height: 51px;
+        font-size: 18px;
+        padding: 0;
+        font-weight: 600;
+        line-height: 87.023%; /* 15.664px */
+        letter-spacing: -0.45px;
+        border-radius: 10px;
+    }
+}
