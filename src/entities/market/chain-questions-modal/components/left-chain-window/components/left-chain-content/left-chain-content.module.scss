@@ -1,0 +1,29 @@
+.contentHelperText {
+    color: var(--unnamed, #013878);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 105%; /* 18.9px */
+    letter-spacing: -0.45px;
+
+    white-space: pre-wrap;
+    max-height: 240px;
+    overflow-y: auto;
+    padding-left: 20px;
+    padding-right: 26px;
+}
+
+.contentHelperText::-webkit-scrollbar {
+    width: 9px;
+}
+
+.contentHelperText::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.contentHelperText::-webkit-scrollbar-thumb {
+    width: 9px;
+    border-radius: 7px;
+    background-color: #FD7900;
+}
