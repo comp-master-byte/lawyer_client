@@ -7,6 +7,7 @@ import ResponseModal from 'entities/market/response-modal/response-modal';
 import SupportChatModal from 'entities/support-chat/support-chat-modal/support-chat-modal';
 import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
 import { getChainForQuestion } from '../../model/async-actions';
+import ChainQuestionsModal from 'entities/market/chain-questions-modal/chain-questions-modal';
 
 interface ApplicationItemProps {
     application: MarketQuestion;
@@ -32,8 +33,8 @@ const FreeQuestionItem: React.FC<ApplicationItemProps> = ({application}) => {
     const openChainQuestionsModal = useCallback(() => {
         dispatch(getChainForQuestion(user?.chain[0] as number));
 
-            setIsClientModalVisible(false);
-            setIsChainQuestionsModalVisible(true);
+        setIsClientModalVisible(false);
+        setIsChainQuestionsModalVisible(true);
     }, [chainQuestion]);
 
     const closeChainQuestionModal = useCallback(() => {
@@ -56,13 +57,17 @@ const FreeQuestionItem: React.FC<ApplicationItemProps> = ({application}) => {
                 questionId={application.question_id}
             />
 
-            <SupportChatModal 
+            <ChainQuestionsModal 
+                closeModal={closeChainQuestionModal}
+                isModalVisible={isChainQuestionsModalVisible}
+            />
+            {/* <SupportChatModal 
                 chainData={chainQuestion}
                 isChainLoading={isChainLoading}
                 moveToTheNextChain={() => ''}
                 closeSupportChat={closeChainQuestionModal}
                 isSupportChatVisible={isChainQuestionsModalVisible}
-            />
+            /> */}
 
             <div className={styles.applicationItem}>
                 <div className={styles.applicationContent}>

@@ -23,9 +23,13 @@ const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
 
     const dispatch = useAppDispatch();
 
-    const {toggleSuccessRegisterModalVisibility, toggleRegisterModalVisibility} = authorizationSlice.actions;
+    const {
+        toggleSuccessRegisterModalVisibility, 
+        toggleRegisterModalVisibility
+    } = authorizationSlice.actions;
 
     const {isRegisterModalVisible} = useTypedSelector(state => state.authorizationSlice);
+    const {savedChains} = useTypedSelector(state => state.supportChatSlice);
 
     const [isLoading, setIsLoading] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
@@ -47,7 +51,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({openSignInModal}) => {
         }
 
         setIsLoading(true);
-        const response = await Auth.register(data, setError);
+        const response = await Auth.register({...data, chain: savedChains}, setError);
         setIsLoading(false);
         if(response) {
             dispatch(toggleRegisterModalVisibility(false));

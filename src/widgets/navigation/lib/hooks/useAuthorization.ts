@@ -9,9 +9,17 @@ export const useAuthorization = () => {
 
     const {uid, token} = useParams();
 
-    const {toggleRegisterModalVisibility, toggleSignInModalVisibility, setResetPasswordParams} = authorizationSlice.actions;
+    const {
+        toggleRegisterModalVisibility, 
+        toggleSignInModalVisibility, 
+        setResetPasswordParams
+    } = authorizationSlice.actions;
 
-    const {isSignInModalVisible, isRegisterModalVisible, isSuccessRegisterModalVisible} = useTypedSelector((state) => state.authorizationSlice);
+    const {
+        isSignInModalVisible, 
+        isRegisterModalVisible, 
+        isSuccessRegisterModalVisible
+    } = useTypedSelector((state) => state.authorizationSlice);
 
     const [isForgetPasswordModalVisible, setIsForgetPasswordModalVisible] = useState(false);
 

@@ -5,6 +5,10 @@ import { toast } from "react-toastify";
 import { signUpMapper } from "./mappers/signUpMapper";
 import { UseFormSetError } from "react-hook-form";
 
+interface Register extends SignUpValues {
+    chain: number[]
+}
+
 export default class Auth {
     static async login(loginData: SignInValues, setError: UseFormSetError<SignInValues>) {
         try {
@@ -21,7 +25,7 @@ export default class Auth {
         }
     }
 
-    static async register(registerData: SignUpValues, setError: UseFormSetError<any>) {
+    static async register(registerData: Register, setError: UseFormSetError<any>) {
         try {
             const mappedRegisterData = signUpMapper(registerData);
             const response = await axios.post(`${API_URL}/api/auth/users/`, mappedRegisterData);
