@@ -2,8 +2,15 @@ import path from "path";
 import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
 
-module.exports = (env: any) => { 
+type Mode = 'production' | 'development';
+
+interface EnvVariables {
+    mode: Mode
+}
+
+module.exports = (env: EnvVariables) => { 
     const config: webpack.Configuration = {
         mode: env.mode ?? 'development',
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
@@ -45,12 +52,17 @@ module.exports = (env: any) => {
                 },
             ],
         },
+        devtool: 'inline-source-map',
         resolve: {
             extensions: ['.tsx', '.ts', '.js', '.jsx'],
             alias: {
                 "@": path.resolve(__dirname, 'src'),
             }
         },
+        devServer: {
+            port: 5000,
+            open: true,
+        }
     }
 
     return config;

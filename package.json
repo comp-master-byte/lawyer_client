@@ -29,7 +29,8 @@
   },
   "scripts": {
     "build:dev": "webpack --env mode=development",
-    "build:prod": "webpack --env mode=production"
+    "build:prod": "webpack --env mode=production",
+    "start": "webpack serve"
   },
   "browserslist": {
     "production": [
@@ -48,6 +49,7 @@
     "@types/js-cookie": "^3.0.3",
     "@types/react-input-mask": "^3.0.2",
     "@types/webpack": "^5.28.5",
+    "@types/webpack-dev-server": "^4.7.2",
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
@@ -56,6 +58,7 @@
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }
