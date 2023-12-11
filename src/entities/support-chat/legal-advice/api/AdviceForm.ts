@@ -1,4 +1,4 @@
-import $api from "shared/api/http";
+import $api from "@/shared/api/http";
 import { LegalFormValues } from "../hooks/useLegalAdviceForm";
 import { adviceMapper } from "./mappers/advice-mapper";
 import { toast } from "react-toastify";

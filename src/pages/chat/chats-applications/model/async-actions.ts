@@ -1,5 +1,5 @@
-import { AppDispatch } from "app/store/store";
-import $api from "shared/api/http";
+import { AppDispatch } from "@/app/store/store";
+import $api from "@/shared/api/http";
 import { chatsApplicationsSlice } from "./chatsApplicationsSlice";
 
 export const fetchChatList = () => async (dispatch: AppDispatch) => {

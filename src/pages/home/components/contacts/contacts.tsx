@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./contacts.module.scss";
 import ContactCard from "./components/ContactCard/ContactCard";
-import vk from "./assets/vk.svg";
-import tg from "./assets/tg.svg";
-import yura from "./assets/yura.svg";
-import SectionTitle from "shared/styled-components/SectionTitle/SectionTitle";
-import { TG_LINK, VK_LINK } from "shared/constants/constants";
-import ContactForm from "features/contact-form/contact-form";
+import vk from "./assets/vk.svg?url";
+import tg from "./assets/tg.svg?url";
+import yura from "./assets/yura.svg?url";
+import SectionTitle from "@/shared/styled-components/SectionTitle/SectionTitle";
+import { TG_LINK, VK_LINK } from "@/shared/constants/constants";
+import ContactForm from "@/features/contact-form/contact-form";
 
 const Contacts: React.FC = React.memo(function Contacts() {
   return (

@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import styles from "./waiting-lawyer-appeal.module.scss";
 import { useNavigate, useParams } from 'react-router-dom';
-import MyButton from 'shared/ui/MyButton/MyButton';
-import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
+import MyButton from '@/shared/ui/MyButton/MyButton';
+import { useAppDispatch, useTypedSelector } from '@/shared/lib/hooks/redux';
 import { fetchInterestedLawyers } from './model/async-actions';
 import LawyersList from './components/lawyers-list/lawyers-list';
-import Loader from 'shared/ui/loader/loader';
+import Loader from '@/shared/ui/loader/loader';
 
 const WaitingLawyerAppeal: React.FC = () => {
     const navigate = useNavigate();

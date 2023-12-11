@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./empty-placeholder.module.scss";
-import MyButton from 'shared/ui/MyButton/MyButton';
+import MyButton from '@/shared/ui/MyButton/MyButton';
 import personSvg from "./assets/person.png";
 import { useNavigate } from 'react-router-dom';
 

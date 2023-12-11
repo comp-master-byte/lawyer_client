@@ -1,14 +1,14 @@
 import React from "react";
-import MyButton from "shared/ui/MyButton/MyButton";
+import MyButton from "@/shared/ui/MyButton/MyButton";
 import styles from "./primary.module.scss";
-import pointer from "./assets/pointer.svg";
-import bigHuman from "./assets/big-yura.svg";
+import pointer from "./assets/pointer.svg?url";
+import bigHuman from "./assets/big-yura.svg?url";
 import classNames from "classnames";
-import { useAppDispatch } from "shared/lib/hooks/redux";
-import { authorizationSlice } from "widgets/navigation/model/authorizationSlice";
+import { useAppDispatch } from "@/shared/lib/hooks/redux";
+import { authorizationSlice } from "@/widgets/navigation/model/authorizationSlice";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-import { useSupportChatFeatures } from "features/support-chat/hooks/useSupportChatFeatures";
+import { useSupportChatFeatures } from "@/features/support-chat/hooks/useSupportChatFeatures";
 
 
 const Primary: React.FC = React.memo(function PrimaryView() {

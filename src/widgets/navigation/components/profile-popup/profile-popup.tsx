@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { toast } from 'react-toastify';
-import $api from 'shared/api/http';
-import { ProfileLink } from 'widgets/navigation/model/types';
+import $api from '@/shared/api/http';
+import { ProfileLink } from '@/widgets/navigation/model/types';
 
 interface ProfilePopupProps {
     isPopupVisible: boolean;

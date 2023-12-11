@@ -1,9 +1,9 @@
-import { fetchUser } from "features/user/model/async-actions";
-import { userSlice } from "features/user/model/userSlice";
+import { fetchUser } from "@/features/user/model/async-actions";
+import { userSlice } from "@/features/user/model/userSlice";
 import Cookies from "js-cookie";
 import { useEffect, useRef } from "react"
 import { useLocation, useNavigate } from "react-router-dom";
-import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
+import { useAppDispatch, useTypedSelector } from "@/shared/lib/hooks/redux";
 
 export const useCabinetLayout = () => {
     const dispatch = useAppDispatch();

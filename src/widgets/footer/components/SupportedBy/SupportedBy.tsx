@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./SupportedBy.module.scss";
-import logo from "./assets/logo.svg";
-import fsi from "./assets/fsi.svg";
-import smallLogoSvg from "../../assets/footer-logo.svg";
+import logo from "./assets/logo.svg?url";
+import fsi from "./assets/fsi.svg?url";
+import smallLogoSvg from "../../assets/footer-logo.svg?url";
 
 const SupportedBy: React.FC = React.memo(function SupportedBy() {
   return (

@@ -1,4 +1,4 @@
-import $api from "shared/api/http";
+import $api from "@/shared/api/http";
 import { toast } from "react-toastify";
 import { editProfileMapper, reEditBirthday } from "./mapper/edit-profile-mapper";
 import { UseFormSetError } from "react-hook-form";

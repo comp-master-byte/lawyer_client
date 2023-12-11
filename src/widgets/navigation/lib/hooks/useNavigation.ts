@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useTypedSelector } from "shared/lib/hooks/redux";
-import { useClickOutside } from "shared/lib/hooks/useClickOutside";
-import { ProfileLink } from "widgets/navigation/model/types";
+import { useTypedSelector } from "@/shared/lib/hooks/redux";
+import { useClickOutside } from "@/shared/lib/hooks/useClickOutside";
+import { ProfileLink } from "@/widgets/navigation/model/types";
 
 export const useNavigation = () => {
     const {user} = useTypedSelector((state) => state.userSlice);

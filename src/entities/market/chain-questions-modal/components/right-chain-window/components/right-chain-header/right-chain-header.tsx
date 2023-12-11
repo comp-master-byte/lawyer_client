@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./right-chain-header.module.scss";
-import closeSvg from "shared/assets/close.svg";
+import closeSvg from "@/shared/assets/close.svg?url";
 
 interface RightChainHeaderProps {
     closeModal: () => void;

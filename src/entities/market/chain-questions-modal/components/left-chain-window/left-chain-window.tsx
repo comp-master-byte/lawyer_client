@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from "./left-chain-window.module.scss";
-import BlueBorderModal from 'shared/ui/blue-border-modal/blue-border-modal';
+import BlueBorderModal from '@/shared/ui/blue-border-modal/blue-border-modal';
 import LeftHeader from './components/left-header/left-header';
-import logoSvg from "shared/assets/logo.svg";
-import { QuestionFromChain } from 'shared/model/types';
+import logoSvg from "@/shared/assets/logo.svg?url";
+import { QuestionFromChain } from '@/shared/model/types';
 import LeftChainContent from './components/left-chain-content/left-chain-content';
 
 interface LeftChainWindowProps {

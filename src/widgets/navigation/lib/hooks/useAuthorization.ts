@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
-import { authorizationSlice } from "widgets/navigation/model/authorizationSlice";
+import { useAppDispatch, useTypedSelector } from "@/shared/lib/hooks/redux";
+import { authorizationSlice } from "@/widgets/navigation/model/authorizationSlice";
 
 
 export const useAuthorization = () => {

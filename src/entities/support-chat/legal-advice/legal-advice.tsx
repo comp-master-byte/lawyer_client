@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./legal-advice.module.scss";
-import Modal from 'shared/ui/modal/modal';
+import Modal from '@/shared/ui/modal/modal';
 import TopAdviceContent from './components/top-advice-content/top-advice-content';
 import LegalForm from './components/legal-form/legal-form';
 

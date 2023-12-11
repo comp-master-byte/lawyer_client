@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from "./appeals.module.scss";
 import { APPEALS } from './constants/constants';
-import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
+import { useAppDispatch, useTypedSelector } from '@/shared/lib/hooks/redux';
 import { useAppeals } from './lib/hooks/useAppeals';
-import AppealsList from 'entities/appeals/appeals-list/appeals-list';
+import AppealsList from '@/entities/appeals/appeals-list/appeals-list';
 import { useNavigate } from 'react-router-dom';
-import AppealsFilter from 'entities/appeals/appeals-filter/appeals-filter';
+import AppealsFilter from '@/entities/appeals/appeals-filter/appeals-filter';
 import { Appeal } from './model/types';
-import AppealItem from 'entities/appeals/appeal-item/appeal-item';
-import { supportChatSlice } from 'widgets/support-chat/model/supportChatSlice';
+import AppealItem from '@/entities/appeals/appeal-item/appeal-item';
+import { supportChatSlice } from '@/widgets/support-chat/model/supportChatSlice';
 import { literalNavigation } from './lib/helpers/literalNavigation';
 import { appealsSlice } from './model/appealsSlice';
 

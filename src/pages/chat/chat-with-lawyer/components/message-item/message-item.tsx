@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import styles from "./message-item.module.scss";
 import classNames from 'classnames';
-import { useTypedSelector } from 'shared/lib/hooks/redux';
+import { useTypedSelector } from '@/shared/lib/hooks/redux';
 import { Message } from '../../model/types';
 
 interface MessageItemProps {

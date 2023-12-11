@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Additional.module.scss";
-import icon from "./assets/icon.svg";
+import icon from "./assets/icon.svg?url";
 
 const AdditionalCard: React.FC = React.memo(function AdditionalCard() {
   return (

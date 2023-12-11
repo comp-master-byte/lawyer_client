@@ -1,4 +1,4 @@
-import { StatusQuery } from "shared/model/types";
+import { StatusQuery } from "@/shared/model/types";
 
 export interface Appeal {
     question_id: number;

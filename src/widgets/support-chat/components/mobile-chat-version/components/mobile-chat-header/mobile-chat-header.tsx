@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from "./mobile-chat-header.module.scss";
-import MyButton from 'shared/ui/MyButton/MyButton';
-import backSvg from "widgets/support-chat/assets/backArrow.svg"
-import closeMobileSvg from "widgets/support-chat/assets/closeMobile.svg";
-import { useChatNavigation } from 'widgets/support-chat/lib/hooks/useChatNavigation';
+import MyButton from '@/shared/ui/MyButton/MyButton';
+import backSvg from "@/widgets/support-chat/assets/backArrow.svg?url";
+import closeMobileSvg from "@/widgets/support-chat/assets/closeMobile.svg?url";
+import { useChatNavigation } from '@/widgets/support-chat/lib/hooks/useChatNavigation';
 
 interface MobileChatHeaderProps {
     closeSupportChat: () => void;

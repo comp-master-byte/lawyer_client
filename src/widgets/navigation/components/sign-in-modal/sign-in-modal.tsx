@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./sign-in-modal.module.scss";
 import { SubmitHandler, useForm } from 'react-hook-form';
-import MyInput from 'shared/ui/MyInput/MyInput';
-import { EMAIL_REGEX } from 'shared/constants/constants';
-import MyButton from 'shared/ui/MyButton/MyButton';
-import { SignInValues } from 'widgets/navigation/model/types';
-import Auth from 'widgets/navigation/api/Auth';
+import MyInput from '@/shared/ui/MyInput/MyInput';
+import { EMAIL_REGEX } from '@/shared/constants/constants';
+import MyButton from '@/shared/ui/MyButton/MyButton';
+import { SignInValues } from '@/widgets/navigation/model/types';
+import Auth from '@/widgets/navigation/api/Auth';
 import classNames from 'classnames';
-import ModalWithTitle from 'shared/ui/modal-with-title/modal-with-title';
+import ModalWithTitle from '@/shared/ui/modal-with-title/modal-with-title';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
-import { userSlice } from 'features/user/model/userSlice';
+import { useAppDispatch, useTypedSelector } from '@/shared/lib/hooks/redux';
+import { userSlice } from '@/features/user/model/userSlice';
 
 interface SignInModalProps {
     closeSignInModal: () => void;

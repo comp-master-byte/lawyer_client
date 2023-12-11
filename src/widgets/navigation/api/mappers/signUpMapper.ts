@@ -1,4 +1,4 @@
-import { SignUpValues } from "widgets/navigation/model/types";
+import { SignUpValues } from "@/widgets/navigation/model/types";
 
 export const signUpMapper = (data: SignUpValues) => {
     return {

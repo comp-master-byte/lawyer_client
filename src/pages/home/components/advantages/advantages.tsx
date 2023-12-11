@@ -2,12 +2,12 @@ import React from "react";
 import styles from "./advantages.module.scss";
 import WhiteCard from "./components/WhiteCard/WhiteCard";
 import BlueCard from "./components/BlueCard/BlueCard";
-import MyButton from "shared/ui/MyButton/MyButton";
-import SectionTitle from "shared/styled-components/SectionTitle/SectionTitle";
-import mobileBgLine from "./assets/bg-line.svg";
-import { useSupportChatFeatures } from "features/support-chat/hooks/useSupportChatFeatures";
-import { useAppDispatch } from "shared/lib/hooks/redux";
-import { supportChatSlice } from "widgets/support-chat/model/supportChatSlice";
+import MyButton from "@/shared/ui/MyButton/MyButton";
+import SectionTitle from "@/shared/styled-components/SectionTitle/SectionTitle";
+import mobileBgLine from "./assets/bg-line.svg?url";
+import { useSupportChatFeatures } from "@/features/support-chat/hooks/useSupportChatFeatures";
+import { useAppDispatch } from "@/shared/lib/hooks/redux";
+import { supportChatSlice } from "@/widgets/support-chat/model/supportChatSlice";
 
 const Advantages: React.FC = React.memo(function Advantages() {
   const dispatch = useAppDispatch();

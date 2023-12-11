@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from "./forget-password-modal.module.scss";
-import ModalWithTitle from 'shared/ui/modal-with-title/modal-with-title';
+import ModalWithTitle from '@/shared/ui/modal-with-title/modal-with-title';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import MyInput from 'shared/ui/MyInput/MyInput';
-import { ForgetPassword } from 'widgets/navigation/model/types';
-import { EMAIL_REGEX } from 'shared/constants/constants';
-import MyButton from 'shared/ui/MyButton/MyButton';
-import Auth from 'widgets/navigation/api/Auth';
-import { useAppDispatch } from 'shared/lib/hooks/redux';
-import { authorizationSlice } from 'widgets/navigation/model/authorizationSlice';
+import MyInput from '@/shared/ui/MyInput/MyInput';
+import { ForgetPassword } from '@/widgets/navigation/model/types';
+import { EMAIL_REGEX } from '@/shared/constants/constants';
+import MyButton from '@/shared/ui/MyButton/MyButton';
+import Auth from '@/widgets/navigation/api/Auth';
+import { useAppDispatch } from '@/shared/lib/hooks/redux';
+import { authorizationSlice } from '@/widgets/navigation/model/authorizationSlice';
 import { toast } from 'react-toastify';
 
 interface ForgetPasswordModalProps {

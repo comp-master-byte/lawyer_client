@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from "./legal-form.module.scss";
-import TextArea from 'shared/ui/MyInput/textarea';
-import MyButton from 'shared/ui/MyButton/MyButton';
-import Checkbox from 'shared/ui/checkbox/checkbox';
-import { THEMES } from 'shared/constants/constants';
-import ControllerSelect from 'shared/ui/select/controller-select';
+import TextArea from '@/shared/ui/MyInput/textarea';
+import MyButton from '@/shared/ui/MyButton/MyButton';
+import Checkbox from '@/shared/ui/checkbox/checkbox';
+import { THEMES } from '@/shared/constants/constants';
+import ControllerSelect from '@/shared/ui/select/controller-select';
 import { useLegalAdviceForm } from '../../hooks/useLegalAdviceForm';
-import ErrorText from 'shared/styled-components/error-text/error-text';
+import ErrorText from '@/shared/styled-components/error-text/error-text';
 
 const LegalForm: React.FC = () => {
     const {

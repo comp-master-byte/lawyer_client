@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./edit-profile.module.scss";
-import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
-import MyButton from 'shared/ui/MyButton/MyButton';
+import { useAppDispatch, useTypedSelector } from '@/shared/lib/hooks/redux';
+import MyButton from '@/shared/ui/MyButton/MyButton';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import MyInput from 'shared/ui/MyInput/MyInput';
-import { EMAIL_REGEX } from 'shared/constants/constants';
+import MyInput from '@/shared/ui/MyInput/MyInput';
+import { EMAIL_REGEX } from '@/shared/constants/constants';
 import { EditProfileValues } from './model/types';
-import Edit from '../../../features/edit-profile/api/Edit';
 import StaticUserInformation from './components/static-user-information/static-user-information';
 import classNames from 'classnames';
-import { userSlice } from 'features/user/model/userSlice';
-import EditPassword from 'features/edit-profile/edit-password/edit-password';
+import { userSlice } from '@/features/user/model/userSlice';
+import EditPassword from '@/features/edit-profile/edit-password/edit-password';
+import Edit from '@/features/edit-profile/api/Edit';
 
 const EditProfile: React.FC = () => {
     const {register, formState: {errors, isDirty, isSubmitSuccessful}, handleSubmit, reset} = useForm<EditProfileValues>({mode: "all"});

@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from "./questions-list.module.scss";
-import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
-import AnswerItem from 'entities/support-chat/answer-item/answer-item';
-import Loader from 'shared/ui/loader/loader';
-import { fetchMessageNode } from 'widgets/support-chat/model/async-actions';
-import { supportChatSlice } from 'widgets/support-chat/model/supportChatSlice';
+import { useAppDispatch, useTypedSelector } from '@/shared/lib/hooks/redux';
+import AnswerItem from '@/entities/support-chat/answer-item/answer-item';
+import Loader from '@/shared/ui/loader/loader';
+import { fetchMessageNode } from '@/widgets/support-chat/model/async-actions';
+import { supportChatSlice } from '@/widgets/support-chat/model/supportChatSlice';
 
 const QuestionsList: React.FC = () => {
     const {data, isLoading} = useTypedSelector(state => state.supportChatSlice);

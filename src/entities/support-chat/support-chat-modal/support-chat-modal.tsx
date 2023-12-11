@@ -3,8 +3,8 @@ import styles from "./support-chat-modal.module.scss";
 import classNames from 'classnames';
 import LeftSupportWindow from './components/left-support-window/left-support-window';
 import RightSupportWindow from './components/right-support-window/right-support-window';
-import { useClickOutside } from 'shared/lib/hooks/useClickOutside';
-import { QuestionFromChain } from 'shared/model/types';
+import { useClickOutside } from '@/shared/lib/hooks/useClickOutside';
+import { QuestionFromChain } from '@/shared/model/types';
 
 interface SupportchatModalProps {
     isSupportChatVisible: boolean;

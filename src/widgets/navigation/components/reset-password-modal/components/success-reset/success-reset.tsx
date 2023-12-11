@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from "./success-reset.module.scss";
-import MyButton from 'shared/ui/MyButton/MyButton';
-import { useAppDispatch } from 'shared/lib/hooks/redux';
-import { authorizationSlice } from 'widgets/navigation/model/authorizationSlice';
+import MyButton from '@/shared/ui/MyButton/MyButton';
+import { useAppDispatch } from '@/shared/lib/hooks/redux';
+import { authorizationSlice } from '@/widgets/navigation/model/authorizationSlice';
 
 interface SuccessResetProps {
     closeModal: () => void;

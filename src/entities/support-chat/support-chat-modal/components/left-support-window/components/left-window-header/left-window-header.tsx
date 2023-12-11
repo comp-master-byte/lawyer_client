@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./left-window-header.module.scss";
-import backArrowSvg from 'widgets/support-chat/assets/backArrow.svg'
-import { useChatNavigation } from 'widgets/support-chat/lib/hooks/useChatNavigation';
+import backArrowSvg from '@/widgets/support-chat/assets/backArrow.svg?url'
+import { useChatNavigation } from '@/widgets/support-chat/lib/hooks/useChatNavigation';
 
 const LeftWindowHeader: React.FC = () => {
     const {

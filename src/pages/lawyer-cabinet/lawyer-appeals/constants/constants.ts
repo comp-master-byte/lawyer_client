@@ -1,4 +1,4 @@
-import { ISelectOption } from "shared/model/types";
+import { ISelectOption } from "@/shared/model/types";
 
 
 export const LAWYER_APPEALS: ISelectOption[] = [

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styles from "./contact-form.module.scss";
 import { useForm, SubmitHandler } from "react-hook-form";
-import MyButton from "shared/ui/MyButton/MyButton";
+import MyButton from "@/shared/ui/MyButton/MyButton";
 import { ContractFormValues } from "./model/types";
 import QuestionForm from "./api/QuestionForm";
-import { EMAIL_REGEX } from "shared/constants/constants";
-import Checkbox from "shared/ui/checkbox/checkbox";
-import MyInput from "shared/ui/MyInput/MyInput";
-import TextArea from "shared/ui/MyInput/textarea";
-import ErrorText from "shared/styled-components/error-text/error-text";
+import { EMAIL_REGEX } from "@/shared/constants/constants";
+import Checkbox from "@/shared/ui/checkbox/checkbox";
+import MyInput from "@/shared/ui/MyInput/MyInput";
+import TextArea from "@/shared/ui/MyInput/textarea";
+import ErrorText from "@/shared/styled-components/error-text/error-text";
 
 const ContactForm: React.FC = React.memo(function ContactForm() {
     const {

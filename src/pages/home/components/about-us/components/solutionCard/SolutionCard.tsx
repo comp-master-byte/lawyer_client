@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./SolutionCard.module.scss";
-import icon from "./assets/icon.svg";
-import pointer from "./assets/pointer.svg";
-import mobilePointerSvg from "./assets/pointer-mobile.svg";
+import icon from "./assets/icon.svg?url";
+import pointer from "./assets/pointer.svg?url";
+import mobilePointerSvg from "./assets/pointer-mobile.svg?url";
 
 const SolutionCard: React.FC = React.memo(function SolutionCard() {
   return (

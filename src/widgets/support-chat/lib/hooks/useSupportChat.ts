@@ -1,7 +1,7 @@
-import { useSupportChatFeatures } from "features/support-chat/hooks/useSupportChatFeatures";
+import { useSupportChatFeatures } from "@/features/support-chat/hooks/useSupportChatFeatures";
 import { useCallback, useEffect } from "react";
-import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
-import { supportChatSlice } from "widgets/support-chat/model/supportChatSlice";
+import { useAppDispatch, useTypedSelector } from "@/shared/lib/hooks/redux";
+import { supportChatSlice } from "@/widgets/support-chat/model/supportChatSlice";
 
 export const useSupportChat = () => {
     const dispatch = useAppDispatch();

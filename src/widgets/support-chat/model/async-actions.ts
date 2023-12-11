@@ -1,6 +1,6 @@
-import { AppDispatch } from "app/store/store";
+import { AppDispatch } from "@/app/store/store";
 import axios from "axios";
-import { API_URL } from "shared/api/http";
+import { API_URL } from "@/shared/api/http";
 import { supportChatSlice } from "./supportChatSlice";
 
 

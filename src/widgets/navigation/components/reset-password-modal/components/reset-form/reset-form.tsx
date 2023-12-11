@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from "./reset-form.module.scss";
-import MyInput from 'shared/ui/MyInput/MyInput';
-import MyButton from 'shared/ui/MyButton/MyButton';
+import MyInput from '@/shared/ui/MyInput/MyInput';
+import MyButton from '@/shared/ui/MyButton/MyButton';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import Auth from 'widgets/navigation/api/Auth';
-import { useTypedSelector } from 'shared/lib/hooks/redux';
+import Auth from '@/widgets/navigation/api/Auth';
+import { useTypedSelector } from '@/shared/lib/hooks/redux';
 
 interface FormValues {
     new_password: string;

@@ -1,5 +1,5 @@
 import { Control } from "react-hook-form";
-import { ISelectOption } from "shared/model/types";
+import { ISelectOption } from "@/shared/model/types";
 
 
 export interface SelectProps {

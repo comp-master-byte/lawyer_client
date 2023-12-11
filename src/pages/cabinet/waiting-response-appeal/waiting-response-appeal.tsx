@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from "./waiting-response-appeal.module.scss";
 import { useParams } from 'react-router-dom';
-import { useTypedSelector } from 'shared/lib/hooks/redux';
-import MyButton from 'shared/ui/MyButton/MyButton';
+import { useTypedSelector } from '@/shared/lib/hooks/redux';
+import MyButton from '@/shared/ui/MyButton/MyButton';
 
 const WaitingResponseAppeal: React.FC = () => {
     const {appealId} = useParams();

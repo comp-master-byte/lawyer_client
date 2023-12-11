@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from "./success-register-modal.module.scss";
-import Modal from 'shared/ui/modal/modal';
-import closeSvg from "./assets/close-modal.svg";
-import MyButton from 'shared/ui/MyButton/MyButton';
+import Modal from '@/shared/ui/modal/modal';
+import closeSvg from "./assets/close-modal.svg?url";
+import MyButton from '@/shared/ui/MyButton/MyButton';
 import { useDispatch } from 'react-redux';
-import { authorizationSlice } from 'widgets/navigation/model/authorizationSlice';
-import { useTypedSelector } from 'shared/lib/hooks/redux';
+import { authorizationSlice } from '@/widgets/navigation/model/authorizationSlice';
+import { useTypedSelector } from '@/shared/lib/hooks/redux';
 
 interface SuccessRegisterModalProps {
 }

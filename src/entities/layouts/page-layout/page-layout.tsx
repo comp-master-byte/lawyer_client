@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from "./page-layout.module.scss";
 import { Outlet } from 'react-router-dom';
-import Footer from 'widgets/footer/footer';
-import Navigation from 'widgets/navigation/navigation';
+import Footer from '@/widgets/footer/footer';
+import Navigation from '@/widgets/navigation/navigation';
 import { Helmet } from 'react-helmet-async';
-import SupportChat from 'widgets/support-chat/support-chat';
-import { useTypedSelector } from 'shared/lib/hooks/redux';
+import SupportChat from '@/widgets/support-chat/support-chat';
+import { useTypedSelector } from '@/shared/lib/hooks/redux';
 import { useCabinetLayout } from './hooks/useCabinetLayout';
 
 const PageLayout: React.FC = () => {

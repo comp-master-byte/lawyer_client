@@ -1,6 +1,6 @@
-import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
-import { fetchMessageNode } from "widgets/support-chat/model/async-actions";
-import { supportChatSlice } from "widgets/support-chat/model/supportChatSlice";
+import { useAppDispatch, useTypedSelector } from "@/shared/lib/hooks/redux";
+import { fetchMessageNode } from "@/widgets/support-chat/model/async-actions";
+import { supportChatSlice } from "@/widgets/support-chat/model/supportChatSlice";
 
 
 export const useChatNavigation = () => {

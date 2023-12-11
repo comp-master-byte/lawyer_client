@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from "./desktop-chat-version.module.scss";
-import { useSupportChat } from 'widgets/support-chat/lib/hooks/useSupportChat';
-import SupportChatButton from 'features/support-chat/components/support-chat-button/support-chat-button';
-import LegalAdvice from 'entities/support-chat/legal-advice/legal-advice';
-import SupportChatModal from 'entities/support-chat/support-chat-modal/support-chat-modal';
-import MyButton from 'shared/ui/MyButton/MyButton';
-import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
-import { fetchMessageNode } from 'widgets/support-chat/model/async-actions';
-import { supportChatSlice } from 'widgets/support-chat/model/supportChatSlice';
+import { useSupportChat } from '@/widgets/support-chat/lib/hooks/useSupportChat';
+import SupportChatButton from '@/features/support-chat/components/support-chat-button/support-chat-button';
+import LegalAdvice from '@/entities/support-chat/legal-advice/legal-advice';
+import SupportChatModal from '@/entities/support-chat/support-chat-modal/support-chat-modal';
+import MyButton from '@/shared/ui/MyButton/MyButton';
+import { useAppDispatch, useTypedSelector } from '@/shared/lib/hooks/redux';
+import { fetchMessageNode } from '@/widgets/support-chat/model/async-actions';
+import { supportChatSlice } from '@/widgets/support-chat/model/supportChatSlice';
 
 const DesktopChatVersion: React.FC = () => {
     const {

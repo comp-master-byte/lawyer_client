@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./LawyerAssistant.module.scss";
-import assistant from "./assets/assistant.svg";
-import mobileAssistantSvg from "../../assets/yura-mobile.svg";
-import cloudSvg from "../../assets/cloud.svg";
-import rightCloudSvg from "../../assets/rightCloud.svg";
+import assistant from "./assets/assistant.svg?url";
+import mobileAssistantSvg from "../../assets/yura-mobile.svg?url";
+import cloudSvg from "../../assets/cloud.svg?url";
+import rightCloudSvg from "../../assets/rightCloud.svg?url";
 
 const LawyerAssistant: React.FC = React.memo(function LawyerAssistant() {
   return (

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { SupportChatState } from "./types";
-import { QuestionFromChain } from "shared/model/types";
+import { QuestionFromChain } from "@/shared/model/types";
 
 const initialState: SupportChatState = {
     data: null,

@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from "./response-modal.module.scss";
-import ModalCloseButton from 'entities/layouts/modal-close-button/modal-close-button';
+import ModalCloseButton from '@/entities/layouts/modal-close-button/modal-close-button';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import TextArea from 'shared/ui/MyInput/textarea';
-import InputMask from 'shared/ui/MyInput/input-mask';
-import MyButton from 'shared/ui/MyButton/MyButton';
+import TextArea from '@/shared/ui/MyInput/textarea';
+import InputMask from '@/shared/ui/MyInput/input-mask';
+import MyButton from '@/shared/ui/MyButton/MyButton';
 import Respond from './api/Respond';
 import { toast } from 'react-toastify';
-import { useAppDispatch } from 'shared/lib/hooks/redux';
-import { marketSlice } from 'pages/lawyer-cabinet/market/model/marketSlice';
+import { useAppDispatch } from '@/shared/lib/hooks/redux';
+import { marketSlice } from '@/pages/lawyer-cabinet/market/model/marketSlice';
 
 interface ResponseModalProps {
     closeModal: () => void;

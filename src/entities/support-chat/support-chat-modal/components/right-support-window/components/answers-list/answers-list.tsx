@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./answers-list.module.scss";
-import AnswerItem from 'entities/support-chat/answer-item/answer-item';
-import { QuestionFromChain } from 'shared/model/types';
+import AnswerItem from '@/entities/support-chat/answer-item/answer-item';
+import { QuestionFromChain } from '@/shared/model/types';
 
 interface AnswersListProps {
     chainData: QuestionFromChain|null;

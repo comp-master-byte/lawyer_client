@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from "./top-advice-content.module.scss";
-import logoSvg from "widgets/support-chat/assets/logo.svg";
-import closeSvg from "widgets/support-chat/assets/close.svg";
-import backBlueArrowSvg from "widgets/support-chat/assets/backBlueArrow.svg";
+import logoSvg from "@/widgets/support-chat/assets/logo.svg?url";
+import closeSvg from "@/widgets/support-chat/assets/close.svg?url";
+import backBlueArrowSvg from "@/widgets/support-chat/assets/backBlueArrow.svg?url";
 
 interface TopAdviceContentProps {
     closeLegalAdviceModal: () => void;

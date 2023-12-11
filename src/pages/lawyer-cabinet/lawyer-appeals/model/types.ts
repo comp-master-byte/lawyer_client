@@ -1,4 +1,4 @@
-import { LawyerStatus } from "shared/model/types";
+import { LawyerStatus } from "@/shared/model/types";
 
 export interface Application {
     cost: number;

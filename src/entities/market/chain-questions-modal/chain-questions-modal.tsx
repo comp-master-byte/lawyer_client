@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from "./chain-questions-modal.module.scss"
-import Modal from 'shared/ui/modal/modal';
+import Modal from '@/shared/ui/modal/modal';
 import LeftChainWindow from './components/left-chain-window/left-chain-window';
 import RightChainWindow from './components/right-chain-window/right-chain-window';
-import { QuestionFromChain } from 'shared/model/types';
+import { QuestionFromChain } from '@/shared/model/types';
 
 interface ChainQuestionsModalProps {
     closeModal: () => void;

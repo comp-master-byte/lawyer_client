@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from "./select.module.scss";
 import { SelectProps } from './model/types';
-import arrowSvg from "./assets/arrow.svg";
+import arrowSvg from "./assets/arrow.svg?url";
 import { useSelect } from './hooks/useSelect';
 import classNames from 'classnames';
-import { useClickOutside } from 'shared/lib/hooks/useClickOutside';
+import { useClickOutside } from '@/shared/lib/hooks/useClickOutside';
 
 const Select: React.FC<SelectProps> = (props) => {
     const {options, selectedOption, label, onSelectOption, defaultValue, selectWrapperClassName, selectOptionClassName, error} = props;

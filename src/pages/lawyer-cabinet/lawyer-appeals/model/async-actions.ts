@@ -1,7 +1,7 @@
-import { AppDispatch } from "app/store/store";
-import $api from "shared/api/http";
+import { AppDispatch } from "@/app/store/store";
+import $api from "@/shared/api/http";
 import { lawyerAppealsSlice } from "./lawyerAppealsSlice";
-import { LawyerStatus } from "shared/model/types";
+import { LawyerStatus } from "@/shared/model/types";
 
 
 export const fetchApplications = (question__status?: LawyerStatus) => async (dispatch: AppDispatch) => {

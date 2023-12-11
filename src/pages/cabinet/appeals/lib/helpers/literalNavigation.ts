@@ -1,4 +1,4 @@
-import { AppealAndApplication } from "shared/model/types";
+import { AppealAndApplication } from "@/shared/model/types";
 
 
 export const literalNavigation = (appeal: AppealAndApplication) => {

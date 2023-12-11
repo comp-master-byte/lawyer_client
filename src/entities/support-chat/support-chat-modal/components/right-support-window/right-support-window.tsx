@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from "./right-support-window.module.scss";
 import classNames from 'classnames';
-import closeSvg from "widgets/support-chat/assets/close.svg";
+import closeSvg from "@/widgets/support-chat/assets/close.svg?url";
 import AnswersList from './components/answers-list/answers-list';
-import Loader from 'shared/ui/loader/loader';
-import { QuestionFromChain } from 'shared/model/types';
+import Loader from '@/shared/ui/loader/loader';
+import { QuestionFromChain } from '@/shared/model/types';
 
 interface RightSupportWindowProps {
     closeSupportChatCallback: () => void;

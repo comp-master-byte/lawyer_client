@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./left-chain-content.module.scss";
-import { QuestionFromChain } from 'shared/model/types';
-import BotStaticContent from 'shared/components/bot-static-content/bot-static-content';
+import { QuestionFromChain } from '@/shared/model/types';
+import BotStaticContent from '@/shared/components/bot-static-content/bot-static-content';
 
 interface LeftChainContentProps {
     chainData: QuestionFromChain|null;

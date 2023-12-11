@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from "./modal.module.scss";
 import classNames from 'classnames';
-import { useClickOutside } from 'shared/lib/hooks/useClickOutside';
+import { useClickOutside } from '@/shared/lib/hooks/useClickOutside';
 
 interface ModalProps {
     children: React.ReactNode;

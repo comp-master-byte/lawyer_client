@@ -1,17 +1,17 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styles from "./lawyer-appeals.module.scss";
-import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
+import { useAppDispatch, useTypedSelector } from '@/shared/lib/hooks/redux';
 import { fetchApplications } from './model/async-actions';
-import AppealsFilter from 'entities/appeals/appeals-filter/appeals-filter';
+import AppealsFilter from '@/entities/appeals/appeals-filter/appeals-filter';
 import { Application } from './model/types';
 import ApplicationItem from './components/lawyer-appeal-item/lawyer-appeal-item';
-import AppealsList from 'entities/appeals/appeals-list/appeals-list';
+import AppealsList from '@/entities/appeals/appeals-list/appeals-list';
 import { LAWYER_APPEALS } from './constants/constants';
-import { ISelectOption, LawyerStatus } from 'shared/model/types';
+import { ISelectOption, LawyerStatus } from '@/shared/model/types';
 import { useNavigate } from 'react-router-dom';
-import { useVarification } from 'shared/lib/hooks/useVarification';
-import EmptyPlaceholder from 'entities/empty-placeholders/empty-placeholder/empty-placeholder';
-import LawyerOnVerification from 'entities/empty-placeholders/lawyer-on-verification/lawyer-on-verification';
+import { useVarification } from '@/shared/lib/hooks/useVarification';
+import EmptyPlaceholder from '@/entities/empty-placeholders/empty-placeholder/empty-placeholder';
+import LawyerOnVerification from '@/entities/empty-placeholders/lawyer-on-verification/lawyer-on-verification';
 
 const LawyerAppeals: React.FC = () => {
     const navigate = useNavigate();

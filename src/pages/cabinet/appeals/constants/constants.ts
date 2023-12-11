@@ -1,4 +1,4 @@
-import { ISelectOption } from "shared/model/types";
+import { ISelectOption } from "@/shared/model/types";
 
 export const APPEALS: ISelectOption[] = [
     {id: 1, value: 'Все обращения', label: ''},

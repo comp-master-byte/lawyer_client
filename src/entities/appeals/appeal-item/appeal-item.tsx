@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./appeal-item.module.scss";
-import { Appeal } from 'pages/cabinet/appeals/model/types';
+import { Appeal } from '@/pages/cabinet/appeals/model/types';
 
 interface AppealItemProps {
     appeal: Appeal;

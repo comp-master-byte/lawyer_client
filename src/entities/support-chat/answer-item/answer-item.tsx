@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from "./answer-item.module.scss";
 import classNames from 'classnames';
-import { fetchMessageNode } from 'widgets/support-chat/model/async-actions';
-import { supportChatSlice } from 'widgets/support-chat/model/supportChatSlice';
-import { useAppDispatch } from 'shared/lib/hooks/redux';
+import { fetchMessageNode } from '@/widgets/support-chat/model/async-actions';
+import { supportChatSlice } from '@/widgets/support-chat/model/supportChatSlice';
+import { useAppDispatch } from '@/shared/lib/hooks/redux';
 
 interface AnswerItemProps {
     answer: [string, number];

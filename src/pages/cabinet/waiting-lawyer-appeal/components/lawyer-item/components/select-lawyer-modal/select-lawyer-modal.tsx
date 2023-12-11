@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styles from "./select-lawyer-modal.module.scss";
-import MyButton from 'shared/ui/MyButton/MyButton';
+import MyButton from '@/shared/ui/MyButton/MyButton';
 import { useNavigate, useParams } from 'react-router-dom';
-import Lawyer from 'pages/cabinet/waiting-lawyer-appeal/api/Lawyer';
-import ModalCloseButton from 'entities/layouts/modal-close-button/modal-close-button';
+import Lawyer from '@/pages/cabinet/waiting-lawyer-appeal/api/Lawyer';
+import ModalCloseButton from '@/entities/layouts/modal-close-button/modal-close-button';
 
 interface SelectLawyerModalProps {
     isModalVisible: boolean;

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from "./static-user-information.module.scss";
-import MyButton from 'shared/ui/MyButton/MyButton';
+import MyButton from '@/shared/ui/MyButton/MyButton';
 import { useNavigate } from 'react-router-dom';
-import { useTypedSelector } from 'shared/lib/hooks/redux';
+import { useTypedSelector } from '@/shared/lib/hooks/redux';
 
 const StaticUserInformation: React.FC = () => {
     const navigate = useNavigate();

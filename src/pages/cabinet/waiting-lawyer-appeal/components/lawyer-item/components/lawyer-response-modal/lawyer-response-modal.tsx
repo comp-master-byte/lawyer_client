@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from "./lawyer-response-modal.module.scss";
-import MyButton from 'shared/ui/MyButton/MyButton';
-import ModalCloseButton from 'entities/layouts/modal-close-button/modal-close-button';
-import { InterestedLawyer } from 'pages/cabinet/waiting-lawyer-appeal/model/types';
+import MyButton from '@/shared/ui/MyButton/MyButton';
+import ModalCloseButton from '@/entities/layouts/modal-close-button/modal-close-button';
+import { InterestedLawyer } from '@/pages/cabinet/waiting-lawyer-appeal/model/types';
 
 interface LawyerResponseModalProps {
     isLawyerResponseVisible: boolean;

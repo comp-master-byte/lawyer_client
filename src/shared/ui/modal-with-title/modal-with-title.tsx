@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./modal-with-title.module.scss";
-import Modal from 'shared/ui/modal/modal';
-import closeModalSvg from "./assets/close-modal.svg";
+import Modal from '@/shared/ui/modal/modal';
+import closeModalSvg from "./assets/close-modal.svg?url";
 import classNames from 'classnames';
 
 interface ModalWithTitleProps {

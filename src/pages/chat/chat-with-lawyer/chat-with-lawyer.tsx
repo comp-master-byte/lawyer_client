@@ -1,9 +1,9 @@
 import React  from 'react';
 import styles from "./chat-with-lawyer.module.scss";
-import MyInput from 'shared/ui/MyInput/MyInput';
-import MyButton from 'shared/ui/MyButton/MyButton';
+import MyInput from '@/shared/ui/MyInput/MyInput';
+import MyButton from '@/shared/ui/MyButton/MyButton';
 import MessageList from './components/message-list/message-list';
-import { useTypedSelector } from 'shared/lib/hooks/redux';
+import { useTypedSelector } from '@/shared/lib/hooks/redux';
 import { useChatWithLawyer } from './lib/hooks/useChatWithLawyer';
 
 const ChatWithLawyer: React.FC = () => {

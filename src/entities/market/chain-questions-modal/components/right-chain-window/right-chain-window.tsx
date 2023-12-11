@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./right-chain-window.module.scss";
-import BlueBorderModal from 'shared/ui/blue-border-modal/blue-border-modal';
+import BlueBorderModal from '@/shared/ui/blue-border-modal/blue-border-modal';
 import RightChainHeader from './components/right-chain-header/right-chain-header';
 
 interface RightChainWindowProps {

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./themes.module.scss";
 import ThemeQuestion from "./components/themeQuestion/ThemeQuestion";
-import SectionTitle from "shared/styled-components/SectionTitle/SectionTitle";
-import line from "./assets/line.svg";
+import SectionTitle from "@/shared/styled-components/SectionTitle/SectionTitle";
+import line from "./assets/line.svg?url";
 
 const Themes: React.FC = React.memo(function Themes() {
   return (

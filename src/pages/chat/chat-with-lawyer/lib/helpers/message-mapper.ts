@@ -1,4 +1,4 @@
-import { User } from "features/user/model/types";
+import { User } from "@/features/user/model/types";
 
 export const messageMapper = (data: any, user: User) => ({
     text: data.text,

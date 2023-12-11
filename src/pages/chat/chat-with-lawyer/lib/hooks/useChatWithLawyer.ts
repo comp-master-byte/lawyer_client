@@ -1,12 +1,12 @@
 import { useEffect, useRef }  from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
+import { useAppDispatch, useTypedSelector } from '@/shared/lib/hooks/redux';
 import { useParams } from 'react-router-dom';
 import { clientChatSlice } from '../../model/clientChatSlice';
 import Message from '../../api/Message';
 import { messageMapper } from '../helpers/message-mapper';
-import { User } from 'features/user/model/types';
-import { fetchMessages } from 'pages/chat/chat-with-lawyer/model/async-actions';
+import { User } from '@/features/user/model/types';
+import { fetchMessages } from '@/pages/chat/chat-with-lawyer/model/async-actions';
 
 interface IChatValues {
     text: string;

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from "./appeals-filter.module.scss";
-import Select from 'shared/ui/select/select';
-import { ISelectOption } from 'shared/model/types';
-import MyButton from 'shared/ui/MyButton/MyButton';
+import Select from '@/shared/ui/select/select';
+import { ISelectOption } from '@/shared/model/types';
+import MyButton from '@/shared/ui/MyButton/MyButton';
 
 interface AppealsFilterProps {
     options: ISelectOption[];

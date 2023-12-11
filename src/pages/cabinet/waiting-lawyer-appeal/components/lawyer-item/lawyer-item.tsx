@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./lawyer-item.module.scss";
-import personSvg from "../../assets/person.svg";
-import MyButton from 'shared/ui/MyButton/MyButton';
+import personSvg from "../../assets/person.svg?url";
+import MyButton from '@/shared/ui/MyButton/MyButton';
 import classNames from 'classnames';
 import LawyerResponseModal from './components/lawyer-response-modal/lawyer-response-modal';
 import { InterestedLawyer } from '../../model/types';

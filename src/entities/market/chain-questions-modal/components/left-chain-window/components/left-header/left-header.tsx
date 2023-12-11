@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./left-header.module.scss";
-import MyButton from 'shared/ui/MyButton/MyButton';
+import MyButton from '@/shared/ui/MyButton/MyButton';
 
 const LeftHeader: React.FC = () => {
     return (

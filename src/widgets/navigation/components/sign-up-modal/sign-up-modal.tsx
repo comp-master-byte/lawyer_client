@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import styles from "./sign-up-modal.module.scss";
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { SignUpValues } from 'widgets/navigation/model/types';
-import MyInput from 'shared/ui/MyInput/MyInput';
-import { EMAIL_REGEX } from 'shared/constants/constants';
-import ControllerSelect from 'shared/ui/select/controller-select';
-import { REGISTER_TYPE } from 'widgets/navigation/constants/constants';
-import Checkbox from 'shared/ui/checkbox/checkbox';
-import MyButton from 'shared/ui/MyButton/MyButton';
-import Auth from 'widgets/navigation/api/Auth';
-import ModalWithTitle from 'shared/ui/modal-with-title/modal-with-title';
-import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
-import { authorizationSlice } from 'widgets/navigation/model/authorizationSlice';
-import ErrorText from 'shared/styled-components/error-text/error-text';
+import { SignUpValues } from '@/widgets/navigation/model/types';
+import MyInput from '@/shared/ui/MyInput/MyInput';
+import { EMAIL_REGEX } from '@/shared/constants/constants';
+import ControllerSelect from '@/shared/ui/select/controller-select';
+import { REGISTER_TYPE } from '@/widgets/navigation/constants/constants';
+import Checkbox from '@/shared/ui/checkbox/checkbox';
+import MyButton from '@/shared/ui/MyButton/MyButton';
+import Auth from '@/widgets/navigation/api/Auth';
+import ModalWithTitle from '@/shared/ui/modal-with-title/modal-with-title';
+import { useAppDispatch, useTypedSelector } from '@/shared/lib/hooks/redux';
+import { authorizationSlice } from '@/widgets/navigation/model/authorizationSlice';
+import ErrorText from '@/shared/styled-components/error-text/error-text';
 
 interface SignUpModalProps {
     openSignInModal: () => void;

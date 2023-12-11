@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./lawyer-profile.module.scss";
-import SectionTitle from 'shared/styled-components/SectionTitle/SectionTitle';
-import personSvg from "./assets/avatar.svg";
-import MyButton from 'shared/ui/MyButton/MyButton';
-import ProfileKeyName from 'entities/profile-key-name/profile-key-name';
-import MyInput from 'shared/ui/MyInput/MyInput';
+import SectionTitle from '@/shared/styled-components/SectionTitle/SectionTitle';
+import personSvg from "./assets/avatar.svg?url";
+import MyButton from '@/shared/ui/MyButton/MyButton';
+import ProfileKeyName from '@/entities/profile-key-name/profile-key-name';
+import MyInput from '@/shared/ui/MyInput/MyInput';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { EMAIL_REGEX } from 'shared/constants/constants';
-import { useTypedSelector } from 'shared/lib/hooks/redux';
-import TextArea from 'shared/ui/MyInput/textarea';
-import InputMask from 'shared/ui/MyInput/input-mask';
-import Edit from 'features/edit-profile/api/Edit';
-import EditPassword from 'features/edit-profile/edit-password/edit-password';
+import { EMAIL_REGEX } from '@/shared/constants/constants';
+import { useTypedSelector } from '@/shared/lib/hooks/redux';
+import TextArea from '@/shared/ui/MyInput/textarea';
+import InputMask from '@/shared/ui/MyInput/input-mask';
+import Edit from '@/features/edit-profile/api/Edit';
+import EditPassword from '@/features/edit-profile/edit-password/edit-password';
 import { useNavigate } from 'react-router-dom';
 
 interface EditProfileValues {

@@ -1,4 +1,4 @@
-@import "app/styles/exports";
+@import "@/app/styles/exports";
 
 @mixin content {
   background-color: $lightBlue-color-2;
@@ -142,7 +142,7 @@
   .advantagesMobileContent {
     display: block;
     @include content;
-    background-image: url("./assets/bg-line.svg");
+    background-image: url("./assets/bg-line.svg?url");
     background-repeat: no-repeat;
     background-position: 100px -5px;
     padding: 0;

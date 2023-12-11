@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./MyInput.module.scss";
 import { MyInputProps } from "./types";
 import classNames from "classnames";
-import searchSvg from "./assets/search.svg";
-import fileSvg from "./assets/file.svg";
+import searchSvg from "./assets/search.svg?url";
+import fileSvg from "./assets/file.svg?url";
 
 const MyInput: React.FC<MyInputProps> = ({ register, error, placeholder, label, type, inputClassName, hasSearch, hasFile, variant, disabled, labelClassName}) => {
     return (

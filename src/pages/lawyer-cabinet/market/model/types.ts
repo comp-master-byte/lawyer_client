@@ -1,4 +1,4 @@
-import { QuestionFromChain } from "shared/model/types";
+import { QuestionFromChain } from "@/shared/model/types";
 
 export interface MarketQuestion {
     created_by: {

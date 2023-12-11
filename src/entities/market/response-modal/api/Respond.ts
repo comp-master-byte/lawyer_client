@@ -1,4 +1,4 @@
-import $api from "shared/api/http";
+import $api from "@/shared/api/http";
 import { ResponseValues } from "../response-modal";
 import { mapResponseData } from "./mapper/response-mapper";
 

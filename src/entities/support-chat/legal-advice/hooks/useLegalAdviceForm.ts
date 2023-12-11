@@ -1,13 +1,13 @@
 import Cookies from "js-cookie";
 import { SubmitHandler, useForm } from "react-hook-form"
-import { useAppDispatch, useTypedSelector } from "shared/lib/hooks/redux";
-import { authorizationSlice } from "widgets/navigation/model/authorizationSlice";
-import { supportChatSlice } from "widgets/support-chat/model/supportChatSlice";
+import { useAppDispatch, useTypedSelector } from "@/shared/lib/hooks/redux";
+import { authorizationSlice } from "@/widgets/navigation/model/authorizationSlice";
+import { supportChatSlice } from "@/widgets/support-chat/model/supportChatSlice";
 import AdviceForm from "../api/AdviceForm";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { appealsSlice } from "pages/cabinet/appeals/model/appealsSlice";
+import { appealsSlice } from "@/pages/cabinet/appeals/model/appealsSlice";
 
 export interface LegalFormValues {
     question_text: string;

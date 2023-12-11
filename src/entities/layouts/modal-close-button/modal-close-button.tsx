@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./modal-close-button.module.scss";
-import Modal from 'shared/ui/modal/modal';
-import closeSvg from "./assets/close-button.svg";
+import Modal from '@/shared/ui/modal/modal';
+import closeSvg from "./assets/close-button.svg?url";
 
 interface ModalCloseButtonProps {
     closeModal: () => void;

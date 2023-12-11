@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./ContactsAndLinks.module.scss";
-import vk from "./assets/vk.svg";
-import tg from "./assets/tg.svg";
-import { TG_LINK, VK_LINK } from "shared/constants/constants";
+import vk from "./assets/vk.svg?url";
+import tg from "./assets/tg.svg?url";
+import { TG_LINK, VK_LINK } from "@/shared/constants/constants";
 import { Link } from "react-router-dom";
 
 const ContactsAndLinks: React.FC = React.memo(function ContactsAndLinks() {

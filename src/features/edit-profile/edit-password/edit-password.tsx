@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import styles from "./edit-password.module.scss";
-import ProfileKeyName from 'entities/profile-key-name/profile-key-name';
-import MyButton from 'shared/ui/MyButton/MyButton';
+import ProfileKeyName from '@/entities/profile-key-name/profile-key-name';
+import MyButton from '@/shared/ui/MyButton/MyButton';
 import EditPasswordModal from './components/edit-password-modal/edit-password-modal';
 
 interface EditPasswordProps {

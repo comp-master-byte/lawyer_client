@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import styles from "./market.module.scss";
-import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
+import { useAppDispatch, useTypedSelector } from '@/shared/lib/hooks/redux';
 import { fetchMarketQuestions } from './model/async-actions';
-import SectionTitle from 'shared/styled-components/SectionTitle/SectionTitle';
+import SectionTitle from '@/shared/styled-components/SectionTitle/SectionTitle';
 import FreeQuestionsList from './components/free-questions-list/free-questions-list';
-import EmptyPlaceholder from 'entities/empty-placeholders/empty-placeholder/empty-placeholder';
-import { useVarification } from 'shared/lib/hooks/useVarification';
-import LawyerOnVerification from 'entities/empty-placeholders/lawyer-on-verification/lawyer-on-verification';
+import EmptyPlaceholder from '@/entities/empty-placeholders/empty-placeholder/empty-placeholder';
+import { useVarification } from '@/shared/lib/hooks/useVarification';
+import LawyerOnVerification from '@/entities/empty-placeholders/lawyer-on-verification/lawyer-on-verification';
 
 const Market: React.FC = () => {
     const dispatch = useAppDispatch();

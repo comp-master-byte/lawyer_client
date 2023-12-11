@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL } from "shared/api/http";
+import { API_URL } from "@/shared/api/http";
 import { ForgetPassword, ResetPasswordConfirm, SignInValues, SignUpValues } from "../model/types";
 import { toast } from "react-toastify";
 import { signUpMapper } from "./mappers/signUpMapper";

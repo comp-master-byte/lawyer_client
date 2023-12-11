@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { MarketQuestion, MarketState } from "./types";
-import { QuestionFromChain } from "shared/model/types";
+import { QuestionFromChain } from "@/shared/model/types";
 
 const initialState: MarketState = {
     freeQuestions: [],

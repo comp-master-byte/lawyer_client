@@ -1,4 +1,4 @@
-import $api from "shared/api/http";
+import $api from "@/shared/api/http";
 
 
 export default class Message {

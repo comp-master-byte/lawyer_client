@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./ProblemCard.module.scss";
-import icon from "./assets/icon.svg";
-import pointer from "./assets/pointer.svg";
-import mobilePointerSvg from "./assets/pointer-mobile.svg";
-import bluePointer954 from "../../assets/blue-arrow-954.svg";
+import icon from "./assets/icon.svg?url";
+import pointer from "./assets/pointer.svg?url";
+import mobilePointerSvg from "./assets/pointer-mobile.svg?url";
+import bluePointer954 from "../../assets/blue-arrow-954.svg?url";
 
 const ProblemCard: React.FC = React.memo(function ProblemCard() {
   return (

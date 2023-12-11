@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from "./reset-password-modal.module.scss";
-import ModalWithTitle from 'shared/ui/modal-with-title/modal-with-title';
-import { useAppDispatch, useTypedSelector } from 'shared/lib/hooks/redux';
-import { authorizationSlice } from 'widgets/navigation/model/authorizationSlice';
+import ModalWithTitle from '@/shared/ui/modal-with-title/modal-with-title';
+import { useAppDispatch, useTypedSelector } from '@/shared/lib/hooks/redux';
+import { authorizationSlice } from '@/widgets/navigation/model/authorizationSlice';
 import ResetForm from './components/reset-form/reset-form';
 import SuccessReset from './components/success-reset/success-reset';
 
