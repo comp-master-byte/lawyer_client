@@ -28,9 +28,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "start": "webpack serve --env mode=development",
     "build:dev": "webpack --env mode=development",
-    "build:prod": "webpack --env mode=production",
-    "start": "webpack serve"
+    "build:prod": "webpack --env mode=production"
   },
   "browserslist": {
     "production": [
