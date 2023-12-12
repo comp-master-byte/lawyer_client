@@ -24,6 +24,9 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
                 chunkFilename: 'css/[name].[contenthash:8].css'
             })
         )
+    }
+
+    if(options.analyzer) {
         plugins.push(new BundleAnalyzerPlugin());
     }
 

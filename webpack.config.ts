@@ -4,8 +4,9 @@ import webpack from "webpack";
 import {buildWebpack} from "./src/shared/config/build/buildWebpack";
 
 interface EnvVariables {
-    mode: BuildMode,
-    port: number
+    mode: BuildMode;
+    port: number;
+    analyzer?: boolean;
 }
 
 module.exports = (env: EnvVariables) => { 
@@ -19,7 +20,8 @@ module.exports = (env: EnvVariables) => {
     const config: webpack.Configuration = buildWebpack({
         port: env.port ?? 5000,
         mode: env.mode ?? "development",
-        paths
+        paths,
+        analyzer: env.analyzer
     })
 
     return config;
