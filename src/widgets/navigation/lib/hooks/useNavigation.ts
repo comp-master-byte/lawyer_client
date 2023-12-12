@@ -26,6 +26,9 @@ export const useNavigation = () => {
         }
     }, [user])
 
+    console.log(user);
+    
+
     const openMobileMavigation = () => setIsNavigationMobileVisible(true);
     const closeMobileNavigation = () => setIsNavigationMobileVisible(false);
 

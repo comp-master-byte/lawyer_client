@@ -19,7 +19,7 @@ export const useCabinetLayout = () => {
 
 
     useEffect(() => {
-        if(pathname !== '/') {
+        if(Cookies.get('token')) {
             const user = localStorage.getItem('user');
     
             if(!user) {

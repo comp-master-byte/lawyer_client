@@ -42,28 +42,6 @@ const ProfilePopup: React.FC<ProfilePopupProps> = ({isPopupVisible, closeProfile
                         {link.name}
                     </Link>
                 )}
-{/* 
-                <Link 
-                    to='/cabinet/appeals' 
-                    onClick={closeProfilePopup} 
-                    className={styles.pageLink}
-                >
-                   
-                </Link>
-                <Link 
-                    to='/cabinet/chats' 
-                    onClick={closeProfilePopup} 
-                    className={styles.pageLink}
-                >
-                    Чаты
-                </Link>
-                <Link 
-                    to='/cabinet/edit-profile' 
-                    onClick={closeProfilePopup} 
-                    className={styles.pageLink}
-                >
-                    
-                </Link> */}
                 <div 
                     onClick={logout} 
                     className={styles.pageLink}
