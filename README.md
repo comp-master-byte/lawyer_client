@@ -29,5 +29,5 @@
 Запустить проект:
   - git clone ...
   - yarn
-  - yarn build
+  - yarn build:dev
   - yarn start
